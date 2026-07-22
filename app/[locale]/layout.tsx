@@ -11,24 +11,27 @@ import { hreflangByLocale } from "@/lib/seo/hreflang";
 
 // Generate structured data for SEO
 function generateStructuredData(locale: Locale, baseUrl: string) {
-  const organizationName = "Your Site Name";
+  const organizationName = "VitalSupps";
 
   const organizationDescMap: Record<Locale, string> = {
-    en: "Generic site description — to be replaced with real content.",
-    fr: "Description générique du site — à remplacer par le contenu réel.",
-    it: "Descrizione generica del sito — da sostituire con contenuti reali.",
+    en: "Premium, third-party lab-tested supplements — Methylene Blue and Gut Health formulas made in the USA.",
+    fr: "Compléments alimentaires premium, testés en laboratoire indépendant — Bleu de méthylène et formule Santé Intestinale, fabriqués aux États-Unis.",
+    es: "Suplementos premium probados por laboratorios independientes — Azul de metileno y fórmula de Salud Intestinal, fabricados en EE. UU.",
+    de: "Premium-Nahrungsergänzungsmittel, von unabhängigen Labors getestet — Methylenblau und Darmgesundheits-Formel, hergestellt in den USA.",
   };
 
   const availableLanguageMap: Record<Locale, string[]> = {
     en: ["English"],
     fr: ["French", "Français"],
-    it: ["Italian", "Italiano"],
+    es: ["Spanish", "Español"],
+    de: ["German", "Deutsch"],
   };
 
   const breadcrumbHomeNameMap: Record<Locale, string> = {
     en: "Home",
     fr: "Accueil",
-    it: "Home",
+    es: "Inicio",
+    de: "Startseite",
   };
 
   const organizationSchema = {
@@ -37,7 +40,7 @@ function generateStructuredData(locale: Locale, baseUrl: string) {
     name: organizationName,
     description: organizationDescMap[locale],
     url: `${baseUrl}/${locale}/`, // Include trailing slash for consistency
-    logo: `${baseUrl}/logo/Logo3-removebg-preview.png`,
+    logo: `${baseUrl}/logo/vitalsupps-wordmark.svg`,
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "Customer Service",

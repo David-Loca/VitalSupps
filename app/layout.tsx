@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Fraunces } from "next/font/google";
 import "./globals.css";
 import { buildSocialMetadata } from "@/lib/seo/social-metadata";
 import { getSiteBaseUrl } from "@/lib/seo/og-image";
@@ -22,6 +22,17 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   adjustFontFallback: true,
   fallback: ["system-ui", "-apple-system", "sans-serif"],
   weight: ["400", "600", "700"],
+});
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+  adjustFontFallback: true,
+  fallback: ["Georgia", "serif"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -153,7 +164,7 @@ export default function RootLayout({
         <link rel="preload" as="image" href="/images/hero.webp" type="image/webp" fetchPriority="high" media="(min-width: 768px)" />
       </head>
       <body
-        className={`${inter.variable} ${plusJakartaSans.variable} antialiased`}
+        className={`${inter.variable} ${plusJakartaSans.variable} ${fraunces.variable} antialiased`}
       >
         <div id="root">
           <main>{children}</main>

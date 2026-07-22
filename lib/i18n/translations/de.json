@@ -1,0 +1,242 @@
+{
+  "notFound": {
+    "backHome": "Zurück zur Startseite",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "quickLinksAriaLabel": "Schnellzugriff",
+    "signalLost": "Signal verloren",
+    "title": "Seite nicht gefunden"
+  },
+  "common": {
+    "home": "Startseite",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Kontakt",
+    "contactUs": "Kontaktieren Sie uns",
+    "features": "Warum VitalSupps",
+    "products": "Produkte",
+    "whatsapp": "WhatsApp",
+    "email": "E-Mail",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "refundPolicy": "Rückerstattungsrichtlinie",
+    "termsOfService": "Nutzungsbedingungen",
+    "contactWhatsapp": "Kontaktieren Sie uns per WhatsApp"
+  },
+  "blog": {
+    "articlesAriaLabel": "Artikel",
+    "backToBlog": "Zurück zum Blog",
+    "description": "Neueste Artikel und Neuigkeiten.",
+    "excerptUnavailable": "Auszug nicht verfügbar",
+    "eyebrow": "Blog",
+    "noPosts": "Noch keine Artikel.",
+    "noPostsSubtitle": "Schauen Sie bald wieder vorbei für neue Inhalte.",
+    "readMore": "Weiterlesen",
+    "title": "Blog",
+    "untitled": "Ohne Titel"
+  },
+  "home": {
+    "latestFromBlog": "Neueste Artikel",
+    "latestFromBlogSubtitle": "Unsere neuesten Artikel und Neuigkeiten.",
+    "viewAllArticles": "Alle Artikel ansehen"
+  },
+  "hero": {
+    "eyebrow": "Premium-Nahrungsergänzung, wissenschaftlich fundiert",
+    "title": "Fühlen Sie sich klarer. Fühlen Sie sich leichter. Fühlen Sie sich wieder wie Sie selbst.",
+    "subtitle": "Zwei gezielte Formeln — Methylenblau für mentale Klarheit und zelluläre Energie sowie Darmgesundheits-Kapseln für digestives Wohlbefinden — hergestellt mit laborgeprüften, GMP-zertifizierten Inhaltsstoffen.",
+    "ctaPrimary": "Jetzt einkaufen",
+    "ctaSecondary": "Schreiben Sie uns auf WhatsApp",
+    "badgeLabTested": "Laborgeprüft",
+    "badgeMadeInUsa": "Hergestellt in den USA",
+    "badgeNonGmo": "Gentechnikfrei"
+  },
+  "products": {
+    "sectionTitle": "Unsere Formeln",
+    "sectionSubtitle": "Zwei gezielte Produkte, jedes für ein bestimmtes Ziel formuliert — nichts Überflüssiges, nichts Verdünntes.",
+    "shopNow": "Jetzt kaufen",
+    "askOnWhatsapp": "Auf WhatsApp fragen",
+    "buyOnWhatsapp": "Über WhatsApp kaufen",
+    "backToHome": "Zurück zur Startseite",
+    "targetAudience": "Für wen geeignet",
+    "benefits": "Vorteile",
+    "ingredients": "Inhaltsstoffe",
+    "howToUse": "Anwendung"
+  },
+  "features": {
+    "sectionSubtitle": "Reinheit, Wirksamkeit und Transparenz in jeder Charge.",
+    "sectionTitle": "Warum VitalSupps",
+    "statChannelsLabel": "Von Dritten getestete Chargen",
+    "statChannelsValue": "100%",
+    "statMoviesLabel": "Produkte in unserem Sortiment",
+    "statMoviesValue": "2",
+    "statSupportLabel": "Kundenservice",
+    "statSupportValue": "7 Tage/Woche",
+    "trustBadgesAlt": "Von Drittlaboren getestet",
+    "badgeLabTested": "Laborgeprüft",
+    "badgeMadeInUsa": "Hergestellt in den USA",
+    "badgeNonGmo": "Gentechnikfrei",
+    "feature1": {
+      "title": "Von Drittlaboren getestet",
+      "description": "Jede Charge wird vor dem Versand von einem unabhängigen Labor auf Reinheit und Wirksamkeit geprüft."
+    },
+    "feature2": {
+      "title": "Saubere, zielgerichtete Inhaltsstoffe",
+      "description": "Keine unnötigen Füllstoffe — nur die Inhaltsstoffe, die dem Ziel jeder Formel dienen."
+    },
+    "feature3": {
+      "title": "GMP-zertifizierte Anlage",
+      "description": "Hergestellt in einer nach Good Manufacturing Practice zertifizierten Anlage in den USA."
+    },
+    "feature4": {
+      "title": "Formulierung für schnelle Aufnahme",
+      "description": "Unsere sublinguale Tinktur und unsere Kapseln sind für eine effektive Aufnahme formuliert."
+    },
+    "feature5": {
+      "title": "Produktion in kleinen Chargen",
+      "description": "Wir produzieren in kleinen Chargen, um strenge Qualitätskontrolle und hohe Frische zu gewährleisten."
+    },
+    "feature6": {
+      "title": "Echter persönlicher Support",
+      "description": "Fragen zu Dosierung oder Inhaltsstoffen? Schreiben Sie uns direkt auf WhatsApp."
+    }
+  },
+  "trust": {
+    "sectionTitle": "Kaufen Sie mit Vertrauen",
+    "guarantee": {
+      "title": "30-Tage Geld-zurück-Garantie",
+      "description": "Nicht zufrieden? Volle Rückerstattung innerhalb von 30 Tagen nach dem Kauf, ohne Fragen."
+    },
+    "labTested": {
+      "title": "Von Drittlaboren getestet",
+      "description": "Jede Charge wird unabhängig auf Reinheit, Wirksamkeit und Schadstoffe geprüft."
+    },
+    "gmp": {
+      "title": "GMP-zertifizierte Anlage",
+      "description": "Hergestellt in einer Anlage, die den Good-Manufacturing-Practice-Standards folgt."
+    },
+    "madeInUsa": {
+      "title": "Hergestellt in den USA",
+      "description": "Im Inland formuliert und hergestellt unter strenger Qualitätskontrolle."
+    }
+  },
+  "ingredients": {
+    "sectionTitle": "Was drinsteckt",
+    "sectionSubtitle": "Volle Transparenz über jeden Inhaltsstoff in jeder Formel."
+  },
+  "cta": {
+    "title": "Bereit, den Unterschied zu spüren?",
+    "subtitle": "Schreiben Sie uns auf WhatsApp für eine persönliche Beratung, welche Formel zu Ihnen passt.",
+    "button": "Auf WhatsApp chatten"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "general1": {
+      "question": "Ist Methylenblau sicher?",
+      "answer": "Bei den niedrigen, titrierten Dosen in unserer Tinktur wird Methylenblau von vielen Menschen zur Wellness-Unterstützung verwendet. Es interagiert mit bestimmten Medikamenten (insbesondere MAO-Hemmern, SSRIs und SNRIs), daher empfehlen wir, vor der Anwendung Ihren Arzt zu konsultieren, besonders bei Schwangerschaft, Stillzeit oder Medikamenteneinnahme."
+    },
+    "general2": {
+      "question": "Wie lange dauert es, bis ich Ergebnisse der Darmgesundheits-Formel sehe?",
+      "answer": "Viele Kunden bemerken nach 2-4 Wochen regelmäßiger täglicher Einnahme ein verbessertes Verdauungswohlbefinden. Individuelle Ergebnisse variieren je nach Ernährung und Lebensstil."
+    },
+    "general3": {
+      "question": "Versenden Sie international?",
+      "answer": "Derzeit versenden wir in die beim Checkout aufgeführten Regionen. Schreiben Sie uns auf WhatsApp mit Ihrem Standort, und wir bestätigen Verfügbarkeit und Versandzeiten."
+    },
+    "general4": {
+      "question": "Wie lautet Ihre Rückgaberichtlinie?",
+      "answer": "Wir bieten eine 30-tägige Geld-zurück-Garantie. Wenn Sie nicht zufrieden sind, kontaktieren Sie uns und wir bearbeiten die Rückerstattung — Details finden Sie in unserer Rückerstattungsrichtlinie."
+    },
+    "general5": {
+      "question": "Sind Ihre Produkte von Dritten getestet?",
+      "answer": "Ja. Jede Charge beider Formeln wird vor dem Verkauf von einem unabhängigen Labor auf Reinheit und Wirksamkeit geprüft."
+    },
+    "general6": {
+      "question": "Kann ich beide Produkte zusammen einnehmen?",
+      "answer": "Ja, viele Kunden nutzen beide Formeln als Teil ihrer täglichen Routine. Wenn Sie Medikamente einnehmen oder eine Erkrankung haben, sprechen Sie zuerst mit Ihrem Arzt, insbesondere wegen der Wechselwirkungen von Methylenblau."
+    },
+    "general7": {
+      "question": "Sind die Kapseln und die Tinktur vegan und glutenfrei?",
+      "answer": "Die Darmgesundheits-Kapseln verwenden eine pflanzliche Kapselhülle und sind glutenfrei. Die Methylenblau-Tinktur enthält keine tierischen Inhaltsstoffe."
+    },
+    "general8": {
+      "question": "Wie sollte ich meine Nahrungsergänzungsmittel lagern?",
+      "answer": "Lagern Sie beide Produkte kühl und trocken, geschützt vor direkter Sonneneinstrahlung. Für keines der Produkte ist Kühlung erforderlich."
+    }
+  },
+  "whatsapp": {
+    "floatingButton": "Hallo, ich habe eine Frage zu VitalSupps.",
+    "ariaFloating": "Über WhatsApp kontaktieren",
+    "tooltip": "Haben Sie eine Frage? Schreiben Sie uns",
+    "contactQuestion": "Hallo, ich habe eine Frage zu VitalSupps.",
+    "defaultButton": "Hallo, ich habe eine Frage.",
+    "ariaFreeTest": "Über WhatsApp kontaktieren",
+    "notFoundHelp": "Hallo, ich konnte die gesuchte Seite nicht finden."
+  },
+  "contactSection": {
+    "title": "Kontaktieren Sie uns",
+    "description": "Haben Sie eine Frage zu unseren Formeln? Schreiben Sie uns."
+  },
+  "footer": {
+    "quickLinks": "Schnellzugriff",
+    "legal": "Rechtliches",
+    "description": "VitalSupps stellt Premium-Nahrungsergänzungsmittel her, die laborgeprüft sind — Methylenblau für Fokus und zelluläre Energie sowie Darmgesundheits-Kapseln für digestives Wohlbefinden. Hergestellt in den USA in einer GMP-zertifizierten Anlage.",
+    "paymentMethods": "Zahlungsmethoden",
+    "copyright": "© {year} VitalSupps. Alle Rechte vorbehalten.",
+    "fdaDisclaimer": "Diese Aussagen wurden nicht von der US-amerikanischen Food and Drug Administration (FDA) bewertet. Dieses Produkt ist nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder vorzubeugen. Konsultieren Sie vor der Anwendung Ihren Arzt, besonders bei Schwangerschaft, Stillzeit, Medikamenteneinnahme oder bestehender Erkrankung."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Rückerstattungsrichtlinie",
+      "intro": "Wir möchten, dass Sie VitalSupps mit vollem Vertrauen kaufen. Wenn Sie mit Ihrer Methylenblau- oder Darmgesundheits-Bestellung nicht zufrieden sind, bieten wir eine 30-tägige Geld-zurück-Garantie ab Lieferdatum.",
+      "intro2": "Um eine Rückerstattung zu beantragen, kontaktieren Sie uns per WhatsApp oder E-Mail mit Ihrer Bestellnummer, und wir führen Sie durch den Prozess.",
+      "howItWorksTitle": "So funktioniert es",
+      "howItWorksText": "Kontaktieren Sie uns innerhalb von 30 Tagen nach Lieferung. Nach Bestätigung Ihrer Anfrage bearbeiten wir Ihre Rückerstattung innerhalb von 5-10 Werktagen auf die ursprüngliche Zahlungsmethode. Geöffnete oder verwendete Produkte sind weiterhin im Rahmen dieser Garantie berechtigt.",
+      "conclusion": "Bei Fragen zu Ihrer Bestellung oder dieser Richtlinie schreiben Sie uns auf WhatsApp — wir helfen gerne."
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzrichtlinie",
+      "intro": "VitalSupps respektiert Ihre Privatsphäre. Diese Richtlinie erklärt, welche Informationen wir sammeln, wenn Sie unsere Website besuchen oder uns kontaktieren, und wie wir sie nutzen.",
+      "intro2": "Wir erfassen nur Informationen, die zur Bearbeitung von Bestellungen, zur Beantwortung von Anfragen und zur Verbesserung unserer Website erforderlich sind.",
+      "dataProtectionTitle": "Datenschutz",
+      "dataProtectionText": "Wir verwenden branchenübliche Sicherheitsmaßnahmen, um alle persönlichen Informationen zu schützen, die Sie mit uns teilen, einschließlich Bestell- und Kontaktdaten.",
+      "dataUsageTitle": "Datennutzung",
+      "dataUsageText": "Von Ihnen bereitgestellte Informationen (wie Name, E-Mail oder WhatsApp-Nummer) werden ausschließlich zur Bearbeitung von Bestellungen und Beantwortung Ihrer Fragen verwendet.",
+      "dataUsageText2": "Wir verkaufen Ihre persönlichen Daten nicht an Dritte.",
+      "dataCollectionTitle": "Datenerfassung",
+      "dataCollectionText": "Wir können grundlegende Analysedaten (z. B. besuchte Seiten) erfassen, um zu verstehen, wie Besucher unsere Website nutzen.",
+      "dataCollectionText2": "Kontaktinformationen werden nur erfasst, wenn Sie sie freiwillig angeben, z. B. über eine WhatsApp-Nachricht oder ein Kontaktformular.",
+      "securityTitle": "Sicherheit",
+      "securityText": "Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten vor unbefugtem Zugriff, Änderung oder Offenlegung zu schützen.",
+      "conclusion": "Bei Fragen zum Umgang mit Ihren Daten kontaktieren Sie uns über die Angaben in unserer Fußzeile."
+    },
+    "termsOfService": {
+      "title": "Nutzungsbedingungen",
+      "intro": "Durch die Nutzung der VitalSupps-Website und den Kauf unserer Produkte stimmen Sie den folgenden Bedingungen zu.",
+      "definitionsTitle": "Definitionen",
+      "definitionsText": "„Wir\" und „VitalSupps\" bezeichnen dieses Unternehmen. „Sie\" bezeichnet den Besucher oder Kunden, der unsere Website oder Produkte nutzt.",
+      "cookiesTitle": "Cookies",
+      "cookiesText": "Unsere Website kann Cookies verwenden, um Ihr Surferlebnis zu verbessern. Durch die weitere Nutzung der Website stimmen Sie unserer Verwendung von Cookies zu.",
+      "intellectualPropertyTitle": "Geistiges Eigentum",
+      "intellectualPropertyText": "Alle Inhalte dieser Website, einschließlich Texte, Grafiken, Logos und Produktformulierungen, sind Eigentum von VitalSupps, sofern nicht anders angegeben.",
+      "intellectualPropertyRestrictions": "Sie dürfen unsere Inhalte ohne schriftliche Genehmigung nicht reproduzieren, verbreiten oder daraus abgeleitete Werke erstellen.",
+      "restriction1": "Verwenden Sie unsere Marke oder Produktnamen nicht zur Bewerbung nicht verwandter Waren oder Dienstleistungen.",
+      "restriction2": "Kopieren Sie nicht unser Website-Design oder unsere Produktbeschreibungen für kommerzielle Zwecke.",
+      "commentsTitle": "Nutzung des Dienstes",
+      "commentsText": "Unsere Produkte sind Nahrungsergänzungsmittel und nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder vorzubeugen.",
+      "commentsText2": "Konsultieren Sie immer einen Arzt, bevor Sie ein neues Nahrungsergänzungsmittel einnehmen, insbesondere bei Schwangerschaft, Stillzeit, Medikamenteneinnahme oder einer bestehenden Erkrankung.",
+      "hyperlinksTitle": "Laufzeit und Kündigung",
+      "hyperlinksText": "Diese Bedingungen bleiben gültig, solange Sie unsere Website nutzen. Wir können den Zugang für jeden sperren, der gegen diese Bedingungen verstößt.",
+      "hyperlinksText2": "Sie können die Nutzung unserer Dienste jederzeit beenden.",
+      "iframesTitle": "Verfügbarkeit und Wartung",
+      "iframesText": "Wir bemühen uns, unsere Website jederzeit verfügbar zu halten, garantieren jedoch keinen unterbrechungsfreien Zugang und können Wartungsarbeiten ohne vorherige Ankündigung durchführen.",
+      "contentResponsibilityTitle": "Drittanbieter-Apps",
+      "contentResponsibilityText": "Unsere Website kann zu Kommunikationszwecken auf Dienste Dritter wie WhatsApp verlinken. Wir sind nicht verantwortlich für die Inhalte oder Praktiken dieser Dritten.",
+      "privacyDataTitle": "Ihre persönlichen Daten",
+      "privacyDataText": "Vollständige Details zur Erfassung, Nutzung und zum Schutz Ihrer persönlichen Daten finden Sie in unserer Datenschutzrichtlinie.",
+      "modificationsTitle": "Änderungen dieser Bedingungen",
+      "modificationsText": "Wir können diese Bedingungen von Zeit zu Zeit aktualisieren. Die fortgesetzte Nutzung unserer Website nach Änderungen gilt als Zustimmung zu den aktualisierten Bedingungen.",
+      "linkRemovalTitle": "Problem melden",
+      "linkRemovalText": "Wenn Sie ein Problem auf unserer Website bemerken oder Bedenken bezüglich unserer Inhalte haben, kontaktieren Sie uns, und wir kümmern uns umgehend darum.",
+      "limitationTitle": "Haftungsbeschränkung",
+      "limitationText": "VitalSupps haftet, soweit gesetzlich zulässig, nicht für indirekte, zufällige oder Folgeschäden, die aus der Nutzung unserer Produkte oder unserer Website entstehen."
+    }
+  }
+}

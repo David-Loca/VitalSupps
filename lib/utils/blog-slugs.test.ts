@@ -58,7 +58,8 @@ describe("blog-slugs", () => {
     expect(getAllBlogSlugs(blog)).toEqual({
       en: "",
       fr: "fr-s",
-      it: "",
+      es: "",
+      de: "",
     });
   });
 
@@ -69,7 +70,8 @@ describe("blog-slugs", () => {
     expect(getAllBlogSlugs(blog)).toEqual({
       en: "en-s",
       fr: "fr-s",
-      it: "",
+      es: "",
+      de: "",
     });
   });
 

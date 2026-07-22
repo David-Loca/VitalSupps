@@ -64,10 +64,15 @@ export function middleware(request: NextRequest) {
         'privacy-policy': 'politique-de-confidentialite',
         'terms-of-service': 'conditions-utilisation',
       },
-      it: {
-        'refund-policy': 'politica-di-rimborso',
-        'privacy-policy': 'informativa-sulla-privacy',
-        'terms-of-service': 'termini-di-utilizzo',
+      es: {
+        'refund-policy': 'politica-de-reembolso',
+        'privacy-policy': 'politica-de-privacidad',
+        'terms-of-service': 'terminos-de-servicio',
+      },
+      de: {
+        'refund-policy': 'rueckerstattungsrichtlinie',
+        'privacy-policy': 'datenschutzrichtlinie',
+        'terms-of-service': 'nutzungsbedingungen',
       },
     };
 

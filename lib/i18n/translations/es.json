@@ -1,0 +1,242 @@
+{
+  "notFound": {
+    "backHome": "Volver al inicio",
+    "description": "La página que buscas no existe o ha sido movida.",
+    "quickLinksAriaLabel": "Enlaces rápidos",
+    "signalLost": "Señal perdida",
+    "title": "Página no encontrada"
+  },
+  "common": {
+    "home": "Inicio",
+    "blog": "Blog",
+    "faq": "Preguntas Frecuentes",
+    "contact": "Contacto",
+    "contactUs": "Contáctanos",
+    "features": "Por qué VitalSupps",
+    "products": "Productos",
+    "whatsapp": "WhatsApp",
+    "email": "Correo",
+    "privacyPolicy": "Política de Privacidad",
+    "refundPolicy": "Política de Reembolso",
+    "termsOfService": "Términos de Servicio",
+    "contactWhatsapp": "Contáctanos por WhatsApp"
+  },
+  "blog": {
+    "articlesAriaLabel": "Artículos",
+    "backToBlog": "Volver al blog",
+    "description": "Últimos artículos y noticias.",
+    "excerptUnavailable": "Extracto no disponible",
+    "eyebrow": "Blog",
+    "noPosts": "Aún no hay artículos.",
+    "noPostsSubtitle": "Vuelve pronto para ver contenido nuevo.",
+    "readMore": "Leer más",
+    "title": "Blog",
+    "untitled": "Sin título"
+  },
+  "home": {
+    "latestFromBlog": "Últimos Artículos",
+    "latestFromBlogSubtitle": "Nuestros últimos artículos y noticias.",
+    "viewAllArticles": "Ver todos los artículos"
+  },
+  "hero": {
+    "eyebrow": "Suplementos Premium, Respaldados por la Ciencia",
+    "title": "Siéntete más claro. Siéntete más ligero. Siéntete tú de nuevo.",
+    "subtitle": "Dos fórmulas específicas — Azul de Metileno para la claridad mental y la energía celular, y cápsulas de Salud Intestinal para el confort digestivo — elaboradas con ingredientes probados en laboratorio y certificados GMP.",
+    "ctaPrimary": "Comprar Ahora",
+    "ctaSecondary": "Escríbenos por WhatsApp",
+    "badgeLabTested": "Probado en Laboratorio",
+    "badgeMadeInUsa": "Hecho en EE. UU.",
+    "badgeNonGmo": "Sin OGM"
+  },
+  "products": {
+    "sectionTitle": "Nuestras Fórmulas",
+    "sectionSubtitle": "Dos productos con propósito, cada uno formulado para un objetivo específico — nada superfluo, nada diluido.",
+    "shopNow": "Comprar Ahora",
+    "askOnWhatsapp": "Preguntar por WhatsApp",
+    "buyOnWhatsapp": "Comprar por WhatsApp",
+    "backToHome": "Volver al inicio",
+    "targetAudience": "Para quién es",
+    "benefits": "Beneficios",
+    "ingredients": "Ingredientes",
+    "howToUse": "Modo de Uso"
+  },
+  "features": {
+    "sectionSubtitle": "Pureza, potencia y transparencia en cada lote.",
+    "sectionTitle": "Por qué VitalSupps",
+    "statChannelsLabel": "Lotes probados por terceros",
+    "statChannelsValue": "100%",
+    "statMoviesLabel": "Productos en nuestra gama",
+    "statMoviesValue": "2",
+    "statSupportLabel": "Atención al Cliente",
+    "statSupportValue": "7 Días/Semana",
+    "trustBadgesAlt": "Probado por Terceros",
+    "badgeLabTested": "Probado en Laboratorio",
+    "badgeMadeInUsa": "Hecho en EE. UU.",
+    "badgeNonGmo": "Sin OGM",
+    "feature1": {
+      "title": "Probado en Laboratorio Independiente",
+      "description": "Cada lote es verificado por un laboratorio independiente en cuanto a pureza y potencia antes de enviarse."
+    },
+    "feature2": {
+      "title": "Ingredientes Limpios y con Propósito",
+      "description": "Sin rellenos innecesarios — solo los ingredientes que apoyan el objetivo de cada fórmula."
+    },
+    "feature3": {
+      "title": "Instalación Certificada GMP",
+      "description": "Fabricado en una instalación certificada bajo Buenas Prácticas de Manufactura en EE. UU."
+    },
+    "feature4": {
+      "title": "Formulación de Absorción Rápida",
+      "description": "Nuestra tintura sublingual y cápsulas están formuladas para una absorción eficaz."
+    },
+    "feature5": {
+      "title": "Producción en Lotes Pequeños",
+      "description": "Producimos en lotes pequeños para mantener un control de calidad riguroso y máxima frescura."
+    },
+    "feature6": {
+      "title": "Soporte Humano Real",
+      "description": "¿Dudas sobre dosificación o ingredientes? Escríbenos directamente por WhatsApp."
+    }
+  },
+  "trust": {
+    "sectionTitle": "Compra con confianza",
+    "guarantee": {
+      "title": "Garantía de 30 Días de Devolución de Dinero",
+      "description": "¿No estás satisfecho? Reembolso completo dentro de los 30 días posteriores a la compra, sin preguntas."
+    },
+    "labTested": {
+      "title": "Probado por Terceros",
+      "description": "Cada lote se prueba de forma independiente en cuanto a pureza, potencia y contaminantes."
+    },
+    "gmp": {
+      "title": "Instalación Certificada GMP",
+      "description": "Producido en una instalación que sigue los estándares de Buenas Prácticas de Manufactura."
+    },
+    "madeInUsa": {
+      "title": "Hecho en EE. UU.",
+      "description": "Formulado y fabricado localmente bajo estrictos controles de calidad."
+    }
+  },
+  "ingredients": {
+    "sectionTitle": "Qué contiene",
+    "sectionSubtitle": "Transparencia total sobre cada ingrediente de cada fórmula."
+  },
+  "cta": {
+    "title": "¿Listo para sentir la diferencia?",
+    "subtitle": "Escríbenos por WhatsApp para recibir orientación personalizada sobre qué fórmula es adecuada para ti.",
+    "button": "Chatear por WhatsApp"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "general1": {
+      "question": "¿Es seguro el Azul de Metileno?",
+      "answer": "En las dosis bajas y progresivas de nuestra tintura, el Azul de Metileno es usado por muchas personas como apoyo para el bienestar. Interactúa con ciertos medicamentos (especialmente IMAO, ISRS e IRSN), por lo que recomendamos consultar a tu médico antes de usarlo, sobre todo si estás embarazada, en periodo de lactancia o tomando medicación."
+    },
+    "general2": {
+      "question": "¿Cuánto tardaré en ver resultados con la fórmula de Salud Intestinal?",
+      "answer": "Muchos clientes notan mejor confort digestivo entre 2 y 4 semanas de uso diario constante. Los resultados varían según la dieta y el estilo de vida."
+    },
+    "general3": {
+      "question": "¿Realizan envíos internacionales?",
+      "answer": "Actualmente enviamos a las regiones indicadas al finalizar la compra. Escríbenos por WhatsApp con tu ubicación y confirmaremos disponibilidad y tiempos de envío."
+    },
+    "general4": {
+      "question": "¿Cuál es su política de devoluciones?",
+      "answer": "Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás satisfecho, contáctanos y procesaremos el reembolso — consulta nuestra Política de Reembolso para más detalles."
+    },
+    "general5": {
+      "question": "¿Sus productos están probados por terceros?",
+      "answer": "Sí. Cada lote de ambas fórmulas es probado por un laboratorio independiente en cuanto a pureza y potencia antes de salir a la venta."
+    },
+    "general6": {
+      "question": "¿Puedo tomar ambos productos juntos?",
+      "answer": "Sí, muchos clientes usan ambas fórmulas como parte de su rutina diaria. Si tomas medicación o tienes una condición de salud, consulta primero a tu médico, especialmente por las interacciones del Azul de Metileno."
+    },
+    "general7": {
+      "question": "¿Las cápsulas y la tintura son veganas y sin gluten?",
+      "answer": "Las cápsulas de Salud Intestinal usan una cubierta vegetal y son sin gluten. La tintura de Azul de Metileno no contiene ingredientes de origen animal."
+    },
+    "general8": {
+      "question": "¿Cómo debo almacenar mis suplementos?",
+      "answer": "Guarda ambos productos en un lugar fresco y seco, alejado de la luz solar directa. Ninguno de los dos productos requiere refrigeración."
+    }
+  },
+  "whatsapp": {
+    "floatingButton": "Hola, tengo una pregunta sobre VitalSupps.",
+    "ariaFloating": "Contactar por WhatsApp",
+    "tooltip": "¿Tienes una pregunta? Escríbenos",
+    "contactQuestion": "Hola, tengo una pregunta sobre VitalSupps.",
+    "defaultButton": "Hola, tengo una pregunta.",
+    "ariaFreeTest": "Contactar por WhatsApp",
+    "notFoundHelp": "Hola, no encontré la página que buscaba."
+  },
+  "contactSection": {
+    "title": "Contáctanos",
+    "description": "¿Tienes una pregunta sobre nuestras fórmulas? Escríbenos."
+  },
+  "footer": {
+    "quickLinks": "Enlaces Rápidos",
+    "legal": "Legal",
+    "description": "VitalSupps elabora suplementos premium probados en laboratorio — Azul de Metileno para la concentración y la energía celular, y cápsulas de Salud Intestinal para el confort digestivo. Fabricado en EE. UU. en una instalación certificada GMP.",
+    "paymentMethods": "Métodos de Pago",
+    "copyright": "© {year} VitalSupps. Todos los derechos reservados.",
+    "fdaDisclaimer": "Estas declaraciones no han sido evaluadas por la Administración de Alimentos y Medicamentos (FDA). Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Consulta a tu médico antes de usarlo, especialmente si estás embarazada, en periodo de lactancia, tomando medicación o tienes una condición médica."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Política de Reembolso",
+      "intro": "Queremos que compres VitalSupps con total confianza. Si no estás satisfecho con tu pedido de Azul de Metileno o Salud Intestinal, ofrecemos una garantía de devolución de dinero de 30 días desde la fecha de entrega.",
+      "intro2": "Para solicitar un reembolso, contáctanos por WhatsApp o correo electrónico con tu número de pedido, y te guiaremos en el proceso.",
+      "howItWorksTitle": "Cómo funciona",
+      "howItWorksText": "Contáctanos dentro de los 30 días posteriores a la entrega. Una vez confirmada tu solicitud, procesaremos tu reembolso al método de pago original en 5-10 días hábiles. Los productos abiertos o usados siguen siendo elegibles bajo esta garantía.",
+      "conclusion": "Si tienes alguna pregunta sobre tu pedido o esta política, escríbenos por WhatsApp y con gusto te ayudaremos."
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidad",
+      "intro": "VitalSupps respeta tu privacidad. Esta política explica qué información recopilamos cuando visitas nuestro sitio o nos contactas, y cómo la usamos.",
+      "intro2": "Solo recopilamos la información necesaria para procesar pedidos, responder consultas y mejorar la experiencia de nuestro sitio web.",
+      "dataProtectionTitle": "Protección de datos",
+      "dataProtectionText": "Utilizamos medidas de seguridad estándar de la industria para proteger la información personal que compartes con nosotros, incluidos los datos de pedido y contacto.",
+      "dataUsageTitle": "Uso de datos",
+      "dataUsageText": "La información que proporcionas (como tu nombre, correo o número de WhatsApp) se usa únicamente para procesar pedidos y responder tus preguntas.",
+      "dataUsageText2": "No vendemos tu información personal a terceros.",
+      "dataCollectionTitle": "Recopilación de datos",
+      "dataCollectionText": "Podemos recopilar datos analíticos básicos (como páginas visitadas) para entender cómo los visitantes usan nuestro sitio.",
+      "dataCollectionText2": "La información de contacto solo se recopila cuando la proporcionas voluntariamente, por ejemplo a través de un mensaje de WhatsApp o un formulario de contacto.",
+      "securityTitle": "Seguridad",
+      "securityText": "Tomamos medidas técnicas y organizativas razonables para proteger tus datos contra accesos, alteraciones o divulgaciones no autorizados.",
+      "conclusion": "Si tienes preguntas sobre cómo manejamos tus datos, contáctanos a través de los detalles en nuestro pie de página."
+    },
+    "termsOfService": {
+      "title": "Términos de Servicio",
+      "intro": "Al usar el sitio web de VitalSupps y comprar nuestros productos, aceptas los siguientes términos.",
+      "definitionsTitle": "Definiciones",
+      "definitionsText": "\"Nosotros\" y \"VitalSupps\" se refieren a esta empresa. \"Tú\" se refiere al visitante o cliente que usa nuestro sitio o productos.",
+      "cookiesTitle": "Cookies",
+      "cookiesText": "Nuestro sitio puede usar cookies para mejorar tu experiencia de navegación. Al continuar usando el sitio, aceptas nuestro uso de cookies.",
+      "intellectualPropertyTitle": "Propiedad intelectual",
+      "intellectualPropertyText": "Todo el contenido de este sitio, incluidos textos, gráficos, logotipos y formulaciones de productos, es propiedad de VitalSupps salvo que se indique lo contrario.",
+      "intellectualPropertyRestrictions": "No puedes reproducir, distribuir ni crear obras derivadas de nuestro contenido sin permiso escrito.",
+      "restriction1": "No uses nuestra marca o nombres de productos para promocionar bienes o servicios no relacionados.",
+      "restriction2": "No copies el diseño de nuestro sitio ni las descripciones de productos con fines comerciales.",
+      "commentsTitle": "Uso del servicio",
+      "commentsText": "Nuestros productos son suplementos dietéticos y no están destinados a diagnosticar, tratar, curar o prevenir ninguna enfermedad.",
+      "commentsText2": "Consulta siempre a un profesional de la salud antes de comenzar un nuevo suplemento, especialmente si estás embarazada, en periodo de lactancia, tomando medicación o gestionando una condición médica.",
+      "hyperlinksTitle": "Vigencia y terminación",
+      "hyperlinksText": "Estos términos permanecen vigentes mientras uses nuestro sitio. Podemos suspender el acceso a quien los infrinja.",
+      "hyperlinksText2": "Puedes dejar de usar nuestros servicios en cualquier momento.",
+      "iframesTitle": "Disponibilidad y mantenimiento",
+      "iframesText": "Nos esforzamos por mantener nuestro sitio disponible en todo momento, pero no garantizamos un acceso ininterrumpido y podemos realizar mantenimiento sin previo aviso.",
+      "contentResponsibilityTitle": "Aplicaciones de terceros",
+      "contentResponsibilityText": "Nuestro sitio puede enlazar a servicios de terceros, como WhatsApp, con fines de comunicación. No somos responsables del contenido o las prácticas de esos terceros.",
+      "privacyDataTitle": "Tus datos personales",
+      "privacyDataText": "Consulta nuestra Política de Privacidad para conocer todos los detalles sobre cómo recopilamos, usamos y protegemos tu información personal.",
+      "modificationsTitle": "Cambios a estos términos",
+      "modificationsText": "Podemos actualizar estos términos periódicamente. El uso continuado de nuestro sitio tras los cambios constituye la aceptación de los términos actualizados.",
+      "linkRemovalTitle": "Reportar un problema",
+      "linkRemovalText": "Si notas un problema en nuestro sitio o tienes una inquietud sobre nuestro contenido, contáctanos y lo resolveremos con prontitud.",
+      "limitationTitle": "Limitación de responsabilidad",
+      "limitationText": "VitalSupps no es responsable de daños indirectos, incidentales o consecuentes derivados del uso de nuestros productos o sitio web, en la medida permitida por la ley."
+    }
+  }
+}

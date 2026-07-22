@@ -1,28 +1,28 @@
 {
   "homepage": {
-    "title": "Your Site Name | Home",
-    "description": "Generic site description — to be replaced with real content."
+    "title": "VitalSupps | Premium Methylene Blue & Gut Health Supplements",
+    "description": "Shop lab-tested Methylene Blue tincture for focus and cellular energy, and our Gut Health capsules for digestive comfort. Made in the USA, GMP certified."
   },
   "blog": {
-    "title": "Blog | Your Site Name",
-    "description": "News, guides and tips."
+    "title": "Blog | VitalSupps",
+    "description": "Supplement science, wellness guides and tips from VitalSupps."
   },
   "blogListing": {
-    "title": "Blog | Latest Articles",
-    "description": "Browse our collection of articles."
+    "title": "Blog | Latest Articles | VitalSupps",
+    "description": "Browse our collection of articles on cellular energy, focus and gut health."
   },
   "legal": {
     "refundPolicy": {
-      "title": "Refund Policy | Your Site Name",
-      "description": "Read Your Site Name's refund policy."
+      "title": "Refund Policy | VitalSupps",
+      "description": "Read VitalSupps' 30-day money-back guarantee and refund policy."
     },
     "privacyPolicy": {
-      "title": "Privacy Policy | Your Site Name",
-      "description": "Learn how Your Site Name collects, uses, and protects your personal data."
+      "title": "Privacy Policy | VitalSupps",
+      "description": "Learn how VitalSupps collects, uses, and protects your personal data."
     },
     "termsOfService": {
-      "title": "Terms of Service | Your Site Name",
-      "description": "Read the terms and conditions for using Your Site Name's services."
+      "title": "Terms of Service | VitalSupps",
+      "description": "Read the terms and conditions for using VitalSupps' services."
     }
   }
 }

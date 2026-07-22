@@ -6,7 +6,8 @@ type PricingSlice = Record<string, unknown> | undefined;
 export const DEFAULT_PRICE_CURRENCY: Record<Locale, string> = {
   en: "USD",
   fr: "EUR",
-  it: "EUR",
+  es: "EUR",
+  de: "EUR",
 };
 
 /** Whether the “Premium Plans (Multiple Connections)” block is shown on the homepage. */

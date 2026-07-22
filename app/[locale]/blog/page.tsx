@@ -18,9 +18,13 @@ const itemListMeta: Record<Locale, { name: string; description: string }> = {
     name: "Blog - Articles et Guides",
     description: "Derniers articles, guides et actualités.",
   },
-  it: {
-    name: "Blog - Articoli e Guide",
-    description: "Ultimi articoli, guide e novità.",
+  es: {
+    name: "Blog - Artículos y Guías",
+    description: "Últimos artículos, guías y noticias.",
+  },
+  de: {
+    name: "Blog - Artikel und Leitfäden",
+    description: "Neueste Artikel, Leitfäden und Neuigkeiten.",
   },
 };
 

@@ -1,0 +1,332 @@
+[
+  {
+    "slug": "methylene-blue",
+    "price": 34.99,
+    "images": { "primary": "/images/products/methylene-blue.svg" },
+    "en": {
+      "name": "Methylene Blue Tincture",
+      "tagline": "Clarity, focus, and cellular energy in every drop",
+      "heroImageAlt": "Amber dropper bottle of VitalSupps Methylene Blue tincture",
+      "targetAudience": "Professionals, students, and biohackers who want sharper focus and steady mental energy during demanding cognitive work.",
+      "benefits": [
+        "Supports mental clarity and sustained focus",
+        "Supports cellular energy & mitochondrial function",
+        "Antioxidant properties to help combat oxidative stress",
+        "Fast-absorbing sublingual liquid format",
+        "USP-grade purity, third-party tested",
+        "Convenient dropper for precise, low-dose titration"
+      ],
+      "usage": "Start low: 1-3 drops (roughly 0.5-1 mg) held under the tongue for 30-60 seconds, once daily. Assess tolerance before increasing gradually. Do not exceed the amount recommended on the label. Methylene blue can temporarily tint urine or saliva blue-green — this is normal.",
+      "safety": "Consult your doctor before use, especially if you are pregnant, nursing, or have a medical condition. Do not use with MAOIs, SSRIs, SNRIs, or other serotonergic medications due to the risk of serotonin syndrome. Not intended for children. Discontinue use and consult a physician if you experience any adverse reaction.",
+      "ingredients": [
+        "USP-grade Methylene Blue (pharmaceutical grade)",
+        "Purified water",
+        "Food-grade glycerin (carrier)"
+      ],
+      "faq": [
+        {
+          "question": "Is Methylene Blue safe to take daily?",
+          "answer": "At the low, titrated doses used for wellness support, many people use it daily. Because it interacts with several medication classes, we recommend checking with your doctor before starting a daily routine."
+        },
+        {
+          "question": "Why does my urine or saliva turn blue-green?",
+          "answer": "This is a normal, harmless effect of methylene blue being excreted by the body. It is not a sign of a problem and typically fades within a day."
+        },
+        {
+          "question": "Can I take this with antidepressants?",
+          "answer": "No. Methylene blue is a monoamine oxidase inhibitor and should not be combined with SSRIs, SNRIs, MAOIs, or other serotonergic medications without explicit medical supervision, due to the risk of serotonin syndrome."
+        },
+        {
+          "question": "How quickly will I notice an effect?",
+          "answer": "Some people report a subtle sense of mental clarity within an hour of a dose; individual response varies and this product is not intended to produce a stimulant-like effect."
+        }
+      ]
+    },
+    "fr": {
+      "name": "Teinture de Bleu de Méthylène",
+      "tagline": "Clarté, concentration et énergie cellulaire à chaque goutte",
+      "heroImageAlt": "Flacon compte-gouttes ambré de teinture de Bleu de Méthylène VitalSupps",
+      "targetAudience": "Professionnels, étudiants et biohackers en quête d'une concentration plus nette et d'une énergie mentale stable pendant un travail cognitif exigeant.",
+      "benefits": [
+        "Favorise la clarté mentale et une concentration durable",
+        "Soutient l'énergie cellulaire et la fonction mitochondriale",
+        "Propriétés antioxydantes contre le stress oxydatif",
+        "Format liquide sublingual à absorption rapide",
+        "Pureté qualité USP, testé par un tiers indépendant",
+        "Compte-gouttes pratique pour un dosage précis et progressif"
+      ],
+      "usage": "Commencez bas : 1 à 3 gouttes (environ 0,5 à 1 mg) sous la langue pendant 30 à 60 secondes, une fois par jour. Évaluez votre tolérance avant d'augmenter progressivement. Ne dépassez pas la dose recommandée sur l'étiquette. Le bleu de méthylène peut colorer temporairement l'urine ou la salive en bleu-vert — c'est normal.",
+      "safety": "Consultez votre médecin avant utilisation, surtout en cas de grossesse, d'allaitement ou de pathologie. Ne pas associer aux IMAO, ISRS, IRSN ou autres médicaments sérotoninergiques en raison du risque de syndrome sérotoninergique. Non destiné aux enfants. Arrêtez l'utilisation et consultez un médecin en cas de réaction indésirable.",
+      "ingredients": [
+        "Bleu de méthylène qualité USP (grade pharmaceutique)",
+        "Eau purifiée",
+        "Glycérine alimentaire (excipient)"
+      ],
+      "faq": [
+        {
+          "question": "Le bleu de méthylène est-il sûr en prise quotidienne ?",
+          "answer": "Aux faibles doses progressives utilisées pour le bien-être, de nombreuses personnes l'utilisent quotidiennement. En raison de ses interactions médicamenteuses, consultez votre médecin avant une routine quotidienne."
+        },
+        {
+          "question": "Pourquoi mon urine ou ma salive devient-elle bleu-vert ?",
+          "answer": "C'est un effet normal et sans danger lié à l'élimination du bleu de méthylène par l'organisme. Cela disparaît généralement en une journée."
+        },
+        {
+          "question": "Puis-je le prendre avec des antidépresseurs ?",
+          "answer": "Non. Le bleu de méthylène est un inhibiteur de la monoamine oxydase et ne doit pas être associé aux ISRS, IRSN, IMAO ou autres médicaments sérotoninergiques sans supervision médicale explicite, en raison du risque de syndrome sérotoninergique."
+        },
+        {
+          "question": "Combien de temps avant de ressentir un effet ?",
+          "answer": "Certaines personnes rapportent une sensation subtile de clarté mentale dans l'heure suivant la prise ; la réponse varie selon les individus et ce produit n'est pas destiné à produire un effet stimulant."
+        }
+      ]
+    },
+    "es": {
+      "name": "Tintura de Azul de Metileno",
+      "tagline": "Claridad, concentración y energía celular en cada gota",
+      "heroImageAlt": "Frasco cuentagotas ámbar de tintura de Azul de Metileno VitalSupps",
+      "targetAudience": "Profesionales, estudiantes y biohackers que buscan mayor concentración y energía mental constante durante trabajo cognitivo exigente.",
+      "benefits": [
+        "Favorece la claridad mental y la concentración sostenida",
+        "Apoya la energía celular y la función mitocondrial",
+        "Propiedades antioxidantes frente al estrés oxidativo",
+        "Formato líquido sublingual de absorción rápida",
+        "Pureza grado USP, verificado por terceros",
+        "Cuentagotas práctico para una dosificación precisa y progresiva"
+      ],
+      "usage": "Empieza con dosis bajas: 1-3 gotas (aprox. 0,5-1 mg) debajo de la lengua durante 30-60 segundos, una vez al día. Evalúa tu tolerancia antes de aumentar gradualmente. No superes la cantidad recomendada en la etiqueta. El azul de metileno puede teñir temporalmente la orina o la saliva de color verde-azulado; esto es normal.",
+      "safety": "Consulta a tu médico antes de usarlo, especialmente si estás embarazada, en periodo de lactancia o tienes una condición médica. No lo uses con IMAO, ISRS, IRSN u otros medicamentos serotoninérgicos por riesgo de síndrome serotoninérgico. No apto para niños. Suspende el uso y consulta a un médico si presentas una reacción adversa.",
+      "ingredients": [
+        "Azul de metileno grado USP (grado farmacéutico)",
+        "Agua purificada",
+        "Glicerina de grado alimentario (excipiente)"
+      ],
+      "faq": [
+        {
+          "question": "¿Es seguro tomar Azul de Metileno a diario?",
+          "answer": "En las dosis bajas y progresivas usadas para el bienestar, muchas personas lo usan a diario. Debido a sus interacciones con varios medicamentos, recomendamos consultar a tu médico antes de iniciar una rutina diaria."
+        },
+        {
+          "question": "¿Por qué mi orina o saliva se vuelve verde-azulada?",
+          "answer": "Es un efecto normal e inofensivo de la eliminación del azul de metileno por el organismo. No es señal de un problema y suele desaparecer en un día."
+        },
+        {
+          "question": "¿Puedo tomarlo con antidepresivos?",
+          "answer": "No. El azul de metileno es un inhibidor de la monoaminooxidasa y no debe combinarse con ISRS, IRSN, IMAO u otros medicamentos serotoninérgicos sin supervisión médica explícita, por el riesgo de síndrome serotoninérgico."
+        },
+        {
+          "question": "¿Qué tan rápido notaré un efecto?",
+          "answer": "Algunas personas reportan una sensación sutil de claridad mental en la hora posterior a la dosis; la respuesta varía según la persona y este producto no está pensado para producir un efecto estimulante."
+        }
+      ]
+    },
+    "de": {
+      "name": "Methylenblau-Tinktur",
+      "tagline": "Klarheit, Fokus und zelluläre Energie in jedem Tropfen",
+      "heroImageAlt": "Bernsteinfarbene Tropfflasche mit VitalSupps Methylenblau-Tinktur",
+      "targetAudience": "Berufstätige, Studierende und Biohacker, die während anspruchsvoller kognitiver Arbeit schärferen Fokus und stabile mentale Energie suchen.",
+      "benefits": [
+        "Unterstützt mentale Klarheit und anhaltenden Fokus",
+        "Unterstützt zelluläre Energie & Mitochondrienfunktion",
+        "Antioxidative Eigenschaften gegen oxidativen Stress",
+        "Schnell aufnehmbares sublinguales Flüssigformat",
+        "USP-Reinheit, von Drittlaboren getestet",
+        "Praktische Pipette für präzise, niedrig dosierte Titration"
+      ],
+      "usage": "Beginnen Sie niedrig: 1-3 Tropfen (etwa 0,5-1 mg) einmal täglich 30-60 Sekunden unter die Zunge geben. Verträglichkeit prüfen, bevor die Dosis schrittweise erhöht wird. Die auf dem Etikett empfohlene Menge nicht überschreiten. Methylenblau kann Urin oder Speichel vorübergehend blau-grün färben — das ist normal.",
+      "safety": "Konsultieren Sie vor der Anwendung Ihren Arzt, insbesondere bei Schwangerschaft, Stillzeit oder einer bestehenden Erkrankung. Nicht mit MAO-Hemmern, SSRIs, SNRIs oder anderen serotonergen Medikamenten kombinieren — Risiko eines Serotonin-Syndroms. Nicht für Kinder geeignet. Bei unerwünschten Reaktionen die Anwendung beenden und einen Arzt konsultieren.",
+      "ingredients": [
+        "Methylenblau USP-Qualität (pharmazeutischer Grad)",
+        "Gereinigtes Wasser",
+        "Pflanzliches Glycerin (Trägerstoff)"
+      ],
+      "faq": [
+        {
+          "question": "Ist Methylenblau zur täglichen Einnahme sicher?",
+          "answer": "Bei den niedrigen, titrierten Dosen zur Wellness-Unterstützung verwenden viele Menschen es täglich. Da es mit mehreren Medikamentenklassen interagiert, empfehlen wir vor einer täglichen Routine Rücksprache mit Ihrem Arzt."
+        },
+        {
+          "question": "Warum färbt sich mein Urin oder Speichel blau-grün?",
+          "answer": "Dies ist ein normaler, harmloser Effekt der Ausscheidung von Methylenblau durch den Körper. Es ist kein Anzeichen eines Problems und verschwindet in der Regel innerhalb eines Tages."
+        },
+        {
+          "question": "Kann ich es mit Antidepressiva einnehmen?",
+          "answer": "Nein. Methylenblau ist ein Monoaminoxidase-Hemmer und sollte wegen des Risikos eines Serotonin-Syndroms nicht ohne ausdrückliche ärztliche Aufsicht mit SSRIs, SNRIs, MAO-Hemmern oder anderen serotonergen Medikamenten kombiniert werden."
+        },
+        {
+          "question": "Wie schnell spüre ich eine Wirkung?",
+          "answer": "Manche Menschen berichten innerhalb einer Stunde nach der Einnahme von einem subtilen Gefühl mentaler Klarheit; die individuelle Reaktion variiert, und dieses Produkt ist nicht auf eine stimulierende Wirkung ausgelegt."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "gut-health",
+    "price": 29.99,
+    "images": { "primary": "/images/products/gut-health.svg" },
+    "en": {
+      "name": "Gut Health Capsules",
+      "tagline": "Digestive comfort and microbiome balance, made for life after 45",
+      "heroImageAlt": "White capsule bottle of VitalSupps Gut Health formula",
+      "targetAudience": "Adults ages 45-65 looking to ease everyday digestive discomfort and support long-term gut and microbiome health.",
+      "benefits": [
+        "Supports healthy gut flora & microbiome balance",
+        "Helps ease occasional bloating and digestive discomfort",
+        "Contains a multi-strain probiotic blend",
+        "Includes prebiotics to help nourish beneficial bacteria",
+        "Digestive enzyme blend to support nutrient breakdown",
+        "Non-GMO, gluten-free, third-party tested capsules"
+      ],
+      "usage": "Take 2 capsules daily with a meal and a full glass of water, or as directed by your healthcare provider. For best results, use consistently for at least 4-6 weeks alongside a fiber-rich diet.",
+      "safety": "Consult your doctor before use if you are pregnant, nursing, taking medication, or have a diagnosed digestive or immune condition. Discontinue use if you experience discomfort and consult a physician.",
+      "ingredients": [
+        "Multi-strain probiotic blend (Lactobacillus & Bifidobacterium species)",
+        "Prebiotic fiber (inulin)",
+        "Digestive enzyme blend (protease, amylase, lipase)",
+        "Ginger root extract",
+        "Vegetable capsule (non-GMO, gluten-free)"
+      ],
+      "faq": [
+        {
+          "question": "How long until I notice a difference?",
+          "answer": "Many people notice improved digestive comfort within 2-4 weeks of consistent daily use, though individual timelines vary based on diet and lifestyle."
+        },
+        {
+          "question": "Is this suitable for people over 45?",
+          "answer": "Yes — this formula was designed with adults 45-65 in mind, a life stage when digestive comfort and microbiome balance often become a bigger focus."
+        },
+        {
+          "question": "Do I need to refrigerate the capsules?",
+          "answer": "No. Store in a cool, dry place away from direct sunlight; refrigeration is not required."
+        },
+        {
+          "question": "Can I take this alongside other supplements or medication?",
+          "answer": "Generally yes, but we recommend checking with your doctor or pharmacist, especially if you take prescription medication or have an existing digestive condition."
+        }
+      ]
+    },
+    "fr": {
+      "name": "Gélules Santé Intestinale",
+      "tagline": "Confort digestif et équilibre du microbiote, pensés pour la vie après 45 ans",
+      "heroImageAlt": "Flacon de gélules blanches formule Santé Intestinale VitalSupps",
+      "targetAudience": "Adultes de 45 à 65 ans souhaitant atténuer l'inconfort digestif quotidien et soutenir la santé intestinale et le microbiote sur le long terme.",
+      "benefits": [
+        "Favorise une flore intestinale saine et l'équilibre du microbiote",
+        "Aide à atténuer les ballonnements et l'inconfort digestif occasionnels",
+        "Contient un mélange de probiotiques multi-souches",
+        "Inclut des prébiotiques pour nourrir les bonnes bactéries",
+        "Mélange d'enzymes digestives pour aider à l'assimilation des nutriments",
+        "Gélules non-OGM, sans gluten, testées par un tiers indépendant"
+      ],
+      "usage": "Prenez 2 gélules par jour avec un repas et un grand verre d'eau, ou selon les conseils de votre professionnel de santé. Pour de meilleurs résultats, utilisez de façon régulière pendant au moins 4 à 6 semaines avec une alimentation riche en fibres.",
+      "safety": "Consultez votre médecin avant utilisation en cas de grossesse, d'allaitement, de traitement médicamenteux ou de pathologie digestive ou immunitaire diagnostiquée. Arrêtez l'utilisation en cas d'inconfort et consultez un médecin.",
+      "ingredients": [
+        "Mélange de probiotiques multi-souches (espèces Lactobacillus et Bifidobacterium)",
+        "Fibre prébiotique (inuline)",
+        "Mélange d'enzymes digestives (protéase, amylase, lipase)",
+        "Extrait de racine de gingembre",
+        "Gélule végétale (non-OGM, sans gluten)"
+      ],
+      "faq": [
+        {
+          "question": "Au bout de combien de temps vais-je remarquer une différence ?",
+          "answer": "De nombreuses personnes remarquent un meilleur confort digestif après 2 à 4 semaines d'utilisation quotidienne régulière, bien que cela varie selon l'alimentation et le mode de vie."
+        },
+        {
+          "question": "Convient-il aux personnes de plus de 45 ans ?",
+          "answer": "Oui — cette formule a été conçue pour les adultes de 45 à 65 ans, une étape de vie où le confort digestif et l'équilibre du microbiote deviennent souvent une priorité."
+        },
+        {
+          "question": "Faut-il conserver les gélules au réfrigérateur ?",
+          "answer": "Non. Conservez dans un endroit frais et sec, à l'abri de la lumière directe ; la réfrigération n'est pas nécessaire."
+        },
+        {
+          "question": "Puis-je le prendre avec d'autres compléments ou médicaments ?",
+          "answer": "En général oui, mais nous recommandons de vérifier auprès de votre médecin ou pharmacien, surtout si vous suivez un traitement sur ordonnance ou avez une pathologie digestive existante."
+        }
+      ]
+    },
+    "es": {
+      "name": "Cápsulas Salud Intestinal",
+      "tagline": "Confort digestivo y equilibrio del microbioma, pensado para la vida después de los 45",
+      "heroImageAlt": "Frasco de cápsulas blancas de la fórmula Salud Intestinal VitalSupps",
+      "targetAudience": "Adultos de 45 a 65 años que buscan aliviar el malestar digestivo cotidiano y apoyar la salud intestinal y del microbioma a largo plazo.",
+      "benefits": [
+        "Favorece una flora intestinal saludable y el equilibrio del microbioma",
+        "Ayuda a aliviar la hinchazón y el malestar digestivo ocasionales",
+        "Contiene una mezcla de probióticos multicepa",
+        "Incluye prebióticos para nutrir las bacterias beneficiosas",
+        "Mezcla de enzimas digestivas para apoyar la asimilación de nutrientes",
+        "Cápsulas no transgénicas, sin gluten, verificadas por terceros"
+      ],
+      "usage": "Toma 2 cápsulas al día con una comida y un vaso lleno de agua, o según indique tu profesional de salud. Para mejores resultados, úsalo de forma constante durante al menos 4-6 semanas junto con una dieta rica en fibra.",
+      "safety": "Consulta a tu médico antes de usarlo si estás embarazada, en periodo de lactancia, tomas medicación o tienes una afección digestiva o inmunitaria diagnosticada. Suspende el uso si sientes molestias y consulta a un médico.",
+      "ingredients": [
+        "Mezcla de probióticos multicepa (especies Lactobacillus y Bifidobacterium)",
+        "Fibra prebiótica (inulina)",
+        "Mezcla de enzimas digestivas (proteasa, amilasa, lipasa)",
+        "Extracto de raíz de jengibre",
+        "Cápsula vegetal (no transgénica, sin gluten)"
+      ],
+      "faq": [
+        {
+          "question": "¿Cuánto tardaré en notar una diferencia?",
+          "answer": "Muchas personas notan mejor confort digestivo entre 2 y 4 semanas de uso diario constante, aunque el tiempo varía según la dieta y el estilo de vida."
+        },
+        {
+          "question": "¿Es adecuado para mayores de 45 años?",
+          "answer": "Sí — esta fórmula se diseñó pensando en adultos de 45 a 65 años, una etapa en la que el confort digestivo y el equilibrio del microbioma suelen ser una prioridad mayor."
+        },
+        {
+          "question": "¿Debo refrigerar las cápsulas?",
+          "answer": "No. Consérvalas en un lugar fresco y seco, alejadas de la luz solar directa; no es necesaria la refrigeración."
+        },
+        {
+          "question": "¿Puedo tomarlo junto con otros suplementos o medicamentos?",
+          "answer": "Generalmente sí, pero recomendamos consultar con tu médico o farmacéutico, especialmente si tomas medicación recetada o tienes una afección digestiva existente."
+        }
+      ]
+    },
+    "de": {
+      "name": "Darmgesundheit-Kapseln",
+      "tagline": "Verdauungskomfort und mikrobielles Gleichgewicht — für das Leben nach 45",
+      "heroImageAlt": "Weiße Kapselflasche der VitalSupps Darmgesundheits-Formel",
+      "targetAudience": "Erwachsene im Alter von 45-65 Jahren, die alltägliche Verdauungsbeschwerden lindern und die langfristige Darm- und Mikrobiomgesundheit unterstützen möchten.",
+      "benefits": [
+        "Unterstützt eine gesunde Darmflora & das mikrobielle Gleichgewicht",
+        "Hilft, gelegentliches Blähbauchgefühl und Verdauungsbeschwerden zu lindern",
+        "Enthält eine Multi-Stamm-Probiotika-Mischung",
+        "Enthält Präbiotika zur Nährstoffversorgung guter Bakterien",
+        "Verdauungsenzym-Mischung zur Unterstützung der Nährstoffaufspaltung",
+        "Nicht gentechnisch verändert, glutenfrei, von Drittlaboren getestet"
+      ],
+      "usage": "Nehmen Sie täglich 2 Kapseln zu einer Mahlzeit mit einem vollen Glas Wasser ein, oder nach Anweisung Ihres Arztes. Für beste Ergebnisse mindestens 4-6 Wochen konsequent zusammen mit einer ballaststoffreichen Ernährung einnehmen.",
+      "safety": "Konsultieren Sie vor der Anwendung Ihren Arzt, wenn Sie schwanger sind, stillen, Medikamente einnehmen oder eine diagnostizierte Verdauungs- oder Immunerkrankung haben. Bei Beschwerden die Anwendung beenden und einen Arzt konsultieren.",
+      "ingredients": [
+        "Multi-Stamm-Probiotika-Mischung (Lactobacillus- & Bifidobacterium-Arten)",
+        "Präbiotische Ballaststoffe (Inulin)",
+        "Verdauungsenzym-Mischung (Protease, Amylase, Lipase)",
+        "Ingwerwurzelextrakt",
+        "Pflanzliche Kapsel (nicht gentechnisch verändert, glutenfrei)"
+      ],
+      "faq": [
+        {
+          "question": "Wie lange dauert es, bis ich einen Unterschied bemerke?",
+          "answer": "Viele Menschen bemerken nach 2-4 Wochen regelmäßiger täglicher Einnahme ein verbessertes Verdauungswohlbefinden, die individuelle Dauer hängt jedoch von Ernährung und Lebensstil ab."
+        },
+        {
+          "question": "Ist dies für Menschen über 45 geeignet?",
+          "answer": "Ja — diese Formel wurde speziell für Erwachsene zwischen 45 und 65 Jahren entwickelt, eine Lebensphase, in der Verdauungskomfort und mikrobielles Gleichgewicht oft wichtiger werden."
+        },
+        {
+          "question": "Müssen die Kapseln gekühlt werden?",
+          "answer": "Nein. Kühl und trocken, vor direkter Sonneneinstrahlung geschützt lagern; Kühlung ist nicht erforderlich."
+        },
+        {
+          "question": "Kann ich es zusammen mit anderen Nahrungsergänzungsmitteln oder Medikamenten einnehmen?",
+          "answer": "Grundsätzlich ja, aber wir empfehlen, dies mit Ihrem Arzt oder Apotheker abzuklären, besonders wenn Sie verschreibungspflichtige Medikamente einnehmen oder eine bestehende Verdauungserkrankung haben."
+        }
+      ]
+    }
+  }
+]

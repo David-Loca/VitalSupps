@@ -4,18 +4,21 @@ import type { Locale } from "@/lib/i18n";
 export const openGraphLocaleMap: Record<Locale, string> = {
   en: "en_US",
   fr: "fr_FR",
-  it: "it_IT",
+  es: "es_ES",
+  de: "de_DE",
 };
 
 export const siteNameMap: Record<Locale, string> = {
-  en: "Your Site Name",
-  fr: "Your Site Name",
-  it: "Your Site Name",
+  en: "VitalSupps",
+  fr: "VitalSupps",
+  es: "VitalSupps",
+  de: "VitalSupps",
 };
 
 /** Footer / switcher labels */
 export const regionDisplayNames: Record<Locale, string> = {
   en: "English",
   fr: "Français",
-  it: "Italiano",
+  es: "Español",
+  de: "Deutsch",
 };

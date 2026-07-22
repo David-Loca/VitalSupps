@@ -12,7 +12,8 @@
     "faq": "FAQ",
     "contact": "Contact",
     "contactUs": "Contact Us",
-    "features": "Features",
+    "features": "Why VitalSupps",
+    "products": "Products",
     "whatsapp": "WhatsApp",
     "email": "Email",
     "privacyPolicy": "Privacy Policy",
@@ -38,140 +39,204 @@
     "viewAllArticles": "View all articles"
   },
   "hero": {
-    "title": "Welcome",
-    "subtitlePart1": "This is the homepage",
-    "subtitlePart2": "placeholder",
-    "description": "Replace this placeholder with real content."
+    "eyebrow": "Premium Supplements, Backed by Science",
+    "title": "Feel sharper. Feel lighter. Feel like you again.",
+    "subtitle": "Two focused formulas — Methylene Blue for mental clarity and cellular energy, and Gut Health capsules for digestive comfort — made with lab-tested, GMP-certified ingredients.",
+    "ctaPrimary": "Shop Now",
+    "ctaSecondary": "Talk to us on WhatsApp",
+    "badgeLabTested": "Lab Tested",
+    "badgeMadeInUsa": "Made in the USA",
+    "badgeNonGmo": "Non-GMO"
+  },
+  "products": {
+    "sectionTitle": "Our Formulas",
+    "sectionSubtitle": "Two purposeful products, each formulated for a specific goal — nothing else in the lineup, nothing diluted.",
+    "shopNow": "Shop Now",
+    "askOnWhatsapp": "Ask on WhatsApp",
+    "buyOnWhatsapp": "Buy via WhatsApp",
+    "backToHome": "Back to home",
+    "targetAudience": "Who it's for",
+    "benefits": "Benefits",
+    "ingredients": "Ingredients",
+    "howToUse": "How to Use"
   },
   "features": {
-    "sectionSubtitle": "What our product offers.",
-    "sectionTitle": "Features",
-    "statChannelsLabel": "Stat 1",
-    "statChannelsValue": "100+",
-    "statMoviesLabel": "Stat 2",
-    "statMoviesValue": "100+",
-    "statSupportLabel": "Support",
-    "statSupportValue": "24/7",
-    "trustBadgesAlt": "Trust badges",
+    "sectionSubtitle": "Purity, potency and transparency in every batch.",
+    "sectionTitle": "Why VitalSupps",
+    "statChannelsLabel": "Third-party tested batches",
+    "statChannelsValue": "100%",
+    "statMoviesLabel": "Products in our lineup",
+    "statMoviesValue": "2",
+    "statSupportLabel": "Customer Support",
+    "statSupportValue": "7 Days/Week",
+    "trustBadgesAlt": "Third-Party Tested",
+    "badgeLabTested": "Lab Tested",
+    "badgeMadeInUsa": "Made in the USA",
+    "badgeNonGmo": "Non-GMO",
     "feature1": {
-      "title": "Feature 1",
-      "description": "Generic feature description — to be replaced."
+      "title": "Third-Party Lab Tested",
+      "description": "Every batch is verified by an independent lab for purity and potency before it ships."
     },
     "feature2": {
-      "title": "Feature 2",
-      "description": "Generic feature description — to be replaced."
+      "title": "Clean, Purposeful Ingredients",
+      "description": "No unnecessary fillers — just the ingredients that support each formula's goal."
     },
     "feature3": {
-      "title": "Feature 3",
-      "description": "Generic feature description — to be replaced."
+      "title": "GMP-Certified Facility",
+      "description": "Manufactured in a Good Manufacturing Practice certified facility in the USA."
     },
     "feature4": {
-      "title": "Feature 4",
-      "description": "Generic feature description — to be replaced."
+      "title": "Fast-Absorption Formulation",
+      "description": "Our sublingual tincture and enteric-friendly capsules are formulated for effective uptake."
     },
     "feature5": {
-      "title": "Feature 5",
-      "description": "Generic feature description — to be replaced."
+      "title": "Small-Batch Production",
+      "description": "We produce in smaller batches to keep quality control tight and freshness high."
     },
     "feature6": {
-      "title": "Feature 6",
-      "description": "Generic feature description — to be replaced."
+      "title": "Real Human Support",
+      "description": "Questions about dosage or ingredients? Message us directly on WhatsApp."
     }
+  },
+  "trust": {
+    "sectionTitle": "Buy with confidence",
+    "guarantee": {
+      "title": "30-Day Money-Back Guarantee",
+      "description": "Not satisfied? Get a full refund within 30 days of purchase, no questions asked."
+    },
+    "labTested": {
+      "title": "Third-Party Lab Tested",
+      "description": "Every batch is independently tested for purity, potency and contaminants."
+    },
+    "gmp": {
+      "title": "GMP Certified Facility",
+      "description": "Produced in a facility that follows Good Manufacturing Practice standards."
+    },
+    "madeInUsa": {
+      "title": "Made in the USA",
+      "description": "Formulated and manufactured domestically under strict quality controls."
+    }
+  },
+  "ingredients": {
+    "sectionTitle": "What's inside",
+    "sectionSubtitle": "Full transparency on every ingredient in every formula."
+  },
+  "cta": {
+    "title": "Ready to feel the difference?",
+    "subtitle": "Message us on WhatsApp for personalized guidance on which formula is right for you.",
+    "button": "Chat with us on WhatsApp"
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "general1": {
-      "question": "Generic question 1",
-      "answer": "Generic answer — to be replaced with real content."
+      "question": "Is Methylene Blue safe?",
+      "answer": "At the low, titrated doses in our tincture, Methylene Blue is used by many people for wellness support. It does interact with certain medications (notably MAOIs, SSRIs and SNRIs), so we recommend consulting your doctor before use, especially if pregnant, nursing, or on medication."
     },
     "general2": {
-      "question": "Generic question 2",
-      "answer": "Generic answer — to be replaced with real content."
+      "question": "How long until I see results from the Gut Health formula?",
+      "answer": "Many customers notice improved digestive comfort within 2-4 weeks of consistent daily use. Individual results vary based on diet and lifestyle."
     },
     "general3": {
-      "question": "Generic question 3",
-      "answer": "Generic answer — to be replaced with real content."
+      "question": "Do you ship internationally?",
+      "answer": "We currently ship within the regions listed at checkout. Message us on WhatsApp with your location and we'll confirm availability and shipping times."
     },
     "general4": {
-      "question": "Generic question 4",
-      "answer": "Generic answer — to be replaced with real content."
+      "question": "What's your return policy?",
+      "answer": "We offer a 30-day money-back guarantee. If you're not satisfied, reach out and we'll process a refund — see our Refund Policy for full details."
+    },
+    "general5": {
+      "question": "Are your products third-party tested?",
+      "answer": "Yes. Every batch of both formulas is tested by an independent laboratory for purity and potency before it's released for sale."
+    },
+    "general6": {
+      "question": "Can I take both products together?",
+      "answer": "Yes, many customers use both formulas as part of their daily routine. If you're on medication or have a health condition, check with your doctor first, particularly regarding Methylene Blue's drug interactions."
+    },
+    "general7": {
+      "question": "Are the capsules and tincture vegan and gluten-free?",
+      "answer": "The Gut Health capsules use a vegetable capsule shell and are gluten-free. The Methylene Blue tincture contains no animal-derived ingredients."
+    },
+    "general8": {
+      "question": "How should I store my supplements?",
+      "answer": "Store both products in a cool, dry place away from direct sunlight. Refrigeration is not required for either product."
     }
   },
   "whatsapp": {
-    "floatingButton": "Hi, I have a question.",
+    "floatingButton": "Hi, I have a question about VitalSupps.",
     "ariaFloating": "Contact via WhatsApp",
     "tooltip": "Got a question? Message us",
-    "contactQuestion": "Hi, I have a question.",
+    "contactQuestion": "Hi, I have a question about VitalSupps.",
     "defaultButton": "Hi, I have a question.",
     "ariaFreeTest": "Contact via WhatsApp",
     "notFoundHelp": "Hi, I couldn't find the page I was looking for."
   },
   "contactSection": {
     "title": "Contact Us",
-    "description": "Got a question? Message us."
+    "description": "Got a question about our formulas? Message us."
   },
   "footer": {
     "quickLinks": "Quick Links",
     "legal": "Legal",
-    "description": "Generic site description.",
+    "description": "VitalSupps makes premium, lab-tested supplements — Methylene Blue for focus and cellular energy, and Gut Health capsules for digestive comfort. Made in the USA in a GMP-certified facility.",
     "paymentMethods": "Payment Methods",
-    "copyright": "© {year} Your Site Name. All rights reserved."
+    "copyright": "© {year} VitalSupps. All rights reserved.",
+    "fdaDisclaimer": "These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Consult your healthcare provider before use, especially if pregnant, nursing, taking medication, or have a medical condition."
   },
   "legal": {
     "refundPolicy": {
       "title": "Refund Policy",
-      "intro": "Generic placeholder content — to be replaced with real legal text.",
-      "intro2": "Generic placeholder content — to be replaced with real legal text.",
+      "intro": "We want you to feel confident purchasing VitalSupps. If you're not satisfied with your Methylene Blue or Gut Health order, we offer a 30-day money-back guarantee from the date of delivery.",
+      "intro2": "To request a refund, contact us via WhatsApp or email with your order number, and we'll guide you through the process.",
       "howItWorksTitle": "How it works",
-      "howItWorksText": "Generic placeholder content — to be replaced with real legal text.",
-      "conclusion": "Generic placeholder content — to be replaced with real legal text."
+      "howItWorksText": "Reach out within 30 days of delivery. Once your request is confirmed, we'll process your refund to the original payment method within 5-10 business days. Opened or used products are still eligible under this guarantee.",
+      "conclusion": "If you have any questions about your order or this policy, message us on WhatsApp and we'll be happy to help."
     },
     "privacyPolicy": {
       "title": "Privacy Policy",
-      "intro": "Generic placeholder content — to be replaced with real legal text.",
-      "intro2": "Generic placeholder content — to be replaced with real legal text.",
+      "intro": "VitalSupps respects your privacy. This policy explains what information we collect when you visit our site or contact us, and how we use it.",
+      "intro2": "We only collect information necessary to process orders, respond to inquiries, and improve our website experience.",
       "dataProtectionTitle": "Data protection",
-      "dataProtectionText": "Generic placeholder content — to be replaced with real legal text.",
+      "dataProtectionText": "We use industry-standard safeguards to protect any personal information you share with us, including order and contact details.",
       "dataUsageTitle": "Data usage",
-      "dataUsageText": "Generic placeholder content — to be replaced with real legal text.",
-      "dataUsageText2": "Generic placeholder content — to be replaced with real legal text.",
+      "dataUsageText": "Information you provide (such as your name, email, or WhatsApp number) is used solely to fulfill orders and respond to your questions.",
+      "dataUsageText2": "We do not sell your personal information to third parties.",
       "dataCollectionTitle": "Data collection",
-      "dataCollectionText": "Generic placeholder content — to be replaced with real legal text.",
-      "dataCollectionText2": "Generic placeholder content — to be replaced with real legal text.",
+      "dataCollectionText": "We may collect basic analytics data (such as pages visited) to understand how visitors use our site.",
+      "dataCollectionText2": "Contact information is only collected when you voluntarily provide it, such as through a WhatsApp message or contact form.",
       "securityTitle": "Security",
-      "securityText": "Generic placeholder content — to be replaced with real legal text.",
-      "conclusion": "Generic placeholder content — to be replaced with real legal text."
+      "securityText": "We take reasonable technical and organizational measures to protect your data against unauthorized access, alteration, or disclosure.",
+      "conclusion": "If you have questions about how we handle your data, contact us via the details in our footer."
     },
     "termsOfService": {
       "title": "Terms of Service",
-      "intro": "Generic placeholder content — to be replaced with real legal text.",
+      "intro": "By using the VitalSupps website and purchasing our products, you agree to the following terms.",
       "definitionsTitle": "Definitions",
-      "definitionsText": "Generic placeholder content — to be replaced with real legal text.",
+      "definitionsText": "\"We\", \"us\" and \"VitalSupps\" refer to this business. \"You\" refers to the visitor or customer using our site or products.",
       "cookiesTitle": "Cookies",
-      "cookiesText": "Generic placeholder content — to be replaced with real legal text.",
+      "cookiesText": "Our site may use cookies to improve your browsing experience. By continuing to use the site, you consent to our use of cookies.",
       "intellectualPropertyTitle": "Intellectual property",
-      "intellectualPropertyText": "Generic placeholder content — to be replaced with real legal text.",
-      "intellectualPropertyRestrictions": "Generic placeholder content — to be replaced with real legal text.",
-      "restriction1": "Generic placeholder content — to be replaced with real legal text.",
-      "restriction2": "Generic placeholder content — to be replaced with real legal text.",
+      "intellectualPropertyText": "All content on this site, including text, graphics, logos, and product formulations, is the property of VitalSupps unless otherwise stated.",
+      "intellectualPropertyRestrictions": "You may not reproduce, distribute, or create derivative works from our content without written permission.",
+      "restriction1": "Do not use our branding or product names to promote unrelated goods or services.",
+      "restriction2": "Do not copy our website design or product descriptions for commercial use.",
       "commentsTitle": "Use of service",
-      "commentsText": "Generic placeholder content — to be replaced with real legal text.",
-      "commentsText2": "Generic placeholder content — to be replaced with real legal text.",
+      "commentsText": "Our products are dietary supplements and are not intended to diagnose, treat, cure, or prevent any disease.",
+      "commentsText2": "Always consult a healthcare professional before starting any new supplement, particularly if you are pregnant, nursing, taking medication, or managing a medical condition.",
       "hyperlinksTitle": "Term and termination",
-      "hyperlinksText": "Generic placeholder content — to be replaced with real legal text.",
-      "hyperlinksText2": "Generic placeholder content — to be replaced with real legal text.",
+      "hyperlinksText": "These terms remain in effect while you use our site. We may suspend access for anyone who violates these terms.",
+      "hyperlinksText2": "You may stop using our services at any time.",
       "iframesTitle": "Availability and maintenance",
-      "iframesText": "Generic placeholder content — to be replaced with real legal text.",
+      "iframesText": "We aim to keep our site available at all times but do not guarantee uninterrupted access, and may perform maintenance without notice.",
       "contentResponsibilityTitle": "Third-party apps",
-      "contentResponsibilityText": "Generic placeholder content — to be replaced with real legal text.",
+      "contentResponsibilityText": "Our site may link to third-party services, such as WhatsApp, for communication purposes. We are not responsible for the content or practices of those third parties.",
       "privacyDataTitle": "Your personal data",
-      "privacyDataText": "Generic placeholder content — to be replaced with real legal text.",
+      "privacyDataText": "See our Privacy Policy for full details on how we collect, use, and protect your personal information.",
       "modificationsTitle": "Changes to these terms",
-      "modificationsText": "Generic placeholder content — to be replaced with real legal text.",
+      "modificationsText": "We may update these terms from time to time. Continued use of our site after changes constitutes acceptance of the updated terms.",
       "linkRemovalTitle": "Report an issue",
-      "linkRemovalText": "Generic placeholder content — to be replaced with real legal text.",
+      "linkRemovalText": "If you notice a problem with our site or have a concern about our content, contact us and we'll address it promptly.",
       "limitationTitle": "Limitation of liability",
-      "limitationText": "Generic placeholder content — to be replaced with real legal text."
+      "limitationText": "VitalSupps is not liable for indirect, incidental, or consequential damages arising from the use of our products or website, to the extent permitted by law."
     }
   }
 }

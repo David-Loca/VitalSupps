@@ -1,0 +1,28 @@
+{
+  "homepage": {
+    "title": "VitalSupps | Azul de Metileno y Suplementos para la Salud Intestinal",
+    "description": "Descubre nuestra tintura de Azul de Metileno probada en laboratorio para la concentración y la energía celular, y nuestras cápsulas de Salud Intestinal para el confort digestivo. Fabricado en EE. UU., certificado GMP."
+  },
+  "blog": {
+    "title": "Blog | VitalSupps",
+    "description": "Ciencia de suplementos, guías de bienestar y consejos de VitalSupps."
+  },
+  "blogListing": {
+    "title": "Blog | Últimos Artículos | VitalSupps",
+    "description": "Explora nuestros artículos sobre energía celular, concentración y salud intestinal."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Política de Reembolso | VitalSupps",
+      "description": "Consulta la garantía de devolución de dinero de 30 días de VitalSupps."
+    },
+    "privacyPolicy": {
+      "title": "Política de Privacidad | VitalSupps",
+      "description": "Descubre cómo VitalSupps recopila, utiliza y protege tus datos personales."
+    },
+    "termsOfService": {
+      "title": "Términos de Servicio | VitalSupps",
+      "description": "Consulta los términos y condiciones de uso de los servicios de VitalSupps."
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="Amber dropper bottle line illustration">
+  <defs>
+    <linearGradient id="mb-liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3F4F3C" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#3F4F3C" stop-opacity="0.28" />
+    </linearGradient>
+  </defs>
+
+  <!-- dropper cap -->
+  <rect x="104" y="18" width="32" height="46" rx="6" fill="none" stroke="#1A1D17" stroke-width="1.6" />
+  <line x1="120" y1="64" x2="120" y2="118" stroke="#1A1D17" stroke-width="1.4" />
+  <line x1="112" y1="64" x2="112" y2="104" stroke="#1A1D17" stroke-width="1" opacity="0.5" />
+  <line x1="128" y1="64" x2="128" y2="104" stroke="#1A1D17" stroke-width="1" opacity="0.5" />
+
+  <!-- neck -->
+  <path d="M104 64 L104 90 Q104 100 96 108 L82 128" fill="none" stroke="#1A1D17" stroke-width="1.6" stroke-linecap="round" />
+  <path d="M136 64 L136 90 Q136 100 144 108 L158 128" fill="none" stroke="#1A1D17" stroke-width="1.6" stroke-linecap="round" />
+
+  <!-- bottle body -->
+  <path d="M82 128
+           Q64 150 64 190
+           L64 296
+           Q64 322 90 322
+           L150 322
+           Q176 322 176 296
+           L176 190
+           Q176 150 158 128
+           Z"
+        fill="none" stroke="#1A1D17" stroke-width="1.8" />
+
+  <!-- liquid fill line -->
+  <path d="M67 220 L173 220 L173 296 Q173 319 150 319 L90 319 Q67 319 67 296 Z" fill="url(#mb-liquid)" opacity="0.9" />
+
+  <!-- label -->
+  <rect x="80" y="230" width="80" height="56" rx="2" fill="#F7F4EC" stroke="#B08D57" stroke-width="1.1" />
+  <text x="120" y="254" text-anchor="middle" font-family="Georgia, serif" font-size="11" fill="#3F4F3C" letter-spacing="1">VITALSUPPS</text>
+  <line x1="94" y1="264" x2="146" y2="264" stroke="#B08D57" stroke-width="0.8" />
+  <text x="120" y="278" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#1A1D17" letter-spacing="0.5">Methylene Blue</text>
+
+  <!-- botanical sprig accent -->
+  <g stroke="#B08D57" stroke-width="1" fill="none" opacity="0.8">
+    <path d="M186 150 Q200 140 198 122" />
+    <path d="M192 145 Q198 138 196 130" />
+    <path d="M190 152 Q184 146 186 138" />
+  </g>
+</svg>

@@ -3,37 +3,43 @@ import type { BlogLocale } from "@/lib/admin/blog-locales";
 export const ADMIN_BLOG_LOCALE_LABELS: Record<BlogLocale, string> = {
   en: "English",
   fr: "French",
-  it: "Italian",
+  es: "Spanish",
+  de: "German",
 };
 
 export const ADMIN_BLOG_LOCALE_SHORT: Record<BlogLocale, string> = {
   en: "EN",
   fr: "FR",
-  it: "IT",
+  es: "ES",
+  de: "DE",
 };
 
 export const ADMIN_BLOG_SLUG_PLACEHOLDERS: Record<BlogLocale, string> = {
   en: "my-article",
   fr: "mon-article",
-  it: "mio-articolo",
+  es: "mi-articulo",
+  de: "mein-artikel",
 };
 
 const TITLE_PLACEHOLDERS: Record<BlogLocale, string> = {
   en: "Enter the article title",
   fr: "Saisissez le titre de l'article",
-  it: "Inserisci il titolo dell'articolo",
+  es: "Introduce el título del artículo",
+  de: "Geben Sie den Artikeltitel ein",
 };
 
 const EXCERPT_PLACEHOLDERS: Record<BlogLocale, string> = {
   en: "Short description for the listing page",
   fr: "Courte description pour la page de liste",
-  it: "Breve descrizione per la pagina elenco",
+  es: "Breve descripción para la página de listado",
+  de: "Kurzbeschreibung für die Übersichtsseite",
 };
 
 const META_DESCRIPTION_PLACEHOLDERS: Record<BlogLocale, string> = {
   en: "SEO description for search engines and social media",
   fr: "Description SEO pour la recherche et les réseaux sociaux",
-  it: "Descrizione SEO per la ricerca e i social media",
+  es: "Descripción SEO para buscadores y redes sociales",
+  de: "SEO-Beschreibung für Suchmaschinen und soziale Medien",
 };
 
 export function getBlogLocaleLabel(locale: BlogLocale): string {

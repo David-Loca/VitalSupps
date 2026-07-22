@@ -1,18 +1,20 @@
 import en from './translations/en.json';
 import fr from './translations/fr.json';
-import it from './translations/it.json';
+import es from './translations/es.json';
+import de from './translations/de.json';
 import { normalizeHeroSection } from './normalize-hero-text';
 
-export type Locale = 'en' | 'fr' | 'it';
+export type Locale = 'en' | 'fr' | 'es' | 'de';
 
-export const locales: Locale[] = ['en', 'fr', 'it'];
+export const locales: Locale[] = ['en', 'fr', 'es', 'de'];
 
 export const defaultLocale: Locale = 'en';
 
 export const translations = {
   en,
   fr,
-  it,
+  es,
+  de,
 } as const;
 
 export type TranslationKey = keyof typeof en | string;

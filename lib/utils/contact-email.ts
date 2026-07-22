@@ -4,7 +4,8 @@ import type { Locale } from "@/lib/i18n";
 const CONTACT_EMAIL_BY_LOCALE: Record<Locale, string> = {
   en: "info@example.com",
   fr: "info@example.com",
-  it: "info@example.com",
+  es: "info@example.com",
+  de: "info@example.com",
 };
 
 /**

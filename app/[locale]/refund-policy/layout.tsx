@@ -27,15 +27,17 @@ export async function generateMetadata({
   const baseUrl = getSiteBaseUrl();
 
   const titleMap: Record<Locale, string> = {
-  en: "Refund Policy | Your Site Name",
-  fr: "Politique de Remboursement | Your Site Name",
-  it: "Politica di Rimborso | Your Site Name",
+  en: "Refund Policy | VitalSupps",
+  fr: "Politique de Remboursement | VitalSupps",
+  es: "Política de Reembolso | VitalSupps",
+  de: "Rückerstattungsrichtlinie | VitalSupps",
 };
 
   const descriptionMap: Record<Locale, string> = {
-  en: "Read Your Site Name's refund policy, including eligibility, timelines, and how to request a refund for your subscription.",
-  fr: "Consultez la politique de remboursement de Your Site Name, y découvrez l’éligibilité, les délais et comment demander un remboursement pour votre abonnement.",
-  it: "Consulta la politica di rimborso di Your Site Name: requisiti, tempistiche e come richiedere un rimborso per il tuo abbonamento.",
+  en: "Read VitalSupps' 30-day money-back guarantee, including eligibility, timelines, and how to request a refund.",
+  fr: "Consultez la garantie satisfait ou remboursé de 30 jours de VitalSupps, l'éligibilité, les délais et comment demander un remboursement.",
+  es: "Consulta la garantía de devolución de dinero de 30 días de VitalSupps, la elegibilidad, los plazos y cómo solicitar un reembolso.",
+  de: "Lesen Sie die 30-tägige Geld-zurück-Garantie von VitalSupps, einschließlich Berechtigung, Fristen und wie Sie eine Rückerstattung beantragen.",
 };
 
   const keywords = getRouteMetaKeywords(locale, "legal", legalRefundSeeds[locale]);
@@ -73,15 +75,17 @@ export default async function RefundPolicyLayout({
   const baseUrl = getSiteBaseUrl();
 
   const titleMap: Record<Locale, string> = {
-  en: "Refund Policy | Your Site Name",
-  fr: "Politique de Remboursement | Your Site Name",
-  it: "Politica di Rimborso | Your Site Name",
+  en: "Refund Policy | VitalSupps",
+  fr: "Politique de Remboursement | VitalSupps",
+  es: "Política de Reembolso | VitalSupps",
+  de: "Rückerstattungsrichtlinie | VitalSupps",
 };
 
   const descriptionMap: Record<Locale, string> = {
-  en: "Read Your Site Name's refund policy, including eligibility, timelines, and how to request a refund for your subscription.",
-  fr: "Consultez la politique de remboursement de Your Site Name, y découvrez l’éligibilité, les délais et comment demander un remboursement pour votre abonnement.",
-  it: "Consulta la politica di rimborso di Your Site Name: requisiti, tempistiche e come richiedere un rimborso per il tuo abbonamento.",
+  en: "Read VitalSupps' 30-day money-back guarantee, including eligibility, timelines, and how to request a refund.",
+  fr: "Consultez la garantie satisfait ou remboursé de 30 jours de VitalSupps, l'éligibilité, les délais et comment demander un remboursement.",
+  es: "Consulta la garantía de devolución de dinero de 30 días de VitalSupps, la elegibilidad, los plazos y cómo solicitar un reembolso.",
+  de: "Lesen Sie die 30-tägige Geld-zurück-Garantie von VitalSupps, einschließlich Berechtigung, Fristen und wie Sie eine Rückerstattung beantragen.",
 };
 
   const keywords = getRouteMetaKeywords(locale, "legal", legalRefundSeeds[locale]);

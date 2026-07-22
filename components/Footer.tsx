@@ -74,17 +74,8 @@ export default function Footer() {
 
   return (
     <footer className="relative bg-dark-text text-white overflow-hidden border-t border-white/5">
-      {/* Premium accent line marking the transition into the footer */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-accent-blue via-accent-blue-ring to-accent-secondary" />
-
-      {/* Modern gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1e3a8a]/50 via-transparent to-[#1e3a8a]/30 pointer-events-none" />
-
-      {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
-        backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-        backgroundSize: '50px 50px'
-      }} />
+      {/* Hairline accent marking the transition into the footer */}
+      <div className="h-px w-full bg-accent-secondary/50" />
 
       <div className="relative max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-6 sm:py-8 lg:py-10">
         {/* Main Footer Content */}
@@ -99,14 +90,13 @@ export default function Footer() {
           >
             {/* Logo */}
             <div className="flex items-center mb-2.5">
-              <div className="relative h-12 w-auto">
+              <div className="relative h-10 w-auto">
                 <Image
-                  src="/logo/Logo3-removebg-preview.png"
-                  alt="Logo"
+                  src="/logo/vitalsupps-wordmark.svg"
+                  alt="VitalSupps"
                   width={200}
-                  height={80}
+                  height={35}
                   className="h-full w-auto object-contain brightness-0 invert"
-                  quality={40}
                   loading="lazy"
                 />
               </div>
@@ -215,6 +205,13 @@ export default function Footer() {
           </motion.div>
         </div>
 
+        {/* FDA / supplement disclaimer */}
+        <div className="border-t border-white/10 pt-4 pb-1">
+          <p className="text-[11px] leading-relaxed text-white/40 max-w-4xl">
+            {t("footer.fdaDisclaimer")}
+          </p>
+        </div>
+
         {/* Bottom Section - Copyright, Language Picker, Back to Top */}
         <div className="border-t border-white/10 pt-4">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -233,7 +230,7 @@ export default function Footer() {
                       onClick={() => setLocale(loc)}
                       className={`relative min-w-10 min-h-9 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-full transition-all duration-300 cursor-pointer ${
                         locale === loc
-                          ? "bg-gradient-to-br from-accent-blue to-accent-blue-dark text-white shadow-[0_2px_8px_rgba(37,99,235,0.5)] scale-105"
+                          ? "bg-accent-blue text-white scale-105"
                           : "text-white/45 hover:text-white/90 hover:bg-white/[0.06]"
                       }`}
                       aria-label={`Switch to ${languageNames[loc]}`}
@@ -250,7 +247,7 @@ export default function Footer() {
               <button
                 onClick={scrollToTop}
                 aria-label="Back to top"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.04] border border-white/10 text-white/50 hover:text-white hover:bg-accent-blue hover:border-accent-blue hover:shadow-[0_2px_8px_rgba(37,99,235,0.5)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.04] border border-white/10 text-white/50 hover:text-white hover:bg-accent-blue hover:border-accent-blue hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
               >
                 <ArrowUp className="w-4 h-4" />
               </button>

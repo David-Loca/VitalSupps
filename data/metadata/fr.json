@@ -1,28 +1,28 @@
 {
   "homepage": {
-    "title": "Your Site Name | Accueil",
-    "description": "Description générique du site — à remplacer par le contenu réel."
+    "title": "VitalSupps | Bleu de Méthylène & Compléments Santé Intestinale",
+    "description": "Découvrez notre teinture de Bleu de Méthylène testée en laboratoire pour la concentration et l'énergie cellulaire, et nos gélules Santé Intestinale pour le confort digestif. Fabriqué aux États-Unis, certifié GMP."
   },
   "blog": {
-    "title": "Blog | Your Site Name",
-    "description": "Actualités, guides et conseils."
+    "title": "Blog | VitalSupps",
+    "description": "Science des compléments alimentaires, guides bien-être et conseils VitalSupps."
   },
   "blogListing": {
-    "title": "Blog | Derniers Articles",
-    "description": "Parcourez notre collection d'articles."
+    "title": "Blog | Derniers Articles | VitalSupps",
+    "description": "Parcourez nos articles sur l'énergie cellulaire, la concentration et la santé intestinale."
   },
   "legal": {
     "refundPolicy": {
-      "title": "Politique de Remboursement | Your Site Name",
-      "description": "Consultez la politique de remboursement de Your Site Name."
+      "title": "Politique de Remboursement | VitalSupps",
+      "description": "Consultez la garantie satisfait ou remboursé de 30 jours de VitalSupps."
     },
     "privacyPolicy": {
-      "title": "Politique de Confidentialité | Your Site Name",
-      "description": "Découvrez comment Your Site Name collecte, utilise et protège vos données personnelles."
+      "title": "Politique de Confidentialité | VitalSupps",
+      "description": "Découvrez comment VitalSupps collecte, utilise et protège vos données personnelles."
     },
     "termsOfService": {
-      "title": "Conditions d'Utilisation | Your Site Name",
-      "description": "Consultez les conditions d'utilisation des services Your Site Name."
+      "title": "Conditions d'Utilisation | VitalSupps",
+      "description": "Consultez les conditions d'utilisation des services VitalSupps."
     }
   }
 }

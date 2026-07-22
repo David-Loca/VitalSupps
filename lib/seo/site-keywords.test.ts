@@ -4,12 +4,12 @@ import { CORE_SITE_KEYWORDS, getHomepageKeywordList } from "@/lib/seo/site-keywo
 describe("site keywords", () => {
   it("keeps a core list of French terms", () => {
     const frCore = CORE_SITE_KEYWORDS.fr.join(" ").toLowerCase();
-    expect(frCore).toContain("votre produit");
+    expect(frCore).toContain("méthylène");
     expect(CORE_SITE_KEYWORDS.fr.length).toBeGreaterThan(0);
   });
 
   it("keeps a core list for every locale", () => {
-    for (const locale of ["en", "fr", "it"] as const) {
+    for (const locale of ["en", "fr", "es", "de"] as const) {
       expect(CORE_SITE_KEYWORDS[locale].length).toBeGreaterThan(0);
     }
   });

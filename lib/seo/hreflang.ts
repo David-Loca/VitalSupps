@@ -7,7 +7,8 @@ import { locales, type Locale } from "@/lib/i18n";
 export const hreflangByLocale: Record<Locale, string> = {
   en: "en-US",
   fr: "fr-FR",
-  it: "it-IT",
+  es: "es-ES",
+  de: "de-DE",
 };
 
 /** Build `alternates.languages` for Next.js metadata from internal locale → absolute URL map. */

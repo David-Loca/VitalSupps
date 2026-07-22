@@ -44,6 +44,14 @@ export function getWhatsAppUrl(message?: string): string {
 }
 
 /**
+ * Generate a WhatsApp URL pre-filled with a product inquiry message.
+ * @param productName - The product's display name
+ */
+export function getProductWhatsAppUrl(productName: string): string {
+  return getWhatsAppUrl(`Hi, I'm interested in ${productName}. Can you tell me more?`);
+}
+
+/**
  * Open WhatsApp in a new window/tab
  * @param message - Optional pre-filled message
  */

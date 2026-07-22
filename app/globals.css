@@ -7,26 +7,32 @@
   /* Font Families */
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-heading: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-fraunces), "Georgia", serif;
 
-  /* Colors - base surfaces (slate-aligned, cooler undertone) */
+  /* Colors - base surfaces ("Botanical Apothecary": warm ivory paper) */
   --color-white: #ffffff;
-  --color-off-white: #f9fafb;
-  --color-light-gray: #f3f4f6;
-  --color-dark-text: #0f172a;
-  --color-subtle-gray: #e2e8f0;
+  --color-off-white: #f7f4ec;
+  --color-light-gray: #e7ece1;
+  --color-dark-text: #1a1d17;
+  --color-subtle-gray: #d9d3c1;
 
-  /* Colors - brand blue, with hover/tint/ring steps */
-  --color-accent-blue: #2563eb;
-  --color-accent-blue-dark: #1d4ed8;
-  --color-accent-blue-light: #eff6ff;
-  --color-accent-blue-ring: #93c5fd;
+  /* Colors - brand primary (Deep Sage green), with hover/tint/ring steps */
+  --color-accent-blue: #3f4f3c;
+  --color-accent-blue-dark: #2c3829;
+  --color-accent-blue-light: #e7ece1;
+  --color-accent-blue-ring: #8fa286;
 
-  /* Colors - secondary accent, same family */
-  --color-accent-secondary: #0ea5e9;
+  /* Colors - secondary accent (Antique Gold) */
+  --color-accent-secondary: #b08d57;
+
+  /* Colors - Terracotta accent (Gut Health product line) */
+  --color-accent-terracotta: #b5623a;
+  --color-accent-terracotta-dark: #8f4b2c;
+  --color-accent-terracotta-light: #f3e3da;
 
   /* Colors - semantic state */
   --color-success: #16a34a;
-  --color-warning: #d97706;
+  --color-warning: #b45309;
 
   /* Typography scale */
   --text-display: 3.5rem;
@@ -46,7 +52,7 @@
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-card-hover: 0 20px 25px -5px rgb(37 99 235 / 0.10), 0 8px 10px -6px rgb(37 99 235 / 0.08);
+  --shadow-card-hover: 0 20px 25px -5px rgb(15 110 92 / 0.10), 0 8px 10px -6px rgb(15 110 92 / 0.08);
 }
 
 html {
@@ -79,6 +85,12 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+}
+
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
 @keyframes scroll {

@@ -32,7 +32,7 @@ export default function NotFoundContent() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/20 via-transparent to-transparent rounded-xl blur-xl"></div>
 
                 {/* Screen Content */}
-                <div className="relative bg-gradient-to-br from-[#0f172a] to-[#1e3a8a] rounded-lg p-8 sm:p-12 lg:p-16 border-2 border-accent-blue/30">
+                <div className="relative bg-gradient-to-br from-dark-text to-accent-blue-dark rounded-lg p-8 sm:p-12 lg:p-16 border-2 border-accent-blue/30">
                   {/* Signal Lines Animation */}
                   <div className="absolute inset-0 overflow-hidden rounded-lg">
                     <motion.div

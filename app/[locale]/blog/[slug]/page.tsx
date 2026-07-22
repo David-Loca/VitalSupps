@@ -67,7 +67,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       url: `${baseUrl}/${locale}/`,
       logo: {
         "@type": "ImageObject",
-        url: `${baseUrl}/logo/Logo3-removebg-preview.png`,
+        url: `${baseUrl}/logo/vitalsupps-wordmark.svg`,
       },
     },
     mainEntityOfPage: {

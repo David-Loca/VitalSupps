@@ -32,6 +32,26 @@ const faqData: FAQItem[] = [
     questionKey: "faq.general4.question",
     answerKey: "faq.general4.answer",
   },
+  {
+    id: "general-5",
+    questionKey: "faq.general5.question",
+    answerKey: "faq.general5.answer",
+  },
+  {
+    id: "general-6",
+    questionKey: "faq.general6.question",
+    answerKey: "faq.general6.answer",
+  },
+  {
+    id: "general-7",
+    questionKey: "faq.general7.question",
+    answerKey: "faq.general7.answer",
+  },
+  {
+    id: "general-8",
+    questionKey: "faq.general8.question",
+    answerKey: "faq.general8.answer",
+  },
 ];
 
 export default function FAQSection() {
@@ -62,7 +82,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-center mb-12 xl:mb-16 2xl:mb-20 text-dark-text font-heading"
+          className="font-display text-3xl sm:text-4xl xl:text-5xl text-center mb-12 xl:mb-16 2xl:mb-20 text-dark-text"
         >
           {t("faq.title")}
         </motion.h2>
@@ -75,10 +95,10 @@ export default function FAQSection() {
             return (
               <div
                 key={faq.id}
-                className={`bg-white rounded-2xl border transition-all duration-300 overflow-hidden h-fit ${
+                className={`bg-white rounded-md border transition-all duration-300 overflow-hidden h-fit ${
                   isOpen
-                    ? "border-accent-blue shadow-card-hover"
-                    : "border-subtle-gray shadow-sm hover:border-accent-blue/30 hover:shadow-md"
+                    ? "border-accent-blue"
+                    : "border-subtle-gray hover:border-accent-blue/30"
                 }`}
               >
                 {/* Question Button */}

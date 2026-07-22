@@ -1,0 +1,28 @@
+{
+  "homepage": {
+    "title": "VitalSupps | Methylenblau & Nahrungsergänzung für die Darmgesundheit",
+    "description": "Entdecken Sie unsere labor-geprüfte Methylenblau-Tinktur für Fokus und zelluläre Energie sowie unsere Darmgesundheits-Kapseln für digestives Wohlbefinden. Hergestellt in den USA, GMP-zertifiziert."
+  },
+  "blog": {
+    "title": "Blog | VitalSupps",
+    "description": "Nahrungsergänzungswissenschaft, Wellness-Guides und Tipps von VitalSupps."
+  },
+  "blogListing": {
+    "title": "Blog | Neueste Artikel | VitalSupps",
+    "description": "Stöbern Sie durch unsere Artikel zu zellulärer Energie, Fokus und Darmgesundheit."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Rückerstattungsrichtlinie | VitalSupps",
+      "description": "Lesen Sie die 30-tägige Geld-zurück-Garantie von VitalSupps."
+    },
+    "privacyPolicy": {
+      "title": "Datenschutzrichtlinie | VitalSupps",
+      "description": "Erfahren Sie, wie VitalSupps Ihre persönlichen Daten sammelt, nutzt und schützt."
+    },
+    "termsOfService": {
+      "title": "Nutzungsbedingungen | VitalSupps",
+      "description": "Lesen Sie die Allgemeinen Geschäftsbedingungen für die Nutzung der VitalSupps-Dienste."
+    }
+  }
+}

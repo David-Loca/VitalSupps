@@ -122,12 +122,12 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
           >
             {/* Logo - slightly bigger on desktop without changing header height */}
-            <div className="relative h-10 sm:h-11 w-auto">
+            <div className="relative h-8 sm:h-9 w-auto">
               <Image
-                src="/logo/Logo3-removebg-preview.png"
-                alt="Logo"
-                width={135}
-                height={36}
+                src="/logo/vitalsupps-wordmark.svg"
+                alt="VitalSupps"
+                width={170}
+                height={30}
                 className="h-full w-auto object-contain"
                 priority
               />
@@ -135,20 +135,29 @@ export default function Header() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-off-white rounded-full p-1 mx-4">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8 mx-4">
             {/* Home */}
             <motion.a
               href="#home"
               onClick={(e) => handleNavClick(e, "#home")}
-              className="px-4 py-2 rounded-full font-medium text-sm text-dark-text/75 hover:text-dark-text hover:bg-white hover:shadow-sm transition-all duration-200"
+              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
             >
               {t("common.home")}
+            </motion.a>
+
+            {/* Products */}
+            <motion.a
+              href="#products"
+              onClick={(e) => handleNavClick(e, "#products")}
+              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
+            >
+              {t("common.products")}
             </motion.a>
 
             {/* Blog */}
             <motion.a
               href={`/${locale}/blog`}
-              className="px-4 py-2 rounded-full font-medium text-sm text-dark-text/75 hover:text-dark-text hover:bg-white hover:shadow-sm transition-all duration-200"
+              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
             >
               {t("common.blog")}
             </motion.a>
@@ -157,14 +166,14 @@ export default function Header() {
             <motion.a
               href="#faq"
               onClick={(e) => handleNavClick(e, "#faq")}
-              className="px-4 py-2 rounded-full font-medium text-sm text-dark-text/75 hover:text-dark-text hover:bg-white hover:shadow-sm transition-all duration-200"
+              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
             >
               {t("common.faq")}
             </motion.a>
           </div>
 
           {/* Desktop CTA Cluster */}
-          <div className="hidden lg:flex items-center gap-2 shrink-0">
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <motion.a
               href="#cta"
               onClick={(e) => handleNavClick(e, "#cta")}
@@ -180,9 +189,9 @@ export default function Header() {
             <motion.a
               href="#cta"
               onClick={(e) => handleNavClick(e, "#cta")}
-              className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide text-white bg-gradient-to-r from-accent-blue to-accent-blue-dark shadow-md hover:shadow-lg hover:from-accent-blue-dark hover:to-accent-blue-dark transition-all duration-150 cursor-pointer border border-white/40"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-md text-sm font-semibold tracking-wide text-white bg-accent-blue hover:bg-accent-blue-dark transition-colors duration-150 cursor-pointer"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
             >
               {t("common.contactUs")}
             </motion.a>
@@ -265,6 +274,18 @@ export default function Header() {
                   transition={{ delay: 0.1, duration: 0.2 }}
                 >
                   {t("common.home")}
+                </motion.a>
+
+                {/* Products */}
+                <motion.a
+                  href="#products"
+                  onClick={(e) => handleNavClick(e, "#products")}
+                  className="text-base font-medium text-dark-text hover:text-accent-blue py-3 px-4 rounded-lg hover:bg-light-gray transition-all duration-200"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.14, duration: 0.2 }}
+                >
+                  {t("common.products")}
                 </motion.a>
 
                 {/* Blog */}

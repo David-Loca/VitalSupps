@@ -6,9 +6,10 @@ import type { Locale } from "@/lib/i18n";
  * IPTV-specific keyword set and the generated keyword corpus.
  */
 export const CORE_SITE_KEYWORDS: Record<Locale, readonly string[]> = {
-  en: ["your product", "your brand"],
-  fr: ["votre produit", "votre marque"],
-  it: ["il tuo prodotto", "il tuo marchio"],
+  en: ["methylene blue", "gut health supplement", "vitalsupps"],
+  fr: ["bleu de méthylène", "complément santé intestinale", "votre produit", "vitalsupps"],
+  es: ["azul de metileno", "suplemento salud intestinal", "vitalsupps"],
+  de: ["methylenblau", "darmgesundheit nahrungsergänzung", "vitalsupps"],
 };
 
 /**

@@ -12,7 +12,8 @@
     "faq": "FAQ",
     "contact": "Contact",
     "contactUs": "Nous Contacter",
-    "features": "Fonctionnalités",
+    "features": "Pourquoi VitalSupps",
+    "products": "Produits",
     "whatsapp": "WhatsApp",
     "email": "Email",
     "privacyPolicy": "Politique de Confidentialité",
@@ -38,140 +39,204 @@
     "viewAllArticles": "Voir tous les articles"
   },
   "hero": {
-    "title": "Welcome",
-    "subtitlePart1": "This is the homepage",
-    "subtitlePart2": "placeholder",
-    "description": "Replace this placeholder with real content."
+    "eyebrow": "Compléments Premium, Fondés sur la Science",
+    "title": "Retrouvez votre clarté. Retrouvez votre légèreté. Retrouvez-vous.",
+    "subtitle": "Deux formules ciblées — Bleu de Méthylène pour la clarté mentale et l'énergie cellulaire, et gélules Santé Intestinale pour le confort digestif — élaborées avec des ingrédients testés en laboratoire et certifiés GMP.",
+    "ctaPrimary": "Acheter maintenant",
+    "ctaSecondary": "Parlez-nous sur WhatsApp",
+    "badgeLabTested": "Testé en Laboratoire",
+    "badgeMadeInUsa": "Fabriqué aux États-Unis",
+    "badgeNonGmo": "Sans OGM"
+  },
+  "products": {
+    "sectionTitle": "Nos Formules",
+    "sectionSubtitle": "Deux produits ciblés, chacun formulé pour un objectif précis — rien de superflu, rien de dilué.",
+    "shopNow": "Acheter",
+    "askOnWhatsapp": "Demander sur WhatsApp",
+    "buyOnWhatsapp": "Acheter via WhatsApp",
+    "backToHome": "Retour à l'accueil",
+    "targetAudience": "Pour qui",
+    "benefits": "Bienfaits",
+    "ingredients": "Ingrédients",
+    "howToUse": "Mode d'emploi"
   },
   "features": {
-    "sectionSubtitle": "Ce que propose notre produit.",
-    "sectionTitle": "Fonctionnalités",
-    "statChannelsLabel": "Statistique 1",
-    "statChannelsValue": "100+",
-    "statMoviesLabel": "Statistique 2",
-    "statMoviesValue": "100+",
-    "statSupportLabel": "Support",
-    "statSupportValue": "24/7",
-    "trustBadgesAlt": "Badges de confiance",
+    "sectionSubtitle": "Pureté, efficacité et transparence à chaque lot.",
+    "sectionTitle": "Pourquoi VitalSupps",
+    "statChannelsLabel": "Lots testés par un tiers",
+    "statChannelsValue": "100%",
+    "statMoviesLabel": "Produits dans notre gamme",
+    "statMoviesValue": "2",
+    "statSupportLabel": "Support Client",
+    "statSupportValue": "7j/7",
+    "trustBadgesAlt": "Testé par un Tiers Indépendant",
+    "badgeLabTested": "Testé en Laboratoire",
+    "badgeMadeInUsa": "Fabriqué aux États-Unis",
+    "badgeNonGmo": "Sans OGM",
     "feature1": {
-      "title": "Fonctionnalité 1",
-      "description": "Description générique de la fonctionnalité — à remplacer."
+      "title": "Testé en Laboratoire Indépendant",
+      "description": "Chaque lot est vérifié par un laboratoire indépendant pour sa pureté et son efficacité avant expédition."
     },
     "feature2": {
-      "title": "Fonctionnalité 2",
-      "description": "Description générique de la fonctionnalité — à remplacer."
+      "title": "Ingrédients Sains et Ciblés",
+      "description": "Aucun excipient inutile — uniquement les ingrédients qui servent l'objectif de chaque formule."
     },
     "feature3": {
-      "title": "Fonctionnalité 3",
-      "description": "Description générique de la fonctionnalité — à remplacer."
+      "title": "Installation Certifiée GMP",
+      "description": "Fabriqué dans une installation certifiée Bonnes Pratiques de Fabrication aux États-Unis."
     },
     "feature4": {
-      "title": "Fonctionnalité 4",
-      "description": "Description générique de la fonctionnalité — à remplacer."
+      "title": "Formulation à Absorption Rapide",
+      "description": "Notre teinture sublinguale et nos gélules sont formulées pour une assimilation efficace."
     },
     "feature5": {
-      "title": "Fonctionnalité 5",
-      "description": "Description générique de la fonctionnalité — à remplacer."
+      "title": "Production en Petits Lots",
+      "description": "Nous produisons en petits lots pour garantir un contrôle qualité rigoureux et une fraîcheur optimale."
     },
     "feature6": {
-      "title": "Fonctionnalité 6",
-      "description": "Description générique de la fonctionnalité — à remplacer."
+      "title": "Un Vrai Support Humain",
+      "description": "Des questions sur le dosage ou les ingrédients ? Écrivez-nous directement sur WhatsApp."
     }
+  },
+  "trust": {
+    "sectionTitle": "Achetez en toute confiance",
+    "guarantee": {
+      "title": "Garantie Satisfait ou Remboursé 30 Jours",
+      "description": "Pas satisfait ? Remboursement intégral sous 30 jours après l'achat, sans justification."
+    },
+    "labTested": {
+      "title": "Testé par un Tiers Indépendant",
+      "description": "Chaque lot est testé indépendamment pour sa pureté, son efficacité et l'absence de contaminants."
+    },
+    "gmp": {
+      "title": "Installation Certifiée GMP",
+      "description": "Produit dans une installation respectant les normes de Bonnes Pratiques de Fabrication."
+    },
+    "madeInUsa": {
+      "title": "Fabriqué aux États-Unis",
+      "description": "Formulé et fabriqué localement sous contrôle qualité strict."
+    }
+  },
+  "ingredients": {
+    "sectionTitle": "Ce que contiennent nos produits",
+    "sectionSubtitle": "Transparence totale sur chaque ingrédient de chaque formule."
+  },
+  "cta": {
+    "title": "Prêt à ressentir la différence ?",
+    "subtitle": "Écrivez-nous sur WhatsApp pour un conseil personnalisé sur la formule qui vous convient.",
+    "button": "Discuter sur WhatsApp"
   },
   "faq": {
     "title": "Questions Fréquentes",
     "general1": {
-      "question": "Question générique 1",
-      "answer": "Réponse générique — à remplacer par du contenu réel."
+      "question": "Le Bleu de Méthylène est-il sûr ?",
+      "answer": "Aux faibles doses progressives de notre teinture, le Bleu de Méthylène est utilisé par de nombreuses personnes pour le bien-être. Il interagit avec certains médicaments (notamment les IMAO, ISRS et IRSN) ; consultez donc votre médecin avant utilisation, surtout en cas de grossesse, d'allaitement ou de traitement médicamenteux."
     },
     "general2": {
-      "question": "Question générique 2",
-      "answer": "Réponse générique — à remplacer par du contenu réel."
+      "question": "Au bout de combien de temps vais-je voir des résultats avec la formule Santé Intestinale ?",
+      "answer": "De nombreux clients constatent un meilleur confort digestif après 2 à 4 semaines d'utilisation quotidienne régulière. Les résultats varient selon l'alimentation et le mode de vie."
     },
     "general3": {
-      "question": "Question générique 3",
-      "answer": "Réponse générique — à remplacer par du contenu réel."
+      "question": "Livrez-vous à l'international ?",
+      "answer": "Nous livrons actuellement dans les régions indiquées lors du paiement. Écrivez-nous sur WhatsApp avec votre localisation et nous confirmerons la disponibilité et les délais de livraison."
     },
     "general4": {
-      "question": "Question générique 4",
-      "answer": "Réponse générique — à remplacer par du contenu réel."
+      "question": "Quelle est votre politique de retour ?",
+      "answer": "Nous offrons une garantie satisfait ou remboursé de 30 jours. Si vous n'êtes pas satisfait, contactez-nous et nous procéderons au remboursement — consultez notre Politique de Remboursement pour tous les détails."
+    },
+    "general5": {
+      "question": "Vos produits sont-ils testés par un tiers indépendant ?",
+      "answer": "Oui. Chaque lot des deux formules est testé par un laboratoire indépendant pour sa pureté et son efficacité avant sa mise en vente."
+    },
+    "general6": {
+      "question": "Puis-je prendre les deux produits ensemble ?",
+      "answer": "Oui, de nombreux clients utilisent les deux formules dans leur routine quotidienne. Si vous suivez un traitement médicamenteux ou avez une pathologie, consultez d'abord votre médecin, notamment concernant les interactions du Bleu de Méthylène."
+    },
+    "general7": {
+      "question": "Les gélules et la teinture sont-elles véganes et sans gluten ?",
+      "answer": "Les gélules Santé Intestinale utilisent une enveloppe végétale et sont sans gluten. La teinture de Bleu de Méthylène ne contient aucun ingrédient d'origine animale."
+    },
+    "general8": {
+      "question": "Comment conserver mes compléments ?",
+      "answer": "Conservez les deux produits dans un endroit frais et sec, à l'abri de la lumière directe. La réfrigération n'est nécessaire pour aucun des deux produits."
     }
   },
   "whatsapp": {
-    "floatingButton": "Bonjour, j'ai une question.",
+    "floatingButton": "Bonjour, j'ai une question sur VitalSupps.",
     "ariaFloating": "Contacter via WhatsApp",
     "tooltip": "Une question ? Écrivez-nous",
-    "contactQuestion": "Bonjour, j'ai une question.",
+    "contactQuestion": "Bonjour, j'ai une question sur VitalSupps.",
     "defaultButton": "Bonjour, j'ai une question.",
     "ariaFreeTest": "Contacter via WhatsApp",
     "notFoundHelp": "Bonjour, je n'ai pas trouvé la page que je cherchais."
   },
   "contactSection": {
     "title": "Contactez-nous",
-    "description": "Une question ? Écrivez-nous."
+    "description": "Une question sur nos formules ? Écrivez-nous."
   },
   "footer": {
     "quickLinks": "Liens Rapides",
     "legal": "Légal",
-    "description": "Description générique du site.",
+    "description": "VitalSupps propose des compléments premium testés en laboratoire — Bleu de Méthylène pour la concentration et l'énergie cellulaire, et gélules Santé Intestinale pour le confort digestif. Fabriqué aux États-Unis dans une installation certifiée GMP.",
     "paymentMethods": "Moyens de Paiement",
-    "copyright": "© {year} Your Site Name. Tous droits réservés."
+    "copyright": "© {year} VitalSupps. Tous droits réservés.",
+    "fdaDisclaimer": "Ces déclarations n'ont pas été évaluées par la Food and Drug Administration (FDA). Ce produit n'est pas destiné à diagnostiquer, traiter, guérir ou prévenir une maladie. Consultez votre médecin avant utilisation, surtout en cas de grossesse, d'allaitement, de traitement médicamenteux ou de pathologie."
   },
   "legal": {
     "refundPolicy": {
       "title": "Politique de Remboursement",
-      "intro": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "intro2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intro": "Nous voulons que vous achetiez VitalSupps en toute confiance. Si vous n'êtes pas satisfait de votre commande de Bleu de Méthylène ou de Santé Intestinale, nous offrons une garantie satisfait ou remboursé de 30 jours à compter de la livraison.",
+      "intro2": "Pour demander un remboursement, contactez-nous via WhatsApp ou par email avec votre numéro de commande, et nous vous guiderons dans la procédure.",
       "howItWorksTitle": "Comment ça marche",
-      "howItWorksText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "conclusion": "Contenu générique de remplacement — à remplacer par le texte légal réel."
+      "howItWorksText": "Contactez-nous dans les 30 jours suivant la livraison. Une fois votre demande confirmée, nous traiterons votre remboursement sur le moyen de paiement d'origine sous 5 à 10 jours ouvrés. Les produits ouverts ou utilisés restent éligibles à cette garantie.",
+      "conclusion": "Pour toute question sur votre commande ou cette politique, écrivez-nous sur WhatsApp, nous serons ravis de vous aider."
     },
     "privacyPolicy": {
       "title": "Politique de Confidentialité",
-      "intro": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "intro2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intro": "VitalSupps respecte votre vie privée. Cette politique explique quelles informations nous collectons lorsque vous visitez notre site ou nous contactez, et comment nous les utilisons.",
+      "intro2": "Nous ne collectons que les informations nécessaires au traitement des commandes, aux réponses aux demandes et à l'amélioration de notre site.",
       "dataProtectionTitle": "Protection des données",
-      "dataProtectionText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataProtectionText": "Nous utilisons des mesures de sécurité conformes aux standards du secteur pour protéger toute information personnelle que vous partagez avec nous, y compris les détails de commande et de contact.",
       "dataUsageTitle": "Utilisation des données",
-      "dataUsageText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "dataUsageText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataUsageText": "Les informations que vous fournissez (nom, email, numéro WhatsApp) sont utilisées uniquement pour traiter les commandes et répondre à vos questions.",
+      "dataUsageText2": "Nous ne vendons pas vos données personnelles à des tiers.",
       "dataCollectionTitle": "Collecte des données",
-      "dataCollectionText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "dataCollectionText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataCollectionText": "Nous pouvons collecter des données analytiques de base (pages visitées) pour comprendre l'utilisation de notre site.",
+      "dataCollectionText2": "Les informations de contact ne sont collectées que lorsque vous les fournissez volontairement, par exemple via un message WhatsApp ou un formulaire de contact.",
       "securityTitle": "Sécurité",
-      "securityText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "conclusion": "Contenu générique de remplacement — à remplacer par le texte légal réel."
+      "securityText": "Nous prenons des mesures techniques et organisationnelles raisonnables pour protéger vos données contre tout accès, modification ou divulgation non autorisés.",
+      "conclusion": "Pour toute question sur le traitement de vos données, contactez-nous via les coordonnées indiquées dans notre pied de page."
     },
     "termsOfService": {
       "title": "Conditions d'Utilisation",
-      "intro": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intro": "En utilisant le site VitalSupps et en achetant nos produits, vous acceptez les conditions suivantes.",
       "definitionsTitle": "Définitions",
-      "definitionsText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "definitionsText": "« Nous » et « VitalSupps » désignent cette entreprise. « Vous » désigne le visiteur ou client utilisant notre site ou nos produits.",
       "cookiesTitle": "Cookies",
-      "cookiesText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "cookiesText": "Notre site peut utiliser des cookies pour améliorer votre expérience de navigation. En continuant à utiliser le site, vous consentez à notre utilisation des cookies.",
       "intellectualPropertyTitle": "Propriété intellectuelle",
-      "intellectualPropertyText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "intellectualPropertyRestrictions": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "restriction1": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "restriction2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intellectualPropertyText": "Tout le contenu de ce site, y compris les textes, graphismes, logos et formulations de produits, appartient à VitalSupps sauf mention contraire.",
+      "intellectualPropertyRestrictions": "Vous ne pouvez pas reproduire, distribuer ou créer des œuvres dérivées de notre contenu sans autorisation écrite.",
+      "restriction1": "N'utilisez pas notre marque ou nos noms de produits pour promouvoir des biens ou services sans rapport.",
+      "restriction2": "Ne copiez pas le design de notre site ou les descriptions de nos produits à des fins commerciales.",
       "commentsTitle": "Utilisation du service",
-      "commentsText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "commentsText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "commentsText": "Nos produits sont des compléments alimentaires et ne sont pas destinés à diagnostiquer, traiter, guérir ou prévenir une maladie.",
+      "commentsText2": "Consultez toujours un professionnel de santé avant de commencer un nouveau complément, en particulier en cas de grossesse, d'allaitement, de traitement médicamenteux ou de pathologie.",
       "hyperlinksTitle": "Durée et résiliation",
-      "hyperlinksText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
-      "hyperlinksText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "hyperlinksText": "Ces conditions restent en vigueur tant que vous utilisez notre site. Nous pouvons suspendre l'accès à toute personne qui les enfreint.",
+      "hyperlinksText2": "Vous pouvez cesser d'utiliser nos services à tout moment.",
       "iframesTitle": "Disponibilité et maintenance",
-      "iframesText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "iframesText": "Nous nous efforçons de maintenir notre site disponible en permanence, mais ne garantissons pas un accès ininterrompu et pouvons effectuer une maintenance sans préavis.",
       "contentResponsibilityTitle": "Applications tierces",
-      "contentResponsibilityText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "contentResponsibilityText": "Notre site peut renvoyer vers des services tiers, comme WhatsApp, à des fins de communication. Nous ne sommes pas responsables du contenu ou des pratiques de ces tiers.",
       "privacyDataTitle": "Vos données personnelles",
-      "privacyDataText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "privacyDataText": "Consultez notre Politique de Confidentialité pour tous les détails sur la collecte, l'utilisation et la protection de vos données personnelles.",
       "modificationsTitle": "Évolution de ces conditions",
-      "modificationsText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "modificationsText": "Nous pouvons mettre à jour ces conditions de temps à autre. La poursuite de l'utilisation de notre site après modification vaut acceptation des nouvelles conditions.",
       "linkRemovalTitle": "Signaler un problème",
-      "linkRemovalText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "linkRemovalText": "Si vous remarquez un problème sur notre site ou avez une préoccupation concernant notre contenu, contactez-nous et nous y remédierons rapidement.",
       "limitationTitle": "Limites de responsabilité",
-      "limitationText": "Contenu générique de remplacement — à remplacer par le texte légal réel."
+      "limitationText": "VitalSupps n'est pas responsable des dommages indirects, accessoires ou consécutifs résultant de l'utilisation de nos produits ou de notre site, dans la mesure permise par la loi."
     }
   }
 }
