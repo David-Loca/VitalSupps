@@ -1,0 +1,177 @@
+{
+  "notFound": {
+    "backHome": "Retour à l'accueil",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "quickLinksAriaLabel": "Liens rapides",
+    "signalLost": "Signal perdu",
+    "title": "Page introuvable"
+  },
+  "common": {
+    "home": "Accueil",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "contactUs": "Nous Contacter",
+    "features": "Fonctionnalités",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "privacyPolicy": "Politique de Confidentialité",
+    "refundPolicy": "Politique de Remboursement",
+    "termsOfService": "Conditions d'Utilisation",
+    "contactWhatsapp": "Contactez-nous sur WhatsApp"
+  },
+  "blog": {
+    "articlesAriaLabel": "Articles",
+    "backToBlog": "Retour au blog",
+    "description": "Derniers articles et actualités.",
+    "excerptUnavailable": "Extrait non disponible",
+    "eyebrow": "Blog",
+    "noPosts": "Aucun article pour le moment.",
+    "noPostsSubtitle": "Revenez bientôt pour du nouveau contenu.",
+    "readMore": "Lire la suite",
+    "title": "Blog",
+    "untitled": "Sans titre"
+  },
+  "home": {
+    "latestFromBlog": "Derniers Articles",
+    "latestFromBlogSubtitle": "Nos derniers articles et actualités.",
+    "viewAllArticles": "Voir tous les articles"
+  },
+  "hero": {
+    "title": "Welcome",
+    "subtitlePart1": "This is the homepage",
+    "subtitlePart2": "placeholder",
+    "description": "Replace this placeholder with real content."
+  },
+  "features": {
+    "sectionSubtitle": "Ce que propose notre produit.",
+    "sectionTitle": "Fonctionnalités",
+    "statChannelsLabel": "Statistique 1",
+    "statChannelsValue": "100+",
+    "statMoviesLabel": "Statistique 2",
+    "statMoviesValue": "100+",
+    "statSupportLabel": "Support",
+    "statSupportValue": "24/7",
+    "trustBadgesAlt": "Badges de confiance",
+    "feature1": {
+      "title": "Fonctionnalité 1",
+      "description": "Description générique de la fonctionnalité — à remplacer."
+    },
+    "feature2": {
+      "title": "Fonctionnalité 2",
+      "description": "Description générique de la fonctionnalité — à remplacer."
+    },
+    "feature3": {
+      "title": "Fonctionnalité 3",
+      "description": "Description générique de la fonctionnalité — à remplacer."
+    },
+    "feature4": {
+      "title": "Fonctionnalité 4",
+      "description": "Description générique de la fonctionnalité — à remplacer."
+    },
+    "feature5": {
+      "title": "Fonctionnalité 5",
+      "description": "Description générique de la fonctionnalité — à remplacer."
+    },
+    "feature6": {
+      "title": "Fonctionnalité 6",
+      "description": "Description générique de la fonctionnalité — à remplacer."
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "general1": {
+      "question": "Question générique 1",
+      "answer": "Réponse générique — à remplacer par du contenu réel."
+    },
+    "general2": {
+      "question": "Question générique 2",
+      "answer": "Réponse générique — à remplacer par du contenu réel."
+    },
+    "general3": {
+      "question": "Question générique 3",
+      "answer": "Réponse générique — à remplacer par du contenu réel."
+    },
+    "general4": {
+      "question": "Question générique 4",
+      "answer": "Réponse générique — à remplacer par du contenu réel."
+    }
+  },
+  "whatsapp": {
+    "floatingButton": "Bonjour, j'ai une question.",
+    "ariaFloating": "Contacter via WhatsApp",
+    "tooltip": "Une question ? Écrivez-nous",
+    "contactQuestion": "Bonjour, j'ai une question.",
+    "defaultButton": "Bonjour, j'ai une question.",
+    "ariaFreeTest": "Contacter via WhatsApp",
+    "notFoundHelp": "Bonjour, je n'ai pas trouvé la page que je cherchais."
+  },
+  "contactSection": {
+    "title": "Contactez-nous",
+    "description": "Une question ? Écrivez-nous."
+  },
+  "footer": {
+    "quickLinks": "Liens Rapides",
+    "legal": "Légal",
+    "description": "Description générique du site.",
+    "paymentMethods": "Moyens de Paiement",
+    "copyright": "© {year} Your Site Name. Tous droits réservés."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Politique de Remboursement",
+      "intro": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intro2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "howItWorksTitle": "Comment ça marche",
+      "howItWorksText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "conclusion": "Contenu générique de remplacement — à remplacer par le texte légal réel."
+    },
+    "privacyPolicy": {
+      "title": "Politique de Confidentialité",
+      "intro": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intro2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataProtectionTitle": "Protection des données",
+      "dataProtectionText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataUsageTitle": "Utilisation des données",
+      "dataUsageText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataUsageText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataCollectionTitle": "Collecte des données",
+      "dataCollectionText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "dataCollectionText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "securityTitle": "Sécurité",
+      "securityText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "conclusion": "Contenu générique de remplacement — à remplacer par le texte légal réel."
+    },
+    "termsOfService": {
+      "title": "Conditions d'Utilisation",
+      "intro": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "definitionsTitle": "Définitions",
+      "definitionsText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "cookiesTitle": "Cookies",
+      "cookiesText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intellectualPropertyTitle": "Propriété intellectuelle",
+      "intellectualPropertyText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "intellectualPropertyRestrictions": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "restriction1": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "restriction2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "commentsTitle": "Utilisation du service",
+      "commentsText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "commentsText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "hyperlinksTitle": "Durée et résiliation",
+      "hyperlinksText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "hyperlinksText2": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "iframesTitle": "Disponibilité et maintenance",
+      "iframesText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "contentResponsibilityTitle": "Applications tierces",
+      "contentResponsibilityText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "privacyDataTitle": "Vos données personnelles",
+      "privacyDataText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "modificationsTitle": "Évolution de ces conditions",
+      "modificationsText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "linkRemovalTitle": "Signaler un problème",
+      "linkRemovalText": "Contenu générique de remplacement — à remplacer par le texte légal réel.",
+      "limitationTitle": "Limites de responsabilité",
+      "limitationText": "Contenu générique de remplacement — à remplacer par le texte légal réel."
+    }
+  }
+}

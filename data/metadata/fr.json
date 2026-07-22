@@ -1,0 +1,28 @@
+{
+  "homepage": {
+    "title": "Your Site Name | Accueil",
+    "description": "Description générique du site — à remplacer par le contenu réel."
+  },
+  "blog": {
+    "title": "Blog | Your Site Name",
+    "description": "Actualités, guides et conseils."
+  },
+  "blogListing": {
+    "title": "Blog | Derniers Articles",
+    "description": "Parcourez notre collection d'articles."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Politique de Remboursement | Your Site Name",
+      "description": "Consultez la politique de remboursement de Your Site Name."
+    },
+    "privacyPolicy": {
+      "title": "Politique de Confidentialité | Your Site Name",
+      "description": "Découvrez comment Your Site Name collecte, utilise et protège vos données personnelles."
+    },
+    "termsOfService": {
+      "title": "Conditions d'Utilisation | Your Site Name",
+      "description": "Consultez les conditions d'utilisation des services Your Site Name."
+    }
+  }
+}

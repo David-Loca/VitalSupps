@@ -1,0 +1,177 @@
+{
+  "notFound": {
+    "backHome": "Torna alla home",
+    "description": "La pagina che stai cercando non esiste o è stata spostata.",
+    "quickLinksAriaLabel": "Link rapidi",
+    "signalLost": "Segnale perso",
+    "title": "Pagina non trovata"
+  },
+  "common": {
+    "home": "Home",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contatto",
+    "contactUs": "Contattaci",
+    "features": "Funzionalità",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "privacyPolicy": "Informativa sulla Privacy",
+    "refundPolicy": "Politica di Rimborso",
+    "termsOfService": "Termini di Servizio",
+    "contactWhatsapp": "Contattaci su WhatsApp"
+  },
+  "blog": {
+    "articlesAriaLabel": "Articoli",
+    "backToBlog": "Torna al blog",
+    "description": "Ultimi articoli e novità.",
+    "excerptUnavailable": "Estratto non disponibile",
+    "eyebrow": "Blog",
+    "noPosts": "Ancora nessun articolo.",
+    "noPostsSubtitle": "Torna presto per nuovi contenuti.",
+    "readMore": "Leggi di più",
+    "title": "Blog",
+    "untitled": "Senza titolo"
+  },
+  "home": {
+    "latestFromBlog": "Ultimi Articoli",
+    "latestFromBlogSubtitle": "I nostri ultimi articoli e novità.",
+    "viewAllArticles": "Vedi tutti gli articoli"
+  },
+  "hero": {
+    "title": "Welcome",
+    "subtitlePart1": "This is the homepage",
+    "subtitlePart2": "placeholder",
+    "description": "Replace this placeholder with real content."
+  },
+  "features": {
+    "sectionSubtitle": "Cosa offre il nostro prodotto.",
+    "sectionTitle": "Funzionalità",
+    "statChannelsLabel": "Statistica 1",
+    "statChannelsValue": "100+",
+    "statMoviesLabel": "Statistica 2",
+    "statMoviesValue": "100+",
+    "statSupportLabel": "Supporto",
+    "statSupportValue": "24/7",
+    "trustBadgesAlt": "Badge di fiducia",
+    "feature1": {
+      "title": "Funzionalità 1",
+      "description": "Descrizione generica della funzionalità — da sostituire."
+    },
+    "feature2": {
+      "title": "Funzionalità 2",
+      "description": "Descrizione generica della funzionalità — da sostituire."
+    },
+    "feature3": {
+      "title": "Funzionalità 3",
+      "description": "Descrizione generica della funzionalità — da sostituire."
+    },
+    "feature4": {
+      "title": "Funzionalità 4",
+      "description": "Descrizione generica della funzionalità — da sostituire."
+    },
+    "feature5": {
+      "title": "Funzionalità 5",
+      "description": "Descrizione generica della funzionalità — da sostituire."
+    },
+    "feature6": {
+      "title": "Funzionalità 6",
+      "description": "Descrizione generica della funzionalità — da sostituire."
+    }
+  },
+  "faq": {
+    "title": "Domande Frequenti",
+    "general1": {
+      "question": "Domanda generica 1",
+      "answer": "Risposta generica — da sostituire con contenuti reali."
+    },
+    "general2": {
+      "question": "Domanda generica 2",
+      "answer": "Risposta generica — da sostituire con contenuti reali."
+    },
+    "general3": {
+      "question": "Domanda generica 3",
+      "answer": "Risposta generica — da sostituire con contenuti reali."
+    },
+    "general4": {
+      "question": "Domanda generica 4",
+      "answer": "Risposta generica — da sostituire con contenuti reali."
+    }
+  },
+  "whatsapp": {
+    "floatingButton": "Ciao, ho una domanda.",
+    "ariaFloating": "Contatta via WhatsApp",
+    "tooltip": "Una domanda? Scrivici",
+    "contactQuestion": "Ciao, ho una domanda.",
+    "defaultButton": "Ciao, ho una domanda.",
+    "ariaFreeTest": "Contatta via WhatsApp",
+    "notFoundHelp": "Ciao, non ho trovato la pagina che cercavo."
+  },
+  "contactSection": {
+    "title": "Contattaci",
+    "description": "Una domanda? Scrivici."
+  },
+  "footer": {
+    "quickLinks": "Link Rapidi",
+    "legal": "Legale",
+    "description": "Descrizione generica del sito.",
+    "paymentMethods": "Metodi di Pagamento",
+    "copyright": "© {year} Your Site Name. Tutti i diritti riservati."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Politica di Rimborso",
+      "intro": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "intro2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "howItWorksTitle": "Come funziona",
+      "howItWorksText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "conclusion": "Testo segnaposto generico — da sostituire con il contenuto legale reale."
+    },
+    "privacyPolicy": {
+      "title": "Informativa sulla Privacy",
+      "intro": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "intro2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "dataProtectionTitle": "Protezione dei dati",
+      "dataProtectionText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "dataUsageTitle": "Utilizzo dei dati",
+      "dataUsageText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "dataUsageText2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "dataCollectionTitle": "Raccolta dati",
+      "dataCollectionText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "dataCollectionText2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "securityTitle": "Sicurezza",
+      "securityText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "conclusion": "Testo segnaposto generico — da sostituire con il contenuto legale reale."
+    },
+    "termsOfService": {
+      "title": "Termini di Servizio",
+      "intro": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "definitionsTitle": "Definizioni",
+      "definitionsText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "cookiesTitle": "Cookie",
+      "cookiesText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "intellectualPropertyTitle": "Proprietà intellettuale",
+      "intellectualPropertyText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "intellectualPropertyRestrictions": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "restriction1": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "restriction2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "commentsTitle": "Utilizzo del servizio",
+      "commentsText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "commentsText2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "hyperlinksTitle": "Durata e recesso",
+      "hyperlinksText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "hyperlinksText2": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "iframesTitle": "Disponibilità e manutenzione",
+      "iframesText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "contentResponsibilityTitle": "App di terze parti",
+      "contentResponsibilityText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "privacyDataTitle": "I tuoi dati personali",
+      "privacyDataText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "modificationsTitle": "Modifiche ai termini",
+      "modificationsText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "linkRemovalTitle": "Segnala un problema",
+      "linkRemovalText": "Testo segnaposto generico — da sostituire con il contenuto legale reale.",
+      "limitationTitle": "Limitazione di responsabilità",
+      "limitationText": "Testo segnaposto generico — da sostituire con il contenuto legale reale."
+    }
+  }
+}

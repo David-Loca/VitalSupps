@@ -1,0 +1,177 @@
+{
+  "notFound": {
+    "backHome": "Back to home",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "quickLinksAriaLabel": "Quick links",
+    "signalLost": "Signal lost",
+    "title": "Page not found"
+  },
+  "common": {
+    "home": "Home",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "contactUs": "Contact Us",
+    "features": "Features",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "privacyPolicy": "Privacy Policy",
+    "refundPolicy": "Refund Policy",
+    "termsOfService": "Terms of Service",
+    "contactWhatsapp": "Contact us on WhatsApp"
+  },
+  "blog": {
+    "articlesAriaLabel": "Articles",
+    "backToBlog": "Back to blog",
+    "description": "Latest articles and news.",
+    "excerptUnavailable": "Excerpt unavailable",
+    "eyebrow": "Blog",
+    "noPosts": "No articles yet.",
+    "noPostsSubtitle": "Check back soon for new content.",
+    "readMore": "Read more",
+    "title": "Blog",
+    "untitled": "Untitled"
+  },
+  "home": {
+    "latestFromBlog": "Latest Articles",
+    "latestFromBlogSubtitle": "Our latest articles and news.",
+    "viewAllArticles": "View all articles"
+  },
+  "hero": {
+    "title": "Welcome",
+    "subtitlePart1": "This is the homepage",
+    "subtitlePart2": "placeholder",
+    "description": "Replace this placeholder with real content."
+  },
+  "features": {
+    "sectionSubtitle": "What our product offers.",
+    "sectionTitle": "Features",
+    "statChannelsLabel": "Stat 1",
+    "statChannelsValue": "100+",
+    "statMoviesLabel": "Stat 2",
+    "statMoviesValue": "100+",
+    "statSupportLabel": "Support",
+    "statSupportValue": "24/7",
+    "trustBadgesAlt": "Trust badges",
+    "feature1": {
+      "title": "Feature 1",
+      "description": "Generic feature description — to be replaced."
+    },
+    "feature2": {
+      "title": "Feature 2",
+      "description": "Generic feature description — to be replaced."
+    },
+    "feature3": {
+      "title": "Feature 3",
+      "description": "Generic feature description — to be replaced."
+    },
+    "feature4": {
+      "title": "Feature 4",
+      "description": "Generic feature description — to be replaced."
+    },
+    "feature5": {
+      "title": "Feature 5",
+      "description": "Generic feature description — to be replaced."
+    },
+    "feature6": {
+      "title": "Feature 6",
+      "description": "Generic feature description — to be replaced."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "general1": {
+      "question": "Generic question 1",
+      "answer": "Generic answer — to be replaced with real content."
+    },
+    "general2": {
+      "question": "Generic question 2",
+      "answer": "Generic answer — to be replaced with real content."
+    },
+    "general3": {
+      "question": "Generic question 3",
+      "answer": "Generic answer — to be replaced with real content."
+    },
+    "general4": {
+      "question": "Generic question 4",
+      "answer": "Generic answer — to be replaced with real content."
+    }
+  },
+  "whatsapp": {
+    "floatingButton": "Hi, I have a question.",
+    "ariaFloating": "Contact via WhatsApp",
+    "tooltip": "Got a question? Message us",
+    "contactQuestion": "Hi, I have a question.",
+    "defaultButton": "Hi, I have a question.",
+    "ariaFreeTest": "Contact via WhatsApp",
+    "notFoundHelp": "Hi, I couldn't find the page I was looking for."
+  },
+  "contactSection": {
+    "title": "Contact Us",
+    "description": "Got a question? Message us."
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "description": "Generic site description.",
+    "paymentMethods": "Payment Methods",
+    "copyright": "© {year} Your Site Name. All rights reserved."
+  },
+  "legal": {
+    "refundPolicy": {
+      "title": "Refund Policy",
+      "intro": "Generic placeholder content — to be replaced with real legal text.",
+      "intro2": "Generic placeholder content — to be replaced with real legal text.",
+      "howItWorksTitle": "How it works",
+      "howItWorksText": "Generic placeholder content — to be replaced with real legal text.",
+      "conclusion": "Generic placeholder content — to be replaced with real legal text."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "intro": "Generic placeholder content — to be replaced with real legal text.",
+      "intro2": "Generic placeholder content — to be replaced with real legal text.",
+      "dataProtectionTitle": "Data protection",
+      "dataProtectionText": "Generic placeholder content — to be replaced with real legal text.",
+      "dataUsageTitle": "Data usage",
+      "dataUsageText": "Generic placeholder content — to be replaced with real legal text.",
+      "dataUsageText2": "Generic placeholder content — to be replaced with real legal text.",
+      "dataCollectionTitle": "Data collection",
+      "dataCollectionText": "Generic placeholder content — to be replaced with real legal text.",
+      "dataCollectionText2": "Generic placeholder content — to be replaced with real legal text.",
+      "securityTitle": "Security",
+      "securityText": "Generic placeholder content — to be replaced with real legal text.",
+      "conclusion": "Generic placeholder content — to be replaced with real legal text."
+    },
+    "termsOfService": {
+      "title": "Terms of Service",
+      "intro": "Generic placeholder content — to be replaced with real legal text.",
+      "definitionsTitle": "Definitions",
+      "definitionsText": "Generic placeholder content — to be replaced with real legal text.",
+      "cookiesTitle": "Cookies",
+      "cookiesText": "Generic placeholder content — to be replaced with real legal text.",
+      "intellectualPropertyTitle": "Intellectual property",
+      "intellectualPropertyText": "Generic placeholder content — to be replaced with real legal text.",
+      "intellectualPropertyRestrictions": "Generic placeholder content — to be replaced with real legal text.",
+      "restriction1": "Generic placeholder content — to be replaced with real legal text.",
+      "restriction2": "Generic placeholder content — to be replaced with real legal text.",
+      "commentsTitle": "Use of service",
+      "commentsText": "Generic placeholder content — to be replaced with real legal text.",
+      "commentsText2": "Generic placeholder content — to be replaced with real legal text.",
+      "hyperlinksTitle": "Term and termination",
+      "hyperlinksText": "Generic placeholder content — to be replaced with real legal text.",
+      "hyperlinksText2": "Generic placeholder content — to be replaced with real legal text.",
+      "iframesTitle": "Availability and maintenance",
+      "iframesText": "Generic placeholder content — to be replaced with real legal text.",
+      "contentResponsibilityTitle": "Third-party apps",
+      "contentResponsibilityText": "Generic placeholder content — to be replaced with real legal text.",
+      "privacyDataTitle": "Your personal data",
+      "privacyDataText": "Generic placeholder content — to be replaced with real legal text.",
+      "modificationsTitle": "Changes to these terms",
+      "modificationsText": "Generic placeholder content — to be replaced with real legal text.",
+      "linkRemovalTitle": "Report an issue",
+      "linkRemovalText": "Generic placeholder content — to be replaced with real legal text.",
+      "limitationTitle": "Limitation of liability",
+      "limitationText": "Generic placeholder content — to be replaced with real legal text."
+    }
+  }
+}
