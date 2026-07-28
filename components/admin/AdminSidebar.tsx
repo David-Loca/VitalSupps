@@ -5,6 +5,7 @@ import {
   MessageCircle,
   FileText,
   Type,
+  Package,
   Settings as SettingsIcon,
 } from "lucide-react";
 
@@ -13,12 +14,14 @@ export type AdminSection =
   | "whatsapp"
   | "settings"
   | "blogs"
+  | "products"
   | "metadata";
 
 const NAV_ITEMS: { section: AdminSection; label: string; icon: typeof Home }[] = [
   { section: "hero", label: "Homepage", icon: Home },
   { section: "whatsapp", label: "WhatsApp & CTA", icon: MessageCircle },
   { section: "blogs", label: "Blogs", icon: FileText },
+  { section: "products", label: "Products", icon: Package },
   { section: "metadata", label: "Page Metadata", icon: Type },
   { section: "settings", label: "Settings", icon: SettingsIcon },
 ];

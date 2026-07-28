@@ -107,25 +107,25 @@ export default function NotFoundContent() {
             {/* Home Button */}
             <Link
               href={`/${locale}/`}
-              className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent-blue text-white font-semibold rounded-lg shadow-lg hover:bg-accent-blue-dark hover:shadow-xl hover:ring-2 hover:ring-accent-blue/30 transition-all duration-200 text-sm sm:text-base lg:text-lg"
+              className="btn btn-dark group inline-flex items-center gap-2"
             >
-              <Home className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:-translate-x-1" />
+              <Home className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-1" />
               <span>{t("notFound.backHome")}</span>
             </Link>
 
             {/* Blog Button */}
             <Link
               href={`/${locale}/blog/`}
-              className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-accent-blue text-accent-blue font-semibold rounded-lg shadow-md hover:bg-accent-blue hover:text-white hover:shadow-xl transition-all duration-200 text-sm sm:text-base lg:text-lg"
+              className="btn btn-outline group inline-flex items-center gap-2"
             >
-              <Monitor className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:scale-110" />
+              <Monitor className="w-4 h-4 transition-transform duration-200 group-hover:scale-110" />
               <span>{t("common.blog")}</span>
             </Link>
 
             {/* Contact Button */}
             <button
               onClick={() => openWhatsApp(t("whatsapp.notFoundHelp"))}
-              className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#25D366] text-white font-semibold rounded-lg shadow-md hover:bg-[#20ba5a] hover:shadow-xl transition-all duration-200 text-sm sm:text-base lg:text-lg"
+              className="group inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-[#25D366] text-white font-semibold rounded-md shadow-sm hover:bg-[#20ba5a] hover:shadow-xl transition-all duration-200 text-sm sm:text-base lg:text-lg"
             >
               <Wifi className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-200 group-hover:rotate-12" />
               <span>{t("common.contactUs")}</span>
@@ -148,7 +148,7 @@ export default function NotFoundContent() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 rounded-full text-sm font-medium text-dark-text/75 bg-off-white hover:bg-accent-blue-light hover:text-accent-blue-dark transition-colors duration-200"
+                  className="px-4 py-2 rounded-md text-sm font-medium text-dark-text/75 bg-off-white hover:bg-accent-blue-light hover:text-accent-blue-dark transition-colors duration-200"
                 >
                   {link.label}
                 </Link>

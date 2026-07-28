@@ -15,7 +15,7 @@ const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) =>
   e.preventDefault();
   const element = document.querySelector(href);
   if (element) {
-    const headerHeight = 80;
+    const headerHeight = 112;
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
     window.scrollTo({
@@ -112,14 +112,14 @@ export default function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/30 hover:scale-[1.02] group"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-md text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/30 hover:scale-[1.02] group"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{t("common.whatsapp")}</span>
               </a>
               <a
                 href={`mailto:${contactEmail}`}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.02] group border border-white/20 hover:border-white/30"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-md text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.02] group border border-white/20 hover:border-white/30"
               >
                 <Mail className="w-4 h-4" />
                 <span>{t("common.email")}</span>
@@ -160,7 +160,7 @@ export default function Footer() {
                           e.preventDefault();
                           const contactSection = document.querySelector("#contact") || document.querySelector("#faq");
                           if (contactSection) {
-                            const headerHeight = 80;
+                            const headerHeight = 112;
                             const elementPosition = contactSection.getBoundingClientRect().top;
                             const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
                             window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -191,7 +191,7 @@ export default function Footer() {
             <h2 className="text-sm font-semibold text-white mb-2.5 tracking-wide uppercase">
               {t("footer.paymentMethods")}
             </h2>
-            <div className="relative w-full max-w-[160px] h-auto opacity-80 hover:opacity-100 transition-opacity duration-200 bg-white/5 p-1.5 rounded-lg backdrop-blur-sm border border-white/10 mb-3">
+            <div className="relative w-full max-w-[160px] h-auto opacity-80 hover:opacity-100 transition-opacity duration-200 bg-white/5 p-1.5 rounded-md backdrop-blur-sm border border-white/10 mb-3">
               <Image
                 src="/images/Methode-de-paiment.webp"
                 alt="Payment methods accepted"

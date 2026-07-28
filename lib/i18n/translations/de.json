@@ -46,11 +46,54 @@
     "ctaSecondary": "Schreiben Sie uns auf WhatsApp",
     "badgeLabTested": "Laborgeprüft",
     "badgeMadeInUsa": "Hergestellt in den USA",
-    "badgeNonGmo": "Gentechnikfrei"
+    "badgeNonGmo": "Gentechnikfrei",
+    "ribbon": "Bestseller",
+    "priceFrom": "Ab 35,99 $"
+  },
+  "announcement": {
+    "shipping": "Kostenloser Versand ab 50 $ Bestellwert",
+    "guarantee": "30-Tage Geld-zurück-Garantie",
+    "whatsapp": "Einfach per WhatsApp bestellen"
+  },
+  "breadcrumbs": {
+    "home": "Startseite",
+    "products": "Produkte"
+  },
+  "buyBox": {
+    "size": "Größe",
+    "quantity": "Menge",
+    "inStock": "Auf Lager",
+    "reviewsCount": "{count} Bewertungen",
+    "save": "{percent}% sparen",
+    "compareAt": "Regulärer Preis",
+    "trustLine": "Kostenloser Versand ab 50 $ · 30-Tage Geld-zurück-Garantie",
+    "addToCart": "Über WhatsApp kaufen"
+  },
+  "bundle": {
+    "eyebrow": "Bundle & Sparen",
+    "title": "Beide kaufen und sparen",
+    "subtitle": "Holen Sie sich die komplette VitalSupps-Routine — Methylenblau und Darmgesundheit — zum Bundle-Preis.",
+    "cta": "Nach dem Bundle fragen",
+    "bundlePrice": "Bundle-Preis",
+    "individualPrice": "Einzeln gekauft",
+    "youSave": "Sie sparen {amount}"
+  },
+  "reviewsSection": {
+    "title": "Kundenbewertungen",
+    "basedOn": "Basierend auf {count} Bewertungen",
+    "outOf": "von 5"
+  },
+  "specs": {
+    "title": "Produktdetails",
+    "servingSize": "Portionsgröße",
+    "servingsPerContainer": "Portionen pro Packung",
+    "form": "Darreichungsform",
+    "allergens": "Allergen-Hinweise"
   },
   "products": {
     "sectionTitle": "Unsere Formeln",
     "sectionSubtitle": "Zwei gezielte Produkte, jedes für ein bestimmtes Ziel formuliert — nichts Überflüssiges, nichts Verdünntes.",
+    "fromPrice": "Ab {price}",
     "shopNow": "Jetzt kaufen",
     "askOnWhatsapp": "Auf WhatsApp fragen",
     "buyOnWhatsapp": "Über WhatsApp kaufen",
@@ -58,7 +101,11 @@
     "targetAudience": "Für wen geeignet",
     "benefits": "Vorteile",
     "ingredients": "Inhaltsstoffe",
-    "howToUse": "Anwendung"
+    "howToUse": "Anwendung",
+    "badge": {
+      "bestseller": "Bestseller",
+      "new": "Neu"
+    }
   },
   "features": {
     "sectionSubtitle": "Reinheit, Wirksamkeit und Transparenz in jeder Charge.",

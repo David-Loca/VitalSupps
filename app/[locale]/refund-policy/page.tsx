@@ -18,7 +18,7 @@ export default function RefundPolicyPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      <main className="pt-32 pb-14">
+      <main className="pt-40 pb-14">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Title */}
           <motion.h1

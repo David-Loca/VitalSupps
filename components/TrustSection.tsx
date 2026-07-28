@@ -15,10 +15,10 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="py-10 sm:py-12 bg-dark-text border-y border-accent-secondary/25">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-dark-text">
+      <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-0">
-          <h2 className="font-display text-lg sm:text-xl text-white shrink-0 lg:w-56 lg:pr-8">
+          <h2 className="font-serif font-light text-lg sm:text-xl text-white shrink-0 lg:w-56 lg:pr-8">
             {t("trust.sectionTitle")}
           </h2>
 

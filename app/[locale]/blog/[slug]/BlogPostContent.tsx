@@ -177,7 +177,7 @@ export default function BlogPostContent({ blog, locale: serverLocale }: BlogPost
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-24 sm:pt-24 pb-10 sm:pb-14 md:pb-16">
+      <main className="pt-32 sm:pt-32 pb-10 sm:pb-14 md:pb-16">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Back Link */}
           <button

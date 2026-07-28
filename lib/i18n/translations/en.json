@@ -46,11 +46,54 @@
     "ctaSecondary": "Talk to us on WhatsApp",
     "badgeLabTested": "Lab Tested",
     "badgeMadeInUsa": "Made in the USA",
-    "badgeNonGmo": "Non-GMO"
+    "badgeNonGmo": "Non-GMO",
+    "ribbon": "Bestseller",
+    "priceFrom": "From $35.99"
+  },
+  "announcement": {
+    "shipping": "Free shipping on orders over $50",
+    "guarantee": "30-Day Money-Back Guarantee",
+    "whatsapp": "Order easily via WhatsApp"
+  },
+  "breadcrumbs": {
+    "home": "Home",
+    "products": "Products"
+  },
+  "buyBox": {
+    "size": "Size",
+    "quantity": "Quantity",
+    "inStock": "In Stock",
+    "reviewsCount": "{count} reviews",
+    "save": "Save {percent}%",
+    "compareAt": "Compare at",
+    "trustLine": "Free shipping over $50 · 30-day money-back guarantee",
+    "addToCart": "Buy via WhatsApp"
+  },
+  "bundle": {
+    "eyebrow": "Bundle & Save",
+    "title": "Buy Both & Save",
+    "subtitle": "Get the full VitalSupps routine — Methylene Blue and Gut Health — at a bundle price.",
+    "cta": "Ask About the Bundle",
+    "bundlePrice": "Bundle price",
+    "individualPrice": "Buying separately",
+    "youSave": "You save {amount}"
+  },
+  "reviewsSection": {
+    "title": "Customer Reviews",
+    "basedOn": "Based on {count} reviews",
+    "outOf": "out of 5"
+  },
+  "specs": {
+    "title": "Product Details",
+    "servingSize": "Serving Size",
+    "servingsPerContainer": "Servings Per Container",
+    "form": "Form",
+    "allergens": "Allergen Info"
   },
   "products": {
     "sectionTitle": "Our Formulas",
     "sectionSubtitle": "Two purposeful products, each formulated for a specific goal — nothing else in the lineup, nothing diluted.",
+    "fromPrice": "From {price}",
     "shopNow": "Shop Now",
     "askOnWhatsapp": "Ask on WhatsApp",
     "buyOnWhatsapp": "Buy via WhatsApp",
@@ -58,7 +101,11 @@
     "targetAudience": "Who it's for",
     "benefits": "Benefits",
     "ingredients": "Ingredients",
-    "howToUse": "How to Use"
+    "howToUse": "How to Use",
+    "badge": {
+      "bestseller": "Bestseller",
+      "new": "New"
+    }
   },
   "features": {
     "sectionSubtitle": "Purity, potency and transparency in every batch.",

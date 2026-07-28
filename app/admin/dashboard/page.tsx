@@ -27,6 +27,7 @@ import {
   normalizeInlineHeroText,
 } from "@/lib/i18n/normalize-hero-text";
 import BlogsManager from "@/components/admin/BlogsManager";
+import ProductsManager from "@/components/admin/ProductsManager";
 import DeploymentNotification from "@/components/admin/DeploymentNotification";
 import { AdminHeroPreview } from "@/components/admin/AdminLocalePreview";
 import AdminSidebar, { type AdminSection } from "@/components/admin/AdminSidebar";
@@ -728,6 +729,11 @@ export default function AdminDashboard() {
                 {/* Blogs Section Editor */}
                 {activeSection === "blogs" && (
                   <BlogsManager />
+                )}
+
+                {/* Products Section Editor */}
+                {activeSection === "products" && (
+                  <ProductsManager />
                 )}
 
                 {/* Metadata Section Editor */}

@@ -70,19 +70,19 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className={`pt-12 pb-6 sm:pt-16 sm:pb-8 lg:pt-20 lg:pb-10 xl:pt-24 xl:pb-12 2xl:pt-28 2xl:pb-16 ${surface.sectionSoftBg || "bg-white"}`}
+      className={`py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 ${surface.sectionSoftBg || "bg-white"}`}
     >
-      <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
+      <div className="max-w-[1200px] mx-auto">
         {/* Section Heading - Simple h2 for accessibility */}
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-center mb-4 xl:mb-6 2xl:mb-8 text-dark-text">
+        <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-center mb-4 xl:mb-6 2xl:mb-8 text-dark-text">
           {t("features.sectionTitle") || t("common.features")}
         </h2>
         {t("features.sectionSubtitle") ? (
-          <p className="text-center text-base sm:text-lg text-dark-text/70 max-w-3xl mx-auto mb-12 xl:mb-16 2xl:mb-20">
+          <p className="text-center text-[15px] leading-[1.75] text-muted-text max-w-3xl mx-auto mb-8 xl:mb-10 2xl:mb-12">
             {t("features.sectionSubtitle")}
           </p>
         ) : (
-          <div className="mb-12 xl:mb-16 2xl:mb-20" />
+          <div className="mb-8 xl:mb-10 2xl:mb-12" />
         )}
         
         {/* Stat panel + feature list */}
@@ -93,7 +93,7 @@ export default function FeaturesSection() {
             whileInView={reduceAnimations ? { opacity: 1 } : { opacity: 1, y: 0 }}
             viewport={{ once: true, margin: mobile ? "-50px" : "-100px" }}
             transition={reduceAnimations ? {} : { duration: 0.4, ease: "easeOut" }}
-            className="relative overflow-hidden rounded-lg bg-accent-blue-dark p-7 sm:p-9 flex flex-col justify-center gap-7 sm:gap-8"
+            className="relative overflow-hidden rounded-[4px] bg-dark-text p-7 sm:p-9 flex flex-col justify-center gap-7 sm:gap-8"
           >
             {[
               { value: t("features.statChannelsValue"), label: t("features.statChannelsLabel") },
@@ -101,7 +101,7 @@ export default function FeaturesSection() {
               { value: t("features.statSupportValue"), label: t("features.statSupportLabel") },
             ].map((stat) => (
               <div key={stat.label} className="relative z-10">
-                <p className="font-display text-3xl sm:text-4xl text-white leading-none mb-1.5">
+                <p className="font-serif font-light text-3xl sm:text-4xl text-white leading-none mb-1.5">
                   {stat.value}
                 </p>
                 <p className="text-sm sm:text-base text-white/75">{stat.label}</p>
@@ -125,7 +125,7 @@ export default function FeaturesSection() {
                 className="flex items-start gap-4"
               >
                 {/* Icon - plain thin-stroke, no colored circle */}
-                <div className="text-accent-blue shrink-0 mt-0.5">
+                <div className="text-accent-secondary shrink-0 mt-0.5">
                   {feature.icon}
                 </div>
 
@@ -136,7 +136,7 @@ export default function FeaturesSection() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-dark-text/70 leading-relaxed text-sm">
+                  <p className="text-muted-text text-[15px] leading-[1.75]">
                     {t(feature.descriptionKey)}
                   </p>
                 </div>

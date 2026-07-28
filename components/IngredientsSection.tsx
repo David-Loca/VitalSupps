@@ -9,19 +9,19 @@ export default function IngredientsSection() {
   const products = getAllProducts();
 
   return (
-    <section id="ingredients" className="py-16 sm:py-20 bg-off-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-[38%_62%] gap-10 lg:gap-16 items-start mb-12 lg:mb-16">
+    <section id="ingredients" className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[38%_62%] gap-10 lg:gap-16 items-start mb-8 lg:mb-10">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="font-display text-3xl sm:text-4xl text-dark-text"
+            className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text"
           >
             {t("ingredients.sectionTitle")}
           </motion.h2>
-          <p className="text-base sm:text-lg text-dark-text/70 lg:pt-2">
+          <p className="text-[15px] leading-[1.75] text-muted-text lg:pt-2">
             {t("ingredients.sectionSubtitle")}
           </p>
         </div>
@@ -39,12 +39,12 @@ export default function IngredientsSection() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className={`border-t-2 pt-5 ${isTerracotta ? "border-accent-terracotta" : "border-accent-blue"}`}
               >
-                <h3 className="text-lg sm:text-xl font-display text-dark-text mb-4">
+                <h3 className="font-serif font-light text-lg sm:text-xl text-dark-text mb-4">
                   {content.name}
                 </h3>
                 <ul className="space-y-2.5">
                   {content.ingredients.map((ingredient) => (
-                    <li key={ingredient} className="text-sm text-dark-text/80 leading-relaxed pl-4 relative">
+                    <li key={ingredient} className="text-[15px] leading-[1.75] text-muted-text pl-4 relative">
                       <span
                         className={`absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full ${
                           isTerracotta ? "bg-accent-terracotta" : "bg-accent-blue"

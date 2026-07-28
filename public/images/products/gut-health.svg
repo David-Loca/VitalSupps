@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 360" role="img" aria-label="Supplement capsule bottle line illustration">
   <defs>
     <radialGradient id="gh-cap-sheen" cx="0.3" cy="0.2" r="0.9">
-      <stop offset="0%" stop-color="#B5623A" stop-opacity="0.18" />
-      <stop offset="100%" stop-color="#B5623A" stop-opacity="0" />
+      <stop offset="0%" stop-color="#C05A32" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#C05A32" stop-opacity="0" />
     </radialGradient>
   </defs>
 
   <!-- cap -->
-  <path d="M70 70 L170 70 L166 116 L74 116 Z" fill="url(#gh-cap-sheen)" stroke="#1A1D17" stroke-width="1.8" />
-  <line x1="80" y1="82" x2="160" y2="82" stroke="#1A1D17" stroke-width="1" opacity="0.5" />
-  <line x1="78" y1="94" x2="162" y2="94" stroke="#1A1D17" stroke-width="1" opacity="0.5" />
-  <line x1="76" y1="106" x2="164" y2="106" stroke="#1A1D17" stroke-width="1" opacity="0.5" />
+  <path d="M70 70 L170 70 L166 116 L74 116 Z" fill="url(#gh-cap-sheen)" stroke="#0F1111" stroke-width="1.8" />
+  <line x1="80" y1="82" x2="160" y2="82" stroke="#0F1111" stroke-width="1" opacity="0.5" />
+  <line x1="78" y1="94" x2="162" y2="94" stroke="#0F1111" stroke-width="1" opacity="0.5" />
+  <line x1="76" y1="106" x2="164" y2="106" stroke="#0F1111" stroke-width="1" opacity="0.5" />
 
   <!-- bottle body -->
   <path d="M74 116
@@ -20,20 +20,20 @@
            L94 322
            Q68 322 68 296
            Z"
-        fill="none" stroke="#1A1D17" stroke-width="1.8" />
+        fill="none" stroke="#0F1111" stroke-width="1.8" />
 
   <!-- shoulder detail -->
-  <path d="M74 116 Q120 130 166 116" fill="none" stroke="#1A1D17" stroke-width="1.2" opacity="0.6" />
+  <path d="M74 116 Q120 130 166 116" fill="none" stroke="#0F1111" stroke-width="1.2" opacity="0.6" />
 
   <!-- label -->
-  <rect x="84" y="176" width="72" height="80" rx="2" fill="#F7F4EC" stroke="#B5623A" stroke-width="1.1" />
-  <text x="120" y="200" text-anchor="middle" font-family="Georgia, serif" font-size="10" fill="#3F4F3C" letter-spacing="1">VITALSUPPS</text>
-  <line x1="96" y1="210" x2="144" y2="210" stroke="#B5623A" stroke-width="0.8" />
-  <text x="120" y="228" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#1A1D17">Gut Health</text>
-  <text x="120" y="243" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="#1A1D17" opacity="0.7">60 Capsules</text>
+  <rect x="84" y="176" width="72" height="80" rx="2" fill="#FFFFFF" stroke="#C05A32" stroke-width="1.1" />
+  <text x="120" y="200" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="10" fill="#1F5D3E" letter-spacing="1">VITALSUPPS</text>
+  <line x1="96" y1="210" x2="144" y2="210" stroke="#C05A32" stroke-width="0.8" />
+  <text x="120" y="228" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="9" fill="#0F1111">Gut Health</text>
+  <text x="120" y="243" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="8" fill="#0F1111" opacity="0.7">60 Capsules</text>
 
   <!-- a few capsules scattered beside bottle -->
-  <g stroke="#1A1D17" stroke-width="1.4" fill="none">
+  <g stroke="#0F1111" stroke-width="1.4" fill="none">
     <rect x="20" y="270" width="34" height="14" rx="7" transform="rotate(-18 37 277)" />
     <line x1="30" y1="271" x2="24" y2="283" transform="rotate(-18 37 277)" opacity="0.6" />
     <rect x="188" y="230" width="30" height="12" rx="6" transform="rotate(24 203 236)" />
@@ -41,7 +41,7 @@
   </g>
 
   <!-- botanical sprig accent -->
-  <g stroke="#B5623A" stroke-width="1" fill="none" opacity="0.8">
+  <g stroke="#C05A32" stroke-width="1" fill="none" opacity="0.8">
     <path d="M180 132 Q194 122 192 104" />
     <path d="M186 127 Q192 120 190 112" />
   </g>

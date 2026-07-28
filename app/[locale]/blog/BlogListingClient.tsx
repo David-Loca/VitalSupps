@@ -23,7 +23,7 @@ export default function BlogListingClient({ initialBlogs, locale }: BlogListingC
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <main className="pt-24 sm:pt-24 pb-10 sm:pb-14" role="main">
+      <main className="pt-32 sm:pt-32 pb-10 sm:pb-14" role="main">
         <div className="max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
           {/* Hero Section */}
           <section className="relative mb-12 sm:mb-16 md:mb-20" aria-labelledby="blog-heading">

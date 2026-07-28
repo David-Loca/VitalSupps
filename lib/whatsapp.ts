@@ -46,9 +46,32 @@ export function getWhatsAppUrl(message?: string): string {
 /**
  * Generate a WhatsApp URL pre-filled with a product inquiry message.
  * @param productName - The product's display name
+ * @param quantity - Optional quantity to include in the pre-filled message (e.g. from a buy box quantity stepper)
+ * @param variantLabel - Optional selected variant label (e.g. "120 Capsules") to include in the pre-filled message
  */
-export function getProductWhatsAppUrl(productName: string): string {
-  return getWhatsAppUrl(`Hi, I'm interested in ${productName}. Can you tell me more?`);
+export function getProductWhatsAppUrl(
+  productName: string,
+  quantity?: number,
+  variantLabel?: string
+): string {
+  const productDescriptor = `${productName}${variantLabel ? ` (${variantLabel})` : ""}`;
+  if (quantity && quantity > 1) {
+    return getWhatsAppUrl(
+      `Hi, I'd like to order ${quantity}x ${productDescriptor}. Can you help me complete my purchase?`
+    );
+  }
+  return getWhatsAppUrl(`Hi, I'm interested in ${productDescriptor}. Can you tell me more?`);
+}
+
+/**
+ * Generate a WhatsApp URL pre-filled with a bundle inquiry message for buying
+ * multiple products together (e.g. the "Buy Both & Save" offer).
+ * @param productNames - Display names of the products in the bundle
+ */
+export function getBundleWhatsAppUrl(productNames: string[]): string {
+  return getWhatsAppUrl(
+    `Hi, I'm interested in the bundle deal: ${productNames.join(" + ")}. Can you tell me more?`
+  );
 }
 
 /**

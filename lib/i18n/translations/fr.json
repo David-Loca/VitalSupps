@@ -46,11 +46,54 @@
     "ctaSecondary": "Parlez-nous sur WhatsApp",
     "badgeLabTested": "Testé en Laboratoire",
     "badgeMadeInUsa": "Fabriqué aux États-Unis",
-    "badgeNonGmo": "Sans OGM"
+    "badgeNonGmo": "Sans OGM",
+    "ribbon": "Meilleure vente",
+    "priceFrom": "À partir de 35,99 $"
+  },
+  "announcement": {
+    "shipping": "Livraison gratuite dès 50 $ d'achat",
+    "guarantee": "Garantie satisfait ou remboursé 30 jours",
+    "whatsapp": "Commandez facilement via WhatsApp"
+  },
+  "breadcrumbs": {
+    "home": "Accueil",
+    "products": "Produits"
+  },
+  "buyBox": {
+    "size": "Taille",
+    "quantity": "Quantité",
+    "inStock": "En stock",
+    "reviewsCount": "{count} avis",
+    "save": "Économisez {percent}%",
+    "compareAt": "Prix habituel",
+    "trustLine": "Livraison gratuite dès 50 $ · Garantie satisfait ou remboursé 30 jours",
+    "addToCart": "Acheter via WhatsApp"
+  },
+  "bundle": {
+    "eyebrow": "Pack & Économies",
+    "title": "Achetez les Deux et Économisez",
+    "subtitle": "Obtenez la routine complète VitalSupps — Bleu de Méthylène et Santé Intestinale — à prix pack.",
+    "cta": "Demander le Pack",
+    "bundlePrice": "Prix du pack",
+    "individualPrice": "En achat séparé",
+    "youSave": "Vous économisez {amount}"
+  },
+  "reviewsSection": {
+    "title": "Avis Clients",
+    "basedOn": "Basé sur {count} avis",
+    "outOf": "sur 5"
+  },
+  "specs": {
+    "title": "Détails du Produit",
+    "servingSize": "Portion",
+    "servingsPerContainer": "Portions par Flacon",
+    "form": "Format",
+    "allergens": "Allergènes"
   },
   "products": {
     "sectionTitle": "Nos Formules",
     "sectionSubtitle": "Deux produits ciblés, chacun formulé pour un objectif précis — rien de superflu, rien de dilué.",
+    "fromPrice": "À partir de {price}",
     "shopNow": "Acheter",
     "askOnWhatsapp": "Demander sur WhatsApp",
     "buyOnWhatsapp": "Acheter via WhatsApp",
@@ -58,7 +101,11 @@
     "targetAudience": "Pour qui",
     "benefits": "Bienfaits",
     "ingredients": "Ingrédients",
-    "howToUse": "Mode d'emploi"
+    "howToUse": "Mode d'emploi",
+    "badge": {
+      "bestseller": "Meilleure vente",
+      "new": "Nouveau"
+    }
   },
   "features": {
     "sectionSubtitle": "Pureté, efficacité et transparence à chaque lot.",

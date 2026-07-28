@@ -46,11 +46,54 @@
     "ctaSecondary": "Escríbenos por WhatsApp",
     "badgeLabTested": "Probado en Laboratorio",
     "badgeMadeInUsa": "Hecho en EE. UU.",
-    "badgeNonGmo": "Sin OGM"
+    "badgeNonGmo": "Sin OGM",
+    "ribbon": "Más vendido",
+    "priceFrom": "Desde $35.99"
+  },
+  "announcement": {
+    "shipping": "Envío gratis en pedidos superiores a $50",
+    "guarantee": "Garantía de devolución de 30 días",
+    "whatsapp": "Pide fácilmente por WhatsApp"
+  },
+  "breadcrumbs": {
+    "home": "Inicio",
+    "products": "Productos"
+  },
+  "buyBox": {
+    "size": "Tamaño",
+    "quantity": "Cantidad",
+    "inStock": "En stock",
+    "reviewsCount": "{count} reseñas",
+    "save": "Ahorra {percent}%",
+    "compareAt": "Precio habitual",
+    "trustLine": "Envío gratis desde $50 · Garantía de devolución de 30 días",
+    "addToCart": "Comprar por WhatsApp"
+  },
+  "bundle": {
+    "eyebrow": "Pack y Ahorro",
+    "title": "Compra Ambos y Ahorra",
+    "subtitle": "Consigue la rutina completa VitalSupps — Azul de Metileno y Salud Intestinal — a precio de pack.",
+    "cta": "Preguntar por el Pack",
+    "bundlePrice": "Precio del pack",
+    "individualPrice": "Comprando por separado",
+    "youSave": "Ahorras {amount}"
+  },
+  "reviewsSection": {
+    "title": "Opiniones de Clientes",
+    "basedOn": "Basado en {count} reseñas",
+    "outOf": "sobre 5"
+  },
+  "specs": {
+    "title": "Detalles del Producto",
+    "servingSize": "Tamaño de la Porción",
+    "servingsPerContainer": "Porciones por Envase",
+    "form": "Formato",
+    "allergens": "Información de Alérgenos"
   },
   "products": {
     "sectionTitle": "Nuestras Fórmulas",
     "sectionSubtitle": "Dos productos con propósito, cada uno formulado para un objetivo específico — nada superfluo, nada diluido.",
+    "fromPrice": "Desde {price}",
     "shopNow": "Comprar Ahora",
     "askOnWhatsapp": "Preguntar por WhatsApp",
     "buyOnWhatsapp": "Comprar por WhatsApp",
@@ -58,7 +101,11 @@
     "targetAudience": "Para quién es",
     "benefits": "Beneficios",
     "ingredients": "Ingredientes",
-    "howToUse": "Modo de Uso"
+    "howToUse": "Modo de Uso",
+    "badge": {
+      "bestseller": "Más vendido",
+      "new": "Nuevo"
+    }
   },
   "features": {
     "sectionSubtitle": "Pureza, potencia y transparencia en cada lote.",

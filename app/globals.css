@@ -4,35 +4,49 @@
 /* Critical CSS - inline above-the-fold styles */
 
 @theme inline {
-  /* Font Families */
+  /* Font Families — Pass 6 (B&B Beauty ground truth): Inter sans + Cormorant Garamond display serif */
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-heading: var(--font-plus-jakarta-sans), system-ui, -apple-system, sans-serif;
-  --font-display: var(--font-fraunces), "Georgia", serif;
+  --font-heading: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
 
-  /* Colors - base surfaces ("Botanical Apothecary": warm ivory paper) */
+  /* Colors - base surfaces (Pass 6: warm off-white + near-black, luxury) */
   --color-white: #ffffff;
-  --color-off-white: #f7f4ec;
-  --color-light-gray: #e7ece1;
-  --color-dark-text: #1a1d17;
-  --color-subtle-gray: #d9d3c1;
+  --color-off-white: #f7f5f2;
+  --color-light-gray: #f0f2f2;
+  --color-dark-text: #111111;
+  --color-subtle-gray: #e8e4de;
+  --color-muted-text: #888888;
 
-  /* Colors - brand primary (Deep Sage green), with hover/tint/ring steps */
-  --color-accent-blue: #3f4f3c;
-  --color-accent-blue-dark: #2c3829;
-  --color-accent-blue-light: #e7ece1;
+  /* Colors - brand primary (saturated forest green), with hover/tint/ring steps */
+  --color-accent-blue: #1f5d3e;
+  --color-accent-blue-dark: #153f2a;
+  --color-accent-blue-light: #e3f0e9;
   --color-accent-blue-ring: #8fa286;
 
-  /* Colors - secondary accent (Antique Gold) */
-  --color-accent-secondary: #b08d57;
+  /* Colors - secondary accent (Pass 6 gold, B&B Beauty ground truth) */
+  --color-accent-secondary: #c4a35a;
+  --color-accent-secondary-dark: #b8964e;
+  --color-accent-secondary-light: #e8d5a3;
 
   /* Colors - Terracotta accent (Gut Health product line) */
-  --color-accent-terracotta: #b5623a;
+  --color-accent-terracotta: #c05a32;
   --color-accent-terracotta-dark: #8f4b2c;
   --color-accent-terracotta-light: #f3e3da;
 
   /* Colors - semantic state */
   --color-success: #16a34a;
   --color-warning: #b45309;
+
+  /* Colors - Ecommerce density addendum (sale badges, savings, star ratings) */
+  --color-sale: #b33a3a;
+  --color-sale-dark: #8f2e2e;
+  --color-sale-light: #f6e3e0;
+  --color-star: #ffa41c;
+
+  /* Colors - retired Pass 4 CTA orange (Pass 6 supersedes: primary buy button is now black --color-dark-text) */
+  --color-cta: #ffa41c;
+  --color-cta-dark: #e0900a;
 
   /* Typography scale */
   --text-display: 3.5rem;
@@ -42,10 +56,10 @@
   --text-body-lg: 1.125rem;
   --text-body: 1rem;
 
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  /* Border Radius — Commerce Reset (Pass 4): small uniform radius, no pills */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
   --radius-full: 999px;
 
   /* Shadows */
@@ -72,6 +86,7 @@ section[id] {
 
 body {
   font-family: var(--font-sans);
+  font-weight: 300;
   color: var(--color-dark-text);
   background: var(--color-white);
   overflow-x: clip;
@@ -85,12 +100,60 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.01em;
 }
 
-.font-display {
-  font-family: var(--font-display);
+/* Pass 6 — B&B Beauty ground truth: display headings use serif at light weight */
+.font-display,
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Pass 6 button system (supersedes Pass 4's rounded/orange buttons) */
+.btn {
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  border-radius: 2px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-dark {
+  background: #111111;
+  color: #ffffff;
+}
+
+.btn-dark:hover {
+  background: #2a2a2a;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #111111;
+  border: 1px solid #e8e4de;
+}
+
+.btn-outline:hover {
+  border-color: #111111;
+}
+
+.btn-gold {
+  background: #c4a35a;
+  color: #111111;
+}
+
+.btn-gold:hover {
+  background: #b8964e;
 }
 
 @keyframes scroll {
