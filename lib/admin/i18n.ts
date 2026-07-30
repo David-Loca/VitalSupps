@@ -108,6 +108,22 @@ interface AdminDictionary {
     emailButtonLabel: string;
     contactStripTitle: string;
     heading: string;
+    fields: Record<
+      | "floatingButton"
+      | "defaultButton"
+      | "ctaSection"
+      | "homePage"
+      | "pricingPlan"
+      | "contactQuestion"
+      | "installationHelp"
+      | "resellerInterest"
+      | "notFoundHelp"
+      | "tooltip"
+      | "contactButton"
+      | "ariaFloating"
+      | "ariaFreeTest",
+      { label: string; hint?: string }
+    >;
   };
   metadata: {
     title: string;
@@ -316,6 +332,27 @@ const en: AdminDictionary = {
     emailButtonLabel: "Email button label",
     contactStripTitle: "Contact strip",
     heading: "Heading",
+    fields: {
+      floatingButton: {
+        label: "Floating button (corner chat)",
+        hint: "Pre-filled when visitors tap the floating WhatsApp icon.",
+      },
+      defaultButton: { label: "Default WhatsApp button" },
+      ctaSection: { label: "CTA section button" },
+      homePage: { label: "Homepage channels CTA" },
+      pricingPlan: {
+        label: "Pricing card “Buy now”",
+        hint: "Use {planName} where the plan title should appear.",
+      },
+      contactQuestion: { label: "Footer / contact question" },
+      installationHelp: { label: "Installation pages help" },
+      resellerInterest: { label: "Reseller program" },
+      notFoundHelp: { label: "404 page" },
+      tooltip: { label: "Floating button tooltip" },
+      contactButton: { label: "Installation “Contact” link text" },
+      ariaFloating: { label: "Accessibility label (floating button)" },
+      ariaFreeTest: { label: "Accessibility label (WhatsApp info button)" },
+    },
   },
   metadata: {
     title: "Page Metadata",
@@ -527,6 +564,27 @@ const fr: AdminDictionary = {
     emailButtonLabel: "Libellé du bouton e-mail",
     contactStripTitle: "Bandeau de contact",
     heading: "Titre",
+    fields: {
+      floatingButton: {
+        label: "Bouton flottant (coin de l'écran)",
+        hint: "Pré-rempli lorsque les visiteurs touchent l'icône WhatsApp flottante.",
+      },
+      defaultButton: { label: "Bouton WhatsApp par défaut" },
+      ctaSection: { label: "Bouton du bloc CTA" },
+      homePage: { label: "CTA « chaînes » de l'accueil" },
+      pricingPlan: {
+        label: "Bouton « Acheter » de la carte tarifaire",
+        hint: "Utilisez {planName} à l'endroit où le nom de l'offre doit apparaître.",
+      },
+      contactQuestion: { label: "Question du pied de page / contact" },
+      installationHelp: { label: "Aide des pages d'installation" },
+      resellerInterest: { label: "Programme revendeur" },
+      notFoundHelp: { label: "Page 404" },
+      tooltip: { label: "Infobulle du bouton flottant" },
+      contactButton: { label: "Texte du lien « Contact » (installation)" },
+      ariaFloating: { label: "Libellé d'accessibilité (bouton flottant)" },
+      ariaFreeTest: { label: "Libellé d'accessibilité (bouton info WhatsApp)" },
+    },
   },
   metadata: {
     title: "Métadonnées des pages",
@@ -739,6 +797,27 @@ const es: AdminDictionary = {
     emailButtonLabel: "Etiqueta del botón de correo",
     contactStripTitle: "Franja de contacto",
     heading: "Encabezado",
+    fields: {
+      floatingButton: {
+        label: "Botón flotante (esquina de chat)",
+        hint: "Se rellena al tocar el icono flotante de WhatsApp.",
+      },
+      defaultButton: { label: "Botón de WhatsApp predeterminado" },
+      ctaSection: { label: "Botón de la sección CTA" },
+      homePage: { label: "CTA de canales en el inicio" },
+      pricingPlan: {
+        label: "Botón «Comprar ahora» de la tarjeta de precios",
+        hint: "Usa {planName} donde deba aparecer el nombre del plan.",
+      },
+      contactQuestion: { label: "Pregunta del pie de página / contacto" },
+      installationHelp: { label: "Ayuda de páginas de instalación" },
+      resellerInterest: { label: "Programa de revendedores" },
+      notFoundHelp: { label: "Página 404" },
+      tooltip: { label: "Texto emergente del botón flotante" },
+      contactButton: { label: "Texto del enlace «Contacto» (instalación)" },
+      ariaFloating: { label: "Etiqueta de accesibilidad (botón flotante)" },
+      ariaFreeTest: { label: "Etiqueta de accesibilidad (botón info WhatsApp)" },
+    },
   },
   metadata: {
     title: "Metadatos de páginas",
@@ -951,6 +1030,27 @@ const de: AdminDictionary = {
     emailButtonLabel: "Beschriftung des E-Mail-Buttons",
     contactStripTitle: "Kontaktbereich",
     heading: "Überschrift",
+    fields: {
+      floatingButton: {
+        label: "Schwebender Button (Ecken-Chat)",
+        hint: "Wird vorausgefüllt, wenn Besucher auf das schwebende WhatsApp-Symbol tippen.",
+      },
+      defaultButton: { label: "Standard-WhatsApp-Button" },
+      ctaSection: { label: "Button im CTA-Bereich" },
+      homePage: { label: "Kanäle-CTA der Startseite" },
+      pricingPlan: {
+        label: "„Jetzt kaufen“-Button der Preiskarte",
+        hint: "Verwende {planName} an der Stelle, an der der Tarifname erscheinen soll.",
+      },
+      contactQuestion: { label: "Frage in Footer / Kontakt" },
+      installationHelp: { label: "Hilfe auf Installationsseiten" },
+      resellerInterest: { label: "Reseller-Programm" },
+      notFoundHelp: { label: "404-Seite" },
+      tooltip: { label: "Tooltip des schwebenden Buttons" },
+      contactButton: { label: "Text des „Kontakt“-Links (Installation)" },
+      ariaFloating: { label: "Barrierefreiheits-Label (schwebender Button)" },
+      ariaFreeTest: { label: "Barrierefreiheits-Label (WhatsApp-Info-Button)" },
+    },
   },
   metadata: {
     title: "Seiten-Metadaten",

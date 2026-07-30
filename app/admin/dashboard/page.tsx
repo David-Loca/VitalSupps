@@ -49,62 +49,24 @@ interface Translations {
   };
 }
 
-const WHATSAPP_MESSAGE_FIELDS: { key: string; label: string; hint?: string }[] = [
-  {
-    key: "floatingButton",
-    label: "Floating button (corner chat)",
-    hint: "Pre-filled when visitors tap the floating WhatsApp icon.",
-  },
-  {
-    key: "defaultButton",
-    label: "Default WhatsApp button",
-  },
-  {
-    key: "ctaSection",
-    label: "CTA section button",
-  },
-  {
-    key: "homePage",
-    label: "Homepage channels CTA",
-  },
-  {
-    key: "pricingPlan",
-    label: "Pricing card “Buy now”",
-    hint: "Use {planName} where the plan title should appear.",
-  },
-  {
-    key: "contactQuestion",
-    label: "Footer / contact question",
-  },
-  {
-    key: "installationHelp",
-    label: "Installation pages help",
-  },
-  {
-    key: "resellerInterest",
-    label: "Reseller program",
-  },
-  {
-    key: "notFoundHelp",
-    label: "404 page",
-  },
-  {
-    key: "tooltip",
-    label: "Floating button tooltip",
-  },
-  {
-    key: "contactButton",
-    label: "Installation “Contact” link text",
-  },
-  {
-    key: "ariaFloating",
-    label: "Accessibility label (floating button)",
-  },
-  {
-    key: "ariaFreeTest",
-    label: "Accessibility label (WhatsApp info button)",
-  },
-];
+// Order for the WhatsApp pre-filled message fields — labels/hints come from
+// the localized admin dictionary (lib/admin/i18n.ts) so they follow the
+// selected admin UI language.
+const WHATSAPP_MESSAGE_FIELD_KEYS = [
+  "floatingButton",
+  "defaultButton",
+  "ctaSection",
+  "homePage",
+  "pricingPlan",
+  "contactQuestion",
+  "installationHelp",
+  "resellerInterest",
+  "notFoundHelp",
+  "tooltip",
+  "contactButton",
+  "ariaFloating",
+  "ariaFreeTest",
+] as const;
 
 const LOCALE_LABELS: Record<string, string> = {
   en: "EN",
@@ -117,31 +79,23 @@ const LOCALE_LABELS: Record<string, string> = {
 // translations/{locale}.json, data/metadata/{locale}.json, etc. behind it.
 const ADMIN_LOCALE_ORDER = ["en", "fr", "es", "de"] as const;
 
+// Labels/badges come from the localized admin dictionary (ui.metadata) —
+// these constants just fix the section keys and icons.
 const METADATA_PAGES: {
-  section: string;
-  label: string;
-  badge: string;
+  section: "homepage" | "blogListing" | "blog" | "reseller";
+  labelKey: "homepage" | "blogListing" | "blog" | "reseller";
+  badgeKey: "homepageBadge" | "blogListingBadge" | "blogBadge" | "resellerBadge";
   icon: typeof Home;
 }[] = [
-  { section: "homepage", label: "Homepage", badge: "Main page", icon: Home },
-  { section: "blogListing", label: "Blog Listing Page", badge: "Content", icon: FileText },
-  { section: "blog", label: "Blog Page", badge: "SEO", icon: Edit },
-  { section: "reseller", label: "Reseller Program Page", badge: "Business", icon: Users },
+  { section: "homepage", labelKey: "homepage", badgeKey: "homepageBadge", icon: Home },
+  { section: "blogListing", labelKey: "blogListing", badgeKey: "blogListingBadge", icon: FileText },
+  { section: "blog", labelKey: "blog", badgeKey: "blogBadge", icon: Edit },
+  { section: "reseller", labelKey: "reseller", badgeKey: "resellerBadge", icon: Users },
 ];
 
-const METADATA_INSTALLATION_PAGES: { key: string; label: string }[] = [
-  { key: "windows", label: "Windows Installation" },
-  { key: "ios", label: "iOS Installation" },
-  { key: "firestick", label: "Firestick Installation" },
-  { key: "smartTv", label: "Smart TV Installation" },
-  { key: "guide", label: "Installation Guide" },
-];
+const METADATA_INSTALLATION_PAGE_KEYS = ["windows", "ios", "firestick", "smartTv", "guide"] as const;
 
-const METADATA_LEGAL_PAGES: { key: string; label: string }[] = [
-  { key: "refundPolicy", label: "Refund Policy" },
-  { key: "privacyPolicy", label: "Privacy Policy" },
-  { key: "termsOfService", label: "Terms of Service" },
-];
+const METADATA_LEGAL_PAGE_KEYS = ["refundPolicy", "privacyPolicy", "termsOfService"] as const;
 
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -705,21 +659,24 @@ export default function AdminDashboard() {
                   <div className="space-y-8">
                     <SectionHero
                       icon={<MessageCircle className="w-7 h-7" strokeWidth={2} />}
-                      title="WhatsApp & CTA"
-                      subtitle="Pre-filled messages, homepage CTA and contact strip copy"
+                      title={ui.whatsapp.title}
+                      subtitle={ui.whatsapp.subtitle}
                     />
 
                     <Card
                       icon={<MessageCircle className="w-6 h-6 text-admin-primary" strokeWidth={2} />}
-                      title="WhatsApp pre-filled messages"
-                      subtitle={`Each field is sent as the opening message in WhatsApp when that button is clicked on the ${LOCALE_LABELS[activeLocale] ?? activeLocale} site.`}
+                      title={ui.whatsapp.messagesTitle}
+                      subtitle={ui.whatsapp.messagesSubtitle.replace(
+                        "{locale}",
+                        LOCALE_LABELS[activeLocale] ?? activeLocale
+                      )}
                     >
                       <div className="space-y-5">
-                        {WHATSAPP_MESSAGE_FIELDS.map(({ key, label, hint }) => (
+                        {WHATSAPP_MESSAGE_FIELD_KEYS.map((key) => (
                           <Textarea
                             key={key}
-                            label={label}
-                            hint={hint}
+                            label={ui.whatsapp.fields[key].label}
+                            hint={ui.whatsapp.fields[key].hint}
                             value={getValue(`whatsapp.${key}`)}
                             onChange={(e) => updateValue(`whatsapp.${key}`, e.target.value)}
                             rows={key === "pricingPlan" ? 2 : 3}
@@ -728,32 +685,32 @@ export default function AdminDashboard() {
                       </div>
                     </Card>
 
-                    <Card title="CTA section (homepage)">
+                    <Card title={ui.whatsapp.ctaSectionTitle}>
                       <div className="space-y-5">
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                           {(["title", "title2", "title3"] as const).map((key) => (
                             <Input
                               key={key}
-                              label={`Title line — ${key}`}
+                              label={`${ui.whatsapp.titleLinePrefix}${key}`}
                               value={getValue(`cta.${key}`)}
                               onChange={(e) => updateValue(`cta.${key}`, e.target.value)}
                             />
                           ))}
                         </div>
                         <Textarea
-                          label="Description"
+                          label={ui.whatsapp.description}
                           value={getValue("cta.description")}
                           onChange={(e) => updateValue("cta.description", e.target.value)}
                           rows={3}
                         />
                         <TwoCol>
                           <Input
-                            label="WhatsApp button label"
+                            label={ui.whatsapp.whatsappButtonLabel}
                             value={getValue("cta.whatsapp")}
                             onChange={(e) => updateValue("cta.whatsapp", e.target.value)}
                           />
                           <Input
-                            label="Email button label"
+                            label={ui.whatsapp.emailButtonLabel}
                             value={getValue("cta.email")}
                             onChange={(e) => updateValue("cta.email", e.target.value)}
                           />
@@ -761,15 +718,15 @@ export default function AdminDashboard() {
                       </div>
                     </Card>
 
-                    <Card title="Contact strip">
+                    <Card title={ui.whatsapp.contactStripTitle}>
                       <div className="space-y-5">
                         <Input
-                          label="Heading"
+                          label={ui.whatsapp.heading}
                           value={getValue("contactSection.title")}
                           onChange={(e) => updateValue("contactSection.title", e.target.value)}
                         />
                         <Textarea
-                          label="Description"
+                          label={ui.whatsapp.description}
                           value={getValue("contactSection.description")}
                           onChange={(e) =>
                             updateValue("contactSection.description", e.target.value)
@@ -795,32 +752,32 @@ export default function AdminDashboard() {
                   <div className="space-y-8">
                     <SectionHero
                       icon={<Type className="w-7 h-7" strokeWidth={2} />}
-                      title="Page Metadata"
-                      subtitle="Edit SEO titles and descriptions for all pages"
+                      title={ui.metadata.title}
+                      subtitle={ui.metadata.subtitle}
                     />
 
-                    {METADATA_PAGES.map(({ section, label, badge, icon: Icon }) => (
+                    {METADATA_PAGES.map(({ section, labelKey, badgeKey, icon: Icon }) => (
                       <Card
                         key={section}
                         icon={<Icon className="w-5 h-5 text-admin-primary" strokeWidth={2} />}
-                        title={label}
-                        headerAction={<Badge variant="primary">{badge}</Badge>}
+                        title={ui.metadata.pages[labelKey]}
+                        headerAction={<Badge variant="primary">{ui.metadata.pages[badgeKey]}</Badge>}
                       >
                         <div className="space-y-5">
                           <Input
-                            label="Page Title"
+                            label={ui.metadata.pageTitle}
                             value={getMetadataField(section, "title")}
                             onChange={(e) => updateMetadataField(section, "title", e.target.value)}
-                            placeholder="Enter page title for SEO..."
+                            placeholder={ui.metadata.pageTitlePlaceholder}
                           />
                           <Textarea
-                            label="Meta Description"
+                            label={ui.metadata.metaDescription}
                             value={getMetadataField(section, "description")}
                             onChange={(e) =>
                               updateMetadataField(section, "description", e.target.value)
                             }
                             rows={4}
-                            placeholder="Enter meta description for SEO..."
+                            placeholder={ui.metadata.metaDescriptionPlaceholder}
                           />
                         </div>
                       </Card>
@@ -829,39 +786,45 @@ export default function AdminDashboard() {
                     {/* Installation Pages */}
                     <Card
                       icon={<SettingsIcon className="w-5 h-5 text-admin-primary" strokeWidth={2} />}
-                      title="Installation Pages"
-                      headerAction={<Badge variant="gold">{METADATA_INSTALLATION_PAGES.length} Pages</Badge>}
+                      title={ui.metadata.installationTitle}
+                      headerAction={
+                        <Badge variant="gold">
+                          {METADATA_INSTALLATION_PAGE_KEYS.length} {ui.metadata.installationPagesSuffix}
+                        </Badge>
+                      }
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                        {METADATA_INSTALLATION_PAGES.map((page) => (
+                        {METADATA_INSTALLATION_PAGE_KEYS.map((key) => (
                           <div
-                            key={page.key}
+                            key={key}
                             className="rounded-admin-md border border-admin-border bg-admin-bg p-5 transition-all hover:border-admin-primary/30 hover:shadow-[var(--shadow-admin-card)]"
                           >
-                            <h4 className="mb-4 font-semibold text-admin-text">{page.label}</h4>
+                            <h4 className="mb-4 font-semibold text-admin-text">
+                              {ui.metadata.installationItems[key]}
+                            </h4>
                             <div className="space-y-4">
                               <Input
-                                label="Page Title"
-                                value={getMetadataField("installation", "title", page.key)}
+                                label={ui.metadata.pageTitle}
+                                value={getMetadataField("installation", "title", key)}
                                 onChange={(e) =>
-                                  updateMetadataField("installation", "title", e.target.value, page.key)
+                                  updateMetadataField("installation", "title", e.target.value, key)
                                 }
-                                placeholder="Enter page title..."
+                                placeholder={ui.metadata.pageTitlePlaceholder}
                                 className="h-12"
                               />
                               <Textarea
-                                label="Meta Description"
-                                value={getMetadataField("installation", "description", page.key)}
+                                label={ui.metadata.metaDescription}
+                                value={getMetadataField("installation", "description", key)}
                                 onChange={(e) =>
                                   updateMetadataField(
                                     "installation",
                                     "description",
                                     e.target.value,
-                                    page.key
+                                    key
                                   )
                                 }
                                 rows={3}
-                                placeholder="Enter meta description..."
+                                placeholder={ui.metadata.metaDescriptionPlaceholder}
                               />
                             </div>
                           </div>
@@ -872,34 +835,40 @@ export default function AdminDashboard() {
                     {/* Legal Pages */}
                     <Card
                       icon={<AlignLeft className="w-5 h-5 text-admin-primary" strokeWidth={2} />}
-                      title="Legal Pages"
-                      headerAction={<Badge variant="neutral">{METADATA_LEGAL_PAGES.length} Pages</Badge>}
+                      title={ui.metadata.legalTitle}
+                      headerAction={
+                        <Badge variant="neutral">
+                          {METADATA_LEGAL_PAGE_KEYS.length} {ui.metadata.installationPagesSuffix}
+                        </Badge>
+                      }
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                        {METADATA_LEGAL_PAGES.map((page) => (
+                        {METADATA_LEGAL_PAGE_KEYS.map((key) => (
                           <div
-                            key={page.key}
+                            key={key}
                             className="rounded-admin-md border border-admin-border bg-admin-bg p-5 transition-all hover:border-admin-primary/30 hover:shadow-[var(--shadow-admin-card)]"
                           >
-                            <h4 className="mb-4 font-semibold text-admin-text">{page.label}</h4>
+                            <h4 className="mb-4 font-semibold text-admin-text">
+                              {ui.metadata.legalItems[key]}
+                            </h4>
                             <div className="space-y-4">
                               <Input
-                                label="Page Title"
-                                value={getMetadataField("legal", "title", page.key)}
+                                label={ui.metadata.pageTitle}
+                                value={getMetadataField("legal", "title", key)}
                                 onChange={(e) =>
-                                  updateMetadataField("legal", "title", e.target.value, page.key)
+                                  updateMetadataField("legal", "title", e.target.value, key)
                                 }
-                                placeholder="Enter page title..."
+                                placeholder={ui.metadata.pageTitlePlaceholder}
                                 className="h-12"
                               />
                               <Textarea
-                                label="Meta Description"
-                                value={getMetadataField("legal", "description", page.key)}
+                                label={ui.metadata.metaDescription}
+                                value={getMetadataField("legal", "description", key)}
                                 onChange={(e) =>
-                                  updateMetadataField("legal", "description", e.target.value, page.key)
+                                  updateMetadataField("legal", "description", e.target.value, key)
                                 }
                                 rows={4}
-                                placeholder="Enter meta description..."
+                                placeholder={ui.metadata.metaDescriptionPlaceholder}
                               />
                             </div>
                           </div>
