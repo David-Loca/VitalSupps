@@ -44,14 +44,17 @@ import {
   getBlogTitlePlaceholder,
 } from "@/lib/admin/admin-locale-labels";
 import BlogLocaleToolbar from "@/components/admin/BlogLocaleToolbar";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 interface BlogEditorProps {
   onSave: (blog: BlogPost) => Promise<void>;
   onDelete?: (blogId: string) => Promise<void>;
   initialBlog?: BlogPost;
+  locale: string;
 }
 
-export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditorProps) {
+export default function BlogEditor({ onSave, onDelete, initialBlog, locale }: BlogEditorProps) {
+  const ui = getAdminDict(locale);
   const [blog, setBlog] = useState<BlogPost>(
     initialBlog || {
       id: "",
@@ -399,9 +402,9 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-medium text-admin-text mb-1">
-              {initialBlog ? "Edit Blog Post" : "Create New Blog Post"}
+              {initialBlog ? ui.editorChrome.editBlogTitle : ui.editorChrome.createBlogTitle}
             </h2>
-            <p className="text-admin-text-secondary text-sm">Design your blog post with complete freedom</p>
+            <p className="text-admin-text-secondary text-sm">{ui.editorChrome.createBlogSubtitle}</p>
           </div>
           <div className="flex items-center gap-3">
             <button
@@ -412,22 +415,22 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
               {isSaving ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Saving...</span>
+                  <span>{ui.common.saving}</span>
                 </>
               ) : saveStatus === "success" ? (
                 <>
                   <Check className="w-4 h-4" />
-                  <span>Saved</span>
+                  <span>{ui.common.saved}</span>
                 </>
               ) : saveStatus === "error" ? (
                 <>
                   <X className="w-4 h-4" />
-                  <span>Error</span>
+                  <span>{ui.common.error}</span>
                 </>
               ) : (
                 <>
                   <Save className="w-4 h-4" />
-                  <span>Save Blog</span>
+                  <span>{ui.editorChrome.saveBlog}</span>
                 </>
               )}
             </button>
@@ -437,7 +440,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                 className="inline-flex items-center gap-2 px-4 py-2 bg-admin-danger hover:bg-admin-danger text-white font-medium rounded-admin-md transition-all"
               >
                 <Trash2 className="w-4 h-4" />
-                <span>Delete</span>
+                <span>{ui.common.delete}</span>
               </button>
             )}
           </div>
@@ -452,6 +455,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
           onBlogChange={setBlog}
           onActiveLocaleChange={setActiveLocale}
           onPrimaryLocaleChange={setPrimaryLocale}
+          uiLocale={locale}
           onPublishedLocalesChange={setPublishedLocales}
           onMirrorModeChange={setMirrorMode}
         />
@@ -609,7 +613,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
               )}
               <label className="inline-flex items-center gap-2 px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text font-medium rounded-admin-md transition-all cursor-pointer">
                 <Upload className="w-4 h-4" />
-                <span>{isUploading ? "Uploading..." : blog.featuredImage ? "Change Image" : "Upload Image"}</span>
+                <span>{isUploading ? ui.common.uploading : blog.featuredImage ? ui.common.changeImage : ui.common.uploadImage}</span>
                 <input
                   type="file"
                   accept="image/*"
@@ -658,9 +662,9 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
       <div className="bg-white rounded-admin-lg border border-admin-border p-6 relative">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-lg font-medium text-admin-text mb-1">Content blocks</h3>
+            <h3 className="text-lg font-medium text-admin-text mb-1">{ui.editorChrome.contentBlocksTitle}</h3>
             <p className="text-admin-text-secondary text-sm">
-              Use block language tabs for per-language text, or turn on mirror editing above. Images are shared across languages.
+              {ui.editorChrome.contentBlocksSubtitle}
             </p>
           </div>
         </div>
@@ -671,42 +675,42 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             <button
               onClick={() => addBlock("heading")}
               className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
-              title="Add Heading"
+              title={ui.editorChrome.addHeading}
             >
               <Heading className="w-4 h-4" />
-              <span className="hidden sm:inline">Heading</span>
+              <span className="hidden sm:inline">{ui.editorChrome.addHeading}</span>
             </button>
             <button
               onClick={() => addBlock("paragraph")}
               className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
-              title="Add Text"
+              title={ui.editorChrome.addText}
             >
               <Type className="w-4 h-4" />
-              <span className="hidden sm:inline">Text</span>
+              <span className="hidden sm:inline">{ui.editorChrome.addText}</span>
             </button>
             <button
               onClick={() => addBlock("image")}
               className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
-              title="Add Image"
+              title={ui.editorChrome.addImage}
             >
               <ImageIcon className="w-4 h-4" />
-              <span className="hidden sm:inline">Image</span>
+              <span className="hidden sm:inline">{ui.editorChrome.addImage}</span>
             </button>
             <button
               onClick={() => addBlock("quote")}
               className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
-              title="Add Quote"
+              title={ui.editorChrome.addQuote}
             >
               <Quote className="w-4 h-4" />
-              <span className="hidden sm:inline">Quote</span>
+              <span className="hidden sm:inline">{ui.editorChrome.addQuote}</span>
             </button>
             <button
               onClick={() => addBlock("list")}
               className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
-              title="Add List"
+              title={ui.editorChrome.addList}
             >
               <List className="w-4 h-4" />
-              <span className="hidden sm:inline">List</span>
+              <span className="hidden sm:inline">{ui.editorChrome.addList}</span>
             </button>
           </div>
         </div>
@@ -715,7 +719,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
         <div className="space-y-4 pb-24">
           {blog.blocks.length === 0 && (
             <div className="text-center py-12 text-admin-text-secondary">
-              <p>No content blocks yet. Click the buttons above to add content.</p>
+              <p>{ui.editorChrome.noBlocks}</p>
             </div>
           )}
           {blog.blocks.map((block, index) => {
@@ -1073,7 +1077,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                           <div className="flex items-center gap-2">
                             <label className="inline-flex items-center gap-2 px-3 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all cursor-pointer text-sm">
                               <Upload className="w-4 h-4" />
-                              <span>{isUploading ? "Uploading..." : "Change Image"}</span>
+                              <span>{isUploading ? ui.common.uploading : ui.common.changeImage}</span>
                               <input
                                 type="file"
                                 accept="image/*"
@@ -1257,7 +1261,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                         }}
                         className="mt-2 px-3 py-1 text-sm text-admin-text-secondary hover:text-admin-text border border-admin-border rounded-admin-md hover:bg-admin-bg"
                       >
-                        + Add Item
+                        {ui.common.addItem}
                       </button>
                     </div>
                   )}
@@ -1272,7 +1276,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
       {/* Bottom Save Button */}
       <div className="bg-white rounded-admin-lg border border-admin-border p-6 mt-6">
         <div className="flex flex-col items-center gap-4">
-          <p className="text-sm text-admin-text-secondary">Remember to save your changes before leaving</p>
+          <p className="text-sm text-admin-text-secondary">{ui.editorChrome.rememberSave}</p>
           <button
             onClick={handleSave}
             disabled={isSaving}
@@ -1281,22 +1285,22 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             {isSaving ? (
               <>
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Saving...</span>
+                <span>{ui.common.saving}</span>
               </>
             ) : saveStatus === "success" ? (
               <>
                 <Check className="w-4 h-4" />
-                <span>Saved</span>
+                <span>{ui.common.saved}</span>
               </>
             ) : saveStatus === "error" ? (
               <>
                 <X className="w-4 h-4" />
-                <span>Error</span>
+                <span>{ui.common.error}</span>
               </>
             ) : (
               <>
                 <Save className="w-4 h-4" />
-                <span>Save Blog</span>
+                <span>{ui.editorChrome.saveBlog}</span>
               </>
             )}
           </button>

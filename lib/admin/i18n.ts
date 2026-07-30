@@ -1173,8 +1173,8 @@ const de: AdminDictionary = {
 
 const dictionaries: Record<AdminLocale, AdminDictionary> = { en, fr, es, de };
 
-export function getAdminDict(locale: AdminLocale): AdminDictionary {
-  return dictionaries[locale] ?? dictionaries.en;
+export function getAdminDict(locale: string): AdminDictionary {
+  return dictionaries[locale as AdminLocale] ?? dictionaries.en;
 }
 
 export type { AdminDictionary };

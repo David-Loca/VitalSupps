@@ -17,8 +17,10 @@ import Card from "@/components/admin/ui/Card";
 import Badge from "@/components/admin/ui/Badge";
 import Modal from "@/components/admin/ui/Modal";
 import SectionHero from "@/components/admin/ui/SectionHero";
+import { getAdminDict } from "@/lib/admin/i18n";
 
-export default function BlogsManager() {
+export default function BlogsManager({ locale }: { locale: string }) {
+  const ui = getAdminDict(locale);
   const [blogs, setBlogs] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedBlog, setSelectedBlog] = useState<BlogPost | undefined | null>(null);
@@ -179,18 +181,20 @@ export default function BlogsManager() {
             className="inline-flex items-center gap-2 text-[14px] font-medium text-admin-text-secondary transition-colors hover:text-admin-primary cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" strokeWidth={2} />
-            Back to Blogs List
+            {ui.editorChrome.backToBlogs}
           </button>
         </div>
         <BlogEditor
           initialBlog={selectedBlog || undefined}
           onSave={handleSave}
           onDelete={selectedBlog && typeof selectedBlog === 'object' && 'id' in selectedBlog ? () => handleDelete(selectedBlog.id) : undefined}
+          locale={locale}
         />
         <DeploymentNotification
           show={showDeploymentNotification}
           onClose={() => setShowDeploymentNotification(false)}
           type={saveStatus === "error" ? "error" : "success"}
+          locale={locale}
         />
       </div>
     );
@@ -204,10 +208,10 @@ export default function BlogsManager() {
           <AlertTriangle className="w-7 h-7 text-admin-danger" strokeWidth={2} />
         </div>
         <h3 className="text-[19px] font-semibold text-admin-text text-center mb-2">
-          Delete Blog Post?
+          {ui.blogs.deleteTitle}
         </h3>
         <p className="text-[14px] text-admin-text-secondary text-center mb-6">
-          Are you sure you want to delete{" "}
+          {ui.blogs.deleteConfirmPrefix}{" "}
           <span className="font-medium text-admin-text">
             &quot;
             {deleteConfirmBlog &&
@@ -216,7 +220,7 @@ export default function BlogsManager() {
               ).trim()}
             &quot;
           </span>
-          ? This action cannot be undone.
+          ? {ui.blogs.deleteWarning}
         </p>
         <div className="flex items-center gap-3">
           <Button
@@ -225,7 +229,7 @@ export default function BlogsManager() {
             disabled={isDeleting === deleteConfirmBlog?.id}
             className="flex-1"
           >
-            Cancel
+            {ui.common.cancel}
           </Button>
           <Button
             variant="danger"
@@ -235,7 +239,7 @@ export default function BlogsManager() {
             icon={<Trash2 className="w-4 h-4" strokeWidth={2} />}
             className="flex-1 !bg-admin-danger !text-white hover:!bg-admin-danger/90"
           >
-            {isDeleting === deleteConfirmBlog?.id ? "Deleting..." : "Delete"}
+            {isDeleting === deleteConfirmBlog?.id ? ui.common.deleting : ui.common.delete}
           </Button>
         </div>
       </Modal>
@@ -243,8 +247,8 @@ export default function BlogsManager() {
       <div className="space-y-8">
         <SectionHero
           icon={<FileText className="w-7 h-7" strokeWidth={2} />}
-          title="Blog Management"
-          subtitle="Create and manage blog posts"
+          title={ui.blogs.title}
+          subtitle={ui.blogs.subtitle}
         />
 
         <Card
@@ -254,25 +258,25 @@ export default function BlogsManager() {
               onClick={() => setSelectedBlog(undefined)}
               icon={<Plus className="w-4 h-4" strokeWidth={2} />}
             >
-              Create New Blog
+              {ui.blogs.createNew}
             </Button>
           }
         >
           {isLoading ? (
             <div className="text-center py-16">
               <Loader2 className="w-8 h-8 text-admin-primary animate-spin mx-auto mb-4" />
-              <p className="text-admin-text-secondary text-[14px]">Loading blogs...</p>
+              <p className="text-admin-text-secondary text-[14px]">{ui.blogs.loading}</p>
             </div>
           ) : blogs.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-admin-text-secondary text-[14px] mb-4">No blog posts yet.</p>
+              <p className="text-admin-text-secondary text-[14px] mb-4">{ui.blogs.empty}</p>
               <Button
                 variant="primary"
                 onClick={() => setSelectedBlog(undefined)}
                 icon={<Plus className="w-4 h-4" strokeWidth={2} />}
                 className="mx-auto"
               >
-                Create Your First Blog Post
+                {ui.blogs.createFirst}
               </Button>
             </div>
           ) : (
@@ -325,7 +329,7 @@ export default function BlogsManager() {
                       icon={<Edit className="w-3.5 h-3.5" strokeWidth={2} />}
                       className="flex-1"
                     >
-                      Edit
+                      {ui.common.edit}
                     </Button>
                     <a
                       href={getBlogUrl(blog, previewPrimary(blog).locale)}
@@ -334,7 +338,7 @@ export default function BlogsManager() {
                       className="inline-flex h-9 items-center justify-center gap-1.5 rounded-[12px] border border-admin-border bg-white px-3.5 text-[13px] font-medium text-admin-text transition-all hover:-translate-y-[1px] hover:bg-admin-hover"
                     >
                       <Eye className="w-3.5 h-3.5" strokeWidth={2} />
-                      View
+                      {ui.common.view}
                     </a>
                     <Button
                       variant="danger"
@@ -342,7 +346,7 @@ export default function BlogsManager() {
                       onClick={() => handleDeleteClick(blog)}
                       disabled={isDeleting === blog.id}
                       className="!px-2.5"
-                      aria-label="Delete blog"
+                      aria-label={ui.common.delete}
                     >
                       {isDeleting === blog.id ? (
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -363,6 +367,7 @@ export default function BlogsManager() {
         show={showDeploymentNotification}
         onClose={() => setShowDeploymentNotification(false)}
         type={saveStatus === "error" ? "error" : "success"}
+        locale={locale}
       />
     </>
   );

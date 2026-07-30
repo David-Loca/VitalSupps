@@ -883,27 +883,29 @@ export default function AdminDashboard() {
                   <div className="space-y-8">
                     <SectionHero
                       icon={<SettingsIcon className="w-7 h-7" strokeWidth={2} />}
-                      title="Settings"
-                      subtitle="Edit navigation menu items"
+                      title={ui.settings.title}
+                      subtitle={ui.settings.subtitle}
                     />
 
-                    <Card title="Navigation Menu" subtitle="Labels shown in the site header">
+                    <Card title={ui.settings.navMenuTitle} subtitle={ui.settings.navMenuSubtitle}>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        {[
-                          { key: "home", label: "Home" },
-                          { key: "pricing", label: "Pricing" },
-                          { key: "features", label: "Features" },
-                          { key: "faq", label: "FAQ" },
-                          { key: "contact", label: "Contact" },
-                          { key: "blog", label: "Blog" },
-                          { key: "iptvReseller", label: "Reseller (legacy)" },
-                        ].map((item) => (
+                        {(
+                          [
+                            "home",
+                            "pricing",
+                            "features",
+                            "faq",
+                            "contact",
+                            "blog",
+                            "iptvReseller",
+                          ] as const
+                        ).map((key) => (
                           <Input
-                            key={item.key}
-                            label={item.label}
-                            value={getValue(`common.${item.key}`)}
-                            onChange={(e) => updateValue(`common.${item.key}`, e.target.value)}
-                            placeholder={item.label}
+                            key={key}
+                            label={ui.settings.items[key]}
+                            value={getValue(`common.${key}`)}
+                            onChange={(e) => updateValue(`common.${key}`, e.target.value)}
+                            placeholder={ui.settings.items[key]}
                           />
                         ))}
                       </div>

@@ -15,6 +15,7 @@ import {
 import type { BlogPost } from "@/lib/admin/blog-shared";
 import Badge from "@/components/admin/ui/Badge";
 import Button from "@/components/admin/ui/Button";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 interface BlogLocaleToolbarProps {
   blog: BlogPost;
@@ -27,6 +28,8 @@ interface BlogLocaleToolbarProps {
   onPrimaryLocaleChange: (locale: BlogLocale) => void;
   onPublishedLocalesChange: (locales: BlogLocale[]) => void;
   onMirrorModeChange: (enabled: boolean) => void;
+  /** Admin UI display language — distinct from `activeLocale` (the content language being edited). */
+  uiLocale: string;
 }
 
 export default function BlogLocaleToolbar({
@@ -40,7 +43,9 @@ export default function BlogLocaleToolbar({
   onPrimaryLocaleChange,
   onPublishedLocalesChange,
   onMirrorModeChange,
+  uiLocale,
 }: BlogLocaleToolbarProps) {
+  const ui = getAdminDict(uiLocale).localeToolbar;
   const otherPublished = publishedLocales.filter((l) => l !== activeLocale);
 
   const togglePublished = (loc: BlogLocale) => {
@@ -84,14 +89,12 @@ export default function BlogLocaleToolbar({
   return (
     <div className="mb-6 space-y-4 rounded-admin-md border border-admin-border bg-admin-bg p-5">
       <div>
-        <h3 className="text-[14px] font-semibold text-admin-text">Languages</h3>
-        <p className="text-[12px] text-admin-text-secondary mt-1">
-          Write in one language first, then copy or use mirror mode. Publish only the languages you select.
-        </p>
+        <h3 className="text-[14px] font-semibold text-admin-text">{ui.title}</h3>
+        <p className="text-[12px] text-admin-text-secondary mt-1">{ui.subtitle}</p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-[12px] font-medium text-admin-text-secondary mr-1">Publish:</span>
+        <span className="text-[12px] font-medium text-admin-text-secondary mr-1">{ui.publish}</span>
         {BLOG_LOCALES.map((loc) => {
           const checked = publishedLocales.includes(loc);
           const complete = hasLocalePublishableContent(blog, loc);
@@ -115,7 +118,7 @@ export default function BlogLocaleToolbar({
                 {ADMIN_BLOG_LOCALE_LABELS[loc]}
               </span>
               {checked && (
-                <Badge variant={complete ? "success" : "warning"}>{complete ? "ready" : "draft"}</Badge>
+                <Badge variant={complete ? "success" : "warning"}>{complete ? ui.ready : ui.draft}</Badge>
               )}
             </label>
           );
@@ -123,7 +126,7 @@ export default function BlogLocaleToolbar({
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-[12px] font-medium text-admin-text-secondary">Primary:</span>
+        <span className="text-[12px] font-medium text-admin-text-secondary">{ui.primary}</span>
         <select
           value={primaryLocale}
           onChange={(e) => {
@@ -147,7 +150,7 @@ export default function BlogLocaleToolbar({
           ))}
         </select>
 
-        <span className="text-[12px] font-medium text-admin-text-secondary ml-2">Editing:</span>
+        <span className="text-[12px] font-medium text-admin-text-secondary ml-2">{ui.editing}</span>
         {publishedLocales.map((loc) => (
           <button
             key={loc}
@@ -174,9 +177,7 @@ export default function BlogLocaleToolbar({
             className="rounded border-admin-border accent-admin-primary"
           />
           <Link2 className="w-4 h-4 text-admin-text-secondary" strokeWidth={2} />
-          <span>
-            <strong>Mirror editing</strong> — changes apply to all published languages at once
-          </span>
+          <span>{ui.mirrorEditing}</span>
         </label>
 
         <Button
@@ -187,7 +188,7 @@ export default function BlogLocaleToolbar({
           disabled={otherPublished.length === 0}
           icon={<Copy className="w-3.5 h-3.5" strokeWidth={2} />}
         >
-          Copy {activeLocale.toUpperCase()} → others
+          {ui.copyToOthers.replace("{locale}", activeLocale.toUpperCase())}
         </Button>
         <Button
           type="button"
@@ -198,7 +199,7 @@ export default function BlogLocaleToolbar({
           title="Also copies URL slugs (use only if slugs should match)"
           icon={<Copy className="w-3.5 h-3.5" strokeWidth={2} />}
         >
-          Copy with slugs
+          {ui.copyWithSlugs}
         </Button>
       </div>
     </div>

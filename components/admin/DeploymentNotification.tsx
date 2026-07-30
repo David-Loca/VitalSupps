@@ -3,12 +3,14 @@
 import { useEffect, useState, useRef } from "react";
 import { X, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 interface DeploymentNotificationProps {
   show: boolean;
   onClose: () => void;
   type?: "success" | "info" | "error";
   message?: string;
+  locale?: string;
 }
 
 export default function DeploymentNotification({
@@ -16,7 +18,9 @@ export default function DeploymentNotification({
   onClose,
   type = "success",
   message,
+  locale = "en",
 }: DeploymentNotificationProps) {
+  const ui = getAdminDict(locale).toast;
   const [isVisible, setIsVisible] = useState(show);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const startTimeRef = useRef<number | null>(null);
@@ -68,11 +72,8 @@ export default function DeploymentNotification({
     };
   }, [show, onClose]);
 
-  const defaultMessage = type === "success"
-    ? "Your changes are saved. This dashboard keeps showing what you just saved. The public website updates after Vercel redeploys from GitHub (usually 1–3 minutes)."
-    : type === "error"
-    ? "An error occurred while saving. Please try again."
-    : "Changes are being processed...";
+  const defaultMessage =
+    type === "success" ? ui.savedMessage : type === "error" ? ui.errorMessage : ui.processingMessage;
 
   const icon = type === "success" ? CheckCircle2 : type === "error" ? AlertCircle : Clock;
   const Icon = icon;
@@ -87,7 +88,7 @@ export default function DeploymentNotification({
   const iconColor =
     type === "success" ? "text-admin-success" : type === "error" ? "text-admin-danger" : "text-admin-gold";
 
-  const title = type === "success" ? "Changes saved" : type === "error" ? "Something went wrong" : "Processing...";
+  const title = type === "success" ? ui.savedTitle : type === "error" ? ui.errorTitle : ui.processingTitle;
 
   if (!show && !isVisible) return null;
 
@@ -129,7 +130,7 @@ export default function DeploymentNotification({
                   <div className="mt-3 pt-3 border-t border-admin-border">
                     <div className="flex items-center gap-2 text-[12px] text-admin-text-secondary">
                       <Clock className="w-3.5 h-3.5" strokeWidth={2} />
-                      <span>Live site: GitHub → Vercel redeploy (1–3 min). Dashboard already shows your saved edits.</span>
+                      <span>{ui.liveSiteNote}</span>
                     </div>
                   </div>
                 )}

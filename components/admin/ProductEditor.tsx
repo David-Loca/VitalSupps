@@ -22,6 +22,7 @@ import type {
   ProductFaqItem,
 } from "@/lib/products";
 import { locales as PRODUCT_LOCALES, type Locale } from "@/lib/i18n";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 const LOCALE_LABELS: Record<Locale, string> = {
   en: "English",
@@ -127,6 +128,7 @@ interface ProductEditorProps {
   onSave: (product: Product, originalSlug?: string) => Promise<void>;
   onDelete?: (slug: string) => Promise<void>;
   initialProduct?: Product;
+  locale: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -180,7 +182,8 @@ function TextListEditor({
   );
 }
 
-export default function ProductEditor({ onSave, onDelete, initialProduct }: ProductEditorProps) {
+export default function ProductEditor({ onSave, onDelete, initialProduct, locale }: ProductEditorProps) {
+  const ui = getAdminDict(locale);
   const [product, setProduct] = useState<ProductDraft>(
     initialProduct ? normalizeInitialProduct(initialProduct) : buildEmptyProduct()
   );

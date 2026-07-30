@@ -8,6 +8,7 @@ import {
   Package,
   Settings as SettingsIcon,
 } from "lucide-react";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 export type AdminSection =
   | "hero"
@@ -17,21 +18,24 @@ export type AdminSection =
   | "products"
   | "metadata";
 
-const NAV_ITEMS: { section: AdminSection; label: string; icon: typeof Home }[] = [
-  { section: "hero", label: "Homepage", icon: Home },
-  { section: "whatsapp", label: "WhatsApp & CTA", icon: MessageCircle },
-  { section: "blogs", label: "Blogs", icon: FileText },
-  { section: "products", label: "Products", icon: Package },
-  { section: "metadata", label: "Page Metadata", icon: Type },
-  { section: "settings", label: "Settings", icon: SettingsIcon },
-];
-
 interface AdminSidebarProps {
   activeSection: AdminSection;
   onSectionChange: (section: AdminSection) => void;
+  locale: string;
 }
 
-export default function AdminSidebar({ activeSection, onSectionChange }: AdminSidebarProps) {
+export default function AdminSidebar({ activeSection, onSectionChange, locale }: AdminSidebarProps) {
+  const ui = getAdminDict(locale);
+
+  const NAV_ITEMS: { section: AdminSection; label: string; icon: typeof Home }[] = [
+    { section: "hero", label: ui.nav.homepage, icon: Home },
+    { section: "whatsapp", label: ui.nav.whatsapp, icon: MessageCircle },
+    { section: "blogs", label: ui.nav.blogs, icon: FileText },
+    { section: "products", label: ui.nav.products, icon: Package },
+    { section: "metadata", label: ui.nav.metadata, icon: Type },
+    { section: "settings", label: ui.nav.settings, icon: SettingsIcon },
+  ];
+
   return (
     <div className="sticky top-[73px] z-40 border-b border-admin-border bg-admin-card/95 backdrop-blur-sm">
       <nav className="mx-auto flex max-w-[1500px] items-center gap-1 overflow-x-auto px-4 sm:px-8 admin-scrollbar">

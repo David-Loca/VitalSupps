@@ -11,6 +11,7 @@ import Card from "@/components/admin/ui/Card";
 import Badge from "@/components/admin/ui/Badge";
 import Modal from "@/components/admin/ui/Modal";
 import SectionHero from "@/components/admin/ui/SectionHero";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 function getPriceRange(product: Product): string {
   if (product.variants && product.variants.length > 0) {
@@ -22,7 +23,8 @@ function getPriceRange(product: Product): string {
   return formatPrice(product.price);
 }
 
-export default function ProductsManager() {
+export default function ProductsManager({ locale }: { locale: string }) {
+  const ui = getAdminDict(locale);
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedProduct, setSelectedProduct] = useState<Product | undefined | null>(null);
@@ -143,7 +145,7 @@ export default function ProductsManager() {
             className="inline-flex items-center gap-2 text-[14px] font-medium text-admin-text-secondary transition-colors hover:text-admin-primary cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" strokeWidth={2} />
-            Back to Products List
+            {ui.editorChrome.backToProducts}
           </button>
         </div>
         <ProductEditor
@@ -154,11 +156,13 @@ export default function ProductsManager() {
               ? () => handleDelete(selectedProduct.slug)
               : undefined
           }
+          locale={locale}
         />
         <DeploymentNotification
           show={showDeploymentNotification}
           onClose={() => setShowDeploymentNotification(false)}
           type={saveStatus === "error" ? "error" : "success"}
+          locale={locale}
         />
       </div>
     );
@@ -172,14 +176,14 @@ export default function ProductsManager() {
           <AlertTriangle className="w-7 h-7 text-admin-danger" strokeWidth={2} />
         </div>
         <h3 className="text-[19px] font-semibold text-admin-text text-center mb-2">
-          Delete Product?
+          {ui.products.deleteTitle}
         </h3>
         <p className="text-[14px] text-admin-text-secondary text-center mb-6">
-          Are you sure you want to delete{" "}
+          {ui.products.deleteConfirmPrefix}{" "}
           <span className="font-medium text-admin-text">
             &quot;{deleteConfirmProduct?.en?.name || deleteConfirmProduct?.slug}&quot;
           </span>
-          ? This action cannot be undone.
+          ? {ui.products.deleteWarning}
         </p>
         <div className="flex items-center gap-3">
           <Button
@@ -188,7 +192,7 @@ export default function ProductsManager() {
             disabled={isDeleting === deleteConfirmProduct?.slug}
             className="flex-1"
           >
-            Cancel
+            {ui.common.cancel}
           </Button>
           <Button
             variant="danger"
@@ -198,7 +202,7 @@ export default function ProductsManager() {
             icon={<Trash2 className="w-4 h-4" strokeWidth={2} />}
             className="flex-1 !bg-admin-danger !text-white hover:!bg-admin-danger/90"
           >
-            {isDeleting === deleteConfirmProduct?.slug ? "Deleting..." : "Delete"}
+            {isDeleting === deleteConfirmProduct?.slug ? ui.common.deleting : ui.common.delete}
           </Button>
         </div>
       </Modal>
@@ -206,8 +210,8 @@ export default function ProductsManager() {
       <div className="space-y-8">
         <SectionHero
           icon={<Package className="w-7 h-7" strokeWidth={2} />}
-          title="Product Management"
-          subtitle="Create and manage store products"
+          title={ui.products.title}
+          subtitle={ui.products.subtitle}
         />
 
         <Card
@@ -217,25 +221,25 @@ export default function ProductsManager() {
               onClick={() => setSelectedProduct(undefined)}
               icon={<Plus className="w-4 h-4" strokeWidth={2} />}
             >
-              New Product
+              {ui.products.createNew}
             </Button>
           }
         >
           {isLoading ? (
             <div className="text-center py-16">
               <Loader2 className="w-8 h-8 text-admin-primary animate-spin mx-auto mb-4" />
-              <p className="text-admin-text-secondary text-[14px]">Loading products...</p>
+              <p className="text-admin-text-secondary text-[14px]">{ui.products.loading}</p>
             </div>
           ) : products.length === 0 ? (
             <div className="text-center py-16">
-              <p className="text-admin-text-secondary text-[14px] mb-4">No products yet.</p>
+              <p className="text-admin-text-secondary text-[14px] mb-4">{ui.products.empty}</p>
               <Button
                 variant="primary"
                 onClick={() => setSelectedProduct(undefined)}
                 icon={<Plus className="w-4 h-4" strokeWidth={2} />}
                 className="mx-auto"
               >
-                Create Your First Product
+                {ui.products.createFirst}
               </Button>
             </div>
           ) : (
@@ -257,7 +261,8 @@ export default function ProductsManager() {
                   <div className="flex flex-wrap items-center gap-1 mb-2">
                     {product.badge && <Badge variant="gold">{product.badge}</Badge>}
                     <Badge variant="neutral">
-                      {product.variants?.length || 0} variant{(product.variants?.length || 0) === 1 ? "" : "s"}
+                      {product.variants?.length || 0}{" "}
+                      {(product.variants?.length || 0) === 1 ? ui.products.variant : ui.products.variants}
                     </Badge>
                   </div>
                   <h3 className="font-semibold text-admin-text mb-1 line-clamp-2">
@@ -283,7 +288,7 @@ export default function ProductsManager() {
                       icon={<Edit className="w-3.5 h-3.5" strokeWidth={2} />}
                       className="flex-1"
                     >
-                      Edit
+                      {ui.common.edit}
                     </Button>
                     <Button
                       variant="danger"
@@ -291,7 +296,7 @@ export default function ProductsManager() {
                       onClick={() => handleDeleteClick(product)}
                       disabled={isDeleting === product.slug}
                       className="!px-2.5"
-                      aria-label="Delete product"
+                      aria-label={ui.common.delete}
                     >
                       {isDeleting === product.slug ? (
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -310,6 +315,7 @@ export default function ProductsManager() {
           show={showDeploymentNotification}
           onClose={() => setShowDeploymentNotification(false)}
           type={saveStatus === "error" ? "error" : "success"}
+          locale={locale}
         />
       </div>
     </>
