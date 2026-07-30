@@ -13,6 +13,8 @@ import {
   getBlogLocaleShort,
 } from "@/lib/admin/admin-locale-labels";
 import type { BlogPost } from "@/lib/admin/blog-shared";
+import Badge from "@/components/admin/ui/Badge";
+import Button from "@/components/admin/ui/Button";
 
 interface BlogLocaleToolbarProps {
   blog: BlogPost;
@@ -80,47 +82,40 @@ export default function BlogLocaleToolbar({
   };
 
   return (
-    <div className="mb-6 space-y-4 rounded-xl border border-gray-200 bg-gray-50/80 p-4">
+    <div className="mb-6 space-y-4 rounded-admin-md border border-admin-border bg-admin-bg p-5">
       <div>
-        <h3 className="text-sm font-semibold text-gray-900">Languages</h3>
-        <p className="text-xs text-gray-500 mt-1">
+        <h3 className="text-[14px] font-semibold text-admin-text">Languages</h3>
+        <p className="text-[12px] text-admin-text-secondary mt-1">
           Write in one language first, then copy or use mirror mode. Publish only the languages you select.
         </p>
       </div>
 
       <div className="flex flex-wrap items-center gap-2">
-        <span className="text-xs font-medium text-gray-600 mr-1">Publish:</span>
+        <span className="text-[12px] font-medium text-admin-text-secondary mr-1">Publish:</span>
         {BLOG_LOCALES.map((loc) => {
           const checked = publishedLocales.includes(loc);
           const complete = hasLocalePublishableContent(blog, loc);
           return (
             <label
               key={loc}
-              className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg border cursor-pointer transition-colors ${
+              className={`inline-flex items-center gap-2 px-3 py-2 rounded-[12px] border cursor-pointer transition-all ${
                 checked
-                  ? "bg-white border-gray-300 shadow-sm"
-                  : "bg-gray-100 border-transparent opacity-80"
+                  ? "bg-white border-admin-border shadow-sm"
+                  : "bg-admin-hover border-transparent opacity-80"
               }`}
             >
               <input
                 type="checkbox"
                 checked={checked}
                 onChange={() => togglePublished(loc)}
-                className="rounded border-gray-300"
+                className="rounded border-admin-border accent-admin-primary"
               />
-              <span className="text-sm font-medium text-gray-800">{getBlogLocaleShort(loc)}</span>
-              <span className="text-xs text-gray-500 hidden sm:inline">
+              <span className="text-[13px] font-medium text-admin-text">{getBlogLocaleShort(loc)}</span>
+              <span className="text-[12px] text-admin-text-secondary hidden sm:inline">
                 {ADMIN_BLOG_LOCALE_LABELS[loc]}
               </span>
               {checked && (
-                <span
-                  className={`text-[10px] px-1.5 py-0.5 rounded ${
-                    complete ? "bg-green-100 text-green-800" : "bg-amber-100 text-amber-800"
-                  }`}
-                  title={complete ? "Ready to publish" : "Missing required fields"}
-                >
-                  {complete ? "ready" : "draft"}
-                </span>
+                <Badge variant={complete ? "success" : "warning"}>{complete ? "ready" : "draft"}</Badge>
               )}
             </label>
           );
@@ -128,7 +123,7 @@ export default function BlogLocaleToolbar({
       </div>
 
       <div className="flex flex-wrap items-center gap-3">
-        <span className="text-xs font-medium text-gray-600">Primary:</span>
+        <span className="text-[12px] font-medium text-admin-text-secondary">Primary:</span>
         <select
           value={primaryLocale}
           onChange={(e) => {
@@ -143,7 +138,7 @@ export default function BlogLocaleToolbar({
               onBlogChange({ ...blog, locale: loc, translations: next });
             }
           }}
-          className="text-sm px-3 py-1.5 border border-gray-300 rounded-lg bg-white"
+          className="text-[13px] px-3 py-2 border border-admin-border rounded-[10px] bg-white text-admin-text focus:outline-none focus:border-admin-primary"
         >
           {publishedLocales.map((loc) => (
             <option key={loc} value={loc}>
@@ -152,57 +147,59 @@ export default function BlogLocaleToolbar({
           ))}
         </select>
 
-        <span className="text-xs font-medium text-gray-600 ml-2">Editing:</span>
+        <span className="text-[12px] font-medium text-admin-text-secondary ml-2">Editing:</span>
         {publishedLocales.map((loc) => (
           <button
             key={loc}
             type="button"
             onClick={() => onActiveLocaleChange(loc)}
-            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
+            className={`inline-flex items-center px-3 py-1.5 text-[13px] font-medium rounded-[10px] transition-all cursor-pointer ${
               activeLocale === loc
-                ? "bg-black text-white"
-                : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                ? "bg-admin-primary text-white"
+                : "bg-white text-admin-text border border-admin-border hover:bg-admin-hover"
             }`}
           >
-            <Globe className="w-3.5 h-3.5 inline mr-1.5" />
+            <Globe className="w-3.5 h-3.5 inline mr-1.5" strokeWidth={2} />
             {getBlogLocaleShort(loc)}
           </button>
         ))}
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-gray-200">
-        <label className="inline-flex items-center gap-2 cursor-pointer text-sm text-gray-700">
+      <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-admin-border">
+        <label className="inline-flex items-center gap-2 cursor-pointer text-[13px] text-admin-text">
           <input
             type="checkbox"
             checked={mirrorMode}
             onChange={(e) => onMirrorModeChange(e.target.checked)}
-            className="rounded border-gray-300"
+            className="rounded border-admin-border accent-admin-primary"
           />
-          <Link2 className="w-4 h-4 text-gray-500" />
+          <Link2 className="w-4 h-4 text-admin-text-secondary" strokeWidth={2} />
           <span>
             <strong>Mirror editing</strong> — changes apply to all published languages at once
           </span>
         </label>
 
-        <button
+        <Button
           type="button"
+          variant="secondary"
+          size="sm"
           onClick={() => handleCopy(false)}
           disabled={otherPublished.length === 0}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white border border-gray-300 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
+          icon={<Copy className="w-3.5 h-3.5" strokeWidth={2} />}
         >
-          <Copy className="w-4 h-4" />
           Copy {activeLocale.toUpperCase()} → others
-        </button>
-        <button
+        </Button>
+        <Button
           type="button"
+          variant="secondary"
+          size="sm"
           onClick={() => handleCopy(true)}
           disabled={otherPublished.length === 0}
-          className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-white border border-gray-300 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed"
           title="Also copies URL slugs (use only if slugs should match)"
+          icon={<Copy className="w-3.5 h-3.5" strokeWidth={2} />}
         >
-          <Copy className="w-4 h-4" />
           Copy with slugs
-        </button>
+        </Button>
       </div>
     </div>
   );

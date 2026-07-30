@@ -1,11 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Edit, Trash2, Loader2, AlertTriangle, X } from "lucide-react";
+import { Plus, Edit, Trash2, Loader2, AlertTriangle, ArrowLeft, Package, Star } from "lucide-react";
 import ProductEditor from "./ProductEditor";
 import DeploymentNotification from "./DeploymentNotification";
 import type { Product } from "@/lib/products";
 import { formatPrice } from "@/lib/products";
+import Button from "@/components/admin/ui/Button";
+import Card from "@/components/admin/ui/Card";
+import Badge from "@/components/admin/ui/Badge";
+import Modal from "@/components/admin/ui/Modal";
+import SectionHero from "@/components/admin/ui/SectionHero";
 
 function getPriceRange(product: Product): string {
   if (product.variants && product.variants.length > 0) {
@@ -131,13 +136,14 @@ export default function ProductsManager() {
   // Show editor when selectedProduct is undefined (new product) or a Product object (editing)
   if (selectedProduct !== null) {
     return (
-      <div>
+      <div className="admin-page-enter">
         <div className="mb-6">
           <button
             onClick={() => setSelectedProduct(null)}
-            className="text-gray-600 hover:text-gray-900 font-medium flex items-center gap-2 hover:underline cursor-pointer"
+            className="inline-flex items-center gap-2 text-[14px] font-medium text-admin-text-secondary transition-colors hover:text-admin-primary cursor-pointer"
           >
-            ← Back to Products List
+            <ArrowLeft className="w-4 h-4" strokeWidth={2} />
+            Back to Products List
           </button>
         </div>
         <ProductEditor
@@ -161,108 +167,86 @@ export default function ProductsManager() {
   return (
     <>
       {/* Delete Confirmation Modal */}
-      {deleteConfirmProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-            onClick={handleDeleteCancel}
-          />
-
-          <div className="relative bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
-            <button
-              onClick={handleDeleteCancel}
-              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            <div className="flex items-center justify-center w-16 h-16 mx-auto mb-4 bg-red-100 rounded-full">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
-            </div>
-
-            <h3 className="text-xl font-semibold text-gray-900 text-center mb-2">
-              Delete Product?
-            </h3>
-
-            <p className="text-gray-600 text-center mb-6">
-              Are you sure you want to delete{" "}
-              <span className="font-medium text-gray-900">
-                &quot;{deleteConfirmProduct.en?.name || deleteConfirmProduct.slug}&quot;
-              </span>
-              ? This action cannot be undone.
-            </p>
-
-            <div className="flex items-center gap-3">
-              <button
-                onClick={handleDeleteCancel}
-                disabled={isDeleting === deleteConfirmProduct.slug}
-                className="flex-1 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-all disabled:opacity-50 cursor-pointer"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleDeleteConfirm}
-                disabled={isDeleting === deleteConfirmProduct.slug}
-                className="flex-1 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg transition-all disabled:opacity-50 flex items-center justify-center gap-2 cursor-pointer"
-              >
-                {isDeleting === deleteConfirmProduct.slug ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    Deleting...
-                  </>
-                ) : (
-                  <>
-                    <Trash2 className="w-4 h-4" />
-                    Delete
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
+      <Modal open={!!deleteConfirmProduct} onClose={handleDeleteCancel}>
+        <div className="flex items-center justify-center w-14 h-14 mx-auto mb-4 rounded-full bg-admin-danger-bg">
+          <AlertTriangle className="w-7 h-7 text-admin-danger" strokeWidth={2} />
         </div>
-      )}
+        <h3 className="text-[19px] font-semibold text-admin-text text-center mb-2">
+          Delete Product?
+        </h3>
+        <p className="text-[14px] text-admin-text-secondary text-center mb-6">
+          Are you sure you want to delete{" "}
+          <span className="font-medium text-admin-text">
+            &quot;{deleteConfirmProduct?.en?.name || deleteConfirmProduct?.slug}&quot;
+          </span>
+          ? This action cannot be undone.
+        </p>
+        <div className="flex items-center gap-3">
+          <Button
+            variant="secondary"
+            onClick={handleDeleteCancel}
+            disabled={isDeleting === deleteConfirmProduct?.slug}
+            className="flex-1"
+          >
+            Cancel
+          </Button>
+          <Button
+            variant="danger"
+            onClick={handleDeleteConfirm}
+            disabled={isDeleting === deleteConfirmProduct?.slug}
+            loading={isDeleting === deleteConfirmProduct?.slug}
+            icon={<Trash2 className="w-4 h-4" strokeWidth={2} />}
+            className="flex-1 !bg-admin-danger !text-white hover:!bg-admin-danger/90"
+          >
+            {isDeleting === deleteConfirmProduct?.slug ? "Deleting..." : "Delete"}
+          </Button>
+        </div>
+      </Modal>
 
-      <div className="space-y-6">
-        <div className="bg-white rounded-xl border border-gray-200 p-6">
-          <div className="flex items-center justify-between mb-6">
-            <div>
-              <h2 className="text-2xl font-medium text-black mb-1">Product Management</h2>
-              <p className="text-gray-500 text-sm">Create and manage store products</p>
-            </div>
-            <button
+      <div className="space-y-8">
+        <SectionHero
+          icon={<Package className="w-7 h-7" strokeWidth={2} />}
+          title="Product Management"
+          subtitle="Create and manage store products"
+        />
+
+        <Card
+          headerAction={
+            <Button
+              variant="primary"
               onClick={() => setSelectedProduct(undefined)}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-900 text-white font-medium rounded-lg transition-all cursor-pointer"
+              icon={<Plus className="w-4 h-4" strokeWidth={2} />}
             >
-              <Plus className="w-4 h-4" />
-              <span>New Product</span>
-            </button>
-          </div>
-
+              New Product
+            </Button>
+          }
+        >
           {isLoading ? (
-            <div className="text-center py-12">
-              <Loader2 className="w-8 h-8 text-gray-400 animate-spin mx-auto mb-4" />
-              <p className="text-gray-500">Loading products...</p>
+            <div className="text-center py-16">
+              <Loader2 className="w-8 h-8 text-admin-primary animate-spin mx-auto mb-4" />
+              <p className="text-admin-text-secondary text-[14px]">Loading products...</p>
             </div>
           ) : products.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-500 mb-4">No products yet.</p>
-              <button
+            <div className="text-center py-16">
+              <p className="text-admin-text-secondary text-[14px] mb-4">No products yet.</p>
+              <Button
+                variant="primary"
                 onClick={() => setSelectedProduct(undefined)}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-900 text-white font-medium rounded-lg transition-all cursor-pointer"
+                icon={<Plus className="w-4 h-4" strokeWidth={2} />}
+                className="mx-auto"
               >
-                <Plus className="w-4 h-4" />
-                <span>Create Your First Product</span>
-              </button>
+                Create Your First Product
+              </Button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {products.map((product) => (
                 <div
                   key={product.slug}
-                  className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors"
+                  className="group rounded-admin-md border border-admin-border bg-white p-4 transition-all duration-150 hover:-translate-y-0.5 hover:border-admin-primary/25 hover:shadow-[var(--shadow-admin-card-hover)]"
                 >
                   {product.images?.primary && (
-                    <div className="relative w-full h-40 mb-3 overflow-hidden rounded-lg bg-gray-100">
+                    <div className="relative w-full h-40 mb-3 overflow-hidden rounded-admin-sm bg-admin-hover">
                       <img
                         src={product.images.primary}
                         alt={product.en?.heroImageAlt || product.en?.name || product.slug}
@@ -271,54 +255,56 @@ export default function ProductsManager() {
                     </div>
                   )}
                   <div className="flex flex-wrap items-center gap-1 mb-2">
-                    {product.badge && (
-                      <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-amber-100 text-amber-800">
-                        {product.badge}
-                      </span>
-                    )}
-                    <span className="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">
+                    {product.badge && <Badge variant="gold">{product.badge}</Badge>}
+                    <Badge variant="neutral">
                       {product.variants?.length || 0} variant{(product.variants?.length || 0) === 1 ? "" : "s"}
-                    </span>
+                    </Badge>
                   </div>
-                  <h3 className="font-semibold text-gray-900 mb-1 line-clamp-2">
+                  <h3 className="font-semibold text-admin-text mb-1 line-clamp-2">
                     {product.en?.name || "Untitled product"}
                   </h3>
-                  <p className="text-sm text-gray-500 mb-3 truncate" title={product.slug}>
+                  <p className="text-[13px] text-admin-text-secondary mb-3 truncate" title={product.slug}>
                     /{product.slug}
                   </p>
-                  <div className="flex items-center justify-between text-sm mb-3">
-                    <span className="font-medium text-gray-900">{getPriceRange(product)}</span>
+                  <div className="flex items-center justify-between text-[14px] mb-3">
+                    <span className="font-semibold text-admin-text">{getPriceRange(product)}</span>
                     {typeof product.rating === "number" && (
-                      <span className="text-xs text-gray-400">
-                        ★ {product.rating.toFixed(1)} ({product.reviewCount || 0})
+                      <span className="flex items-center gap-1 text-[12px] text-admin-text-secondary">
+                        <Star className="w-3.5 h-3.5 fill-admin-gold text-admin-gold" strokeWidth={0} />
+                        {product.rating.toFixed(1)} ({product.reviewCount || 0})
                       </span>
                     )}
                   </div>
                   <div className="flex items-center gap-2">
-                    <button
+                    <Button
+                      variant="secondary"
+                      size="sm"
                       onClick={() => setSelectedProduct(product)}
-                      className="flex-1 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all text-sm font-medium flex items-center justify-center gap-2 cursor-pointer"
+                      icon={<Edit className="w-3.5 h-3.5" strokeWidth={2} />}
+                      className="flex-1"
                     >
-                      <Edit className="w-4 h-4" />
                       Edit
-                    </button>
-                    <button
+                    </Button>
+                    <Button
+                      variant="danger"
+                      size="sm"
                       onClick={() => handleDeleteClick(product)}
                       disabled={isDeleting === product.slug}
-                      className="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg transition-all text-sm font-medium disabled:opacity-50 cursor-pointer"
+                      className="!px-2.5"
+                      aria-label="Delete product"
                     >
                       {isDeleting === product.slug ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className="w-3.5 h-3.5 animate-spin" />
                       ) : (
-                        <Trash2 className="w-4 h-4" />
+                        <Trash2 className="w-3.5 h-3.5" strokeWidth={2} />
                       )}
-                    </button>
+                    </Button>
                   </div>
                 </div>
               ))}
             </div>
           )}
-        </div>
+        </Card>
 
         <DeploymentNotification
           show={showDeploymentNotification}
