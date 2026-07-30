@@ -113,6 +113,32 @@ const LOCALE_LABELS: Record<string, string> = {
 
 const ADMIN_LOCALE_ORDER = ["en", "fr", "it"] as const;
 
+const METADATA_PAGES: {
+  section: string;
+  label: string;
+  badge: string;
+  icon: typeof Home;
+}[] = [
+  { section: "homepage", label: "Homepage", badge: "Main page", icon: Home },
+  { section: "blogListing", label: "Blog Listing Page", badge: "Content", icon: FileText },
+  { section: "blog", label: "Blog Page", badge: "SEO", icon: Edit },
+  { section: "reseller", label: "Reseller Program Page", badge: "Business", icon: Users },
+];
+
+const METADATA_INSTALLATION_PAGES: { key: string; label: string }[] = [
+  { key: "windows", label: "Windows Installation" },
+  { key: "ios", label: "iOS Installation" },
+  { key: "firestick", label: "Firestick Installation" },
+  { key: "smartTv", label: "Smart TV Installation" },
+  { key: "guide", label: "Installation Guide" },
+];
+
+const METADATA_LEGAL_PAGES: { key: string; label: string }[] = [
+  { key: "refundPolicy", label: "Refund Policy" },
+  { key: "privacyPolicy", label: "Privacy Policy" },
+  { key: "termsOfService", label: "Terms of Service" },
+];
+
 export default function AdminDashboard() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -389,6 +415,42 @@ export default function AdminDashboard() {
     }
     
     return String(current);
+  };
+
+  // Read/write a metadata field, optionally nested under a sub-key
+  // (e.g. section="installation", subKey="windows").
+  const getMetadataField = (
+    section: string,
+    field: "title" | "description",
+    subKey?: string
+  ): string => {
+    const content = metadata[activeLocale]?.content;
+    const sectionValue = content?.[section];
+    const target = subKey ? sectionValue?.[subKey] : sectionValue;
+    return target?.[field] || "";
+  };
+
+  const updateMetadataField = (
+    section: string,
+    field: "title" | "description",
+    value: string,
+    subKey?: string
+  ) => {
+    setMetadata((prev) => {
+      const entry = prev[activeLocale] ?? { content: {}, sha: "" };
+      const content: Record<string, any> = { ...(entry.content ?? {}) };
+
+      if (subKey) {
+        content[section] = {
+          ...(content[section] ?? {}),
+          [subKey]: { ...(content[section]?.[subKey] ?? {}), [field]: value },
+        };
+      } else {
+        content[section] = { ...(content[section] ?? {}), [field]: value };
+      }
+
+      return { ...prev, [activeLocale]: { ...entry, content } };
+    });
   };
 
   if (isLoading) {
