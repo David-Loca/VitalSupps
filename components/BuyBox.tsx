@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { MessageCircle, Minus, Plus } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { formatPrice, getSavingsPercent, type Product, type ProductVariant } from "@/lib/products";
+import { formatPrice, getSavingsPercent, getProductContent, type Product, type ProductVariant } from "@/lib/products";
 import { getProductWhatsAppUrl } from "@/lib/whatsapp";
 import StarRating from "./StarRating";
 
@@ -32,13 +32,15 @@ export default function BuyBox({
   selectedVariant?: ProductVariant | null;
   onVariantChange?: (variant: ProductVariant) => void;
 }) {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
   const [quantity, setQuantity] = useState(1);
   const variants = product.variants;
   const price = selectedVariant ? selectedVariant.price : product.price;
   const compareAtPrice = selectedVariant ? selectedVariant.compareAtPrice : product.compareAtPrice;
   const savingsPercent = getSavingsPercent({ price, compareAtPrice });
-  const whatsappUrl = getProductWhatsAppUrl(productName, quantity, selectedVariant?.label);
+  const orderTemplate =
+    getProductContent(product, locale).whatsappOrderTemplate || t("whatsapp.productOrderTemplate");
+  const whatsappUrl = getProductWhatsAppUrl(orderTemplate, productName, selectedVariant?.label, quantity);
 
   return (
     <div className="bg-white border border-subtle-gray rounded-[4px] shadow-none p-5 sm:p-6">

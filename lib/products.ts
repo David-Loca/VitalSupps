@@ -16,6 +16,21 @@ export interface ProductLocaleContent {
   safety?: string;
   ingredients: string[];
   faq: ProductFaqItem[];
+  /**
+   * Optional per-product, per-locale override for the pre-filled WhatsApp
+   * message used by the "Ask on WhatsApp" / inquiry CTA (e.g. on the
+   * homepage product cards). Supports {product} and {variant} placeholders.
+   * Falls back to the site-wide `whatsapp.productInquiryTemplate`
+   * translation when unset.
+   */
+  whatsappInquiryTemplate?: string;
+  /**
+   * Optional per-product, per-locale override for the pre-filled WhatsApp
+   * message used by the buy box's "Buy via WhatsApp" CTA. Supports
+   * {product}, {variant}, and {quantity} placeholders. Falls back to the
+   * site-wide `whatsapp.productOrderTemplate` translation when unset.
+   */
+  whatsappOrderTemplate?: string;
 }
 
 export interface ProductSpecs {

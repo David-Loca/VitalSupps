@@ -852,6 +852,41 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
               </button>
             </div>
           </div>
+
+          <div className="rounded-lg border border-gray-100 bg-gray-50/80 p-4 space-y-4">
+            <p className="text-sm text-gray-600">
+              WhatsApp messages — {LOCALE_LABELS[activeLocale]} (optional). Leave blank to use
+              the site-wide default for this language. Available placeholders:{" "}
+              <code className="text-xs bg-white px-1 py-0.5 rounded border border-gray-200">{"{product}"}</code>{" "}
+              <code className="text-xs bg-white px-1 py-0.5 rounded border border-gray-200">{"{variant}"}</code>{" "}
+              <code className="text-xs bg-white px-1 py-0.5 rounded border border-gray-200">{"{quantity}"}</code>{" "}
+              (quantity only applies to the order message).
+            </p>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                &quot;Ask on WhatsApp&quot; inquiry message
+              </label>
+              <textarea
+                value={content.whatsappInquiryTemplate || ""}
+                onChange={(e) => setLocaleField("whatsappInquiryTemplate", e.target.value)}
+                rows={2}
+                placeholder="Leave empty to use the default"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Buy box &quot;Buy via WhatsApp&quot; order message
+              </label>
+              <textarea
+                value={content.whatsappOrderTemplate || ""}
+                onChange={(e) => setLocaleField("whatsappOrderTemplate", e.target.value)}
+                rows={2}
+                placeholder="Leave empty to use the default"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              />
+            </div>
+          </div>
         </div>
       </div>
 

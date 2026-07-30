@@ -44,7 +44,9 @@ export default function ProductShowcase() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {products.map((product, index) => {
             const content = getProductContent(product, locale);
-            const whatsappUrl = getProductWhatsAppUrl(content.name);
+            const inquiryTemplate =
+              content.whatsappInquiryTemplate || t("whatsapp.productInquiryTemplate");
+            const whatsappUrl = getProductWhatsAppUrl(inquiryTemplate, content.name);
             const isTerracotta = product.slug === "gut-health";
             const accentText = isTerracotta ? "text-accent-terracotta" : "text-accent-blue";
             const accentBorder = isTerracotta ? "hover:border-accent-terracotta/40" : "hover:border-accent-blue/40";

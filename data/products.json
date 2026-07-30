@@ -6,13 +6,66 @@
     "badge": "bestseller",
     "rating": 4.7,
     "reviewCount": 128,
-    "images": { "primary": "/images/products/methylene-blue-hero.svg" },
+    "images": {
+      "primary": "/images/products/methylene-blue-hero.svg"
+    },
     "variants": [
-      { "id": "drops-30ml", "label": "30ml Drops", "price": 35.99, "compareAtPrice": 44.99, "images": ["/images/products/methylene-blue-hero.svg", "/images/products/methylene-blue/drops-30ml/img2.webp", "/images/products/methylene-blue/drops-30ml/img3.webp"] },
-      { "id": "gummies-30ct", "label": "30 Gummies", "price": 41.99, "compareAtPrice": 52.99, "images": ["/images/products/methylene-blue-hero.svg", "/images/products/methylene-blue/gummies-30ct/img2.webp", "/images/products/methylene-blue/gummies-30ct/img3.webp"] },
-      { "id": "drops-50ml", "label": "50ml Drops", "price": 48.99, "compareAtPrice": 61.99, "images": ["/images/products/methylene-blue-hero.svg", "/images/products/methylene-blue/drops-50ml/img2.webp", "/images/products/methylene-blue/drops-50ml/img3.webp"], "isDefault": true },
-      { "id": "capsules-60ct", "label": "60 Capsules", "price": 55.99, "compareAtPrice": 69.99, "images": ["/images/products/methylene-blue-hero.svg", "/images/products/methylene-blue/capsules-60ct/img2.webp", "/images/products/methylene-blue/capsules-60ct/img3.webp"] },
-      { "id": "drops-60ml", "label": "60ml Drops", "price": 65.99, "compareAtPrice": 82.99, "images": ["/images/products/methylene-blue-hero.svg", "/images/products/methylene-blue/drops-60ml/img2.webp", "/images/products/methylene-blue/drops-60ml/img3.webp"] }
+      {
+        "id": "drops-30ml",
+        "label": "30ml Drops",
+        "price": 35.99,
+        "compareAtPrice": 44.99,
+        "images": [
+          "/images/products/methylene-blue-hero.svg",
+          "/images/products/methylene-blue/drops-30ml/img2.webp",
+          "/images/products/methylene-blue/drops-30ml/img3.webp"
+        ]
+      },
+      {
+        "id": "gummies-30ct",
+        "label": "30 Gummies",
+        "price": 41.99,
+        "compareAtPrice": 52.99,
+        "images": [
+          "/images/products/methylene-blue-hero.svg",
+          "/images/products/methylene-blue/gummies-30ct/img2.webp",
+          "/images/products/methylene-blue/gummies-30ct/img3.webp"
+        ]
+      },
+      {
+        "id": "drops-50ml",
+        "label": "50ml Drops",
+        "price": 48.99,
+        "compareAtPrice": 61.99,
+        "images": [
+          "/images/products/methylene-blue-hero.svg",
+          "/images/products/methylene-blue/drops-50ml/img2.webp",
+          "/images/products/methylene-blue/drops-50ml/img3.webp"
+        ],
+        "isDefault": true
+      },
+      {
+        "id": "capsules-60ct",
+        "label": "60 Capsules",
+        "price": 55.99,
+        "compareAtPrice": 69.99,
+        "images": [
+          "/images/products/methylene-blue-hero.svg",
+          "/images/products/methylene-blue/capsules-60ct/img2.webp",
+          "/images/products/methylene-blue/capsules-60ct/img3.webp"
+        ]
+      },
+      {
+        "id": "drops-60ml",
+        "label": "60ml Drops",
+        "price": 65.99,
+        "compareAtPrice": 82.99,
+        "images": [
+          "/images/products/methylene-blue-hero.svg",
+          "/images/products/methylene-blue/drops-60ml/img2.webp",
+          "/images/products/methylene-blue/drops-60ml/img3.webp"
+        ]
+      }
     ],
     "specs": {
       "servingSize": "1-3 drops (~0.5-1 mg)",
@@ -21,12 +74,48 @@
       "allergens": "Free from the top 9 allergens; contains no animal-derived ingredients"
     },
     "reviews": [
-      { "name": "Daniel R.", "daysAgo": 6, "rating": 5, "text": "The dropper makes it easy to keep the dose consistent. I've noticed steadier focus through the afternoon slump since I started using this.", "isSample": true },
-      { "name": "Priya M.", "daysAgo": 13, "rating": 5, "text": "Was skeptical at first but the sublingual format really does absorb fast. A little goes a long way — one bottle has lasted me over two months.", "isSample": true },
-      { "name": "Chris T.", "daysAgo": 20, "rating": 4, "text": "Works well for me, just wish the bottle were a bit bigger given how often I use it. Otherwise no complaints on quality.", "isSample": true },
-      { "name": "Anke B.", "daysAgo": 34, "rating": 5, "text": "My naturopath recommended methylene blue and this brand's purity documentation was the most transparent I found. Titrating up slowly worked exactly as described.", "isSample": true },
-      { "name": "Marcus O.", "daysAgo": 51, "rating": 4, "text": "Good product, does what it says. The blue-green tint on the tongue for a bit caught me off guard the first time but it's harmless and expected.", "isSample": true },
-      { "name": "Elena V.", "daysAgo": 63, "rating": 5, "text": "Ordering via WhatsApp was surprisingly smooth and shipping was quick. The tincture itself has become part of my morning routine.", "isSample": true }
+      {
+        "name": "Daniel R.",
+        "daysAgo": 6,
+        "rating": 5,
+        "text": "The dropper makes it easy to keep the dose consistent. I've noticed steadier focus through the afternoon slump since I started using this.",
+        "isSample": true
+      },
+      {
+        "name": "Priya M.",
+        "daysAgo": 13,
+        "rating": 5,
+        "text": "Was skeptical at first but the sublingual format really does absorb fast. A little goes a long way — one bottle has lasted me over two months.",
+        "isSample": true
+      },
+      {
+        "name": "Chris T.",
+        "daysAgo": 20,
+        "rating": 4,
+        "text": "Works well for me, just wish the bottle were a bit bigger given how often I use it. Otherwise no complaints on quality.",
+        "isSample": true
+      },
+      {
+        "name": "Anke B.",
+        "daysAgo": 34,
+        "rating": 5,
+        "text": "My naturopath recommended methylene blue and this brand's purity documentation was the most transparent I found. Titrating up slowly worked exactly as described.",
+        "isSample": true
+      },
+      {
+        "name": "Marcus O.",
+        "daysAgo": 51,
+        "rating": 4,
+        "text": "Good product, does what it says. The blue-green tint on the tongue for a bit caught me off guard the first time but it's harmless and expected.",
+        "isSample": true
+      },
+      {
+        "name": "Elena V.",
+        "daysAgo": 63,
+        "rating": 5,
+        "text": "Ordering via WhatsApp was surprisingly smooth and shipping was quick. The tincture itself has become part of my morning routine.",
+        "isSample": true
+      }
     ],
     "en": {
       "name": "Methylene Blue Tincture",
@@ -192,13 +281,66 @@
     "badge": "new",
     "rating": 4.6,
     "reviewCount": 94,
-    "images": { "primary": "/images/products/gut-health-hero.svg" },
+    "images": {
+      "primary": "/images/products/gut-health-hero.svg"
+    },
     "variants": [
-      { "id": "60ct", "label": "60 Capsules", "price": 35.99, "compareAtPrice": 44.99, "images": ["/images/products/gut-health-hero.svg", "/images/products/gut-health/60ct/img2.webp", "/images/products/gut-health/60ct/img3.webp"] },
-      { "id": "90ct", "label": "90 Capsules", "price": 42.99, "compareAtPrice": 54.99, "images": ["/images/products/gut-health-hero.svg", "/images/products/gut-health/90ct/img2.webp", "/images/products/gut-health/90ct/img3.webp"] },
-      { "id": "120ct", "label": "120 Capsules", "price": 49.99, "compareAtPrice": 64.99, "images": ["/images/products/gut-health-hero.svg", "/images/products/gut-health/120ct/img2.webp", "/images/products/gut-health/120ct/img3.webp"], "isDefault": true },
-      { "id": "150ct", "label": "150 Capsules", "price": 59.99, "compareAtPrice": 74.99, "images": ["/images/products/gut-health-hero.svg", "/images/products/gut-health/150ct/img2.webp", "/images/products/gut-health/150ct/img3.webp"] },
-      { "id": "gummies-60ct", "label": "60 Gummies", "price": 65.99, "compareAtPrice": 79.99, "images": ["/images/products/gut-health-hero.svg", "/images/products/gut-health/gummies-60ct/img2.webp", "/images/products/gut-health/gummies-60ct/img3.webp"] }
+      {
+        "id": "60ct",
+        "label": "60 Capsules",
+        "price": 35.99,
+        "compareAtPrice": 44.99,
+        "images": [
+          "/images/products/gut-health-hero.svg",
+          "/images/products/gut-health/60ct/img2.webp",
+          "/images/products/gut-health/60ct/img3.webp"
+        ]
+      },
+      {
+        "id": "90ct",
+        "label": "90 Capsules",
+        "price": 42.99,
+        "compareAtPrice": 54.99,
+        "images": [
+          "/images/products/gut-health-hero.svg",
+          "/images/products/gut-health/90ct/img2.webp",
+          "/images/products/gut-health/90ct/img3.webp"
+        ]
+      },
+      {
+        "id": "120ct",
+        "label": "120 Capsules",
+        "price": 49.99,
+        "compareAtPrice": 64.99,
+        "images": [
+          "/images/products/gut-health-hero.svg",
+          "/images/products/gut-health/120ct/img2.webp",
+          "/images/products/gut-health/120ct/img3.webp"
+        ],
+        "isDefault": true
+      },
+      {
+        "id": "150ct",
+        "label": "150 Capsules",
+        "price": 59.99,
+        "compareAtPrice": 74.99,
+        "images": [
+          "/images/products/gut-health-hero.svg",
+          "/images/products/gut-health/150ct/img2.webp",
+          "/images/products/gut-health/150ct/img3.webp"
+        ]
+      },
+      {
+        "id": "gummies-60ct",
+        "label": "60 Gummies",
+        "price": 65.99,
+        "compareAtPrice": 79.99,
+        "images": [
+          "/images/products/gut-health-hero.svg",
+          "/images/products/gut-health/gummies-60ct/img2.webp",
+          "/images/products/gut-health/gummies-60ct/img3.webp"
+        ]
+      }
     ],
     "specs": {
       "servingSize": "2 capsules",
@@ -207,12 +349,48 @@
       "allergens": "Non-GMO, gluten-free; free from the top 9 allergens"
     },
     "reviews": [
-      { "name": "Susan K.", "daysAgo": 5, "rating": 5, "text": "At 52, occasional bloating had become a real nuisance. About three weeks into taking these daily and I'm noticing a real difference.", "isSample": true },
-      { "name": "Robert F.", "daysAgo": 11, "rating": 5, "text": "Easy to swallow, no aftertaste, and my digestion has felt noticeably more regular. Will be reordering.", "isSample": true },
-      { "name": "Linda G.", "daysAgo": 22, "rating": 4, "text": "Solid multi-strain blend and the ginger root addition is a nice touch. Took about a month to notice the full effect.", "isSample": true },
-      { "name": "Tom H.", "daysAgo": 29, "rating": 5, "text": "My doctor was fine with me adding this alongside my usual routine. Capsules are a normal size, easy to take with breakfast.", "isSample": true },
-      { "name": "Carol N.", "daysAgo": 45, "rating": 4, "text": "Good quality capsules, non-GMO and gluten-free like advertised. Shipping took a few extra days but customer service on WhatsApp was responsive.", "isSample": true },
-      { "name": "Walter S.", "daysAgo": 58, "rating": 5, "text": "Been using this for six weeks paired with more fiber in my diet, as recommended. Comfortable, consistent digestion for the first time in years.", "isSample": true }
+      {
+        "name": "Susan K.",
+        "daysAgo": 5,
+        "rating": 5,
+        "text": "At 52, occasional bloating had become a real nuisance. About three weeks into taking these daily and I'm noticing a real difference.",
+        "isSample": true
+      },
+      {
+        "name": "Robert F.",
+        "daysAgo": 11,
+        "rating": 5,
+        "text": "Easy to swallow, no aftertaste, and my digestion has felt noticeably more regular. Will be reordering.",
+        "isSample": true
+      },
+      {
+        "name": "Linda G.",
+        "daysAgo": 22,
+        "rating": 4,
+        "text": "Solid multi-strain blend and the ginger root addition is a nice touch. Took about a month to notice the full effect.",
+        "isSample": true
+      },
+      {
+        "name": "Tom H.",
+        "daysAgo": 29,
+        "rating": 5,
+        "text": "My doctor was fine with me adding this alongside my usual routine. Capsules are a normal size, easy to take with breakfast.",
+        "isSample": true
+      },
+      {
+        "name": "Carol N.",
+        "daysAgo": 45,
+        "rating": 4,
+        "text": "Good quality capsules, non-GMO and gluten-free like advertised. Shipping took a few extra days but customer service on WhatsApp was responsive.",
+        "isSample": true
+      },
+      {
+        "name": "Walter S.",
+        "daysAgo": 58,
+        "rating": 5,
+        "text": "Been using this for six weeks paired with more fiber in my diet, as recommended. Comfortable, consistent digestion for the first time in years.",
+        "isSample": true
+      }
     ],
     "en": {
       "name": "Gut Health Capsules",

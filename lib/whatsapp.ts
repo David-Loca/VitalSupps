@@ -44,34 +44,60 @@ export function getWhatsAppUrl(message?: string): string {
 }
 
 /**
- * Generate a WhatsApp URL pre-filled with a product inquiry message.
+ * Fill a message template's {token} placeholders with the given values.
+ * Unknown/missing tokens are replaced with an empty string rather than left
+ * as a literal "{token}" in the outgoing message.
+ */
+export function fillWhatsAppTemplate(
+  template: string,
+  tokens: Record<string, string | number | undefined>
+): string {
+  return template.replace(/\{(\w+)\}/g, (_match, key: string) => {
+    const value = tokens[key];
+    return value === undefined || value === null ? "" : String(value);
+  });
+}
+
+/**
+ * Generate a WhatsApp URL pre-filled with a product inquiry/order message
+ * built from a template (the caller resolves which template to use — a
+ * per-product/per-locale override from `data/products.json`, falling back
+ * to a site-wide localized default translation — since this module has no
+ * access to i18n or product content itself).
+ *
+ * Supported placeholders in `template`: {product} (name + variant, e.g.
+ * "Gut Health Capsules (120 Capsules)"), {variant} (variant label alone,
+ * empty string if none selected), {quantity}.
+ *
+ * @param template - The resolved message template
  * @param productName - The product's display name
- * @param quantity - Optional quantity to include in the pre-filled message (e.g. from a buy box quantity stepper)
- * @param variantLabel - Optional selected variant label (e.g. "120 Capsules") to include in the pre-filled message
+ * @param variantLabel - Optional selected variant label (e.g. "120 Capsules")
+ * @param quantity - Optional quantity (defaults to 1 for the {quantity} token)
  */
 export function getProductWhatsAppUrl(
+  template: string,
   productName: string,
-  quantity?: number,
-  variantLabel?: string
+  variantLabel?: string,
+  quantity?: number
 ): string {
-  const productDescriptor = `${productName}${variantLabel ? ` (${variantLabel})` : ""}`;
-  if (quantity && quantity > 1) {
-    return getWhatsAppUrl(
-      `Hi, I'd like to order ${quantity}x ${productDescriptor}. Can you help me complete my purchase?`
-    );
-  }
-  return getWhatsAppUrl(`Hi, I'm interested in ${productDescriptor}. Can you tell me more?`);
+  const product = variantLabel ? `${productName} (${variantLabel})` : productName;
+  const message = fillWhatsAppTemplate(template, {
+    product,
+    variant: variantLabel ?? "",
+    quantity: quantity ?? 1,
+  });
+  return getWhatsAppUrl(message);
 }
 
 /**
  * Generate a WhatsApp URL pre-filled with a bundle inquiry message for buying
  * multiple products together (e.g. the "Buy Both & Save" offer).
+ * @param template - The resolved message template; supports a {products} placeholder
  * @param productNames - Display names of the products in the bundle
  */
-export function getBundleWhatsAppUrl(productNames: string[]): string {
-  return getWhatsAppUrl(
-    `Hi, I'm interested in the bundle deal: ${productNames.join(" + ")}. Can you tell me more?`
-  );
+export function getBundleWhatsAppUrl(template: string, productNames: string[]): string {
+  const message = fillWhatsAppTemplate(template, { products: productNames.join(" + ") });
+  return getWhatsAppUrl(message);
 }
 
 /**

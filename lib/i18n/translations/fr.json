@@ -211,7 +211,10 @@
     "contactQuestion": "Bonjour, j'ai une question sur VitalSupps.",
     "defaultButton": "Bonjour, j'ai une question.",
     "ariaFreeTest": "Contacter via WhatsApp",
-    "notFoundHelp": "Bonjour, je n'ai pas trouvé la page que je cherchais."
+    "notFoundHelp": "Bonjour, je n'ai pas trouvé la page que je cherchais.",
+    "productInquiryTemplate": "Bonjour, je suis intéressé(e) par {product}. Pouvez-vous m'en dire plus ?",
+    "productOrderTemplate": "Bonjour, je souhaite commander {quantity}x {product}. Pouvez-vous m'aider à finaliser mon achat ?",
+    "bundleTemplate": "Bonjour, je suis intéressé(e) par l'offre groupée : {products}. Pouvez-vous m'en dire plus ?"
   },
   "contactSection": {
     "title": "Contactez-nous",
