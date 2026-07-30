@@ -42,18 +42,33 @@ await mainHeadingInput.fill("");
 await mainHeadingInput.type("LIVE PREVIEW TEST 123", { delay: 20 });
 await page.waitForTimeout(300);
 
+console.log("Input value before preview:", await mainHeadingInput.inputValue());
+
 // Click the eye/preview toggle (aria-label follows the DE dict's preview.title)
 await page.locator('button[aria-label="Live-Vorschau"]').click();
-await page.waitForTimeout(1500);
+console.log("Waiting for iframe to finish first (slow, on-demand-compiled) load...");
+await page.waitForTimeout(4000);
 await page.screenshot({ path: "screenshots/preview-open.png" });
 
 const iframeEl = await page.$("iframe[title='Live site preview']");
 if (iframeEl) {
   const frame = await iframeEl.contentFrame();
   if (frame) {
-    await frame.waitForTimeout?.(500);
-    const bodyText = await frame.locator("body").innerText().catch(() => "N/A");
-    console.log("IFRAME CONTAINS TEST TEXT:", bodyText.includes("LIVE PREVIEW TEST 123"));
+    const bodyText1 = await frame.locator("body").innerText().catch(() => "N/A");
+    console.log("IFRAME CONTAINS TEST TEXT (after initial load):", bodyText1.includes("LIVEPREVIEWTEST123"));
+  }
+}
+
+// Type one more character to force a fresh broadcast now that the iframe is definitely loaded
+await mainHeadingInput.type("!", { delay: 20 });
+await page.waitForTimeout(1200);
+await page.screenshot({ path: "screenshots/preview-after-edit.png" });
+
+if (iframeEl) {
+  const frame = await iframeEl.contentFrame();
+  if (frame) {
+    const bodyText2 = await frame.locator("body").innerText().catch(() => "N/A");
+    console.log("IFRAME CONTAINS TEST TEXT (after 2nd edit):", bodyText2.includes("LIVEPREVIEWTEST123!"));
   }
 }
 
