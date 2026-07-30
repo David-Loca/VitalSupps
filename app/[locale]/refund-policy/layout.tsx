@@ -34,10 +34,10 @@ export async function generateMetadata({
 };
 
   const descriptionMap: Record<Locale, string> = {
-  en: "Read VitalSupps' 30-day money-back guarantee, including eligibility, timelines, and how to request a refund.",
-  fr: "Consultez la garantie satisfait ou remboursé de 30 jours de VitalSupps, l'éligibilité, les délais et comment demander un remboursement.",
-  es: "Consulta la garantía de devolución de dinero de 30 días de VitalSupps, la elegibilidad, los plazos y cómo solicitar un reembolso.",
-  de: "Lesen Sie die 30-tägige Geld-zurück-Garantie von VitalSupps, einschließlich Berechtigung, Fristen und wie Sie eine Rückerstattung beantragen.",
+  en: "Learn about VitalSupps' return process, eligibility, and how to request a refund.",
+  fr: "Découvrez le processus de retour de VitalSupps, l'éligibilité et comment demander un remboursement.",
+  es: "Conoce el proceso de devolución de VitalSupps, la elegibilidad y cómo solicitar un reembolso.",
+  de: "Erfahren Sie mehr über den Rückgabeprozess von VitalSupps, die Berechtigung und wie Sie eine Rückerstattung beantragen.",
 };
 
   const keywords = getRouteMetaKeywords(locale, "legal", legalRefundSeeds[locale]);
@@ -82,10 +82,10 @@ export default async function RefundPolicyLayout({
 };
 
   const descriptionMap: Record<Locale, string> = {
-  en: "Read VitalSupps' 30-day money-back guarantee, including eligibility, timelines, and how to request a refund.",
-  fr: "Consultez la garantie satisfait ou remboursé de 30 jours de VitalSupps, l'éligibilité, les délais et comment demander un remboursement.",
-  es: "Consulta la garantía de devolución de dinero de 30 días de VitalSupps, la elegibilidad, los plazos y cómo solicitar un reembolso.",
-  de: "Lesen Sie die 30-tägige Geld-zurück-Garantie von VitalSupps, einschließlich Berechtigung, Fristen und wie Sie eine Rückerstattung beantragen.",
+  en: "Learn about VitalSupps' return process, eligibility, and how to request a refund.",
+  fr: "Découvrez le processus de retour de VitalSupps, l'éligibilité et comment demander un remboursement.",
+  es: "Conoce el proceso de devolución de VitalSupps, la elegibilidad y cómo solicitar un reembolso.",
+  de: "Erfahren Sie mehr über den Rückgabeprozess von VitalSupps, die Berechtigung und wie Sie eine Rückerstattung beantragen.",
 };
 
   const keywords = getRouteMetaKeywords(locale, "legal", legalRefundSeeds[locale]);

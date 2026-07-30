@@ -70,7 +70,7 @@ export default function FeaturesSection() {
   return (
     <section
       id="features"
-      className={`py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 ${surface.sectionSoftBg || "bg-white"}`}
+      className={`py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 ${surface.sectionSoftBg || "bg-white"}`}
     >
       <div className="max-w-[1200px] mx-auto">
         {/* Section Heading - Simple h2 for accessibility */}

@@ -51,8 +51,8 @@
     "priceFrom": "Ab 35,99 $"
   },
   "announcement": {
-    "shipping": "Kostenloser Versand ab 50 $ Bestellwert",
-    "guarantee": "30-Tage Geld-zurück-Garantie",
+    "shipping": "",
+    "guarantee": "",
     "whatsapp": "Einfach per WhatsApp bestellen"
   },
   "breadcrumbs": {
@@ -66,7 +66,7 @@
     "reviewsCount": "{count} Bewertungen",
     "save": "{percent}% sparen",
     "compareAt": "Regulärer Preis",
-    "trustLine": "Kostenloser Versand ab 50 $ · 30-Tage Geld-zurück-Garantie",
+    "trustLine": "Bestellung über WhatsApp — wir bestätigen Versand- und Zahlungsdetails direkt mit Ihnen.",
     "addToCart": "Über WhatsApp kaufen"
   },
   "bundle": {
@@ -147,10 +147,6 @@
   },
   "trust": {
     "sectionTitle": "Kaufen Sie mit Vertrauen",
-    "guarantee": {
-      "title": "30-Tage Geld-zurück-Garantie",
-      "description": "Nicht zufrieden? Volle Rückerstattung innerhalb von 30 Tagen nach dem Kauf, ohne Fragen."
-    },
     "labTested": {
       "title": "Von Drittlaboren getestet",
       "description": "Jede Charge wird unabhängig auf Reinheit, Wirksamkeit und Schadstoffe geprüft."
@@ -189,7 +185,7 @@
     },
     "general4": {
       "question": "Wie lautet Ihre Rückgaberichtlinie?",
-      "answer": "Wir bieten eine 30-tägige Geld-zurück-Garantie. Wenn Sie nicht zufrieden sind, kontaktieren Sie uns und wir bearbeiten die Rückerstattung — Details finden Sie in unserer Rückerstattungsrichtlinie."
+      "answer": "Schreiben Sie uns bei Problemen mit Ihrer Bestellung auf WhatsApp — wir bearbeiten Rückgaben und Rückerstattungen im Einzelfall."
     },
     "general5": {
       "question": "Sind Ihre Produkte von Dritten getestet?",
@@ -232,10 +228,10 @@
   "legal": {
     "refundPolicy": {
       "title": "Rückerstattungsrichtlinie",
-      "intro": "Wir möchten, dass Sie VitalSupps mit vollem Vertrauen kaufen. Wenn Sie mit Ihrer Methylenblau- oder Darmgesundheits-Bestellung nicht zufrieden sind, bieten wir eine 30-tägige Geld-zurück-Garantie ab Lieferdatum.",
-      "intro2": "Um eine Rückerstattung zu beantragen, kontaktieren Sie uns per WhatsApp oder E-Mail mit Ihrer Bestellnummer, und wir führen Sie durch den Prozess.",
+      "intro": "Wenn Sie mit Ihrer Methylenblau- oder Darmgesundheits-Bestellung nicht zufrieden sind, kontaktieren Sie uns und wir prüfen Ihre Anfrage.",
+      "intro2": "Um eine Rückgabe zu starten, kontaktieren Sie uns per WhatsApp oder E-Mail mit Ihrer Bestellnummer, und wir führen Sie durch die nächsten Schritte.",
       "howItWorksTitle": "So funktioniert es",
-      "howItWorksText": "Kontaktieren Sie uns innerhalb von 30 Tagen nach Lieferung. Nach Bestätigung Ihrer Anfrage bearbeiten wir Ihre Rückerstattung innerhalb von 5-10 Werktagen auf die ursprüngliche Zahlungsmethode. Geöffnete oder verwendete Produkte sind weiterhin im Rahmen dieser Garantie berechtigt.",
+      "howItWorksText": "Kontaktieren Sie uns so bald wie möglich nach Erhalt Ihrer Bestellung. Wir prüfen Ihre Anfrage und informieren Sie über das Ergebnis, einschließlich der nächsten Schritte für eine Rückerstattung oder einen Ersatz, falls zutreffend.",
       "conclusion": "Bei Fragen zu Ihrer Bestellung oder dieser Richtlinie schreiben Sie uns auf WhatsApp — wir helfen gerne."
     },
     "privacyPolicy": {

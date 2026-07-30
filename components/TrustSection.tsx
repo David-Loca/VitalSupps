@@ -1,21 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, FlaskConical, BadgeCheck, RotateCcw } from "lucide-react";
+import { ShieldCheck, FlaskConical, BadgeCheck } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TrustSection() {
   const { t } = useLanguage();
 
   const badges = [
-    { icon: RotateCcw, titleKey: "trust.guarantee.title", descKey: "trust.guarantee.description" },
     { icon: FlaskConical, titleKey: "trust.labTested.title", descKey: "trust.labTested.description" },
     { icon: BadgeCheck, titleKey: "trust.gmp.title", descKey: "trust.gmp.description" },
     { icon: ShieldCheck, titleKey: "trust.madeInUsa.title", descKey: "trust.madeInUsa.description" },
   ];
 
   return (
-    <section className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-dark-text">
+    <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-dark-text">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-0">
           <h2 className="font-serif font-light text-lg sm:text-xl text-white shrink-0 lg:w-56 lg:pr-8">

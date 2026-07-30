@@ -105,22 +105,51 @@ export default function Header() {
         isScrolled ? "shadow-md" : ""
       } ${isVisible ? "translate-y-0" : "lg:-translate-y-full"}`}
     >
-      {/* Announcement bar - standard ecommerce trust/promo strip above the nav */}
-      <div className="bg-accent-blue-dark text-white text-[11px] sm:text-xs font-medium tracking-wide">
-        <div className="max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 h-8 flex items-center justify-center overflow-hidden">
-          <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap overflow-hidden text-ellipsis">
-            <span>{t("announcement.shipping")}</span>
-            <span className="text-white/40" aria-hidden="true">
-              ·
-            </span>
-            <span className="hidden sm:inline">{t("announcement.guarantee")}</span>
-            <span className="hidden sm:inline text-white/40" aria-hidden="true">
-              ·
-            </span>
-            <span className="hidden md:inline">{t("announcement.whatsapp")}</span>
+      {/* Announcement bar - standard ecommerce trust/promo strip above the nav.
+          Each message is optional (set via the admin panel); empty ones are
+          skipped entirely so no orphaned "·" separator is ever shown. */}
+      {(() => {
+        const rawMessages = [
+          t("announcement.shipping"),
+          t("announcement.guarantee"),
+          t("announcement.whatsapp"),
+        ].filter((text) => text && text.trim().length > 0);
+
+        if (rawMessages.length === 0) return null;
+
+        // Progressively hide later messages on narrower screens, based on
+        // their position AFTER empty ones are filtered out — not their
+        // original slot — so a single remaining message is never hidden.
+        const hideBelowByIndex: ("sm" | "md" | null)[] = [null, "sm", "md"];
+        const messages = rawMessages.map((text, i) => ({
+          text,
+          hideBelow: hideBelowByIndex[i] ?? "md",
+        }));
+
+        return (
+          <div className="bg-accent-blue-dark text-white text-[11px] sm:text-xs font-medium tracking-wide">
+            <div className="max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 h-8 flex items-center justify-center overflow-hidden">
+              <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap overflow-hidden text-ellipsis">
+                {messages.map((m, i) => (
+                  <span key={i} className="contents">
+                    {i > 0 && (
+                      <span
+                        className={`text-white/40 ${m.hideBelow === "sm" ? "hidden sm:inline" : m.hideBelow === "md" ? "hidden md:inline" : ""}`}
+                        aria-hidden="true"
+                      >
+                        ·
+                      </span>
+                    )}
+                    <span className={m.hideBelow === "sm" ? "hidden sm:inline" : m.hideBelow === "md" ? "hidden md:inline" : ""}>
+                      {m.text}
+                    </span>
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        );
+      })()}
       <nav
         className="bg-white max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
         aria-label="Main navigation"
@@ -137,7 +166,16 @@ export default function Header() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {/* Logo - slightly bigger on desktop without changing header height */}
+            {/* Logo mark + wordmark */}
+            <div className="relative h-9 sm:h-10 w-9 sm:w-10 shrink-0 mr-2 rounded-full overflow-hidden">
+              <Image
+                src="/logo/vitalsupps-icon.jpg"
+                alt=""
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
             <div className="relative h-8 sm:h-9 w-auto">
               <Image
                 src="/logo/vitalsupps-wordmark.svg"

@@ -21,7 +21,7 @@ export default function ProductShowcase() {
   const products = getAllProducts();
 
   return (
-    <section id="products" className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
+    <section id="products" className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
       <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ export default function ProductShowcase() {
                   </span>
                 )}
 
-                <div className="relative aspect-[3/4] bg-white">
+                <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 bg-white">
                   <Image
                     src={cardImage}
                     alt={content.heroImageAlt}

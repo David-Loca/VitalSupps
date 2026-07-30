@@ -51,8 +51,8 @@
     "priceFrom": "Desde $35.99"
   },
   "announcement": {
-    "shipping": "Envío gratis en pedidos superiores a $50",
-    "guarantee": "Garantía de devolución de 30 días",
+    "shipping": "",
+    "guarantee": "",
     "whatsapp": "Pide fácilmente por WhatsApp"
   },
   "breadcrumbs": {
@@ -66,7 +66,7 @@
     "reviewsCount": "{count} reseñas",
     "save": "Ahorra {percent}%",
     "compareAt": "Precio habitual",
-    "trustLine": "Envío gratis desde $50 · Garantía de devolución de 30 días",
+    "trustLine": "Pide por WhatsApp — confirmamos contigo directamente los detalles de envío y pago.",
     "addToCart": "Comprar por WhatsApp"
   },
   "bundle": {
@@ -147,10 +147,6 @@
   },
   "trust": {
     "sectionTitle": "Compra con confianza",
-    "guarantee": {
-      "title": "Garantía de 30 Días de Devolución de Dinero",
-      "description": "¿No estás satisfecho? Reembolso completo dentro de los 30 días posteriores a la compra, sin preguntas."
-    },
     "labTested": {
       "title": "Probado por Terceros",
       "description": "Cada lote se prueba de forma independiente en cuanto a pureza, potencia y contaminantes."
@@ -189,7 +185,7 @@
     },
     "general4": {
       "question": "¿Cuál es su política de devoluciones?",
-      "answer": "Ofrecemos una garantía de devolución de dinero de 30 días. Si no estás satisfecho, contáctanos y procesaremos el reembolso — consulta nuestra Política de Reembolso para más detalles."
+      "answer": "Escríbenos por WhatsApp si hay algún problema con tu pedido — gestionamos las devoluciones y reembolsos caso por caso."
     },
     "general5": {
       "question": "¿Sus productos están probados por terceros?",
@@ -232,10 +228,10 @@
   "legal": {
     "refundPolicy": {
       "title": "Política de Reembolso",
-      "intro": "Queremos que compres VitalSupps con total confianza. Si no estás satisfecho con tu pedido de Azul de Metileno o Salud Intestinal, ofrecemos una garantía de devolución de dinero de 30 días desde la fecha de entrega.",
-      "intro2": "Para solicitar un reembolso, contáctanos por WhatsApp o correo electrónico con tu número de pedido, y te guiaremos en el proceso.",
+      "intro": "Si no estás satisfecho con tu pedido de Azul de Metileno o Salud Intestinal, contáctanos y revisaremos tu solicitud.",
+      "intro2": "Para iniciar una devolución, contáctanos por WhatsApp o correo electrónico con tu número de pedido y te guiaremos en los siguientes pasos.",
       "howItWorksTitle": "Cómo funciona",
-      "howItWorksText": "Contáctanos dentro de los 30 días posteriores a la entrega. Una vez confirmada tu solicitud, procesaremos tu reembolso al método de pago original en 5-10 días hábiles. Los productos abiertos o usados siguen siendo elegibles bajo esta garantía.",
+      "howItWorksText": "Contáctanos lo antes posible después de recibir tu pedido. Revisaremos tu solicitud y te informaremos del resultado, incluyendo los siguientes pasos para un reembolso o reemplazo si corresponde.",
       "conclusion": "Si tienes alguna pregunta sobre tu pedido o esta política, escríbenos por WhatsApp y con gusto te ayudaremos."
     },
     "privacyPolicy": {

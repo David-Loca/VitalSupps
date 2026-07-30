@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircle, Minus, Plus, ShieldCheck, Truck } from "lucide-react";
+import { MessageCircle, Minus, Plus } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { formatPrice, getSavingsPercent, type Product, type ProductVariant } from "@/lib/products";
 import { getProductWhatsAppUrl } from "@/lib/whatsapp";
@@ -86,8 +86,8 @@ export default function BuyBox({
                   aria-pressed={isSelected}
                   className={`px-3.5 py-2 rounded-[2px] border text-sm font-medium transition-colors cursor-pointer ${
                     isSelected
-                      ? "bg-dark-text text-white border-dark-text"
-                      : "border-subtle-gray text-dark-text hover:border-dark-text"
+                      ? "bg-accent-blue text-white border-accent-blue"
+                      : "border-subtle-gray text-dark-text hover:border-accent-blue"
                   }`}
                 >
                   {variant.label}
@@ -137,8 +137,7 @@ export default function BuyBox({
       </a>
 
       <p className="mt-4 flex items-center gap-2 text-xs text-dark-text/60">
-        <Truck className="w-4 h-4 text-accent-secondary shrink-0" strokeWidth={1.5} />
-        <ShieldCheck className="w-4 h-4 text-accent-secondary shrink-0" strokeWidth={1.5} />
+        <MessageCircle className="w-4 h-4 text-accent-secondary shrink-0" strokeWidth={1.5} />
         {t("buyBox.trustLine")}
       </p>
     </div>

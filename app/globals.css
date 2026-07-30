@@ -18,16 +18,16 @@
   --color-subtle-gray: #e8e4de;
   --color-muted-text: #888888;
 
-  /* Colors - brand primary (saturated forest green), with hover/tint/ring steps */
-  --color-accent-blue: #1f5d3e;
-  --color-accent-blue-dark: #153f2a;
-  --color-accent-blue-light: #e3f0e9;
-  --color-accent-blue-ring: #8fa286;
+  /* Colors - brand primary (Pass 7: real logo green), with hover/tint/ring steps */
+  --color-accent-blue: #2e8912;
+  --color-accent-blue-dark: #226b12;
+  --color-accent-blue-light: #eaf6e3;
+  --color-accent-blue-ring: #6fbf5a;
 
-  /* Colors - secondary accent (Pass 6 gold, B&B Beauty ground truth) */
-  --color-accent-secondary: #c4a35a;
-  --color-accent-secondary-dark: #b8964e;
-  --color-accent-secondary-light: #e8d5a3;
+  /* Colors - secondary accent (Pass 7: real logo blue) */
+  --color-accent-secondary: #137bc2;
+  --color-accent-secondary-dark: #0b5a94;
+  --color-accent-secondary-light: #e3f3fc;
 
   /* Colors - Terracotta accent (Gut Health product line) */
   --color-accent-terracotta: #c05a32;
@@ -129,12 +129,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-dark {
-  background: #111111;
+  background: var(--color-accent-blue);
   color: #ffffff;
 }
 
 .btn-dark:hover {
-  background: #2a2a2a;
+  background: var(--color-accent-blue-dark);
 }
 
 .btn-outline {
@@ -148,12 +148,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-gold {
-  background: #c4a35a;
-  color: #111111;
+  background: var(--color-accent-secondary);
+  color: #ffffff;
 }
 
 .btn-gold:hover {
-  background: #b8964e;
+  background: var(--color-accent-secondary-dark);
 }
 
 @keyframes scroll {

@@ -1,7 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 60" role="img" aria-label="VitalSupps">
-  <g transform="translate(0,8)">
-    <path d="M22 3c9 3 15 11 15 20 0 9-6 17-15 20-9-3-15-11-15-20C7 14 13 6 22 3Z" fill="none" stroke="#1F5D3E" stroke-width="2.2" />
-    <path d="M22 9c0 12 0 20 0 28" stroke="#FFA41C" stroke-width="2" stroke-linecap="round" />
-  </g>
-  <text x="50" y="41" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="28" letter-spacing="-0.5" fill="#0F1111">Vital<tspan fill="#1F5D3E">Supps</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" role="img" aria-label="VitalSupps">
+  <defs>
+    <linearGradient id="vs-green" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#43a827" />
+      <stop offset="100%" stop-color="#1f6b0e" />
+    </linearGradient>
+    <linearGradient id="vs-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3fb6f0" />
+      <stop offset="100%" stop-color="#0b5a94" />
+    </linearGradient>
+  </defs>
+  <text x="0" y="41" font-family="Poppins, 'Segoe UI', Arial, Helvetica, sans-serif" font-weight="800" font-size="30" letter-spacing="-0.5">
+    <tspan fill="url(#vs-green)">Vital</tspan><tspan fill="url(#vs-blue)">Supps</tspan>
+  </text>
 </svg>

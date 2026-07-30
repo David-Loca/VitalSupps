@@ -29,7 +29,7 @@ import {
 import BlogsManager from "@/components/admin/BlogsManager";
 import ProductsManager from "@/components/admin/ProductsManager";
 import DeploymentNotification from "@/components/admin/DeploymentNotification";
-import { AdminHeroPreview } from "@/components/admin/AdminLocalePreview";
+import { AdminHeroPreview, AdminAnnouncementPreview } from "@/components/admin/AdminLocalePreview";
 import AdminSidebar, { type AdminSection } from "@/components/admin/AdminSidebar";
 
 interface Translations {
@@ -602,6 +602,45 @@ export default function AdminDashboard() {
 
                     {showPreview && (
                       <AdminHeroPreview locale={activeLocale} getValue={getValue} />
+                    )}
+
+                    <div className="bg-white rounded-xl border border-gray-200 p-6">
+                      <h2 className="text-2xl font-medium text-dark-text mb-1">
+                        Announcement Bar
+                      </h2>
+                      <p className="text-gray-500 text-sm mb-6">
+                        The thin strip shown above the header on every page, not just the
+                        homepage. Each message is optional — leave a field empty to hide that
+                        message entirely (no stray dot separator is shown). If all three are
+                        empty, the whole bar is hidden.
+                      </p>
+
+                      <div className="space-y-5">
+                        {(
+                          [
+                            ["shipping", "Shipping message"],
+                            ["guarantee", "Guarantee message"],
+                            ["whatsapp", "WhatsApp / ordering message"],
+                          ] as const
+                        ).map(([key, label]) => (
+                          <div key={key}>
+                            <label className="block text-sm font-medium text-gray-700 mb-2">
+                              {label}
+                            </label>
+                            <input
+                              type="text"
+                              value={getValue(`announcement.${key}`)}
+                              onChange={(e) => updateValue(`announcement.${key}`, e.target.value)}
+                              placeholder="Leave empty to hide this message"
+                              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {showPreview && (
+                      <AdminAnnouncementPreview locale={activeLocale} getValue={getValue} />
                     )}
                   </div>
                 )}

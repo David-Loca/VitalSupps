@@ -126,8 +126,8 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative order-1 lg:order-2"
             >
-              <div className="relative w-full aspect-[3/4] rounded-[4px] overflow-hidden">
-                <span className="absolute top-4 left-4 z-10 bg-dark-text text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-[2px] shadow-sm">
+              <div className="relative w-full h-72 sm:h-96 md:h-105 lg:h-120 rounded-[4px] overflow-hidden">
+                <span className="absolute top-4 left-4 z-10 bg-accent-blue text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-[2px] shadow-sm">
                   {t("hero.ribbon")}
                 </span>
                 <Image
@@ -169,7 +169,7 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
       </Suspense>
 
       {/* Final CTA banner - full-bleed black band */}
-      <section id="cta" className="bg-dark-text py-24 lg:py-[100px] px-10 text-center">
+      <section id="cta" className="bg-dark-text py-14 sm:py-20 lg:py-[100px] px-10 text-center">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-white mb-4">
             {t("cta.title")}

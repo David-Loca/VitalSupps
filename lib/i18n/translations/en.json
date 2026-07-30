@@ -51,8 +51,8 @@
     "priceFrom": "From $35.99"
   },
   "announcement": {
-    "shipping": "Free shipping on orders over $50",
-    "guarantee": "30-Day Money-Back Guarantee",
+    "shipping": "",
+    "guarantee": "",
     "whatsapp": "Order easily via WhatsApp"
   },
   "breadcrumbs": {
@@ -66,7 +66,7 @@
     "reviewsCount": "{count} reviews",
     "save": "Save {percent}%",
     "compareAt": "Compare at",
-    "trustLine": "Free shipping over $50 · 30-day money-back guarantee",
+    "trustLine": "Order via WhatsApp — we'll confirm shipping and payment details with you directly.",
     "addToCart": "Buy via WhatsApp"
   },
   "bundle": {
@@ -147,10 +147,6 @@
   },
   "trust": {
     "sectionTitle": "Buy with confidence",
-    "guarantee": {
-      "title": "30-Day Money-Back Guarantee",
-      "description": "Not satisfied? Get a full refund within 30 days of purchase, no questions asked."
-    },
     "labTested": {
       "title": "Third-Party Lab Tested",
       "description": "Every batch is independently tested for purity, potency and contaminants."
@@ -189,7 +185,7 @@
     },
     "general4": {
       "question": "What's your return policy?",
-      "answer": "We offer a 30-day money-back guarantee. If you're not satisfied, reach out and we'll process a refund — see our Refund Policy for full details."
+      "answer": "Message us on WhatsApp if there's an issue with your order — we handle returns and refunds on a case-by-case basis."
     },
     "general5": {
       "question": "Are your products third-party tested?",
@@ -232,10 +228,10 @@
   "legal": {
     "refundPolicy": {
       "title": "Refund Policy",
-      "intro": "We want you to feel confident purchasing VitalSupps. If you're not satisfied with your Methylene Blue or Gut Health order, we offer a 30-day money-back guarantee from the date of delivery.",
-      "intro2": "To request a refund, contact us via WhatsApp or email with your order number, and we'll guide you through the process.",
+      "intro": "If you're not satisfied with your Methylene Blue or Gut Health order, contact us and we'll review your request.",
+      "intro2": "To start a return, reach out via WhatsApp or email with your order number and we'll walk you through the next steps.",
       "howItWorksTitle": "How it works",
-      "howItWorksText": "Reach out within 30 days of delivery. Once your request is confirmed, we'll process your refund to the original payment method within 5-10 business days. Opened or used products are still eligible under this guarantee.",
+      "howItWorksText": "Contact us as soon as possible after receiving your order. We'll review your request and let you know the outcome, including next steps for a refund or replacement where applicable.",
       "conclusion": "If you have any questions about your order or this policy, message us on WhatsApp and we'll be happy to help."
     },
     "privacyPolicy": {

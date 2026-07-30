@@ -25,7 +25,7 @@ export default function ProductReviews({ product }: { product: Product }) {
   if (reviews.length === 0) return null;
 
   return (
-    <section id="reviews" className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
+    <section id="reviews" className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
       <div className="max-w-[1200px] mx-auto">
         <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-6">
           {t("reviewsSection.title")}

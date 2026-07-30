@@ -415,3 +415,54 @@ our product hero images — not a plain object on a flat white background. New h
 (background gradient + product + prop baked into one image, like a real photograph would be), in
 glossy black-glass-with-gold-cap language, one warm-toned backdrop per product for variety, using
 our own "VITALSUPPS" gold-foil-style label instead of a photo.
+
+---
+
+## Pass 7 — Real Logo Color Match
+
+Passes 1-6 above explored a black/gold "luxury boutique" direction as a design reference point,
+but it never matched the client's actual company logo. This pass replaces the brand accent colors
+with values sampled directly (via `sharp`, both targeted pixel sampling and statistical
+median/extremes) from the real logo files (`public/VitalSupps logo.jpg`, `public/VitalSupps.jpg`,
+`public/VitalSupps logo.ico`) — a glossy "nature + water/science" mark (green leaf, blue water
+droplet/ring, molecule icon, sparkle highlights) on white. Typography, layout, spacing, and the
+ecommerce patterns from prior passes are unchanged — this pass is colors only.
+
+Sampled source values: wordmark green `#2e8912` (clean sample), wordmark blue `#137bc2` (clean
+sample), green median across leaf `#43a827` / darkest leaf shadow `#044200`, blue median across
+ring/droplet `#088bd7` / darkest ring shadow `#001e48`, bright cyan sparkle highlight `#4ce2fd`.
+
+Tokens changed in `app/globals.css`'s `@theme inline` block:
+
+- `--color-accent-blue` (the primary brand/action color token — name is legacy, it now holds the
+  logo's green since green is the dominant color): `#1f5d3e` → `#2e8912`, `-dark` (hover step)
+  `#153f2a` → `#226b12`, `-light` (tint) `#e3f0e9` → `#eaf6e3`, `-ring` (focus ring)
+  `#8fa286` → `#6fbf5a`.
+- `--color-accent-secondary` (was Pass 6 gold, now the logo's blue): `#c4a35a` → `#137bc2`,
+  `-dark` `#b8964e` → `#0b5a94`, `-light` `#e8d5a3` → `#e3f3fc`.
+- `--color-accent-terracotta` (Gut Health line differentiator): left unchanged at `#c05a32` —
+  still reads as an intentional warm contrast against the new green/blue system.
+- `--color-star` (`#ffa41c`) and `--color-sale` (`#b33a3a`): left unchanged — rating-star yellow
+  and sale-badge red are UX conventions independent of brand color.
+- `--color-dark-text`, `--color-off-white`, `--color-light-gray`, `--color-subtle-gray`,
+  `--color-muted-text`: untouched — body/heading text stays neutral near-black for readability,
+  it was never repointed to green.
+- `--color-cta` (`#ffa41c`, already noted as retired/unused in Pass 6): left as-is, confirmed via
+  grep that `bg-cta` has zero usages in components.
+
+`.btn-dark`/`.btn-gold` in `app/globals.css` (previously hardcoded hex, not tokenized) were
+switched to reference `var(--color-accent-blue)` / `var(--color-accent-secondary)` (and their
+`-dark` hover steps) instead of literal `#111111` / `#c4a35a`, so the primary buy button is now
+green-on-white and the featured/promo button is blue-on-white (white text, better contrast than
+the old gold-with-dark-text). `.btn-outline` intentionally stays neutral black/gray as a ghost
+secondary style.
+
+Several interactive "selected/active state" UI moments that were using `--color-dark-text` (near-
+black) as a stand-in accent color were recolored to `--color-accent-blue` (green) so branded
+moments actually read as branded: the BuyBox variant-selector active pill
+(`components/BuyBox.tsx`), the FAQ accordion active card border + open-state icon fill
+(`components/FAQSection.tsx`, `app/[locale]/products/[slug]/ProductPageClient.tsx`), the product
+gallery active thumbnail border (`ProductPageClient.tsx`), and the homepage hero ribbon badge
+(`app/[locale]/HomePageClient.tsx`). Plain body text, headings, and structural dark surfaces
+(footer, black CTA band, hamburger icon, tooltips) were left as near-black — only actual
+brand/accent moments were recolored.

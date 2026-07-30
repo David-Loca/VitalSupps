@@ -58,7 +58,7 @@ function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
             aria-label={`View image ${index + 1}`}
             disabled={!hasMultiple}
             className={`relative w-16 h-16 rounded-[4px] bg-light-gray border overflow-hidden flex items-center justify-center shrink-0 transition-colors ${
-              activeIndex === index ? "border-dark-text" : "border-subtle-gray"
+              activeIndex === index ? "border-accent-blue" : "border-subtle-gray"
             } ${hasMultiple ? "cursor-pointer" : "cursor-default"}`}
           >
             {src ? (
@@ -143,7 +143,7 @@ export default function ProductPageClient({
         </section>
 
         {/* Benefits */}
-        <section className="bg-off-white py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10">
+        <section className="bg-off-white py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10">
           <div className="max-w-[1200px] mx-auto">
             <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-8">
               {t("products.benefits")}
@@ -163,7 +163,7 @@ export default function ProductPageClient({
         </section>
 
         {/* Usage, Ingredients & Spec table */}
-        <section className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
+        <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
           <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
               <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-5">
@@ -235,7 +235,7 @@ export default function ProductPageClient({
         <ProductReviews product={product} />
 
         {/* Product FAQ */}
-        <section className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
+        <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
           <div className="max-w-4xl mx-auto">
             <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-8 text-center">
               {t("faq.title")}
@@ -247,7 +247,7 @@ export default function ProductPageClient({
                   <div
                     key={item.question}
                     className={`bg-white rounded-[4px] border transition-all duration-300 overflow-hidden ${
-                      isOpen ? "border-dark-text" : "border-subtle-gray"
+                      isOpen ? "border-accent-blue" : "border-subtle-gray"
                     }`}
                   >
                     <button
@@ -262,7 +262,7 @@ export default function ProductPageClient({
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                         className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${
-                          isOpen ? "bg-dark-text text-white" : "bg-off-white text-dark-text"
+                          isOpen ? "bg-accent-blue text-white" : "bg-off-white text-dark-text"
                         }`}
                       >
                         <ChevronDown className="w-4 h-4" />

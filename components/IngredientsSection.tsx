@@ -9,7 +9,7 @@ export default function IngredientsSection() {
   const products = getAllProducts();
 
   return (
-    <section id="ingredients" className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
+    <section id="ingredients" className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
       <div className="max-w-[1200px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[38%_62%] gap-10 lg:gap-16 items-start mb-8 lg:mb-10">
           <motion.h2

@@ -51,8 +51,8 @@
     "priceFrom": "À partir de 35,99 $"
   },
   "announcement": {
-    "shipping": "Livraison gratuite dès 50 $ d'achat",
-    "guarantee": "Garantie satisfait ou remboursé 30 jours",
+    "shipping": "",
+    "guarantee": "",
     "whatsapp": "Commandez facilement via WhatsApp"
   },
   "breadcrumbs": {
@@ -66,7 +66,7 @@
     "reviewsCount": "{count} avis",
     "save": "Économisez {percent}%",
     "compareAt": "Prix habituel",
-    "trustLine": "Livraison gratuite dès 50 $ · Garantie satisfait ou remboursé 30 jours",
+    "trustLine": "Commandez via WhatsApp — nous confirmons directement avec vous les modalités de livraison et de paiement.",
     "addToCart": "Acheter via WhatsApp"
   },
   "bundle": {
@@ -147,10 +147,6 @@
   },
   "trust": {
     "sectionTitle": "Achetez en toute confiance",
-    "guarantee": {
-      "title": "Garantie Satisfait ou Remboursé 30 Jours",
-      "description": "Pas satisfait ? Remboursement intégral sous 30 jours après l'achat, sans justification."
-    },
     "labTested": {
       "title": "Testé par un Tiers Indépendant",
       "description": "Chaque lot est testé indépendamment pour sa pureté, son efficacité et l'absence de contaminants."
@@ -189,7 +185,7 @@
     },
     "general4": {
       "question": "Quelle est votre politique de retour ?",
-      "answer": "Nous offrons une garantie satisfait ou remboursé de 30 jours. Si vous n'êtes pas satisfait, contactez-nous et nous procéderons au remboursement — consultez notre Politique de Remboursement pour tous les détails."
+      "answer": "Écrivez-nous sur WhatsApp en cas de problème avec votre commande — nous traitons les retours et remboursements au cas par cas."
     },
     "general5": {
       "question": "Vos produits sont-ils testés par un tiers indépendant ?",
@@ -232,10 +228,10 @@
   "legal": {
     "refundPolicy": {
       "title": "Politique de Remboursement",
-      "intro": "Nous voulons que vous achetiez VitalSupps en toute confiance. Si vous n'êtes pas satisfait de votre commande de Bleu de Méthylène ou de Santé Intestinale, nous offrons une garantie satisfait ou remboursé de 30 jours à compter de la livraison.",
-      "intro2": "Pour demander un remboursement, contactez-nous via WhatsApp ou par email avec votre numéro de commande, et nous vous guiderons dans la procédure.",
+      "intro": "Si vous n'êtes pas satisfait de votre commande de Bleu de Méthylène ou de Santé Intestinale, contactez-nous et nous examinerons votre demande.",
+      "intro2": "Pour entamer un retour, contactez-nous via WhatsApp ou par email avec votre numéro de commande, et nous vous guiderons pour la suite.",
       "howItWorksTitle": "Comment ça marche",
-      "howItWorksText": "Contactez-nous dans les 30 jours suivant la livraison. Une fois votre demande confirmée, nous traiterons votre remboursement sur le moyen de paiement d'origine sous 5 à 10 jours ouvrés. Les produits ouverts ou utilisés restent éligibles à cette garantie.",
+      "howItWorksText": "Contactez-nous dès que possible après réception de votre commande. Nous examinerons votre demande et vous informerons de la suite, y compris des prochaines étapes pour un remboursement ou un remplacement le cas échéant.",
       "conclusion": "Pour toute question sur votre commande ou cette politique, écrivez-nous sur WhatsApp, nous serons ravis de vous aider."
     },
     "privacyPolicy": {

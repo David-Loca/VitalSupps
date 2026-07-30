@@ -89,8 +89,17 @@ export default function Footer() {
             transition={{ duration: 0.3 }}
           >
             {/* Logo */}
-            <div className="flex items-center mb-2.5">
-              <div className="relative h-10 w-auto">
+            <div className="flex items-center gap-2.5 mb-2.5">
+              <div className="relative h-9 w-9 shrink-0 rounded-full overflow-hidden ring-2 ring-white/10">
+                <Image
+                  src="/logo/vitalsupps-icon.jpg"
+                  alt=""
+                  fill
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="relative h-8 w-auto">
                 <Image
                   src="/logo/vitalsupps-wordmark.svg"
                   alt="VitalSupps"

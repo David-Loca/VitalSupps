@@ -70,3 +70,47 @@ export function AdminHeroPreview({ locale, getValue }: PreviewProps) {
     </div>
   );
 }
+
+/**
+ * Live preview of the site-wide announcement bar shown above the header on
+ * every page. Mirrors `components/Header.tsx`'s exact rendering rules —
+ * including that an empty message is skipped entirely (no orphaned "·"
+ * separator) — so what the admin sees here always matches production.
+ */
+export function AdminAnnouncementPreview({ getValue }: PreviewProps) {
+  const messages = [
+    getValue("announcement.shipping"),
+    getValue("announcement.guarantee"),
+    getValue("announcement.whatsapp"),
+  ].filter((text) => text && text.trim().length > 0);
+
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white p-6">
+      <p className="text-xs text-gray-500 mb-4 uppercase tracking-wide">
+        Announcement bar preview (shown above the header on every page)
+      </p>
+      {messages.length === 0 ? (
+        <p className="text-sm text-gray-400 italic">
+          All three messages are empty — the bar will not render at all on the live site.
+        </p>
+      ) : (
+        <div className="bg-accent-blue-dark text-white text-[11px] sm:text-xs font-medium tracking-wide rounded-md">
+          <div className="h-8 flex items-center justify-center overflow-hidden px-4">
+            <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap overflow-hidden text-ellipsis">
+              {messages.map((text, i) => (
+                <span key={i} className="contents">
+                  {i > 0 && (
+                    <span className="text-white/40" aria-hidden="true">
+                      ·
+                    </span>
+                  )}
+                  <span>{text}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

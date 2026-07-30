@@ -73,7 +73,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white"
+      className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white"
     >
       <div className="max-w-[1200px] mx-auto">
         {/* Section Heading */}
@@ -97,8 +97,8 @@ export default function FAQSection() {
                 key={faq.id}
                 className={`bg-white rounded-[4px] border transition-all duration-300 overflow-hidden h-fit ${
                   isOpen
-                    ? "border-dark-text"
-                    : "border-subtle-gray hover:border-dark-text/30"
+                    ? "border-accent-blue"
+                    : "border-subtle-gray hover:border-accent-blue/30"
                 }`}
               >
                 {/* Question Button */}
@@ -115,7 +115,7 @@ export default function FAQSection() {
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                      isOpen ? "bg-dark-text text-white" : "bg-off-white text-dark-text"
+                      isOpen ? "bg-accent-blue text-white" : "bg-off-white text-dark-text"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />

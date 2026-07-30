@@ -24,7 +24,7 @@ export default function BundleOffer() {
   const whatsappUrl = getBundleWhatsAppUrl([contentA.name, contentB.name]);
 
   return (
-    <section className="py-24 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
+    <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-off-white">
       <div className="max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
