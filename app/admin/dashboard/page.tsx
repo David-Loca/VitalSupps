@@ -789,470 +789,132 @@ export default function AdminDashboard() {
                 {/* Metadata Section Editor */}
                 {activeSection === "metadata" && (
                   <div className="space-y-8">
-                    {/* Header */}
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 p-6">
-                      <div className="flex items-center gap-3 mb-2">
-                        <div className="p-2 bg-blue-600 rounded-lg">
-                          <Type className="w-5 h-5 text-white" />
-                        </div>
-                        <div>
-                          <h2 className="text-2xl font-semibold text-gray-900">Page Metadata</h2>
-                          <p className="text-sm text-gray-600 mt-0.5">Edit SEO titles and descriptions for all pages</p>
-                        </div>
-                      </div>
-                    </div>
+                    <SectionHero
+                      icon={<Type className="w-7 h-7" strokeWidth={2} />}
+                      title="Page Metadata"
+                      subtitle="Edit SEO titles and descriptions for all pages"
+                    />
 
-                    <div className="space-y-8">
-                      {/* Homepage */}
-                      <div className="bg-white rounded-xl border-2 border-blue-200 shadow-sm overflow-hidden">
-                        <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 border-b border-blue-800">
-                          <div className="flex items-center gap-3">
-                            <Home className="w-5 h-5 text-white" />
-                            <h3 className="text-lg font-semibold text-white">Homepage</h3>
-                            <span className="ml-auto px-2.5 py-1 bg-blue-500/30 text-white text-xs font-medium rounded-full">Main Page</span>
-                          </div>
+                    {METADATA_PAGES.map(({ section, label, badge, icon: Icon }) => (
+                      <Card
+                        key={section}
+                        icon={<Icon className="w-5 h-5 text-admin-primary" strokeWidth={2} />}
+                        title={label}
+                        headerAction={<Badge variant="primary">{badge}</Badge>}
+                      >
+                        <div className="space-y-5">
+                          <Input
+                            label="Page Title"
+                            value={getMetadataField(section, "title")}
+                            onChange={(e) => updateMetadataField(section, "title", e.target.value)}
+                            placeholder="Enter page title for SEO..."
+                          />
+                          <Textarea
+                            label="Meta Description"
+                            value={getMetadataField(section, "description")}
+                            onChange={(e) =>
+                              updateMetadataField(section, "description", e.target.value)
+                            }
+                            rows={4}
+                            placeholder="Enter meta description for SEO..."
+                          />
                         </div>
-                        <div className="p-6 space-y-5">
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                              Page Title
-                            </label>
-                            <input
-                              type="text"
-                              value={metadata[activeLocale]?.content?.homepage?.title || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
-                                }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  homepage: {
-                                    ...newMetadata[activeLocale].content?.homepage,
-                                    title: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-                              placeholder="Enter page title for SEO..."
-                            />
-                          </div>
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-blue-600 rounded-full"></span>
-                              Meta Description
-                            </label>
-                            <textarea
-                              value={metadata[activeLocale]?.content?.homepage?.description || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
-                                }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  homepage: {
-                                    ...newMetadata[activeLocale].content?.homepage,
-                                    description: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              rows={4}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-all"
-                              placeholder="Enter meta description for SEO..."
-                            />
-                          </div>
-                        </div>
-                      </div>
+                      </Card>
+                    ))}
 
-                      {/* Blog Listing */}
-                      <div className="bg-white rounded-xl border-2 border-purple-200 shadow-sm overflow-hidden">
-                        <div className="bg-gradient-to-r from-purple-600 to-purple-700 px-6 py-4 border-b border-purple-800">
-                          <div className="flex items-center gap-3">
-                            <FileText className="w-5 h-5 text-white" />
-                            <h3 className="text-lg font-semibold text-white">Blog Listing Page</h3>
-                            <span className="ml-auto px-2.5 py-1 bg-purple-500/30 text-white text-xs font-medium rounded-full">Content</span>
-                          </div>
-                        </div>
-                        <div className="p-6 space-y-5">
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-purple-600 rounded-full"></span>
-                              Page Title
-                            </label>
-                            <input
-                              type="text"
-                              value={metadata[activeLocale]?.content?.blogListing?.title || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
+                    {/* Installation Pages */}
+                    <Card
+                      icon={<SettingsIcon className="w-5 h-5 text-admin-primary" strokeWidth={2} />}
+                      title="Installation Pages"
+                      headerAction={<Badge variant="gold">{METADATA_INSTALLATION_PAGES.length} Pages</Badge>}
+                    >
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+                        {METADATA_INSTALLATION_PAGES.map((page) => (
+                          <div
+                            key={page.key}
+                            className="rounded-admin-md border border-admin-border bg-admin-bg p-5 transition-all hover:border-admin-primary/30 hover:shadow-[var(--shadow-admin-card)]"
+                          >
+                            <h4 className="mb-4 font-semibold text-admin-text">{page.label}</h4>
+                            <div className="space-y-4">
+                              <Input
+                                label="Page Title"
+                                value={getMetadataField("installation", "title", page.key)}
+                                onChange={(e) =>
+                                  updateMetadataField("installation", "title", e.target.value, page.key)
                                 }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  blogListing: {
-                                    ...newMetadata[activeLocale].content?.blogListing,
-                                    title: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
-                              placeholder="Enter page title for SEO..."
-                            />
-                          </div>
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-purple-600 rounded-full"></span>
-                              Meta Description
-                            </label>
-                            <textarea
-                              value={metadata[activeLocale]?.content?.blogListing?.description || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
+                                placeholder="Enter page title..."
+                                className="h-12"
+                              />
+                              <Textarea
+                                label="Meta Description"
+                                value={getMetadataField("installation", "description", page.key)}
+                                onChange={(e) =>
+                                  updateMetadataField(
+                                    "installation",
+                                    "description",
+                                    e.target.value,
+                                    page.key
+                                  )
                                 }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  blogListing: {
-                                    ...newMetadata[activeLocale].content?.blogListing,
-                                    description: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              rows={4}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 resize-none transition-all"
-                              placeholder="Enter meta description for SEO..."
-                            />
+                                rows={3}
+                                placeholder="Enter meta description..."
+                              />
+                            </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
+                    </Card>
 
-                      {/* Blog Page */}
-                      <div className="bg-white rounded-xl border-2 border-fuchsia-200 shadow-sm overflow-hidden">
-                        <div className="bg-gradient-to-r from-fuchsia-600 to-fuchsia-700 px-6 py-4 border-b border-fuchsia-800">
-                          <div className="flex items-center gap-3">
-                            <Edit className="w-5 h-5 text-white" />
-                            <h3 className="text-lg font-semibold text-white">Blog Page</h3>
-                            <span className="ml-auto px-2.5 py-1 bg-fuchsia-500/30 text-white text-xs font-medium rounded-full">SEO</span>
-                          </div>
-                        </div>
-                        <div className="p-6 space-y-5">
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-fuchsia-600 rounded-full"></span>
-                              Page Title
-                            </label>
-                            <input
-                              type="text"
-                              value={metadata[activeLocale]?.content?.blog?.title || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
+                    {/* Legal Pages */}
+                    <Card
+                      icon={<AlignLeft className="w-5 h-5 text-admin-primary" strokeWidth={2} />}
+                      title="Legal Pages"
+                      headerAction={<Badge variant="neutral">{METADATA_LEGAL_PAGES.length} Pages</Badge>}
+                    >
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                        {METADATA_LEGAL_PAGES.map((page) => (
+                          <div
+                            key={page.key}
+                            className="rounded-admin-md border border-admin-border bg-admin-bg p-5 transition-all hover:border-admin-primary/30 hover:shadow-[var(--shadow-admin-card)]"
+                          >
+                            <h4 className="mb-4 font-semibold text-admin-text">{page.label}</h4>
+                            <div className="space-y-4">
+                              <Input
+                                label="Page Title"
+                                value={getMetadataField("legal", "title", page.key)}
+                                onChange={(e) =>
+                                  updateMetadataField("legal", "title", e.target.value, page.key)
                                 }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  blog: {
-                                    ...newMetadata[activeLocale].content?.blog,
-                                    title: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 transition-all"
-                              placeholder="Enter page title for SEO..."
-                            />
-                          </div>
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-fuchsia-600 rounded-full"></span>
-                              Meta Description
-                            </label>
-                            <textarea
-                              value={metadata[activeLocale]?.content?.blog?.description || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
+                                placeholder="Enter page title..."
+                                className="h-12"
+                              />
+                              <Textarea
+                                label="Meta Description"
+                                value={getMetadataField("legal", "description", page.key)}
+                                onChange={(e) =>
+                                  updateMetadataField("legal", "description", e.target.value, page.key)
                                 }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  blog: {
-                                    ...newMetadata[activeLocale].content?.blog,
-                                    description: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              rows={4}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 focus:border-fuchsia-500 resize-none transition-all"
-                              placeholder="Enter meta description for SEO..."
-                            />
+                                rows={4}
+                                placeholder="Enter meta description..."
+                              />
+                            </div>
                           </div>
-                        </div>
+                        ))}
                       </div>
-
-                      {/* Installation Pages */}
-                      <div className="bg-white rounded-xl border-2 border-green-200 shadow-sm overflow-hidden">
-                        <div className="bg-gradient-to-r from-green-600 to-green-700 px-6 py-4 border-b border-green-800">
-                          <div className="flex items-center gap-3">
-                            <SettingsIcon className="w-5 h-5 text-white" />
-                            <h3 className="text-lg font-semibold text-white">Installation Pages</h3>
-                            <span className="ml-auto px-2.5 py-1 bg-green-500/30 text-white text-xs font-medium rounded-full">5 Pages</span>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
-                            {[
-                              { key: "windows", label: "Windows Installation", icon: "💻" },
-                              { key: "ios", label: "iOS Installation", icon: "📱" },
-                              { key: "firestick", label: "Firestick Installation", icon: "📺" },
-                              { key: "smartTv", label: "Smart TV Installation", icon: "🖥️" },
-                              { key: "guide", label: "Installation Guide", icon: "📖" },
-                            ].map((page) => (
-                              <div key={page.key} className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 hover:border-green-400 transition-all hover:shadow-md">
-                                <div className="flex items-center gap-3 mb-4">
-                                  <span className="text-2xl">{page.icon}</span>
-                                  <h4 className="font-semibold text-gray-900">{page.label}</h4>
-                                </div>
-                                <div className="space-y-4">
-                                  <div>
-                                    <label className="flex items-center gap-2 text-xs font-semibold text-gray-700 mb-2">
-                                      <span className="w-1 h-1 bg-green-600 rounded-full"></span>
-                                      Page Title
-                                    </label>
-                                    <input
-                                      type="text"
-                                      value={metadata[activeLocale]?.content?.installation?.[page.key]?.title || ""}
-                                      onChange={(e) => {
-                                        const newMetadata = { ...metadata };
-                                        if (!newMetadata[activeLocale]) {
-                                          newMetadata[activeLocale] = { content: {}, sha: "" };
-                                        }
-                                        if (!newMetadata[activeLocale].content.installation) {
-                                          newMetadata[activeLocale].content.installation = {};
-                                        }
-                                        newMetadata[activeLocale].content.installation = {
-                                          ...newMetadata[activeLocale].content.installation,
-                                          [page.key]: {
-                                            ...newMetadata[activeLocale].content.installation[page.key],
-                                            title: e.target.value,
-                                          },
-                                        };
-                                        setMetadata(newMetadata);
-                                      }}
-                                      className="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all"
-                                      placeholder="Enter page title..."
-                                    />
-                                  </div>
-                                  <div>
-                                    <label className="flex items-center gap-2 text-xs font-semibold text-gray-700 mb-2">
-                                      <span className="w-1 h-1 bg-green-600 rounded-full"></span>
-                                      Meta Description
-                                    </label>
-                                    <textarea
-                                      value={metadata[activeLocale]?.content?.installation?.[page.key]?.description || ""}
-                                      onChange={(e) => {
-                                        const newMetadata = { ...metadata };
-                                        if (!newMetadata[activeLocale]) {
-                                          newMetadata[activeLocale] = { content: {}, sha: "" };
-                                        }
-                                        if (!newMetadata[activeLocale].content.installation) {
-                                          newMetadata[activeLocale].content.installation = {};
-                                        }
-                                        newMetadata[activeLocale].content.installation = {
-                                          ...newMetadata[activeLocale].content.installation,
-                                          [page.key]: {
-                                            ...newMetadata[activeLocale].content.installation[page.key],
-                                            description: e.target.value,
-                                          },
-                                        };
-                                        setMetadata(newMetadata);
-                                      }}
-                                      rows={3}
-                                      className="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 resize-none transition-all"
-                                      placeholder="Enter meta description..."
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Reseller Page */}
-                      <div className="bg-white rounded-xl border-2 border-orange-200 shadow-sm overflow-hidden">
-                        <div className="bg-gradient-to-r from-orange-600 to-orange-700 px-6 py-4 border-b border-orange-800">
-                          <div className="flex items-center gap-3">
-                            <Users className="w-5 h-5 text-white" />
-                            <h3 className="text-lg font-semibold text-white">Reseller Program Page</h3>
-                            <span className="ml-auto px-2.5 py-1 bg-orange-500/30 text-white text-xs font-medium rounded-full">Business</span>
-                          </div>
-                        </div>
-                        <div className="p-6 space-y-5">
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-orange-600 rounded-full"></span>
-                              Page Title
-                            </label>
-                            <input
-                              type="text"
-                              value={metadata[activeLocale]?.content?.reseller?.title || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
-                                }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  reseller: {
-                                    ...newMetadata[activeLocale].content?.reseller,
-                                    title: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-all"
-                              placeholder="Enter page title for SEO..."
-                            />
-                          </div>
-                          <div>
-                            <label className="flex items-center gap-2 text-sm font-semibold text-gray-800 mb-2.5">
-                              <span className="w-1.5 h-1.5 bg-orange-600 rounded-full"></span>
-                              Meta Description
-                            </label>
-                            <textarea
-                              value={metadata[activeLocale]?.content?.reseller?.description || ""}
-                              onChange={(e) => {
-                                const newMetadata = { ...metadata };
-                                if (!newMetadata[activeLocale]) {
-                                  newMetadata[activeLocale] = { content: {}, sha: "" };
-                                }
-                                newMetadata[activeLocale].content = {
-                                  ...newMetadata[activeLocale].content,
-                                  reseller: {
-                                    ...newMetadata[activeLocale].content?.reseller,
-                                    description: e.target.value,
-                                  },
-                                };
-                                setMetadata(newMetadata);
-                              }}
-                              rows={4}
-                              className="w-full px-4 py-3 bg-gray-50 border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 resize-none transition-all"
-                              placeholder="Enter meta description for SEO..."
-                            />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Legal Pages */}
-                      <div className="bg-white rounded-xl border-2 border-slate-200 shadow-sm overflow-hidden">
-                        <div className="bg-gradient-to-r from-slate-700 to-slate-800 px-6 py-4 border-b border-slate-900">
-                          <div className="flex items-center gap-3">
-                            <AlignLeft className="w-5 h-5 text-white" />
-                            <h3 className="text-lg font-semibold text-white">Legal Pages</h3>
-                            <span className="ml-auto px-2.5 py-1 bg-white/15 text-white text-xs font-medium rounded-full">3 Pages</span>
-                          </div>
-                        </div>
-                        <div className="p-6">
-                          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                            {[
-                              { key: "refundPolicy", label: "Refund Policy", accent: "bg-slate-700" },
-                              { key: "privacyPolicy", label: "Privacy Policy", accent: "bg-slate-700" },
-                              { key: "termsOfService", label: "Terms of Service", accent: "bg-slate-700" },
-                            ].map((page) => (
-                              <div
-                                key={page.key}
-                                className="bg-gradient-to-br from-gray-50 to-white border-2 border-gray-200 rounded-xl p-5 hover:border-slate-400 transition-all hover:shadow-md"
-                              >
-                                <div className="flex items-center gap-3 mb-4">
-                                  <span className={`w-2.5 h-2.5 rounded-full ${page.accent}`} />
-                                  <h4 className="font-semibold text-gray-900">{page.label}</h4>
-                                </div>
-                                <div className="space-y-4">
-                                  <div>
-                                    <label className="flex items-center gap-2 text-xs font-semibold text-gray-700 mb-2">
-                                      <span className="w-1 h-1 bg-slate-700 rounded-full"></span>
-                                      Page Title
-                                    </label>
-                                    <input
-                                      type="text"
-                                      value={metadata[activeLocale]?.content?.legal?.[page.key]?.title || ""}
-                                      onChange={(e) => {
-                                        const newMetadata = { ...metadata };
-                                        if (!newMetadata[activeLocale]) {
-                                          newMetadata[activeLocale] = { content: {}, sha: "" };
-                                        }
-                                        if (!newMetadata[activeLocale].content.legal) {
-                                          newMetadata[activeLocale].content.legal = {};
-                                        }
-                                        newMetadata[activeLocale].content.legal = {
-                                          ...newMetadata[activeLocale].content.legal,
-                                          [page.key]: {
-                                            ...newMetadata[activeLocale].content.legal[page.key],
-                                            title: e.target.value,
-                                          },
-                                        };
-                                        setMetadata(newMetadata);
-                                      }}
-                                      className="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500 transition-all"
-                                      placeholder="Enter page title..."
-                                    />
-                                  </div>
-                                  <div>
-                                    <label className="flex items-center gap-2 text-xs font-semibold text-gray-700 mb-2">
-                                      <span className="w-1 h-1 bg-slate-700 rounded-full"></span>
-                                      Meta Description
-                                    </label>
-                                    <textarea
-                                      value={metadata[activeLocale]?.content?.legal?.[page.key]?.description || ""}
-                                      onChange={(e) => {
-                                        const newMetadata = { ...metadata };
-                                        if (!newMetadata[activeLocale]) {
-                                          newMetadata[activeLocale] = { content: {}, sha: "" };
-                                        }
-                                        if (!newMetadata[activeLocale].content.legal) {
-                                          newMetadata[activeLocale].content.legal = {};
-                                        }
-                                        newMetadata[activeLocale].content.legal = {
-                                          ...newMetadata[activeLocale].content.legal,
-                                          [page.key]: {
-                                            ...newMetadata[activeLocale].content.legal[page.key],
-                                            description: e.target.value,
-                                          },
-                                        };
-                                        setMetadata(newMetadata);
-                                      }}
-                                      rows={4}
-                                      className="w-full px-3 py-2.5 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:border-slate-500 resize-none transition-all"
-                                      placeholder="Enter meta description..."
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </Card>
                   </div>
                 )}
 
                 {/* Settings Section Editor */}
                 {activeSection === "settings" && (
-                  <div className="space-y-6">
-                    {/* Navigation Menu */}
-                    <div className="bg-white rounded-xl border border-gray-200 p-6">
-                      <h3 className="text-lg font-medium text-dark-text mb-1">Navigation Menu</h3>
-                      <p className="text-gray-500 text-sm mb-4">Edit navigation menu items</p>
-                      
+                  <div className="space-y-8">
+                    <SectionHero
+                      icon={<SettingsIcon className="w-7 h-7" strokeWidth={2} />}
+                      title="Settings"
+                      subtitle="Edit navigation menu items"
+                    />
+
+                    <Card title="Navigation Menu" subtitle="Labels shown in the site header">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {[
                           { key: "home", label: "Home" },
@@ -1263,21 +925,16 @@ export default function AdminDashboard() {
                           { key: "blog", label: "Blog" },
                           { key: "iptvReseller", label: "Reseller (legacy)" },
                         ].map((item) => (
-                          <div key={item.key}>
-                            <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                              {item.label}
-                            </label>
-                            <input
-                              type="text"
-                              value={getValue(`common.${item.key}`)}
-                              onChange={(e) => updateValue(`common.${item.key}`, e.target.value)}
-                              placeholder={item.label}
-                              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent"
-                            />
-                          </div>
+                          <Input
+                            key={item.key}
+                            label={item.label}
+                            value={getValue(`common.${item.key}`)}
+                            onChange={(e) => updateValue(`common.${item.key}`, e.target.value)}
+                            placeholder={item.label}
+                          />
                         ))}
                       </div>
-                    </div>
+                    </Card>
                   </div>
                 )}
               </>
