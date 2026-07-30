@@ -31,6 +31,14 @@ import ProductsManager from "@/components/admin/ProductsManager";
 import DeploymentNotification from "@/components/admin/DeploymentNotification";
 import { AdminHeroPreview, AdminAnnouncementPreview } from "@/components/admin/AdminLocalePreview";
 import AdminSidebar, { type AdminSection } from "@/components/admin/AdminSidebar";
+import Button from "@/components/admin/ui/Button";
+import Input from "@/components/admin/ui/Input";
+import Textarea from "@/components/admin/ui/Textarea";
+import Card from "@/components/admin/ui/Card";
+import SectionHero from "@/components/admin/ui/SectionHero";
+import InfoBox from "@/components/admin/ui/InfoBox";
+import TwoCol from "@/components/admin/ui/TwoCol";
+import Badge from "@/components/admin/ui/Badge";
 
 interface Translations {
   [locale: string]: {
@@ -385,8 +393,8 @@ export default function AdminDashboard() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-off-white flex items-center justify-center">
-        <Loader2 className="w-8 h-8 text-dark-text animate-spin" />
+      <div className="admin-scope flex min-h-screen items-center justify-center">
+        <Loader2 className="w-8 h-8 text-admin-primary animate-spin" />
       </div>
     );
   }
@@ -399,11 +407,11 @@ export default function AdminDashboard() {
   const sortedLocales = ADMIN_LOCALE_ORDER.filter((code) => translations[code]);
 
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="admin-scope min-h-screen">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
+      <header className="sticky top-0 z-50 border-b border-admin-border bg-admin-card/95 backdrop-blur-sm">
+        <div className="mx-auto max-w-[1500px] px-4 py-4 sm:px-8">
+          <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="relative h-9 w-auto shrink-0">
                 <Image
@@ -416,22 +424,26 @@ export default function AdminDashboard() {
                 />
               </div>
               <div>
-                <h1 className="text-xl font-medium text-dark-text">Website Editor</h1>
-                <p className="text-sm text-gray-500 font-light mt-0.5">Edit content, images, and settings</p>
+                <h1 className="text-[18px] font-semibold text-admin-text leading-tight">
+                  Website Editor
+                </h1>
+                <p className="text-[13px] text-admin-text-secondary mt-0.5">
+                  Edit content, images, and settings
+                </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* Language Selector */}
-              <div className="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
+              <div className="flex items-center gap-1 rounded-[12px] border border-admin-border bg-admin-hover p-1 h-[46px]">
                 {sortedLocales.map((locale) => (
                   <button
                     key={locale}
                     onClick={() => setActiveLocale(locale)}
-                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all ${
+                    className={`h-full px-3 rounded-[9px] text-[13px] font-semibold transition-all cursor-pointer ${
                       activeLocale === locale
-                        ? "bg-white text-dark-text shadow-sm"
-                        : "text-gray-600 hover:text-dark-text"
+                        ? "bg-white text-admin-primary shadow-sm"
+                        : "text-admin-text-secondary hover:text-admin-text"
                     }`}
                   >
                     {LOCALE_LABELS[locale] ?? locale.toUpperCase()}
@@ -440,137 +452,131 @@ export default function AdminDashboard() {
               </div>
 
               {/* Preview Toggle */}
-              <button
+              <Button
+                variant="secondary"
+                size="md"
                 onClick={() => setShowPreview(!showPreview)}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 hover:border-gray-400 text-gray-700 font-medium rounded-lg transition-all"
+                className="!px-3.5"
+                aria-label="Toggle preview"
               >
-                {showPreview ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-              </button>
+                {showPreview ? (
+                  <EyeOff className="w-[18px] h-[18px]" strokeWidth={2} />
+                ) : (
+                  <Eye className="w-[18px] h-[18px]" strokeWidth={2} />
+                )}
+              </Button>
 
               {/* Save Button */}
-              <button
-                onClick={
-                  activeSection === "metadata" ? handleSaveMetadata : handleSave
-                }
+              <Button
+                variant="primary"
+                size="md"
+                onClick={activeSection === "metadata" ? handleSaveMetadata : handleSave}
                 disabled={isSaving}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-accent-blue hover:bg-accent-blue-dark text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                icon={
+                  saveStatus === "success" ? (
+                    <Check className="w-4 h-4" strokeWidth={2} />
+                  ) : saveStatus === "error" ? (
+                    <X className="w-4 h-4" strokeWidth={2} />
+                  ) : (
+                    <Save className="w-4 h-4" strokeWidth={2} />
+                  )
+                }
+                loading={isSaving}
               >
-                {isSaving ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Saving...</span>
-                  </>
-                ) : saveStatus === "success" ? (
-                  <>
-                    <Check className="w-4 h-4" />
-                    <span>Saved</span>
-                  </>
-                ) : saveStatus === "error" ? (
-                  <>
-                    <X className="w-4 h-4" />
-                    <span>Error</span>
-                  </>
-                ) : (
-                  <>
-                    <Save className="w-4 h-4" />
-                    <span>Save</span>
-                  </>
-                )}
-              </button>
+                {isSaving ? "Saving..." : saveStatus === "success" ? "Saved" : saveStatus === "error" ? "Error" : "Save"}
+              </Button>
 
               {/* Logout */}
-              <button
+              <Button
+                variant="secondary"
+                size="md"
                 onClick={handleLogout}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-300 hover:border-red-300 hover:bg-red-50 text-gray-700 hover:text-red-600 font-medium rounded-lg transition-all"
+                icon={<LogOut className="w-4 h-4" strokeWidth={2} />}
+                className="hover:!bg-admin-danger-bg hover:!text-admin-danger hover:!border-admin-danger/20"
               >
-                <LogOut className="w-4 h-4" />
-                <span>Logout</span>
-              </button>
+                <span className="hidden sm:inline">Logout</span>
+              </Button>
             </div>
           </div>
           {saveErrorMessage ? (
-            <p className="mt-3 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-2">
+            <p className="mt-3 rounded-admin-sm border-l-4 border-admin-danger bg-admin-danger-bg px-4 py-2 text-[14px] text-admin-danger">
               {saveErrorMessage}
             </p>
           ) : null}
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
-        <div className="grid grid-cols-12 gap-6">
-          {/* Sidebar */}
-          <AdminSidebar activeSection={activeSection} onSectionChange={setActiveSection} />
+      {/* Navigation */}
+      <AdminSidebar activeSection={activeSection} onSectionChange={setActiveSection} />
 
-          {/* Main Editor */}
-          <div className="col-span-9">
-            {currentContent && (
+      <div className="mx-auto max-w-[1500px] px-4 py-8 sm:px-8">
+        <div className="admin-page-enter" key={activeSection}>
+          {currentContent && (
               <>
                 {/* Hero Section Editor */}
                 {activeSection === "hero" && (
-                  <div className="space-y-6">
-                    <div className="bg-white rounded-xl border border-gray-200 p-6">
-                      <h2 className="text-2xl font-medium text-dark-text mb-1">
-                        Homepage Hero
-                      </h2>
-                      <p className="text-gray-500 text-sm mb-6">
-                        Edit your homepage hero section
-                      </p>
+                  <div className="space-y-8">
+                    <SectionHero
+                      icon={<Home className="w-7 h-7" strokeWidth={2} />}
+                      title="Homepage Hero"
+                      subtitle="Edit your homepage hero section"
+                    />
 
-                      <div className="space-y-5">
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Main Heading
-                          </label>
-                          <input
-                            type="text"
-                            value={getValue("hero.title")}
-                            onChange={(e) => updateValue("hero.title", e.target.value)}
-                            className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent text-lg font-medium"
+                    <Card>
+                      <div className="space-y-6">
+                        <Input
+                          label="Main Heading"
+                          value={getValue("hero.title")}
+                          onChange={(e) => updateValue("hero.title", e.target.value)}
+                          maxLength={120}
+                          showCount
+                          className="text-[18px] font-medium"
+                        />
+
+                        <TwoCol>
+                          <Input
+                            label="Subtitle Part 1"
+                            badge="1"
+                            value={getValue("hero.subtitlePart1")}
+                            onChange={(e) => updateValue("hero.subtitlePart1", e.target.value)}
+                            maxLength={60}
+                            showCount
                           />
-                        </div>
+                          <Input
+                            label={
+                              <>
+                                Subtitle Part 2{" "}
+                                <span className="text-admin-gold font-normal">(Highlighted)</span>
+                              </>
+                            }
+                            badge="2"
+                            accent
+                            value={getValue("hero.subtitlePart2")}
+                            onChange={(e) => updateValue("hero.subtitlePart2", e.target.value)}
+                            maxLength={60}
+                            showCount
+                          />
+                        </TwoCol>
 
-                        <div className="grid grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Subtitle Part 1
-                            </label>
-                            <input
-                              type="text"
-                              value={getValue("hero.subtitlePart1")}
-                              onChange={(e) => updateValue("hero.subtitlePart1", e.target.value)}
-                              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Subtitle Part 2 <span className="text-blue-600">(Highlighted)</span>
-                            </label>
-                            <input
-                              type="text"
-                              value={getValue("hero.subtitlePart2")}
-                              onChange={(e) => updateValue("hero.subtitlePart2", e.target.value)}
-                              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-blue-600 font-medium focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="space-y-4 rounded-lg border border-gray-100 bg-gray-50/80 p-4">
-                          <p className="text-sm text-gray-600">
-                            The hero paragraph is one continuous block on the site (with links in
-                            the middle). Edit each part below — line breaks are removed
-                            automatically so text does not jump to a new line.
+                        <InfoBox>
+                          <p>
+                            The hero paragraph is one continuous block on the site (with{" "}
+                            <span className="text-admin-gold font-medium">links</span> in the
+                            middle). Edit each part below — line breaks are removed automatically
+                            so text does not jump to a new line.
                           </p>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Opening sentence
-                            </label>
-                            <textarea
-                              value={getValue("hero.description")}
-                              onChange={(e) => updateValue("hero.description", e.target.value)}
-                              rows={3}
-                              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent resize-none"
-                            />
-                          </div>
+                        </InfoBox>
+
+                        <div className="space-y-5">
+                          <Textarea
+                            label="Opening sentence"
+                            icon={<Edit className="w-3.5 h-3.5" strokeWidth={2} />}
+                            value={getValue("hero.description")}
+                            onChange={(e) => updateValue("hero.description", e.target.value)}
+                            rows={3}
+                            maxLength={160}
+                            showCount
+                          />
                           {(
                             [
                               ["channelsLink", "Channel link text (blue, links to pricing)"],
@@ -584,37 +590,25 @@ export default function AdminDashboard() {
                               ["description5", "Closing sentence"],
                             ] as const
                           ).map(([key, label]) => (
-                            <div key={key}>
-                              <label className="block text-sm font-medium text-gray-700 mb-2">
-                                {label}
-                              </label>
-                              <input
-                                type="text"
-                                value={getValue(`hero.${key}`)}
-                                onChange={(e) => updateValue(`hero.${key}`, e.target.value)}
-                                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent"
-                              />
-                            </div>
+                            <Input
+                              key={key}
+                              label={label}
+                              value={getValue(`hero.${key}`)}
+                              onChange={(e) => updateValue(`hero.${key}`, e.target.value)}
+                            />
                           ))}
                         </div>
                       </div>
-                    </div>
+                    </Card>
 
                     {showPreview && (
                       <AdminHeroPreview locale={activeLocale} getValue={getValue} />
                     )}
 
-                    <div className="bg-white rounded-xl border border-gray-200 p-6">
-                      <h2 className="text-2xl font-medium text-dark-text mb-1">
-                        Announcement Bar
-                      </h2>
-                      <p className="text-gray-500 text-sm mb-6">
-                        The thin strip shown above the header on every page, not just the
-                        homepage. Each message is optional — leave a field empty to hide that
-                        message entirely (no stray dot separator is shown). If all three are
-                        empty, the whole bar is hidden.
-                      </p>
-
+                    <Card
+                      title="Announcement Bar"
+                      subtitle="The thin strip shown above the header on every page, not just the homepage. Each message is optional — leave a field empty to hide that message entirely (no stray dot separator is shown). If all three are empty, the whole bar is hidden."
+                    >
                       <div className="space-y-5">
                         {(
                           [
@@ -623,21 +617,16 @@ export default function AdminDashboard() {
                             ["whatsapp", "WhatsApp / ordering message"],
                           ] as const
                         ).map(([key, label]) => (
-                          <div key={key}>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              {label}
-                            </label>
-                            <input
-                              type="text"
-                              value={getValue(`announcement.${key}`)}
-                              onChange={(e) => updateValue(`announcement.${key}`, e.target.value)}
-                              placeholder="Leave empty to hide this message"
-                              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent"
-                            />
-                          </div>
+                          <Input
+                            key={key}
+                            label={label}
+                            value={getValue(`announcement.${key}`)}
+                            onChange={(e) => updateValue(`announcement.${key}`, e.target.value)}
+                            placeholder="Leave empty to hide this message"
+                          />
                         ))}
                       </div>
-                    </div>
+                    </Card>
 
                     {showPreview && (
                       <AdminAnnouncementPreview locale={activeLocale} getValue={getValue} />
@@ -647,122 +636,82 @@ export default function AdminDashboard() {
 
                 {/* WhatsApp & CTA messages */}
                 {activeSection === "whatsapp" && (
-                  <div className="space-y-6">
-                    <div className="bg-white rounded-xl border border-gray-200 p-6">
-                      <h2 className="text-2xl font-medium text-dark-text mb-1 flex items-center gap-2">
-                        <MessageCircle className="w-6 h-6" />
-                        WhatsApp pre-filled messages
-                      </h2>
-                      <p className="text-gray-500 text-sm mb-6">
-                        Each field is sent as the opening message in WhatsApp when that button is
-                        clicked on the {LOCALE_LABELS[activeLocale] ?? activeLocale} site.
-                      </p>
+                  <div className="space-y-8">
+                    <SectionHero
+                      icon={<MessageCircle className="w-7 h-7" strokeWidth={2} />}
+                      title="WhatsApp & CTA"
+                      subtitle="Pre-filled messages, homepage CTA and contact strip copy"
+                    />
 
+                    <Card
+                      icon={<MessageCircle className="w-6 h-6 text-admin-primary" strokeWidth={2} />}
+                      title="WhatsApp pre-filled messages"
+                      subtitle={`Each field is sent as the opening message in WhatsApp when that button is clicked on the ${LOCALE_LABELS[activeLocale] ?? activeLocale} site.`}
+                    >
                       <div className="space-y-5">
                         {WHATSAPP_MESSAGE_FIELDS.map(({ key, label, hint }) => (
-                          <div key={key}>
-                            <label className="block text-sm font-medium text-gray-700 mb-1">
-                              {label}
-                            </label>
-                            {hint ? (
-                              <p className="text-xs text-gray-500 mb-2">{hint}</p>
-                            ) : null}
-                            <textarea
-                              value={getValue(`whatsapp.${key}`)}
-                              onChange={(e) => updateValue(`whatsapp.${key}`, e.target.value)}
-                              rows={key === "pricingPlan" ? 2 : 3}
-                              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent resize-y"
-                            />
-                          </div>
+                          <Textarea
+                            key={key}
+                            label={label}
+                            hint={hint}
+                            value={getValue(`whatsapp.${key}`)}
+                            onChange={(e) => updateValue(`whatsapp.${key}`, e.target.value)}
+                            rows={key === "pricingPlan" ? 2 : 3}
+                          />
                         ))}
                       </div>
-                    </div>
+                    </Card>
 
-                    <div className="bg-white rounded-xl border border-gray-200 p-6">
-                      <h3 className="text-lg font-medium text-dark-text mb-4">CTA section (homepage)</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
-                        {(["title", "title2", "title3"] as const).map((key) => (
-                          <div key={key}>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Title line — {key}
-                            </label>
-                            <input
-                              type="text"
+                    <Card title="CTA section (homepage)">
+                      <div className="space-y-5">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                          {(["title", "title2", "title3"] as const).map((key) => (
+                            <Input
+                              key={key}
+                              label={`Title line — ${key}`}
                               value={getValue(`cta.${key}`)}
                               onChange={(e) => updateValue(`cta.${key}`, e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
                             />
-                          </div>
-                        ))}
-                      </div>
-                      <div className="space-y-4">
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Description
-                          </label>
-                          <textarea
-                            value={getValue("cta.description")}
-                            onChange={(e) => updateValue("cta.description", e.target.value)}
-                            rows={3}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm resize-none"
+                          ))}
+                        </div>
+                        <Textarea
+                          label="Description"
+                          value={getValue("cta.description")}
+                          onChange={(e) => updateValue("cta.description", e.target.value)}
+                          rows={3}
+                        />
+                        <TwoCol>
+                          <Input
+                            label="WhatsApp button label"
+                            value={getValue("cta.whatsapp")}
+                            onChange={(e) => updateValue("cta.whatsapp", e.target.value)}
                           />
-                        </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              WhatsApp button label
-                            </label>
-                            <input
-                              type="text"
-                              value={getValue("cta.whatsapp")}
-                              onChange={(e) => updateValue("cta.whatsapp", e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                          </div>
-                          <div>
-                            <label className="block text-sm font-medium text-gray-700 mb-2">
-                              Email button label
-                            </label>
-                            <input
-                              type="text"
-                              value={getValue("cta.email")}
-                              onChange={(e) => updateValue("cta.email", e.target.value)}
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                          </div>
-                        </div>
+                          <Input
+                            label="Email button label"
+                            value={getValue("cta.email")}
+                            onChange={(e) => updateValue("cta.email", e.target.value)}
+                          />
+                        </TwoCol>
                       </div>
-                    </div>
+                    </Card>
 
-                    <div className="bg-white rounded-xl border border-gray-200 p-6">
-                      <h3 className="text-lg font-medium text-dark-text mb-4">Contact strip</h3>
-                      <div className="space-y-4">
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Heading
-                          </label>
-                          <input
-                            type="text"
-                            value={getValue("contactSection.title")}
-                            onChange={(e) => updateValue("contactSection.title", e.target.value)}
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
-                            Description
-                          </label>
-                          <textarea
-                            value={getValue("contactSection.description")}
-                            onChange={(e) =>
-                              updateValue("contactSection.description", e.target.value)
-                            }
-                            rows={3}
-                            className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm resize-none"
-                          />
-                        </div>
+                    <Card title="Contact strip">
+                      <div className="space-y-5">
+                        <Input
+                          label="Heading"
+                          value={getValue("contactSection.title")}
+                          onChange={(e) => updateValue("contactSection.title", e.target.value)}
+                        />
+                        <Textarea
+                          label="Description"
+                          value={getValue("contactSection.description")}
+                          onChange={(e) =>
+                            updateValue("contactSection.description", e.target.value)
+                          }
+                          rows={3}
+                        />
                       </div>
-                    </div>
+                    </Card>
                   </div>
                 )}
                 {/* Blogs Section Editor */}
@@ -1271,7 +1220,6 @@ export default function AdminDashboard() {
                 )}
               </>
             )}
-          </div>
         </div>
       </div>
 

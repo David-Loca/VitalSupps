@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Lock, ArrowRight, Loader2 } from "lucide-react";
+import { Lock, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import Button from "@/components/admin/ui/Button";
+import Input from "@/components/admin/ui/Input";
+import { GoldCurve, LeafSprig } from "@/components/admin/ui/Decorative";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
@@ -40,84 +43,75 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-off-white flex items-center justify-center p-4">
-      <div className="w-full max-w-[420px]">
+    <div className="admin-scope relative flex min-h-screen items-center justify-center overflow-hidden p-4">
+      <GoldCurve className="pointer-events-none absolute left-0 top-10 h-32 w-72 opacity-60" />
+      <LeafSprig className="pointer-events-none absolute -bottom-6 -right-6 h-56 w-56 opacity-70" />
+
+      <div className="admin-page-enter relative w-full max-w-[420px]">
         {/* Logo/Title */}
-        <div className="mb-12 text-center">
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-accent-blue rounded-full">
-              <Lock className="w-7 h-7 text-white" strokeWidth={1.5} />
-            </div>
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-accent-blue rounded-full p-2.5">
-              <Image
-                src="/logo/Logo3-removebg-preview.png"
-                alt="Logo"
-                width={32}
-                height={32}
-                className="object-contain"
-              />
-            </div>
+        <div className="mb-10 text-center">
+          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-admin-primary p-3 shadow-[var(--shadow-admin-card)]">
+            <Image
+              src="/logo/Logo3-removebg-preview.png"
+              alt="Logo"
+              width={36}
+              height={36}
+              className="object-contain"
+              priority
+            />
           </div>
-          <h1 className="text-3xl font-light text-dark-text mb-2 tracking-tight">Admin Access</h1>
-          <p className="text-gray-500 font-light">Enter your credentials to continue</p>
+          <h1 className="text-[32px] font-semibold tracking-tight text-admin-text">
+            Admin Access
+          </h1>
+          <p className="mt-2 text-[15px] text-admin-text-secondary">
+            Enter your credentials to continue
+          </p>
         </div>
 
         {/* Login Form */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+        <div className="rounded-admin-lg border border-admin-border bg-admin-card p-8 shadow-[var(--shadow-admin-card)]">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Password Input */}
-            <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Password
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-transparent transition-all"
-                placeholder="Enter your password"
-                required
-                autoComplete="current-password"
-              />
-            </div>
+            <Input
+              id="password"
+              type="password"
+              label="Password"
+              icon={<Lock className="h-4 w-4" strokeWidth={2} />}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              required
+              autoComplete="current-password"
+            />
 
-            {/* Error Message */}
             {error && (
-              <div className="p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+              <div className="rounded-admin-sm border-l-4 border-admin-danger bg-admin-danger-bg px-4 py-3 text-[14px] text-admin-danger">
                 {error}
               </div>
             )}
 
-            {/* Submit Button */}
-            <button
+            <Button
               type="submit"
-              disabled={isLoading}
-              className="w-full py-3 px-4 bg-accent-blue hover:bg-accent-blue-dark text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group"
+              variant="primary"
+              loading={isLoading}
+              className="w-full group"
             >
               {isLoading ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin" />
-                  <span>Signing in...</span>
-                </>
+                <span>Signing in...</span>
               ) : (
                 <>
                   <span>Sign In</span>
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" strokeWidth={2} />
                 </>
               )}
-            </button>
+            </Button>
           </form>
         </div>
 
         {/* Back to Home */}
-        <div className="text-center mt-6">
+        <div className="mt-6 text-center">
           <a
             href="/"
-            className="text-gray-500 hover:text-dark-text transition-colors text-sm font-light"
+            className="text-[14px] text-admin-text-secondary transition-colors hover:text-admin-primary"
           >
             ← Back to website
           </a>

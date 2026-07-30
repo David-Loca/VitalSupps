@@ -33,27 +33,39 @@ interface AdminSidebarProps {
 
 export default function AdminSidebar({ activeSection, onSectionChange }: AdminSidebarProps) {
   return (
-    <div className="col-span-3">
-      <div className="sticky top-24">
-        <div className="bg-white rounded-xl border border-gray-200 p-2">
-          <nav className="space-y-1">
-            {NAV_ITEMS.map(({ section, label, icon: Icon }) => (
-              <button
-                key={section}
-                onClick={() => onSectionChange(section)}
-                className={`w-full px-4 py-2.5 rounded-lg font-medium transition-all flex items-center gap-3 text-left ${
-                  activeSection === section
-                    ? "bg-accent-blue text-white"
-                    : "text-gray-700 hover:bg-gray-100"
+    <div className="sticky top-[73px] z-40 border-b border-admin-border bg-admin-card/95 backdrop-blur-sm">
+      <nav className="mx-auto flex max-w-[1500px] items-center gap-1 overflow-x-auto px-4 sm:px-8 admin-scrollbar">
+        {NAV_ITEMS.map(({ section, label, icon: Icon }) => {
+          const isActive = activeSection === section;
+          return (
+            <button
+              key={section}
+              onClick={() => onSectionChange(section)}
+              className={`group relative flex shrink-0 items-center gap-2 px-4 py-4 text-[14px] font-medium transition-colors duration-150 cursor-pointer ${
+                isActive
+                  ? "text-admin-text"
+                  : "text-admin-text-secondary hover:text-admin-text"
+              }`}
+            >
+              <span
+                className={`pointer-events-none absolute inset-x-1 top-1 bottom-1 -z-10 rounded-[10px] transition-colors duration-150 ${
+                  isActive ? "bg-admin-success-bg" : "bg-transparent group-hover:bg-admin-hover"
                 }`}
-              >
-                <Icon className="w-4 h-4" />
-                {label}
-              </button>
-            ))}
-          </nav>
-        </div>
-      </div>
+              />
+              <Icon
+                className={`h-5 w-5 ${isActive ? "text-admin-primary" : "text-admin-text-secondary group-hover:text-admin-text"}`}
+                strokeWidth={2}
+              />
+              {label}
+              <span
+                className={`absolute bottom-0 left-4 right-4 h-[2px] rounded-full bg-admin-gold transition-transform duration-200 origin-left ${
+                  isActive ? "scale-x-100" : "scale-x-0"
+                }`}
+              />
+            </button>
+          );
+        })}
+      </nav>
     </div>
   );
 }
