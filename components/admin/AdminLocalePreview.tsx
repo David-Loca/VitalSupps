@@ -16,8 +16,8 @@ export function AdminHeroPreview({ locale, getValue }: PreviewProps) {
 
   if (isRegional) {
     return (
-      <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
-        <p className="text-xs text-gray-500 mb-4 uppercase tracking-wide">
+      <div className="admin-scope rounded-admin-lg border border-admin-border bg-admin-card p-6 sm:p-8 shadow-[var(--shadow-admin-card)]">
+        <p className="text-[11px] text-admin-text-secondary mb-4 uppercase tracking-wide font-semibold">
           Homepage hero preview ({locale})
         </p>
         <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[#2563eb] mb-3">
@@ -54,17 +54,21 @@ export function AdminHeroPreview({ locale, getValue }: PreviewProps) {
   }
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6">
-      <p className="text-xs text-gray-500 mb-4 uppercase tracking-wide">Homepage hero preview</p>
-      <h1 className="text-3xl font-bold text-black mb-3">
-        <span className="underline decoration-blue-600">{getValue("hero.title")}</span>
+    <div className="admin-scope rounded-admin-lg border border-admin-border bg-admin-card p-6 sm:p-8 shadow-[var(--shadow-admin-card)]">
+      <p className="text-[11px] text-admin-text-secondary mb-4 uppercase tracking-wide font-semibold">
+        Homepage hero preview
+      </p>
+      <h1 className="text-[28px] font-semibold text-admin-text mb-3 leading-tight">
+        <span className="decoration-admin-gold underline decoration-2 underline-offset-4">
+          {getValue("hero.title")}
+        </span>
         <br />
-        <span className="mt-2 block text-xl font-semibold">
+        <span className="mt-2 block text-[19px] font-medium">
           {getValue("hero.subtitlePart1")}{" "}
-          <span className="text-blue-600">{getValue("hero.subtitlePart2")}</span>
+          <span className="text-admin-gold">{getValue("hero.subtitlePart2")}</span>
         </span>
       </h1>
-      <p className="text-gray-600 leading-relaxed text-sm">
+      <p className="text-admin-text-secondary leading-relaxed text-[14px]">
         {normalizeInlineHeroText(getValue("hero.description"))}
       </p>
     </div>
@@ -85,16 +89,16 @@ export function AdminAnnouncementPreview({ getValue }: PreviewProps) {
   ].filter((text) => text && text.trim().length > 0);
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6">
-      <p className="text-xs text-gray-500 mb-4 uppercase tracking-wide">
+    <div className="admin-scope rounded-admin-lg border border-admin-border bg-admin-card p-6 shadow-[var(--shadow-admin-card)]">
+      <p className="text-[11px] text-admin-text-secondary mb-4 uppercase tracking-wide font-semibold">
         Announcement bar preview (shown above the header on every page)
       </p>
       {messages.length === 0 ? (
-        <p className="text-sm text-gray-400 italic">
+        <p className="text-[14px] text-admin-text-secondary italic">
           All three messages are empty — the bar will not render at all on the live site.
         </p>
       ) : (
-        <div className="bg-accent-blue-dark text-white text-[11px] sm:text-xs font-medium tracking-wide rounded-md">
+        <div className="bg-admin-primary-dark text-white text-[11px] sm:text-xs font-medium tracking-wide rounded-admin-sm">
           <div className="h-8 flex items-center justify-center overflow-hidden px-4">
             <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap overflow-hidden text-ellipsis">
               {messages.map((text, i) => (

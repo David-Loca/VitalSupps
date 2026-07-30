@@ -33,7 +33,7 @@ export default function DeploymentNotification({
     clearTimer();
     startTimeRef.current = Date.now();
     remainingTimeRef.current = duration;
-    
+
     timerRef.current = setTimeout(() => {
       setIsVisible(false);
       setTimeout(onClose, 300); // Wait for animation
@@ -62,7 +62,7 @@ export default function DeploymentNotification({
     } else {
       clearTimer();
     }
-    
+
     return () => {
       clearTimer();
     };
@@ -77,23 +77,17 @@ export default function DeploymentNotification({
   const icon = type === "success" ? CheckCircle2 : type === "error" ? AlertCircle : Clock;
   const Icon = icon;
 
-  const bgColor = type === "success"
-    ? "bg-green-50 border-green-200"
-    : type === "error"
-    ? "bg-red-50 border-red-200"
-    : "bg-blue-50 border-blue-200";
+  const accentColor =
+    type === "success"
+      ? "var(--color-admin-success)"
+      : type === "error"
+      ? "var(--color-admin-danger)"
+      : "var(--color-admin-gold)";
 
-  const iconColor = type === "success"
-    ? "text-green-600"
-    : type === "error"
-    ? "text-red-600"
-    : "text-blue-600";
+  const iconColor =
+    type === "success" ? "text-admin-success" : type === "error" ? "text-admin-danger" : "text-admin-gold";
 
-  const textColor = type === "success"
-    ? "text-green-800"
-    : type === "error"
-    ? "text-red-800"
-    : "text-blue-800";
+  const title = type === "success" ? "Changes saved" : type === "error" ? "Something went wrong" : "Processing...";
 
   if (!show && !isVisible) return null;
 
@@ -101,39 +95,40 @@ export default function DeploymentNotification({
     <AnimatePresence>
       {(show || isVisible) && (
         <motion.div
-          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          initial={{ opacity: 0, y: -16, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: -20, scale: 0.95 }}
-          transition={{ duration: 0.3 }}
-          className="fixed top-4 right-4 z-50 max-w-md w-full"
+          exit={{ opacity: 0, y: -16, scale: 0.97 }}
+          transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
+          className="admin-scope fixed top-4 right-4 z-50 w-full max-w-md"
           onMouseEnter={pauseTimer}
           onMouseLeave={resumeTimer}
         >
-          <div className={`${bgColor} border-2 rounded-lg shadow-lg p-4 relative`}>
+          <div
+            className="relative rounded-admin-md border border-admin-border bg-admin-card p-4 pr-10 shadow-2xl"
+            style={{ borderLeft: `3px solid ${accentColor}` }}
+          >
             <button
               onClick={() => {
                 setIsVisible(false);
                 setTimeout(onClose, 300);
               }}
-              className="absolute top-2 right-2 text-gray-400 hover:text-gray-600 transition-colors"
+              className="absolute top-3.5 right-3.5 rounded-full p-1 text-admin-text-secondary transition-colors hover:bg-admin-hover hover:text-admin-text cursor-pointer"
               aria-label="Close notification"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" strokeWidth={2} />
             </button>
 
-            <div className="flex items-start gap-3 pr-6">
-              <Icon className={`w-6 h-6 ${iconColor} shrink-0 mt-0.5`} />
+            <div className="flex items-start gap-3">
+              <Icon className={`w-5 h-5 shrink-0 mt-0.5 ${iconColor}`} strokeWidth={2} />
               <div className="flex-1">
-                <h3 className={`font-semibold text-sm mb-1 ${textColor}`}>
-                  {type === "success" ? "Changes Saved!" : type === "error" ? "Error" : "Processing..."}
-                </h3>
-                <p className={`text-sm ${textColor} leading-relaxed`}>
+                <h3 className="text-[14px] font-semibold text-admin-text mb-1">{title}</h3>
+                <p className="text-[13px] leading-relaxed text-admin-text-secondary">
                   {message || defaultMessage}
                 </p>
                 {type === "success" && (
-                  <div className="mt-3 pt-3 border-t border-green-200">
-                    <div className="flex items-center gap-2 text-xs text-green-700">
-                      <Clock className="w-4 h-4" />
+                  <div className="mt-3 pt-3 border-t border-admin-border">
+                    <div className="flex items-center gap-2 text-[12px] text-admin-text-secondary">
+                      <Clock className="w-3.5 h-3.5" strokeWidth={2} />
                       <span>Live site: GitHub → Vercel redeploy (1–3 min). Dashboard already shows your saved edits.</span>
                     </div>
                   </div>
