@@ -395,19 +395,19 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-medium text-black mb-1">
+            <h2 className="text-2xl font-medium text-admin-text mb-1">
               {initialBlog ? "Edit Blog Post" : "Create New Blog Post"}
             </h2>
-            <p className="text-gray-500 text-sm">Design your blog post with complete freedom</p>
+            <p className="text-admin-text-secondary text-sm">Design your blog post with complete freedom</p>
           </div>
           <div className="flex items-center gap-3">
             <button
               onClick={handleSave}
               disabled={isSaving}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-900 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-admin-primary hover:bg-admin-primary-dark text-white font-medium rounded-admin-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSaving ? (
                 <>
@@ -434,7 +434,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             {initialBlog && onDelete && (
               <button
                 onClick={() => onDelete(blog.id)}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-admin-danger hover:bg-admin-danger text-white font-medium rounded-admin-md transition-all"
               >
                 <Trash2 className="w-4 h-4" />
                 <span>Delete</span>
@@ -459,13 +459,13 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
         {/* Basic Info */}
         <div className="grid grid-cols-2 gap-4 mb-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               URL slug (per published language)
             </label>
             <div className="space-y-2">
               {publishedLocales.map((loc) => (
                 <div key={loc}>
-                  <label className="block text-xs text-gray-600 mb-1">
+                  <label className="block text-xs text-admin-text-secondary mb-1">
                     {getBlogLocaleLabel(loc)} ({getBlogLocaleShort(loc)})
                   </label>
                   <input
@@ -473,9 +473,9 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                     value={getSlug(loc)}
                     onChange={(e) => setSlug(loc, e.target.value)}
                     placeholder={getBlogSlugPlaceholder(loc)}
-                    className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+                    className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
                   />
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-admin-text-secondary mt-1">
                     Preview: /{loc}/blog/{getSlug(loc) || "your-slug"}/
                   </p>
                 </div>
@@ -483,13 +483,13 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Author (Optional)</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Author (Optional)</label>
             <input
               type="text"
               value={blog.author || ""}
               onChange={(e) => setBlog({ ...blog, author: e.target.value })}
               placeholder="Author name"
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
         </div>
@@ -497,7 +497,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
         {/* Title and Excerpt */}
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Title — {getBlogLocaleLabel(activeLocale)}
             </label>
             <input
@@ -511,11 +511,11 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                 });
               }}
               placeholder={getBlogTitlePlaceholder(activeLocale)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text text-lg font-medium focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Excerpt — {getBlogLocaleLabel(activeLocale)} (listing page)
             </label>
             <textarea
@@ -529,11 +529,11 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
               }}
               rows={3}
               placeholder={getBlogExcerptPlaceholder(activeLocale)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               SEO meta description — {getBlogLocaleLabel(activeLocale)}
             </label>
             <textarea
@@ -550,15 +550,15 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
               }}
               rows={3}
               placeholder={getBlogMetaDescriptionPlaceholder(activeLocale)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-admin-text-secondary mt-1">
               This is the primary SEO description for this language. Listing cards still use the excerpt above.
             </p>
           </div>
           <div>
-            <label className="flex items-center gap-2 text-sm font-medium text-gray-700 mb-2">
-              <Tag className="w-4 h-4 text-gray-500" />
+            <label className="flex items-center gap-2 text-sm font-medium text-admin-text mb-2">
+              <Tag className="w-4 h-4 text-admin-text-secondary" />
               <span>SEO Keywords — {getBlogLocaleLabel(activeLocale)} (comma-separated, not visible on site)</span>
             </label>
             <textarea
@@ -575,14 +575,14 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
               }}
               placeholder="keyword1, keyword2, keyword3"
               rows={3}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-y"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-y"
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-admin-text-secondary mt-1">
               Enter keywords separated by commas. These will be added to meta tags for SEO but will not be visible on the website.
             </p>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Featured Image (Optional)
             </label>
             <div className="space-y-3">
@@ -591,7 +591,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                   <img
                     src={getImageDisplayUrl(blog.featuredImage)}
                     alt="Featured"
-                    className="w-full h-auto max-h-64 object-cover rounded-lg border border-gray-300"
+                    className="w-full h-auto max-h-64 object-cover rounded-admin-md border border-admin-border"
                   />
                   <button
                     onClick={() => {
@@ -601,13 +601,13 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                       }
                       setBlog({ ...blog, featuredImage: undefined });
                     }}
-                    className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
+                    className="absolute top-2 right-2 p-1 bg-admin-danger text-white rounded-full hover:bg-admin-danger"
                   >
                     <X className="w-4 h-4" />
                   </button>
                 </div>
               )}
-              <label className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-all cursor-pointer">
+              <label className="inline-flex items-center gap-2 px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text font-medium rounded-admin-md transition-all cursor-pointer">
                 <Upload className="w-4 h-4" />
                 <span>{isUploading ? "Uploading..." : blog.featuredImage ? "Change Image" : "Upload Image"}</span>
                 <input
@@ -655,11 +655,11 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
       </div>
 
       {/* Content Blocks */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6 relative">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6 relative">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h3 className="text-lg font-medium text-black mb-1">Content blocks</h3>
-            <p className="text-gray-500 text-sm">
+            <h3 className="text-lg font-medium text-admin-text mb-1">Content blocks</h3>
+            <p className="text-admin-text-secondary text-sm">
               Use block language tabs for per-language text, or turn on mirror editing above. Images are shared across languages.
             </p>
           </div>
@@ -667,10 +667,10 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
 
         {/* Floating Add Block Button - Sticky at bottom */}
         <div className="fixed bottom-6 right-6 z-40">
-          <div className="bg-white rounded-xl shadow-2xl border border-gray-200 p-2 flex flex-col gap-2">
+          <div className="bg-white rounded-admin-lg shadow-2xl border border-admin-border p-2 flex flex-col gap-2">
             <button
               onClick={() => addBlock("heading")}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
+              className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
               title="Add Heading"
             >
               <Heading className="w-4 h-4" />
@@ -678,7 +678,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             </button>
             <button
               onClick={() => addBlock("paragraph")}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
+              className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
               title="Add Text"
             >
               <Type className="w-4 h-4" />
@@ -686,7 +686,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             </button>
             <button
               onClick={() => addBlock("image")}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
+              className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
               title="Add Image"
             >
               <ImageIcon className="w-4 h-4" />
@@ -694,7 +694,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             </button>
             <button
               onClick={() => addBlock("quote")}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
+              className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
               title="Add Quote"
             >
               <Quote className="w-4 h-4" />
@@ -702,7 +702,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             </button>
             <button
               onClick={() => addBlock("list")}
-              className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
+              className="px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all text-sm font-medium flex items-center gap-2 whitespace-nowrap"
               title="Add List"
             >
               <List className="w-4 h-4" />
@@ -714,7 +714,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
         {/* Blocks List */}
         <div className="space-y-4 pb-24">
           {blog.blocks.length === 0 && (
-            <div className="text-center py-12 text-gray-500">
+            <div className="text-center py-12 text-admin-text-secondary">
               <p>No content blocks yet. Click the buttons above to add content.</p>
             </div>
           )}
@@ -729,7 +729,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
             <div
               key={block.id}
               id={`block-${block.id}`}
-              className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors mb-4"
+              className="border border-admin-border rounded-admin-md p-4 hover:border-admin-border transition-colors mb-4"
             >
               <div className="flex items-start gap-3">
                 {/* Drag Handle */}
@@ -737,7 +737,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                   <button
                     onClick={() => moveBlock(block.id, "up")}
                     disabled={index === 0}
-                    className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="p-1 text-admin-text-secondary hover:text-admin-text-secondary disabled:opacity-30 disabled:cursor-not-allowed"
                     title="Move up"
                   >
                     <MoveUp className="w-4 h-4" />
@@ -745,14 +745,14 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                   <button
                     onClick={() => moveBlock(block.id, "down")}
                     disabled={index === blog.blocks.length - 1}
-                    className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="p-1 text-admin-text-secondary hover:text-admin-text-secondary disabled:opacity-30 disabled:cursor-not-allowed"
                     title="Move down"
                   >
                     <MoveDown className="w-4 h-4" />
                   </button>
                   <button
                     onClick={() => deleteBlock(block.id)}
-                    className="p-1 text-red-400 hover:text-red-600 mt-2"
+                    className="p-1 text-admin-danger/70 hover:text-admin-danger mt-2"
                     title="Delete block"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -763,8 +763,8 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                 <div className="flex-1">
                   {/* Language Tabs for Text-based Blocks */}
                   {(block.type === "heading" || block.type === "paragraph" || block.type === "quote" || block.type === "list") && (
-                    <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
-                      <span className="text-xs text-gray-500 font-medium">Language:</span>
+                    <div className="flex items-center gap-2 mb-3 pb-2 border-b border-admin-border">
+                      <span className="text-xs text-admin-text-secondary font-medium">Language:</span>
                       {publishedLocales.map((loc) => (
                         <button
                           key={loc}
@@ -772,8 +772,8 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                           onClick={() => setBlockLocale(loc)}
                           className={`px-3 py-1 text-xs font-medium rounded transition-colors ${
                             blockLocale === loc
-                              ? "bg-[#2563eb] text-white"
-                              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                              ? "bg-admin-primary text-white"
+                              : "bg-admin-hover text-admin-text-secondary hover:bg-admin-border"
                           }`}
                         >
                           {getBlogLocaleShort(loc)}
@@ -790,7 +790,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                           onChange={(e) =>
                             updateBlock(block.id, { level: parseInt(e.target.value) as 1 | 2 | 3 | 4 | 5 | 6 })
                           }
-                          className="px-2 py-1 bg-gray-100 border border-gray-300 rounded text-sm"
+                          className="px-2 py-1 bg-admin-hover border border-admin-border rounded text-sm"
                         >
                           {[1, 2, 3, 4, 5, 6].map((level) => (
                             <option key={level} value={level}>
@@ -805,7 +805,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 style: { ...block.style, textAlign: "left" },
                               })
                             }
-                            className={`p-1 rounded ${block.style?.textAlign === "left" ? "bg-gray-200" : ""}`}
+                            className={`p-1 rounded ${block.style?.textAlign === "left" ? "bg-admin-border" : ""}`}
                             title="Align left"
                           >
                             <AlignLeft className="w-4 h-4" />
@@ -816,7 +816,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 style: { ...block.style, textAlign: "center" },
                               })
                             }
-                            className={`p-1 rounded ${block.style?.textAlign === "center" ? "bg-gray-200" : ""}`}
+                            className={`p-1 rounded ${block.style?.textAlign === "center" ? "bg-admin-border" : ""}`}
                             title="Align center"
                           >
                             <AlignCenter className="w-4 h-4" />
@@ -827,7 +827,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 style: { ...block.style, textAlign: "right" },
                               })
                             }
-                            className={`p-1 rounded ${block.style?.textAlign === "right" ? "bg-gray-200" : ""}`}
+                            className={`p-1 rounded ${block.style?.textAlign === "right" ? "bg-admin-border" : ""}`}
                             title="Align right"
                           >
                             <AlignRight className="w-4 h-4" />
@@ -839,7 +839,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                         value={currentContent}
                         onChange={(e) => setBlockContent(block.id, blockLocale, e.target.value)}
                         placeholder={getBlogBlockTextPlaceholder(blockLocale, "heading")}
-                        className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                        className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                         style={{
                           fontSize:
                             block.level === 1
@@ -860,7 +860,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                     <div>
                       {/* Rich Text Formatting Toolbar */}
                       <div className="flex items-center gap-1 mb-2 flex-wrap">
-                        <div className="flex items-center gap-1 border-r border-gray-300 pr-2 mr-2">
+                        <div className="flex items-center gap-1 border-r border-admin-border pr-2 mr-2">
                           <button
                             onClick={() => {
                               const textarea = document.getElementById(`paragraph-${block.id}`) as HTMLTextAreaElement;
@@ -876,7 +876,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 }, 0);
                               }
                             }}
-                            className="p-1.5 rounded hover:bg-gray-200 transition-colors"
+                            className="p-1.5 rounded hover:bg-admin-border transition-colors"
                             title="Bold (**text**)"
                           >
                             <Bold className="w-4 h-4" />
@@ -896,7 +896,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 }, 0);
                               }
                             }}
-                            className="p-1.5 rounded hover:bg-gray-200 transition-colors"
+                            className="p-1.5 rounded hover:bg-admin-border transition-colors"
                             title="Italic (*text*)"
                           >
                             <Italic className="w-4 h-4" />
@@ -919,7 +919,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 }
                               }
                             }}
-                            className="p-1.5 rounded hover:bg-gray-200 transition-colors"
+                            className="p-1.5 rounded hover:bg-admin-border transition-colors"
                             title="Add Link ([text](url))"
                           >
                             <LinkIcon className="w-4 h-4" />
@@ -931,7 +931,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                               style: { ...block.style, textAlign: "left" },
                             })
                           }
-                          className={`p-1.5 rounded ${block.style?.textAlign === "left" ? "bg-gray-200" : "hover:bg-gray-100"}`}
+                          className={`p-1.5 rounded ${block.style?.textAlign === "left" ? "bg-admin-border" : "hover:bg-admin-hover"}`}
                           title="Align left"
                         >
                           <AlignLeft className="w-4 h-4" />
@@ -942,7 +942,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                               style: { ...block.style, textAlign: "center" },
                             })
                           }
-                          className={`p-1.5 rounded ${block.style?.textAlign === "center" ? "bg-gray-200" : "hover:bg-gray-100"}`}
+                          className={`p-1.5 rounded ${block.style?.textAlign === "center" ? "bg-admin-border" : "hover:bg-admin-hover"}`}
                           title="Align center"
                         >
                           <AlignCenter className="w-4 h-4" />
@@ -953,7 +953,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                               style: { ...block.style, textAlign: "right" },
                             })
                           }
-                          className={`p-1.5 rounded ${block.style?.textAlign === "right" ? "bg-gray-200" : "hover:bg-gray-100"}`}
+                          className={`p-1.5 rounded ${block.style?.textAlign === "right" ? "bg-admin-border" : "hover:bg-admin-hover"}`}
                           title="Align right"
                         >
                           <AlignRight className="w-4 h-4" />
@@ -965,11 +965,11 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                         onChange={(e) => setBlockContent(block.id, blockLocale, e.target.value)}
                         placeholder={getBlogBlockTextPlaceholder(blockLocale, "paragraph")}
                         rows={4}
-                        className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black resize-none font-mono text-sm"
+                        className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary resize-none font-mono text-sm"
                         style={{ textAlign: block.style?.textAlign || "left" }}
                       />
-                      <p className="text-xs text-gray-500 mt-1">
-                        Formatting: <strong>**bold**</strong>, <em>*italic*</em>, <span className="text-gray-600">[link text](url)</span>
+                      <p className="text-xs text-admin-text-secondary mt-1">
+                        Formatting: <strong>**bold**</strong>, <em>*italic*</em>, <span className="text-admin-text-secondary">[link text](url)</span>
                       </p>
                     </div>
                   )}
@@ -977,16 +977,16 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                   {block.type === "image" && (
                     <div>
                       {/* Language Tabs for Image Alt Text */}
-                      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-200">
-                        <span className="text-xs text-gray-500 font-medium">Alt Text Language:</span>
+                      <div className="flex items-center gap-2 mb-3 pb-2 border-b border-admin-border">
+                        <span className="text-xs text-admin-text-secondary font-medium">Alt Text Language:</span>
                         {publishedLocales.map((loc) => (
                           <button
                             key={loc}
                             onClick={() => setBlockLocale(loc)}
                             className={`px-3 py-1 text-xs font-medium rounded transition-colors ${
                               blockLocale === loc
-                                ? "bg-[#2563eb] text-white"
-                                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                                ? "bg-admin-primary text-white"
+                                : "bg-admin-hover text-admin-text-secondary hover:bg-admin-border"
                             }`}
                           >
                             {getBlogLocaleShort(loc)}
@@ -999,7 +999,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                           <img
                             src={getImageDisplayUrl(block.imageUrl) || block.imageUrl}
                             alt={typeof block.imageAlt === 'string' ? block.imageAlt : (block.imageAlt?.[blockLocale] || "Blog image")}
-                            className="max-w-full h-auto rounded-lg border border-gray-300"
+                            className="max-w-full h-auto rounded-admin-md border border-admin-border"
                             style={{
                               width:
                                 block.imageWidth === "full"
@@ -1021,7 +1021,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                           />
                           <div className="grid grid-cols-2 gap-3">
                             <div>
-                              <label className="block text-xs font-medium text-gray-700 mb-1">Width</label>
+                              <label className="block text-xs font-medium text-admin-text mb-1">Width</label>
                               <select
                                 value={block.imageWidth || "full"}
                                 onChange={(e) =>
@@ -1029,7 +1029,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                     imageWidth: e.target.value as "full" | "half" | "third" | "quarter",
                                   })
                                 }
-                                className="w-full px-2 py-1 bg-gray-100 border border-gray-300 rounded text-sm"
+                                className="w-full px-2 py-1 bg-admin-hover border border-admin-border rounded text-sm"
                               >
                                 <option value="full">Full Width</option>
                                 <option value="half">Half Width</option>
@@ -1038,7 +1038,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                               </select>
                             </div>
                             <div>
-                              <label className="block text-xs font-medium text-gray-700 mb-1">Alignment</label>
+                              <label className="block text-xs font-medium text-admin-text mb-1">Alignment</label>
                               <select
                                 value={block.imageAlign || "left"}
                                 onChange={(e) =>
@@ -1046,7 +1046,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                     imageAlign: e.target.value as "left" | "center" | "right",
                                   })
                                 }
-                                className="w-full px-2 py-1 bg-gray-100 border border-gray-300 rounded text-sm"
+                                className="w-full px-2 py-1 bg-admin-hover border border-admin-border rounded text-sm"
                               >
                                 <option value="left">Left</option>
                                 <option value="center">Center</option>
@@ -1068,10 +1068,10 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                               updateBlock(block.id, { imageAlt: newAlt });
                             }}
                             placeholder={`Image alt text (${getBlogLocaleLabel(blockLocale)})`}
-                            className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 text-sm focus:outline-none focus:ring-2 focus:ring-black"
+                            className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text text-sm focus:outline-none focus:ring-2 focus:ring-admin-primary"
                           />
                           <div className="flex items-center gap-2">
-                            <label className="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all cursor-pointer text-sm">
+                            <label className="inline-flex items-center gap-2 px-3 py-2 bg-admin-hover hover:bg-admin-border text-admin-text rounded-admin-md transition-all cursor-pointer text-sm">
                               <Upload className="w-4 h-4" />
                               <span>{isUploading ? "Uploading..." : "Change Image"}</span>
                               <input
@@ -1099,20 +1099,20 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 }
                                 updateBlock(block.id, { imageUrl: undefined });
                               }}
-                              className="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-700 rounded-lg transition-all text-sm font-medium"
+                              className="px-3 py-2 bg-admin-danger-bg hover:bg-admin-danger-bg text-admin-danger rounded-admin-md transition-all text-sm font-medium"
                             >
                               Remove Image
                             </button>
                           </div>
                         </div>
                       ) : (
-                        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-gray-400 transition-colors bg-gray-50">
+                        <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-admin-border rounded-admin-md cursor-pointer hover:border-admin-primary/40 transition-colors bg-admin-bg">
                           {isUploading ? (
-                            <Loader2 className="w-8 h-8 text-gray-400 animate-spin mb-2" />
+                            <Loader2 className="w-8 h-8 text-admin-text-secondary animate-spin mb-2" />
                           ) : (
                             <>
-                              <Upload className="w-8 h-8 text-gray-400 mb-2" />
-                              <span className="text-sm text-gray-500">Click to upload image</span>
+                              <Upload className="w-8 h-8 text-admin-text-secondary mb-2" />
+                              <span className="text-sm text-admin-text-secondary">Click to upload image</span>
                             </>
                           )}
                           <input
@@ -1143,7 +1143,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                         onChange={(e) => setBlockContent(block.id, blockLocale, e.target.value)}
                         placeholder={getBlogBlockTextPlaceholder(blockLocale, "quote")}
                         rows={3}
-                        className="w-full px-3 py-2 bg-gray-50 border-l-4 border-gray-400 rounded-lg text-gray-900 italic focus:outline-none focus:ring-2 focus:ring-black resize-none"
+                        className="w-full px-3 py-2 bg-admin-bg border-l-4 border-admin-primary/40 rounded-admin-md text-admin-text italic focus:outline-none focus:ring-2 focus:ring-admin-primary resize-none"
                       />
                     </div>
                   )}
@@ -1160,7 +1160,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
 
                         return items.map((item, itemIndex) => (
                           <div key={itemIndex} className="flex items-center gap-2 mb-2">
-                            <span className="text-gray-500">•</span>
+                            <span className="text-admin-text-secondary">•</span>
                             <input
                               type="text"
                               value={item}
@@ -1192,7 +1192,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                 }
                               }}
                               placeholder={getBlogBlockTextPlaceholder(blockLocale, "list")}
-                              className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                              className="flex-1 px-3 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                             />
                             <button
                               onClick={() => {
@@ -1221,7 +1221,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                                   });
                                 }
                               }}
-                              className="p-1 text-red-500 hover:text-red-700"
+                              className="p-1 text-admin-danger hover:text-admin-danger"
                             >
                               <X className="w-4 h-4" />
                             </button>
@@ -1255,7 +1255,7 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
                             });
                           }
                         }}
-                        className="mt-2 px-3 py-1 text-sm text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50"
+                        className="mt-2 px-3 py-1 text-sm text-admin-text-secondary hover:text-admin-text border border-admin-border rounded-admin-md hover:bg-admin-bg"
                       >
                         + Add Item
                       </button>
@@ -1270,13 +1270,13 @@ export default function BlogEditor({ onSave, onDelete, initialBlog }: BlogEditor
       </div>
 
       {/* Bottom Save Button */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6 mt-6">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6 mt-6">
         <div className="flex flex-col items-center gap-4">
-          <p className="text-sm text-gray-500">Remember to save your changes before leaving</p>
+          <p className="text-sm text-admin-text-secondary">Remember to save your changes before leaving</p>
           <button
             onClick={handleSave}
             disabled={isSaving}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-black hover:bg-gray-900 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-admin-primary hover:bg-admin-primary-dark text-white font-medium rounded-admin-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSaving ? (
               <>

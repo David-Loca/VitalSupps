@@ -146,7 +146,7 @@ function TextListEditor({
     <div className="space-y-2">
       {items.map((item, index) => (
         <div key={index} className="flex items-center gap-2">
-          <span className="text-gray-400 text-sm w-4 shrink-0">{index + 1}.</span>
+          <span className="text-admin-text-secondary text-sm w-4 shrink-0">{index + 1}.</span>
           <input
             type="text"
             value={item}
@@ -156,12 +156,12 @@ function TextListEditor({
               onChange(next);
             }}
             placeholder={placeholder}
-            className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+            className="flex-1 px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
           />
           <button
             type="button"
             onClick={() => onChange(items.filter((_, i) => i !== index))}
-            className="p-1.5 text-red-400 hover:text-red-600"
+            className="p-1.5 text-admin-danger/70 hover:text-admin-danger"
             title="Remove"
           >
             <X className="w-4 h-4" />
@@ -171,7 +171,7 @@ function TextListEditor({
       <button
         type="button"
         onClick={() => onChange([...items, ""])}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-admin-md bg-admin-hover hover:bg-admin-border text-admin-text"
       >
         <Plus className="w-3.5 h-3.5" />
         Add item
@@ -481,7 +481,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
     <button
       onClick={handleSave}
       disabled={isSaving}
-      className="inline-flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-900 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+      className="inline-flex items-center gap-2 px-4 py-2 bg-admin-primary hover:bg-admin-primary-dark text-white font-medium rounded-admin-md transition-all disabled:opacity-50 disabled:cursor-not-allowed"
     >
       {isSaving ? (
         <>
@@ -510,13 +510,13 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-2xl font-medium text-black mb-1">
+            <h2 className="text-2xl font-medium text-admin-text mb-1">
               {initialProduct ? "Edit Product" : "Create New Product"}
             </h2>
-            <p className="text-gray-500 text-sm">
+            <p className="text-admin-text-secondary text-sm">
               Fields marked across all four languages are required for the storefront.
             </p>
           </div>
@@ -525,7 +525,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
             {initialProduct && onDelete && (
               <button
                 onClick={() => onDelete(product.slug)}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-medium rounded-lg transition-all"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-admin-danger hover:bg-admin-danger text-white font-medium rounded-admin-md transition-all"
               >
                 <Trash2 className="w-4 h-4" />
                 <span>Delete</span>
@@ -535,7 +535,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
         </div>
 
         {saveError && (
-          <p className="mb-4 text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-4 py-2">
+          <p className="mb-4 text-sm text-admin-danger bg-admin-danger-bg border border-admin-danger/20 rounded-admin-md px-4 py-2">
             {saveError}
           </p>
         )}
@@ -543,24 +543,24 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
         {/* Core fields */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Slug (URL)</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Slug (URL)</label>
             <input
               type="text"
               value={product.slug}
               onChange={(e) => setProduct((prev) => ({ ...prev, slug: e.target.value }))}
               placeholder="my-product"
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-admin-text-secondary mt-1">
               Lowercase letters, numbers, and hyphens only. Preview: /products/{product.slug || "your-slug"}/
             </p>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Badge</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Badge</label>
             <select
               value={product.badge || ""}
               onChange={(e) => setProduct((prev) => ({ ...prev, badge: e.target.value || undefined }))}
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             >
               {BADGE_OPTIONS.map((opt) => (
                 <option key={opt.value} value={opt.value}>
@@ -570,7 +570,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Base price ($)</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Base price ($)</label>
             <input
               type="number"
               step="0.01"
@@ -579,14 +579,14 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
               onChange={(e) =>
                 setProduct((prev) => ({ ...prev, price: parseFloat(e.target.value) || 0 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
-            <p className="text-xs text-gray-500 mt-1">
+            <p className="text-xs text-admin-text-secondary mt-1">
               Used when the product has no variants, or before a variant is selected.
             </p>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Base compare-at price ($, optional)
             </label>
             <input
@@ -600,11 +600,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                   compareAtPrice: e.target.value ? parseFloat(e.target.value) : undefined,
                 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Rating (0–5)</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Rating (0–5)</label>
             <input
               type="number"
               step="0.1"
@@ -614,11 +614,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
               onChange={(e) =>
                 setProduct((prev) => ({ ...prev, rating: parseFloat(e.target.value) || 0 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Review count</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Review count</label>
             <input
               type="number"
               min="0"
@@ -626,31 +626,31 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
               onChange={(e) =>
                 setProduct((prev) => ({ ...prev, reviewCount: parseInt(e.target.value, 10) || 0 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
         </div>
 
         {/* Primary image */}
         <div className="mb-2">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Primary image</label>
+          <label className="block text-sm font-medium text-admin-text mb-2">Primary image</label>
           <div className="space-y-3">
             {product.images.primary && (
               <div className="relative w-full max-w-xs">
                 <img
                   src={product.images.primary}
                   alt="Primary product"
-                  className="w-full h-auto max-h-56 object-contain rounded-lg border border-gray-300 bg-gray-50"
+                  className="w-full h-auto max-h-56 object-contain rounded-admin-md border border-admin-border bg-admin-bg"
                 />
                 <button
                   onClick={() => setProduct((prev) => ({ ...prev, images: { primary: "" } }))}
-                  className="absolute top-2 right-2 p-1 bg-red-500 text-white rounded-full hover:bg-red-600"
+                  className="absolute top-2 right-2 p-1 bg-admin-danger text-white rounded-full hover:bg-admin-danger"
                 >
                   <X className="w-4 h-4" />
                 </button>
               </div>
             )}
-            <label className="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-all cursor-pointer">
+            <label className="inline-flex items-center gap-2 px-4 py-2 bg-admin-hover hover:bg-admin-border text-admin-text font-medium rounded-admin-md transition-all cursor-pointer">
               <Upload className="w-4 h-4" />
               <span>{isUploading ? "Uploading..." : product.images.primary ? "Change image" : "Upload image"}</span>
               <input
@@ -669,11 +669,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
       </div>
 
       {/* Locale-tabbed content */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <div className="mb-6 space-y-4 rounded-xl border border-gray-200 bg-gray-50/80 p-4">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
+        <div className="mb-6 space-y-4 rounded-admin-lg border border-admin-border bg-admin-bg/80 p-4">
           <div>
-            <h3 className="text-sm font-semibold text-gray-900">Languages</h3>
-            <p className="text-xs text-gray-500 mt-1">
+            <h3 className="text-sm font-semibold text-admin-text">Languages</h3>
+            <p className="text-xs text-admin-text-secondary mt-1">
               All four languages are required. Switch tabs to edit each, or turn on mirror editing to type once.
             </p>
           </div>
@@ -683,24 +683,24 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                 key={loc}
                 type="button"
                 onClick={() => setActiveLocale(loc)}
-                className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-all ${
+                className={`px-3 py-1.5 text-sm font-medium rounded-admin-md transition-all ${
                   activeLocale === loc
-                    ? "bg-black text-white"
-                    : "bg-white text-gray-700 border border-gray-200 hover:bg-gray-100"
+                    ? "bg-admin-primary text-white"
+                    : "bg-white text-admin-text border border-admin-border hover:bg-admin-hover"
                 }`}
               >
                 {LOCALE_SHORT[loc]} · {LOCALE_LABELS[loc]}
               </button>
             ))}
           </div>
-          <label className="inline-flex items-center gap-2 cursor-pointer text-sm text-gray-700 pt-2 border-t border-gray-200 w-full">
+          <label className="inline-flex items-center gap-2 cursor-pointer text-sm text-admin-text pt-2 border-t border-admin-border w-full">
             <input
               type="checkbox"
               checked={mirrorMode}
               onChange={(e) => setMirrorMode(e.target.checked)}
-              className="rounded border-gray-300"
+              className="rounded border-admin-border"
             />
-            <Link2 className="w-4 h-4 text-gray-500" />
+            <Link2 className="w-4 h-4 text-admin-text-secondary" />
             <span>
               <strong>Mirror editing</strong> — changes apply to all four languages at once
             </span>
@@ -709,51 +709,51 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
 
         <div className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Name — {LOCALE_LABELS[activeLocale]}
             </label>
             <input
               type="text"
               value={content.name}
               onChange={(e) => setLocaleField("name", e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 text-lg font-medium focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text text-lg font-medium focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Tagline — {LOCALE_LABELS[activeLocale]}
             </label>
             <input
               type="text"
               value={content.tagline}
               onChange={(e) => setLocaleField("tagline", e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Hero image alt text — {LOCALE_LABELS[activeLocale]}
             </label>
             <input
               type="text"
               value={content.heroImageAlt}
               onChange={(e) => setLocaleField("heroImageAlt", e.target.value)}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Target audience — {LOCALE_LABELS[activeLocale]}
             </label>
             <textarea
               value={content.targetAudience}
               onChange={(e) => setLocaleField("targetAudience", e.target.value)}
               rows={2}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Benefits — {LOCALE_LABELS[activeLocale]}
             </label>
             <TextListEditor
@@ -763,29 +763,29 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Usage instructions — {LOCALE_LABELS[activeLocale]}
             </label>
             <textarea
               value={content.usage}
               onChange={(e) => setLocaleField("usage", e.target.value)}
               rows={3}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Safety information — {LOCALE_LABELS[activeLocale]} (optional)
             </label>
             <textarea
               value={content.safety || ""}
               onChange={(e) => setLocaleField("safety", e.target.value)}
               rows={3}
-              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               Ingredients — {LOCALE_LABELS[activeLocale]}
             </label>
             <TextListEditor
@@ -795,14 +795,14 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
+            <label className="block text-sm font-medium text-admin-text mb-2">
               FAQ — {LOCALE_LABELS[activeLocale]}
             </label>
             <div className="space-y-3">
               {content.faq.map((item, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg p-3 space-y-2">
+                <div key={index} className="border border-admin-border rounded-admin-md p-3 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-gray-500">Question {index + 1}</span>
+                    <span className="text-xs font-medium text-admin-text-secondary">Question {index + 1}</span>
                     <button
                       type="button"
                       onClick={() =>
@@ -811,7 +811,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                           content.faq.filter((_, i) => i !== index)
                         )
                       }
-                      className="p-1 text-red-400 hover:text-red-600"
+                      className="p-1 text-admin-danger/70 hover:text-admin-danger"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -825,7 +825,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                       setLocaleField("faq", next);
                     }}
                     placeholder="Question"
-                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                    className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                   />
                   <textarea
                     value={item.answer}
@@ -836,7 +836,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                     }}
                     placeholder="Answer"
                     rows={2}
-                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black resize-none"
+                    className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary resize-none"
                   />
                 </div>
               ))}
@@ -845,7 +845,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                 onClick={() =>
                   setLocaleField("faq", [...content.faq, { question: "", answer: "" }])
                 }
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-admin-md bg-admin-hover hover:bg-admin-border text-admin-text"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Add FAQ item
@@ -853,17 +853,17 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
             </div>
           </div>
 
-          <div className="rounded-lg border border-gray-100 bg-gray-50/80 p-4 space-y-4">
-            <p className="text-sm text-gray-600">
+          <div className="rounded-admin-md border border-admin-border bg-admin-bg/80 p-4 space-y-4">
+            <p className="text-sm text-admin-text-secondary">
               WhatsApp messages — {LOCALE_LABELS[activeLocale]} (optional). Leave blank to use
               the site-wide default for this language. Available placeholders:{" "}
-              <code className="text-xs bg-white px-1 py-0.5 rounded border border-gray-200">{"{product}"}</code>{" "}
-              <code className="text-xs bg-white px-1 py-0.5 rounded border border-gray-200">{"{variant}"}</code>{" "}
-              <code className="text-xs bg-white px-1 py-0.5 rounded border border-gray-200">{"{quantity}"}</code>{" "}
+              <code className="text-xs bg-white px-1 py-0.5 rounded border border-admin-border">{"{product}"}</code>{" "}
+              <code className="text-xs bg-white px-1 py-0.5 rounded border border-admin-border">{"{variant}"}</code>{" "}
+              <code className="text-xs bg-white px-1 py-0.5 rounded border border-admin-border">{"{quantity}"}</code>{" "}
               (quantity only applies to the order message).
             </p>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-admin-text mb-2">
                 &quot;Ask on WhatsApp&quot; inquiry message
               </label>
               <textarea
@@ -871,11 +871,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                 onChange={(e) => setLocaleField("whatsappInquiryTemplate", e.target.value)}
                 rows={2}
                 placeholder="Leave empty to use the default"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+                className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text placeholder-admin-text-secondary/60 focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-admin-text mb-2">
                 Buy box &quot;Buy via WhatsApp&quot; order message
               </label>
               <textarea
@@ -883,7 +883,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                 onChange={(e) => setLocaleField("whatsappOrderTemplate", e.target.value)}
                 rows={2}
                 placeholder="Leave empty to use the default"
-                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent resize-none"
+                className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text placeholder-admin-text-secondary/60 focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
               />
             </div>
           </div>
@@ -891,17 +891,17 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
       </div>
 
       {/* Variants ("Types") */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h3 className="text-lg font-medium text-black mb-1">Types (variants)</h3>
-            <p className="text-gray-500 text-sm">
+            <h3 className="text-lg font-medium text-admin-text mb-1">Types (variants)</h3>
+            <p className="text-admin-text-secondary text-sm">
               Purchasable size/format options. Pick one as the default shown on page load.
             </p>
           </div>
           <button
             onClick={addVariant}
-            className="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-all text-sm"
+            className="inline-flex items-center gap-2 px-3 py-2 bg-admin-hover hover:bg-admin-border text-admin-text font-medium rounded-admin-md transition-all text-sm"
           >
             <Plus className="w-4 h-4" />
             Add variant
@@ -909,19 +909,19 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
         </div>
 
         {(product.variants || []).length === 0 ? (
-          <p className="text-sm text-gray-500 py-6 text-center">
+          <p className="text-sm text-admin-text-secondary py-6 text-center">
             No variants yet. The product will use the base price and primary image above.
           </p>
         ) : (
           <div className="space-y-4">
             {(product.variants || []).map((variant, index) => (
-              <div key={variant.id || index} className="border border-gray-200 rounded-lg p-4">
+              <div key={variant.id || index} className="border border-admin-border rounded-admin-md p-4">
                 <div className="flex items-start gap-3">
                   <div className="flex flex-col gap-1 pt-1">
                     <button
                       onClick={() => moveVariant(index, "up")}
                       disabled={index === 0}
-                      className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                      className="p-1 text-admin-text-secondary hover:text-admin-text-secondary disabled:opacity-30 disabled:cursor-not-allowed"
                       title="Move up"
                     >
                       <MoveUp className="w-4 h-4" />
@@ -929,14 +929,14 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                     <button
                       onClick={() => moveVariant(index, "down")}
                       disabled={index === (product.variants || []).length - 1}
-                      className="p-1 text-gray-400 hover:text-gray-600 disabled:opacity-30 disabled:cursor-not-allowed"
+                      className="p-1 text-admin-text-secondary hover:text-admin-text-secondary disabled:opacity-30 disabled:cursor-not-allowed"
                       title="Move down"
                     >
                       <MoveDown className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => removeVariant(index)}
-                      className="p-1 text-red-400 hover:text-red-600 mt-2"
+                      className="p-1 text-admin-danger/70 hover:text-admin-danger mt-2"
                       title="Remove variant"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -946,27 +946,27 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                   <div className="flex-1 space-y-3">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">ID</label>
+                        <label className="block text-xs font-medium text-admin-text-secondary mb-1">ID</label>
                         <input
                           type="text"
                           value={variant.id}
                           onChange={(e) => updateVariant(index, { id: e.target.value })}
                           placeholder="e.g. drops-60ml"
-                          className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                          className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">Label</label>
+                        <label className="block text-xs font-medium text-admin-text-secondary mb-1">Label</label>
                         <input
                           type="text"
                           value={variant.label}
                           onChange={(e) => updateVariant(index, { label: e.target.value })}
                           placeholder="e.g. 60ml Drops"
-                          className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                          className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">Price ($)</label>
+                        <label className="block text-xs font-medium text-admin-text-secondary mb-1">Price ($)</label>
                         <input
                           type="number"
                           step="0.01"
@@ -975,11 +975,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                           onChange={(e) =>
                             updateVariant(index, { price: parseFloat(e.target.value) || 0 })
                           }
-                          className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                          className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-medium text-gray-600 mb-1">
+                        <label className="block text-xs font-medium text-admin-text-secondary mb-1">
                           Compare-at price ($, optional)
                         </label>
                         <input
@@ -992,12 +992,12 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                               compareAtPrice: e.target.value ? parseFloat(e.target.value) : undefined,
                             })
                           }
-                          className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                          className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                         />
                       </div>
                     </div>
 
-                    <label className="inline-flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+                    <label className="inline-flex items-center gap-2 text-sm text-admin-text cursor-pointer">
                       <input
                         type="radio"
                         name="default-variant"
@@ -1008,28 +1008,28 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                     </label>
 
                     <div>
-                      <label className="block text-xs font-medium text-gray-600 mb-1">Images</label>
+                      <label className="block text-xs font-medium text-admin-text-secondary mb-1">Images</label>
                       <div className="flex flex-wrap gap-2 mb-2">
                         {variant.images.map((img, imgIndex) => (
                           <div key={imgIndex} className="relative w-20 h-20">
                             <img
                               src={img}
                               alt={`${variant.label || "Variant"} ${imgIndex + 1}`}
-                              className="w-full h-full object-cover rounded-lg border border-gray-300 bg-gray-50"
+                              className="w-full h-full object-cover rounded-admin-md border border-admin-border bg-admin-bg"
                             />
                             <button
                               onClick={() => removeVariantImage(index, imgIndex)}
-                              className="absolute -top-1.5 -right-1.5 p-0.5 bg-red-500 text-white rounded-full hover:bg-red-600"
+                              className="absolute -top-1.5 -right-1.5 p-0.5 bg-admin-danger text-white rounded-full hover:bg-admin-danger"
                             >
                               <X className="w-3 h-3" />
                             </button>
                           </div>
                         ))}
-                        <label className="w-20 h-20 flex items-center justify-center border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-gray-400 transition-colors bg-gray-50">
+                        <label className="w-20 h-20 flex items-center justify-center border-2 border-dashed border-admin-border rounded-admin-md cursor-pointer hover:border-admin-primary/40 transition-colors bg-admin-bg">
                           {isUploading ? (
-                            <Loader2 className="w-5 h-5 text-gray-400 animate-spin" />
+                            <Loader2 className="w-5 h-5 text-admin-text-secondary animate-spin" />
                           ) : (
-                            <Upload className="w-5 h-5 text-gray-400" />
+                            <Upload className="w-5 h-5 text-admin-text-secondary" />
                           )}
                           <input
                             type="file"
@@ -1044,7 +1044,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                           />
                         </label>
                       </div>
-                      <p className="text-xs text-gray-500">
+                      <p className="text-xs text-admin-text-secondary">
                         First image is used as this variant&apos;s primary/gallery cover image.
                       </p>
                     </div>
@@ -1057,11 +1057,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
       </div>
 
       {/* Specs */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
-        <h3 className="text-lg font-medium text-black mb-4">Specs</h3>
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
+        <h3 className="text-lg font-medium text-admin-text mb-4">Specs</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Serving size</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Serving size</label>
             <input
               type="text"
               value={product.specs?.servingSize || ""}
@@ -1071,11 +1071,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                   specs: { ...emptySpecs(), ...prev.specs, servingSize: e.target.value },
                 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Servings per container</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Servings per container</label>
             <input
               type="text"
               value={product.specs?.servingsPerContainer || ""}
@@ -1085,11 +1085,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                   specs: { ...emptySpecs(), ...prev.specs, servingsPerContainer: e.target.value },
                 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Form</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Form</label>
             <input
               type="text"
               value={product.specs?.form || ""}
@@ -1099,11 +1099,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                   specs: { ...emptySpecs(), ...prev.specs, form: e.target.value },
                 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Allergens</label>
+            <label className="block text-sm font-medium text-admin-text mb-2">Allergens</label>
             <input
               type="text"
               value={product.specs?.allergens || ""}
@@ -1113,25 +1113,25 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                   specs: { ...emptySpecs(), ...prev.specs, allergens: e.target.value },
                 }))
               }
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent"
+              className="w-full px-4 py-2 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
           </div>
         </div>
       </div>
 
       {/* Reviews */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h3 className="text-lg font-medium text-black mb-1">Reviews</h3>
-            <p className="text-gray-500 text-sm">
+            <h3 className="text-lg font-medium text-admin-text mb-1">Reviews</h3>
+            <p className="text-admin-text-secondary text-sm">
               Existing sample reviews are marked &quot;Sample&quot;. Toggle a review off sample once
               it&apos;s replaced with a genuine customer review.
             </p>
           </div>
           <button
             onClick={addReview}
-            className="inline-flex items-center gap-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium rounded-lg transition-all text-sm"
+            className="inline-flex items-center gap-2 px-3 py-2 bg-admin-hover hover:bg-admin-border text-admin-text font-medium rounded-admin-md transition-all text-sm"
           >
             <Plus className="w-4 h-4" />
             Add review
@@ -1139,22 +1139,22 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
         </div>
 
         {product.reviews.length === 0 ? (
-          <p className="text-sm text-gray-500 py-6 text-center">No reviews yet.</p>
+          <p className="text-sm text-admin-text-secondary py-6 text-center">No reviews yet.</p>
         ) : (
           <div className="space-y-4">
             {product.reviews.map((review, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-4">
+              <div key={index} className="border border-admin-border rounded-admin-md p-4">
                 <div className="flex items-start justify-between mb-3">
                   <span
                     className={`text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded ${
-                      review.isSample ? "bg-amber-100 text-amber-800" : "bg-green-100 text-green-800"
+                      review.isSample ? "bg-admin-gold-light text-admin-gold" : "bg-admin-success-bg text-admin-success"
                     }`}
                   >
                     {review.isSample ? "Sample" : "Real"}
                   </span>
                   <button
                     onClick={() => removeReview(index)}
-                    className="p-1 text-red-400 hover:text-red-600"
+                    className="p-1 text-admin-danger/70 hover:text-admin-danger"
                     title="Remove review"
                   >
                     <Trash2 className="w-4 h-4" />
@@ -1162,16 +1162,16 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1">Name</label>
+                    <label className="block text-xs font-medium text-admin-text-secondary mb-1">Name</label>
                     <input
                       type="text"
                       value={review.name}
                       onChange={(e) => updateReview(index, { name: e.target.value })}
-                      className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                      className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1">Days ago</label>
+                    <label className="block text-xs font-medium text-admin-text-secondary mb-1">Days ago</label>
                     <input
                       type="number"
                       min="0"
@@ -1179,11 +1179,11 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                       onChange={(e) =>
                         updateReview(index, { daysAgo: parseInt(e.target.value, 10) || 0 })
                       }
-                      className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                      className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-gray-600 mb-1">Rating (1-5)</label>
+                    <label className="block text-xs font-medium text-admin-text-secondary mb-1">Rating (1-5)</label>
                     <div className="flex items-center gap-1">
                       <input
                         type="number"
@@ -1193,27 +1193,27 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
                         onChange={(e) =>
                           updateReview(index, { rating: parseInt(e.target.value, 10) || 1 })
                         }
-                        className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
+                        className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary"
                       />
-                      <Star className="w-4 h-4 text-amber-400 shrink-0" />
+                      <Star className="w-4 h-4 text-admin-gold shrink-0" />
                     </div>
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label className="block text-xs font-medium text-gray-600 mb-1">Text</label>
+                  <label className="block text-xs font-medium text-admin-text-secondary mb-1">Text</label>
                   <textarea
                     value={review.text}
                     onChange={(e) => updateReview(index, { text: e.target.value })}
                     rows={2}
-                    className="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-black resize-none"
+                    className="w-full px-3 py-2 bg-white border border-admin-border rounded-admin-md text-sm text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary resize-none"
                   />
                 </div>
-                <label className="inline-flex items-center gap-2 text-sm text-gray-700 cursor-pointer">
+                <label className="inline-flex items-center gap-2 text-sm text-admin-text cursor-pointer">
                   <input
                     type="checkbox"
                     checked={!review.isSample}
                     onChange={(e) => updateReview(index, { isSample: !e.target.checked })}
-                    className="rounded border-gray-300"
+                    className="rounded border-admin-border"
                   />
                   This is a real, verified customer review (not sample content)
                 </label>
@@ -1224,9 +1224,9 @@ export default function ProductEditor({ onSave, onDelete, initialProduct }: Prod
       </div>
 
       {/* Bottom Save */}
-      <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <div className="bg-white rounded-admin-lg border border-admin-border p-6">
         <div className="flex flex-col items-center gap-4">
-          <p className="text-sm text-gray-500">Remember to save your changes before leaving</p>
+          <p className="text-sm text-admin-text-secondary">Remember to save your changes before leaving</p>
           {saveButton}
         </div>
       </div>
