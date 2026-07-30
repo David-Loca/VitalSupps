@@ -7,6 +7,7 @@ import {
   withDraftPreviewParam,
 } from "@/lib/admin/draft-preview";
 import Button from "@/components/admin/ui/Button";
+import { BotanicalCorner, BotanicalCornerSmall } from "@/components/admin/ui/Decorative";
 
 type Device = "desktop" | "tablet" | "mobile";
 
@@ -156,9 +157,11 @@ export default function PreviewPanel({
         </div>
       </div>
 
-      <div className="flex flex-1 items-center justify-center overflow-auto p-4 sm:p-8">
+      <div className="relative isolate flex flex-1 items-center justify-center overflow-auto p-4 sm:p-8">
+        <BotanicalCorner className="pointer-events-none absolute -right-8 -top-8 z-0 h-[280px] w-[340px] text-admin-sage opacity-[0.06]" />
+        <BotanicalCornerSmall className="pointer-events-none absolute -bottom-6 -left-6 z-0 h-48 w-48 rotate-180 text-admin-sage opacity-[0.06]" />
         <div
-          className={`h-full transition-all duration-300 ease-[var(--ease-admin)] ${
+          className={`relative z-10 h-full transition-all duration-300 ease-[var(--ease-admin)] ${
             device === "desktop"
               ? "w-full"
               : "overflow-hidden rounded-[28px] border-[6px] border-admin-text/80 shadow-2xl"

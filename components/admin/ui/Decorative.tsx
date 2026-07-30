@@ -46,7 +46,7 @@ export function BotanicalCorner({ className = "" }: { className?: string }) {
         strokeLinecap="round"
       />
       {/* leaves — paired almond shapes tapering toward the tip */}
-      <g strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
+      <g stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M210 150C200 128 205 104 226 88C232 112 228 136 210 150Z" />
         <path d="M210 150C188 146 170 132 166 108C190 110 208 126 210 150Z" />
         <path d="M255 118C245 96 249 72 270 56C276 80 272 104 255 118Z" />
@@ -58,7 +58,7 @@ export function BotanicalCorner({ className = "" }: { className?: string }) {
         <path d="M158 200C139 197 125 185 121 166C141 168 156 182 158 200Z" />
       </g>
       {/* short offshoot stems */}
-      <g strokeWidth="0.9" strokeLinecap="round">
+      <g stroke="currentColor" strokeWidth="0.9" strokeLinecap="round">
         <path d="M226 100C232 96 240 94 248 96" />
         <path d="M270 66C277 61 286 59 294 61" />
         <path d="M168 158C161 152 152 149 143 150" />
@@ -86,7 +86,7 @@ export function BotanicalCornerSmall({ className = "" }: { className?: string })
         strokeWidth="1.2"
         strokeLinecap="round"
       />
-      <g strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+      <g stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
         <path d="M90 90C82 72 85 52 102 40C107 60 104 80 90 90Z" />
         <path d="M90 90C71 87 57 75 54 55C74 57 88 70 90 90Z" />
         <path d="M128 58C121 43 124 27 138 17C142 33 140 49 128 58Z" />
