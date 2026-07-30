@@ -9,6 +9,11 @@ import {
   isLegalSlug,
   getLegalSlug,
 } from '@/lib/utils/installation-slugs';
+import {
+  deepMergeContent,
+  isDraftPreviewMode,
+  subscribeToDraftContent,
+} from '@/lib/admin/draft-preview';
 
 type Translations = ReturnType<typeof getTranslations>;
 
@@ -68,7 +73,29 @@ export function LanguageProvider({ children, initialLocale }: { children: ReactN
     router.push(buildLocalizedPath(newLocale, rest));
   };
 
-  const translations = getTranslations(locale);
+  // Admin live-preview support: when this page is rendered inside the admin's
+  // preview iframe (URL carries `?__draftPreview=1`), listen for unsaved
+  // draft content broadcast from the editor and overlay it onto the normal
+  // translations bundle. For every regular visit this stays false, so no
+  // channel is opened and rendering is byte-for-byte what it was before.
+  const [previewMode] = useState(() => isDraftPreviewMode());
+  const [draftOverride, setDraftOverride] = useState<Record<string, unknown> | null>(null);
+
+  useEffect(() => {
+    if (!previewMode) return;
+    setDraftOverride(null); // avoid a stale locale's draft bleeding into the new one
+    return subscribeToDraftContent((message) => {
+      if (message.locale === locale) {
+        setDraftOverride(message.content);
+      }
+    });
+  }, [previewMode, locale]);
+
+  const baseTranslations = getTranslations(locale);
+  const translations =
+    previewMode && draftOverride
+      ? deepMergeContent(baseTranslations, draftOverride)
+      : baseTranslations;
 
   const t = (key: string): string => {
     const keys = key.split('.');

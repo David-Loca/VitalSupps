@@ -29,7 +29,7 @@ import {
 import BlogsManager from "@/components/admin/BlogsManager";
 import ProductsManager from "@/components/admin/ProductsManager";
 import DeploymentNotification from "@/components/admin/DeploymentNotification";
-import { AdminHeroPreview, AdminAnnouncementPreview } from "@/components/admin/AdminLocalePreview";
+import PreviewPanel from "@/components/admin/PreviewPanel";
 import AdminSidebar, { type AdminSection } from "@/components/admin/AdminSidebar";
 import Button from "@/components/admin/ui/Button";
 import Input from "@/components/admin/ui/Input";
@@ -108,10 +108,13 @@ const WHATSAPP_MESSAGE_FIELDS: { key: string; label: string; hint?: string }[] =
 const LOCALE_LABELS: Record<string, string> = {
   en: "EN",
   fr: "FR",
-  it: "IT",
+  es: "ES",
+  de: "DE",
 };
 
-const ADMIN_LOCALE_ORDER = ["en", "fr", "it"] as const;
+// Matches lib/i18n's real Locale union — every locale here has an actual
+// translations/{locale}.json, data/metadata/{locale}.json, etc. behind it.
+const ADMIN_LOCALE_ORDER = ["en", "fr", "es", "de"] as const;
 
 const METADATA_PAGES: {
   section: string;
@@ -663,10 +666,6 @@ export default function AdminDashboard() {
                       </div>
                     </Card>
 
-                    {showPreview && (
-                      <AdminHeroPreview locale={activeLocale} getValue={getValue} />
-                    )}
-
                     <Card
                       title="Announcement Bar"
                       subtitle="The thin strip shown above the header on every page, not just the homepage. Each message is optional — leave a field empty to hide that message entirely (no stray dot separator is shown). If all three are empty, the whole bar is hidden."
@@ -689,10 +688,6 @@ export default function AdminDashboard() {
                         ))}
                       </div>
                     </Card>
-
-                    {showPreview && (
-                      <AdminAnnouncementPreview locale={activeLocale} getValue={getValue} />
-                    )}
                   </div>
                 )}
 
@@ -941,6 +936,15 @@ export default function AdminDashboard() {
             )}
         </div>
       </div>
+
+      {/* Live WYSIWYG preview — same-origin iframe of the real public route,
+          fed with unsaved draft content over a BroadcastChannel. */}
+      <PreviewPanel
+        open={showPreview}
+        onClose={() => setShowPreview(false)}
+        locale={activeLocale}
+        content={translations[activeLocale]?.content as Record<string, unknown> | undefined}
+      />
 
       {/* Deployment Notification */}
       <DeploymentNotification
