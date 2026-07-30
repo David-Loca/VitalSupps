@@ -11,6 +11,7 @@ import Card from "@/components/admin/ui/Card";
 import Badge from "@/components/admin/ui/Badge";
 import Modal from "@/components/admin/ui/Modal";
 import SectionHero from "@/components/admin/ui/SectionHero";
+import { BotanicalIcon } from "@/components/admin/ui/Decorative";
 import { getAdminDict } from "@/lib/admin/i18n";
 
 function getPriceRange(product: Product): string {
@@ -215,6 +216,7 @@ export default function ProductsManager({ locale }: { locale: string }) {
         />
 
         <Card
+          decorated
           headerAction={
             <Button
               variant="primary"
@@ -232,6 +234,7 @@ export default function ProductsManager({ locale }: { locale: string }) {
             </div>
           ) : products.length === 0 ? (
             <div className="text-center py-16">
+              <BotanicalIcon className="mx-auto mb-4 h-12 w-12 text-admin-sage opacity-30" />
               <p className="text-admin-text-secondary text-[14px] mb-4">{ui.products.empty}</p>
               <Button
                 variant="primary"

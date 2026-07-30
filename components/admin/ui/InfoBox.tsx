@@ -1,7 +1,7 @@
 "use client";
 
 import { Info } from "lucide-react";
-import { LeafSprig } from "./Decorative";
+import { BotanicalCornerSmall } from "./Decorative";
 
 interface InfoBoxProps {
   children: React.ReactNode;
@@ -12,10 +12,10 @@ interface InfoBoxProps {
 export default function InfoBox({ children, icon, className = "" }: InfoBoxProps) {
   return (
     <div
-      className={`relative overflow-hidden rounded-admin-md border border-admin-primary/10 bg-admin-success-bg p-5 ${className}`}
+      className={`relative isolate overflow-hidden rounded-admin-md border border-admin-primary/10 bg-admin-success-bg p-5 ${className}`}
     >
-      <LeafSprig className="pointer-events-none absolute -right-4 -bottom-6 h-28 w-28 opacity-70" />
-      <div className="relative flex items-start gap-3">
+      <BotanicalCornerSmall className="absolute -right-3 -bottom-5 z-0 h-24 w-24 text-admin-sage opacity-[0.1]" />
+      <div className="relative z-10 flex items-start gap-3">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-admin-primary text-white">
           {icon ?? <Info className="h-4 w-4" strokeWidth={2} />}
         </span>

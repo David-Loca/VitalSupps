@@ -6,7 +6,7 @@ import { Lock, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Button from "@/components/admin/ui/Button";
 import Input from "@/components/admin/ui/Input";
-import { GoldCurve, LeafSprig } from "@/components/admin/ui/Decorative";
+import { GoldCurve, BotanicalCorner, BotanicalCornerSmall } from "@/components/admin/ui/Decorative";
 
 export default function AdminLogin() {
   const [password, setPassword] = useState("");
@@ -44,10 +44,11 @@ export default function AdminLogin() {
 
   return (
     <div className="admin-scope relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-      <GoldCurve className="pointer-events-none absolute left-0 top-10 h-32 w-72 opacity-60" />
-      <LeafSprig className="pointer-events-none absolute -bottom-6 -right-6 h-56 w-56 opacity-70" />
+      <GoldCurve className="pointer-events-none absolute -right-10 -top-16 h-[420px] w-[560px] text-admin-gold opacity-[0.08]" />
+      <BotanicalCorner className="pointer-events-none absolute -right-6 -top-10 h-[380px] w-[440px] text-admin-sage opacity-[0.1]" />
+      <BotanicalCornerSmall className="pointer-events-none absolute -bottom-8 -left-8 h-64 w-64 rotate-180 text-admin-sage opacity-[0.08]" />
 
-      <div className="admin-page-enter relative w-full max-w-[420px]">
+      <div className="admin-page-enter relative z-10 w-full max-w-[420px]">
         {/* Logo/Title */}
         <div className="mb-10 text-center">
           <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-admin-primary p-3 shadow-[var(--shadow-admin-card)]">

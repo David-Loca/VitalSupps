@@ -7,4 +7,11 @@ export { default as InfoBox } from "./InfoBox";
 export { default as Badge } from "./Badge";
 export { default as Modal } from "./Modal";
 export { default as TwoCol } from "./TwoCol";
-export { BotanicalCorner, GoldDivider, GoldCurve, LeafSprig } from "./Decorative";
+export {
+  BotanicalCorner,
+  BotanicalCornerSmall,
+  BotanicalIcon,
+  GoldDivider,
+  GoldCurve,
+  LeafSprig,
+} from "./Decorative";
