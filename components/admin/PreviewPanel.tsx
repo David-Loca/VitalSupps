@@ -55,20 +55,31 @@ export default function PreviewPanel({
   const previewPath = path || `/${locale}/`;
   const src = withDraftPreviewParam(previewPath);
 
-  // Re-send the current draft the moment the iframe (re)loads a fresh document.
-  const handleIframeLoad = () => {
-    if (content) broadcastDraftContent(locale, content);
+  // The admin's draft state updates its content object in place (same
+  // reference, mutated), so a `useEffect` keyed on `content` would only ever
+  // fire once. Track the latest value in a ref instead — refreshed on every
+  // render regardless of identity — and broadcast on a short heartbeat plus
+  // on demand (iframe load / device switch) rather than depending on prop
+  // reference equality.
+  const latestContent = useRef(content);
+  latestContent.current = content;
+
+  const sendDraft = () => {
+    if (latestContent.current) broadcastDraftContent(locale, latestContent.current);
   };
 
-  // Push every subsequent edit straight into the live iframe — debounced
-  // lightly so fast typing doesn't spam the channel.
+  // Re-send the current draft the moment the iframe (re)loads a fresh document.
+  const handleIframeLoad = () => sendDraft();
+
+  // Lightweight heartbeat while the panel is open, so every edit reaches the
+  // iframe shortly after — cheap for a same-origin BroadcastChannel.
   useEffect(() => {
-    if (!open || !content) return;
-    const timeout = setTimeout(() => {
-      broadcastDraftContent(locale, content);
-    }, 150);
-    return () => clearTimeout(timeout);
-  }, [open, locale, content]);
+    if (!open) return;
+    sendDraft();
+    const interval = setInterval(sendDraft, 250);
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, locale]);
 
   useEffect(() => {
     if (!open) return;
