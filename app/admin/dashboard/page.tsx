@@ -39,6 +39,7 @@ import SectionHero from "@/components/admin/ui/SectionHero";
 import InfoBox from "@/components/admin/ui/InfoBox";
 import TwoCol from "@/components/admin/ui/TwoCol";
 import Badge from "@/components/admin/ui/Badge";
+import { getAdminDict } from "@/lib/admin/i18n";
 
 interface Translations {
   [locale: string]: {
@@ -470,6 +471,9 @@ export default function AdminDashboard() {
 
   const currentContent = translations[activeLocale]?.content;
   const sortedLocales = ADMIN_LOCALE_ORDER.filter((code) => translations[code]);
+  // Admin UI chrome language — follows the same EN/FR/ES/DE switch as the
+  // content being edited, per the "everything stays in sync" requirement.
+  const ui = getAdminDict(activeLocale);
 
   return (
     <div className="admin-scope min-h-screen">
@@ -490,10 +494,10 @@ export default function AdminDashboard() {
               </div>
               <div>
                 <h1 className="text-[18px] font-semibold text-admin-text leading-tight">
-                  Website Editor
+                  {ui.header.title}
                 </h1>
                 <p className="text-[13px] text-admin-text-secondary mt-0.5">
-                  Edit content, images, and settings
+                  {ui.header.subtitle}
                 </p>
               </div>
             </div>
@@ -522,7 +526,7 @@ export default function AdminDashboard() {
                 size="md"
                 onClick={() => setShowPreview(!showPreview)}
                 className="!px-3.5"
-                aria-label="Toggle preview"
+                aria-label={ui.preview.title}
               >
                 {showPreview ? (
                   <EyeOff className="w-[18px] h-[18px]" strokeWidth={2} />
@@ -548,7 +552,13 @@ export default function AdminDashboard() {
                 }
                 loading={isSaving}
               >
-                {isSaving ? "Saving..." : saveStatus === "success" ? "Saved" : saveStatus === "error" ? "Error" : "Save"}
+                {isSaving
+                  ? ui.common.saving
+                  : saveStatus === "success"
+                  ? ui.common.saved
+                  : saveStatus === "error"
+                  ? ui.common.error
+                  : ui.common.save}
               </Button>
 
               {/* Logout */}
@@ -559,7 +569,7 @@ export default function AdminDashboard() {
                 icon={<LogOut className="w-4 h-4" strokeWidth={2} />}
                 className="hover:!bg-admin-danger-bg hover:!text-admin-danger hover:!border-admin-danger/20"
               >
-                <span className="hidden sm:inline">Logout</span>
+                <span className="hidden sm:inline">{ui.common.logout}</span>
               </Button>
             </div>
           </div>
@@ -572,7 +582,7 @@ export default function AdminDashboard() {
       </header>
 
       {/* Navigation */}
-      <AdminSidebar activeSection={activeSection} onSectionChange={setActiveSection} />
+      <AdminSidebar activeSection={activeSection} onSectionChange={setActiveSection} locale={activeLocale} />
 
       <div className="mx-auto max-w-[1500px] px-4 py-8 sm:px-8">
         <div className="admin-page-enter" key={activeSection}>
@@ -583,14 +593,14 @@ export default function AdminDashboard() {
                   <div className="space-y-8">
                     <SectionHero
                       icon={<Home className="w-7 h-7" strokeWidth={2} />}
-                      title="Homepage Hero"
-                      subtitle="Edit your homepage hero section"
+                      title={ui.hero.title}
+                      subtitle={ui.hero.subtitle}
                     />
 
                     <Card>
                       <div className="space-y-6">
                         <Input
-                          label="Main Heading"
+                          label={ui.hero.mainHeading}
                           value={getValue("hero.title")}
                           onChange={(e) => updateValue("hero.title", e.target.value)}
                           maxLength={120}
@@ -600,7 +610,7 @@ export default function AdminDashboard() {
 
                         <TwoCol>
                           <Input
-                            label="Subtitle Part 1"
+                            label={ui.hero.subtitlePart1}
                             badge="1"
                             value={getValue("hero.subtitlePart1")}
                             onChange={(e) => updateValue("hero.subtitlePart1", e.target.value)}
@@ -610,8 +620,8 @@ export default function AdminDashboard() {
                           <Input
                             label={
                               <>
-                                Subtitle Part 2{" "}
-                                <span className="text-admin-gold font-normal">(Highlighted)</span>
+                                {ui.hero.subtitlePart2}{" "}
+                                <span className="text-admin-gold font-normal">{ui.hero.highlighted}</span>
                               </>
                             }
                             badge="2"
@@ -625,16 +635,15 @@ export default function AdminDashboard() {
 
                         <InfoBox>
                           <p>
-                            The hero paragraph is one continuous block on the site (with{" "}
-                            <span className="text-admin-gold font-medium">links</span> in the
-                            middle). Edit each part below — line breaks are removed automatically
-                            so text does not jump to a new line.
+                            {ui.hero.infoBoxPrefix}
+                            <span className="text-admin-gold font-medium">{ui.hero.infoBoxLinks}</span>
+                            {ui.hero.infoBoxSuffix}
                           </p>
                         </InfoBox>
 
                         <div className="space-y-5">
                           <Textarea
-                            label="Opening sentence"
+                            label={ui.hero.openingSentence}
                             icon={<Edit className="w-3.5 h-3.5" strokeWidth={2} />}
                             value={getValue("hero.description")}
                             onChange={(e) => updateValue("hero.description", e.target.value)}
@@ -644,20 +653,20 @@ export default function AdminDashboard() {
                           />
                           {(
                             [
-                              ["channelsLink", "Channel link text (blue, links to pricing)"],
-                              ["description2", "After channel link"],
-                              ["officialSmartersLinkText", "Legacy player link label"],
-                              ["officialIboLinkText", "IBO player link label"],
-                              ["description3", "After player links (e.g. “, etc. (Smart TV…)”)"],
-                              ["m3uLink", "M3U / Xtream link text"],
-                              ["description4", "After M3U link"],
-                              ["freeTest", "Free test highlight"],
-                              ["description5", "Closing sentence"],
+                              "channelsLink",
+                              "description2",
+                              "officialSmartersLinkText",
+                              "officialIboLinkText",
+                              "description3",
+                              "m3uLink",
+                              "description4",
+                              "freeTest",
+                              "description5",
                             ] as const
-                          ).map(([key, label]) => (
+                          ).map((key) => (
                             <Input
                               key={key}
-                              label={label}
+                              label={ui.hero.fieldLabels[key]}
                               value={getValue(`hero.${key}`)}
                               onChange={(e) => updateValue(`hero.${key}`, e.target.value)}
                             />
@@ -667,15 +676,15 @@ export default function AdminDashboard() {
                     </Card>
 
                     <Card
-                      title="Announcement Bar"
-                      subtitle="The thin strip shown above the header on every page, not just the homepage. Each message is optional — leave a field empty to hide that message entirely (no stray dot separator is shown). If all three are empty, the whole bar is hidden."
+                      title={ui.hero.announcementTitle}
+                      subtitle={ui.hero.announcementSubtitle}
                     >
                       <div className="space-y-5">
                         {(
                           [
-                            ["shipping", "Shipping message"],
-                            ["guarantee", "Guarantee message"],
-                            ["whatsapp", "WhatsApp / ordering message"],
+                            ["shipping", ui.hero.shipping],
+                            ["guarantee", ui.hero.guarantee],
+                            ["whatsapp", ui.hero.whatsappMessage],
                           ] as const
                         ).map(([key, label]) => (
                           <Input
@@ -683,7 +692,7 @@ export default function AdminDashboard() {
                             label={label}
                             value={getValue(`announcement.${key}`)}
                             onChange={(e) => updateValue(`announcement.${key}`, e.target.value)}
-                            placeholder="Leave empty to hide this message"
+                            placeholder={ui.hero.placeholderEmpty}
                           />
                         ))}
                       </div>
@@ -773,12 +782,12 @@ export default function AdminDashboard() {
                 )}
                 {/* Blogs Section Editor */}
                 {activeSection === "blogs" && (
-                  <BlogsManager />
+                  <BlogsManager locale={activeLocale} />
                 )}
 
                 {/* Products Section Editor */}
                 {activeSection === "products" && (
-                  <ProductsManager />
+                  <ProductsManager locale={activeLocale} />
                 )}
 
                 {/* Metadata Section Editor */}
@@ -944,6 +953,7 @@ export default function AdminDashboard() {
         onClose={() => setShowPreview(false)}
         locale={activeLocale}
         content={translations[activeLocale]?.content as Record<string, unknown> | undefined}
+        labels={ui.preview}
       />
 
       {/* Deployment Notification */}
@@ -951,6 +961,7 @@ export default function AdminDashboard() {
         show={showDeploymentNotification}
         onClose={() => setShowDeploymentNotification(false)}
         type={saveStatus === "error" ? "error" : "success"}
+        locale={activeLocale}
       />
     </div>
   );
