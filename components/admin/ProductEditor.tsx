@@ -489,22 +489,22 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
       {isSaving ? (
         <>
           <Loader2 className="w-4 h-4 animate-spin" />
-          <span>Saving...</span>
+          <span>{ui.common.saving}</span>
         </>
       ) : saveStatus === "success" ? (
         <>
           <Check className="w-4 h-4" />
-          <span>Saved</span>
+          <span>{ui.common.saved}</span>
         </>
       ) : saveStatus === "error" ? (
         <>
           <X className="w-4 h-4" />
-          <span>Error</span>
+          <span>{ui.common.error}</span>
         </>
       ) : (
         <>
           <Save className="w-4 h-4" />
-          <span>Save Product</span>
+          <span>{ui.editorChrome.saveProduct}</span>
         </>
       )}
     </button>
@@ -517,7 +517,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
         <div className="flex items-center justify-between mb-6">
           <div>
             <h2 className="text-2xl font-medium text-admin-text mb-1">
-              {initialProduct ? "Edit Product" : "Create New Product"}
+              {initialProduct ? ui.editorChrome.editProductTitle : ui.editorChrome.createProductTitle}
             </h2>
             <p className="text-admin-text-secondary text-sm">
               Fields marked across all four languages are required for the storefront.
@@ -531,7 +531,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
                 className="inline-flex items-center gap-2 px-4 py-2 bg-admin-danger hover:bg-admin-danger text-white font-medium rounded-admin-md transition-all"
               >
                 <Trash2 className="w-4 h-4" />
-                <span>Delete</span>
+                <span>{ui.common.delete}</span>
               </button>
             )}
           </div>
