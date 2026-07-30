@@ -675,7 +675,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
       <div className="bg-white rounded-admin-lg border border-admin-border p-6">
         <div className="mb-6 space-y-4 rounded-admin-lg border border-admin-border bg-admin-bg/80 p-4">
           <div>
-            <h3 className="text-sm font-semibold text-admin-text">Languages</h3>
+            <h3 className="text-sm font-semibold text-admin-text">{ui.localeToolbar.title}</h3>
             <p className="text-xs text-admin-text-secondary mt-1">
               All four languages are required. Switch tabs to edit each, or turn on mirror editing to type once.
             </p>
@@ -704,9 +704,7 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
               className="rounded border-admin-border"
             />
             <Link2 className="w-4 h-4 text-admin-text-secondary" />
-            <span>
-              <strong>Mirror editing</strong> — changes apply to all four languages at once
-            </span>
+            <span>{ui.localeToolbar.mirrorEditing}</span>
           </label>
         </div>
 
