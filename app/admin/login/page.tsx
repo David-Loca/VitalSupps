@@ -51,13 +51,12 @@ export default function AdminLogin() {
       <div className="admin-page-enter relative z-10 w-full max-w-[420px]">
         {/* Logo/Title */}
         <div className="mb-10 text-center">
-          <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-admin-primary p-3 shadow-[var(--shadow-admin-card)]">
+          <div className="relative mb-6 inline-flex h-16 w-16 items-center justify-center overflow-hidden rounded-full shadow-[var(--shadow-admin-card)]">
             <Image
-              src="/logo/Logo3-removebg-preview.png"
-              alt="Logo"
-              width={36}
-              height={36}
-              className="object-contain"
+              src="/logo/vitalsupps-icon.jpg"
+              alt="VitalSupps"
+              fill
+              className="object-cover"
               priority
             />
           </div>
