@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans, Cormorant_Garamond } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { buildSocialMetadata } from "@/lib/seo/social-metadata";
 import { getSiteBaseUrl } from "@/lib/seo/og-image";
@@ -86,7 +87,9 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <meta name="google-site-verification" content="UsDivhmxwn1peRYhvqO8TmyNGB180fGmIwM8BST2kh4" />
-        <script
+        <Script
+          id="locale-lang-attr"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -103,7 +106,9 @@ export default function RootLayout({
             `,
           }}
         />
-        <script
+        <Script
+          id="suppress-ipapi-error"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -126,7 +131,9 @@ export default function RootLayout({
             `,
           }}
         />
-        <script
+        <Script
+          id="suppress-ipapi-rejection"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
