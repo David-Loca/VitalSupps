@@ -10,6 +10,7 @@ import { regionDisplayNames } from "@/lib/i18n/locale-maps";
 import { getLegalUrl } from "@/lib/utils/installation-slugs";
 import { getContactEmailForLocale } from "@/lib/utils/contact-email";
 import { usePathname } from "next/navigation";
+import { GoldDivider, BotanicalCorner, GoldCurve } from "@/components/admin/ui/Decorative";
 
 const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
   e.preventDefault();
@@ -73,11 +74,15 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-dark-text text-white overflow-hidden border-t border-white/5">
-      {/* Hairline accent marking the transition into the footer */}
-      <div className="h-px w-full bg-accent-secondary/50" />
+    <footer className="relative isolate overflow-hidden bg-brand-primary-dark text-white">
+      {/* Hairline gold accent marking the transition into the footer */}
+      <div className="h-px w-full bg-brand-gold/40" />
 
-      <div className="relative max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-6 sm:py-8 lg:py-10">
+      {/* Botanical + gold decoration — same artwork language as the admin panel */}
+      <BotanicalCorner className="pointer-events-none absolute -right-10 -top-16 z-0 h-[420px] w-[480px] text-white opacity-[0.05]" />
+      <GoldCurve className="pointer-events-none absolute -right-16 top-0 z-0 h-[320px] w-[460px] text-brand-gold opacity-[0.08]" />
+
+      <div className="relative z-10 max-w-7xl xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-6 sm:py-8 lg:py-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-12 gap-x-4 gap-y-6 sm:gap-6 lg:gap-8 mb-4 sm:mb-6 lg:mb-8">
           {/* Brand Column */}
@@ -121,14 +126,14 @@ export default function Footer() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-md text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/30 hover:scale-[1.02] group"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-[12px] text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-[#25D366]/30 hover:scale-[1.02] group"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>{t("common.whatsapp")}</span>
               </a>
               <a
                 href={`mailto:${contactEmail}`}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-md text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.02] group border border-white/20 hover:border-white/30"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-brand-gold/20 text-white rounded-[12px] text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-white/10 hover:scale-[1.02] group border border-white/20 hover:border-brand-gold/40"
               >
                 <Mail className="w-4 h-4" />
                 <span>{t("common.email")}</span>
@@ -146,9 +151,10 @@ export default function Footer() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.3, delay: 0.05 * (groupIndex + 1) }}
             >
-              <h2 className="text-sm font-semibold text-white mb-2.5 tracking-wide uppercase">
+              <h2 className="text-sm font-semibold text-white mb-1.5 tracking-wide uppercase">
                 {group.title}
               </h2>
+              <GoldDivider className="mb-3 !w-8 !bg-brand-gold/70" />
               <nav className="flex flex-col space-y-1.5" aria-label={group.ariaLabel}>
                 {group.links.map((link) =>
                   link.external ? (
@@ -197,10 +203,11 @@ export default function Footer() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.3, delay: 0.2 }}
           >
-            <h2 className="text-sm font-semibold text-white mb-2.5 tracking-wide uppercase">
+            <h2 className="text-sm font-semibold text-white mb-1.5 tracking-wide uppercase">
               {t("footer.paymentMethods")}
             </h2>
-            <div className="relative w-full max-w-[160px] h-auto opacity-80 hover:opacity-100 transition-opacity duration-200 bg-white/5 p-1.5 rounded-md backdrop-blur-sm border border-white/10 mb-3">
+            <GoldDivider className="mb-3 !w-8 !bg-brand-gold/70" />
+            <div className="relative w-full max-w-[160px] h-auto opacity-80 hover:opacity-100 transition-opacity duration-200 bg-white/5 p-1.5 rounded-[12px] backdrop-blur-sm border border-white/10 mb-3">
               <Image
                 src="/images/Methode-de-paiment.webp"
                 alt="Payment methods accepted"
@@ -239,7 +246,7 @@ export default function Footer() {
                       onClick={() => setLocale(loc)}
                       className={`relative min-w-10 min-h-9 px-3 py-1.5 text-xs font-semibold tracking-wide rounded-full transition-all duration-300 cursor-pointer ${
                         locale === loc
-                          ? "bg-accent-blue text-white scale-105"
+                          ? "bg-white text-brand-primary-dark scale-105"
                           : "text-white/45 hover:text-white/90 hover:bg-white/[0.06]"
                       }`}
                       aria-label={`Switch to ${languageNames[loc]}`}
@@ -256,7 +263,7 @@ export default function Footer() {
               <button
                 onClick={scrollToTop}
                 aria-label="Back to top"
-                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.04] border border-white/10 text-white/50 hover:text-white hover:bg-accent-blue hover:border-accent-blue hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
+                className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/[0.04] border border-white/10 text-white/50 hover:text-white hover:bg-brand-primary hover:border-brand-primary hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
               >
                 <ArrowUp className="w-4 h-4" />
               </button>

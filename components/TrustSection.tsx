@@ -14,10 +14,10 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-dark-text">
+    <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-brand-primary-dark">
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-0">
-          <h2 className="font-serif font-light text-lg sm:text-xl text-white shrink-0 lg:w-56 lg:pr-8">
+          <h2 className="font-semibold text-lg sm:text-xl text-white shrink-0 lg:w-56 lg:pr-8">
             {t("trust.sectionTitle")}
           </h2>
 
@@ -31,7 +31,7 @@ export default function TrustSection() {
                 transition={{ duration: 0.3, delay: index * 0.06 }}
                 className="flex items-start gap-3"
               >
-                <badge.icon className="w-5 h-5 text-accent-secondary shrink-0 mt-0.5" strokeWidth={1.5} />
+                <badge.icon className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" strokeWidth={1.5} />
                 <div>
                   <h3 className="text-white font-semibold text-sm mb-0.5">
                     {t(badge.titleKey)}

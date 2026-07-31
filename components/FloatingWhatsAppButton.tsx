@@ -35,9 +35,9 @@ export default function FloatingWhatsAppButton() {
       </div>
 
       {/* Tooltip on hover */}
-      <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-dark-text text-white text-xs sm:text-sm font-medium px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg">
+      <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-brand-text text-white text-xs sm:text-sm font-medium px-3 py-2 rounded-[10px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-lg">
         {t("whatsapp.tooltip")}
-        <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-dark-text" />
+        <div className="absolute left-full top-1/2 -translate-y-1/2 border-4 border-transparent border-l-brand-text" />
       </div>
     </motion.a>
   );

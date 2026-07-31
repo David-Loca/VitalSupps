@@ -18,6 +18,10 @@ export default function Header() {
   // Check if we're on the home page
   const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
+  // Transparent, borderless nav over the hero; solid card once the page has
+  // scrolled (or on any non-homepage route, where there's no hero to float over).
+  const isTransparent = isHomePage && !isScrolled;
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -99,10 +103,17 @@ export default function Header() {
     }
   };
 
+  const navLinkClass =
+    "group relative font-medium text-sm text-brand-text/75 hover:text-brand-primary transition-colors duration-200";
+
+  const NavUnderline = () => (
+    <span className="pointer-events-none absolute -bottom-1.5 left-0 h-[1.5px] w-full origin-left scale-x-0 bg-brand-gold transition-transform duration-300 ease-[var(--ease-brand)] group-hover:scale-x-100" />
+  );
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full max-w-[100vw] transition-transform duration-300 ease-in-out ${
-        isScrolled ? "shadow-md" : ""
+      className={`fixed top-0 left-0 right-0 z-50 w-full max-w-[100vw] transition-all duration-300 ease-in-out ${
+        isScrolled ? "shadow-[0_1px_0_0_rgba(19,40,31,0.06)]" : ""
       } ${isVisible ? "translate-y-0" : "lg:-translate-y-full"}`}
     >
       {/* Announcement bar - standard ecommerce trust/promo strip above the nav.
@@ -127,7 +138,7 @@ export default function Header() {
         }));
 
         return (
-          <div className="bg-accent-blue-dark text-white text-[11px] sm:text-xs font-medium tracking-wide">
+          <div className="bg-brand-primary-dark text-white text-[11px] sm:text-xs font-medium tracking-wide">
             <div className="max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 h-8 flex items-center justify-center overflow-hidden">
               <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap overflow-hidden text-ellipsis">
                 {messages.map((m, i) => (
@@ -151,7 +162,9 @@ export default function Header() {
         );
       })()}
       <nav
-        className="bg-white max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
+        className={`max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 transition-colors duration-300 ${
+          isTransparent ? "bg-transparent" : "bg-brand-card/95 backdrop-blur-md"
+        }`}
         aria-label="Main navigation"
       >
         <div className="flex items-center justify-between h-20" ref={dropdownRef}>
@@ -191,38 +204,27 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-8 mx-4">
             {/* Home */}
-            <motion.a
-              href="#home"
-              onClick={(e) => handleNavClick(e, "#home")}
-              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
-            >
+            <motion.a href="#home" onClick={(e) => handleNavClick(e, "#home")} className={navLinkClass}>
               {t("common.home")}
+              <NavUnderline />
             </motion.a>
 
             {/* Products */}
-            <motion.a
-              href="#products"
-              onClick={(e) => handleNavClick(e, "#products")}
-              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
-            >
+            <motion.a href="#products" onClick={(e) => handleNavClick(e, "#products")} className={navLinkClass}>
               {t("common.products")}
+              <NavUnderline />
             </motion.a>
 
             {/* Blog */}
-            <motion.a
-              href={`/${locale}/blog`}
-              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
-            >
+            <motion.a href={`/${locale}/blog`} className={navLinkClass}>
               {t("common.blog")}
+              <NavUnderline />
             </motion.a>
 
             {/* FAQ */}
-            <motion.a
-              href="#faq"
-              onClick={(e) => handleNavClick(e, "#faq")}
-              className="font-medium text-sm text-dark-text/70 hover:text-accent-blue transition-colors duration-200"
-            >
+            <motion.a href="#faq" onClick={(e) => handleNavClick(e, "#faq")} className={navLinkClass}>
               {t("common.faq")}
+              <NavUnderline />
             </motion.a>
           </div>
 
@@ -243,8 +245,8 @@ export default function Header() {
             <motion.a
               href="#cta"
               onClick={(e) => handleNavClick(e, "#cta")}
-              className="btn btn-dark relative inline-flex items-center gap-2 cursor-pointer"
-              whileHover={{ scale: 1.03 }}
+              className="relative inline-flex items-center gap-2 cursor-pointer rounded-[12px] bg-brand-primary px-5 h-11 text-[14px] font-medium text-white shadow-sm transition-colors hover:bg-brand-primary-dark"
+              whileHover={{ y: -1, scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
             >
               {t("common.contactUs")}
@@ -264,7 +266,7 @@ export default function Header() {
             <div className="relative w-6 h-5">
               {/* Top line */}
               <motion.span
-                className="absolute top-0 left-0 w-full h-0.5 bg-dark-text rounded-full origin-center"
+                className="absolute top-0 left-0 w-full h-0.5 bg-brand-text rounded-full origin-center"
                 animate={{
                   rotate: isMobileMenuOpen ? 45 : 0,
                   y: isMobileMenuOpen ? 10 : 0,
@@ -276,7 +278,7 @@ export default function Header() {
               />
               {/* Middle line */}
               <motion.span
-                className="absolute top-1/2 left-0 w-full h-0.5 bg-dark-text rounded-full -translate-y-1/2 origin-center"
+                className="absolute top-1/2 left-0 w-full h-0.5 bg-brand-text rounded-full -translate-y-1/2 origin-center"
                 animate={{
                   opacity: isMobileMenuOpen ? 0 : 1,
                   scaleX: isMobileMenuOpen ? 0 : 1,
@@ -288,7 +290,7 @@ export default function Header() {
               />
               {/* Bottom line */}
               <motion.span
-                className="absolute bottom-0 left-0 w-full h-0.5 bg-dark-text rounded-full origin-center"
+                className="absolute bottom-0 left-0 w-full h-0.5 bg-brand-text rounded-full origin-center"
                 animate={{
                   rotate: isMobileMenuOpen ? -45 : 0,
                   y: isMobileMenuOpen ? -10 : 0,
@@ -314,7 +316,7 @@ export default function Header() {
               height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
               opacity: { duration: 0.2, ease: "easeInOut" },
             }}
-            className="overflow-hidden bg-white md:hidden shadow-lg border-b border-subtle-gray"
+            className="overflow-hidden bg-brand-card md:hidden shadow-[var(--shadow-brand-card)] border-b border-brand-border"
           >
             <div className="max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 py-6">
               <nav className="flex flex-col gap-2" aria-label="Mobile navigation">
@@ -322,7 +324,7 @@ export default function Header() {
                 <motion.a
                   href="#home"
                   onClick={(e) => handleNavClick(e, "#home")}
-                  className="text-base font-medium text-dark-text hover:text-accent-blue py-3 px-4 rounded-md hover:bg-light-gray transition-all duration-200"
+                  className="text-base font-medium text-brand-text hover:text-brand-primary py-3 px-4 rounded-[12px] hover:bg-brand-hover transition-all duration-200"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1, duration: 0.2 }}
@@ -334,7 +336,7 @@ export default function Header() {
                 <motion.a
                   href="#products"
                   onClick={(e) => handleNavClick(e, "#products")}
-                  className="text-base font-medium text-dark-text hover:text-accent-blue py-3 px-4 rounded-md hover:bg-light-gray transition-all duration-200"
+                  className="text-base font-medium text-brand-text hover:text-brand-primary py-3 px-4 rounded-[12px] hover:bg-brand-hover transition-all duration-200"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.14, duration: 0.2 }}
@@ -346,7 +348,7 @@ export default function Header() {
                 <motion.a
                   href={`/${locale}/blog`}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-base font-medium text-dark-text hover:text-accent-blue py-3 px-4 rounded-md hover:bg-light-gray transition-all duration-200"
+                  className="text-base font-medium text-brand-text hover:text-brand-primary py-3 px-4 rounded-[12px] hover:bg-brand-hover transition-all duration-200"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.18, duration: 0.2 }}
@@ -358,7 +360,7 @@ export default function Header() {
                 <motion.a
                   href="#faq"
                   onClick={(e) => handleNavClick(e, "#faq")}
-                  className="text-base font-medium text-dark-text hover:text-accent-blue py-3 px-4 rounded-md hover:bg-light-gray transition-all duration-200"
+                  className="text-base font-medium text-brand-text hover:text-brand-primary py-3 px-4 rounded-[12px] hover:bg-brand-hover transition-all duration-200"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.22, duration: 0.2 }}
@@ -366,11 +368,11 @@ export default function Header() {
                   {t("common.faq")}
                 </motion.a>
 
-                {/* Contact (Blue color) */}
+                {/* Contact */}
                 <motion.a
                   href="#cta"
                   onClick={(e) => handleNavClick(e, "#cta")}
-                  className="text-base font-medium text-accent-blue hover:text-accent-blue-dark py-3 px-4 rounded-md hover:bg-light-gray transition-all duration-200"
+                  className="text-base font-medium text-brand-primary hover:text-brand-primary-dark py-3 px-4 rounded-[12px] hover:bg-brand-hover transition-all duration-200"
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.26, duration: 0.2 }}

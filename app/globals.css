@@ -104,6 +104,45 @@
   --radius-admin-xl: 24px;
 
   --ease-admin: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ------------------------------------------------------------------ */
+  /* Brand tokens — public-site alias of the admin design system, so the */
+  /* storefront and the Website Editor share one visual identity without */
+  /* the public site importing anything literally named "admin-*".      */
+  /* Values are defined once above; these are pure aliases (no          */
+  /* duplication) so the two stay in sync automatically.                */
+  /* ------------------------------------------------------------------ */
+  --font-brand: var(--font-admin);
+
+  --color-brand-primary: var(--color-admin-primary);
+  --color-brand-primary-dark: var(--color-admin-primary-dark);
+  --color-brand-emerald: var(--color-admin-emerald);
+  --color-brand-sage: var(--color-admin-sage);
+  --color-brand-gold: var(--color-admin-gold);
+  --color-brand-champagne: var(--color-admin-champagne);
+  --color-brand-gold-light: var(--color-admin-gold-light);
+  --color-brand-bg: var(--color-admin-bg);
+  --color-brand-card: var(--color-admin-card);
+  --color-brand-border: var(--color-admin-border);
+  --color-brand-text: var(--color-admin-text);
+  --color-brand-text-secondary: var(--color-admin-text-secondary);
+  --color-brand-hover: var(--color-admin-hover);
+  --color-brand-success: var(--color-admin-success);
+  --color-brand-success-bg: var(--color-admin-success-bg);
+  --color-brand-warning: var(--color-admin-warning);
+  --color-brand-danger: var(--color-admin-danger);
+  --color-brand-danger-bg: var(--color-admin-danger-bg);
+
+  --shadow-brand-card: var(--shadow-admin-card);
+  --shadow-brand-card-hover: var(--shadow-admin-card-hover);
+  --shadow-brand-focus: var(--shadow-admin-focus);
+
+  --radius-brand-sm: var(--radius-admin-sm);
+  --radius-brand-md: var(--radius-admin-md);
+  --radius-brand-lg: var(--radius-admin-lg);
+  --radius-brand-xl: var(--radius-admin-xl);
+
+  --ease-brand: var(--ease-admin);
 }
 
 @keyframes admin-fade-up {

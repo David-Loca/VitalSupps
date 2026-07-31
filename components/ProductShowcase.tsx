@@ -15,14 +15,16 @@ import {
 } from "@/lib/products";
 import { getProductWhatsAppUrl } from "@/lib/whatsapp";
 import StarRating from "./StarRating";
+import { BotanicalCornerSmall } from "@/components/admin/ui/Decorative";
 
 export default function ProductShowcase() {
   const { t, locale } = useLanguage();
   const products = getAllProducts();
 
   return (
-    <section id="products" className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
-      <div className="max-w-[1200px] mx-auto">
+    <section id="products" className="relative isolate overflow-hidden py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
+      <BotanicalCornerSmall className="pointer-events-none absolute -right-6 -top-6 z-0 h-40 w-40 text-brand-sage opacity-[0.09] sm:h-56 sm:w-56" />
+      <div className="relative z-10 max-w-[1200px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,13 +32,13 @@ export default function ProductShowcase() {
           transition={{ duration: 0.5 }}
           className="text-left mb-12 lg:mb-16 max-w-2xl"
         >
-          <span className="block text-[10px] sm:text-[11px] font-medium tracking-[3px] uppercase text-accent-secondary mb-3">
+          <span className="block text-[10px] sm:text-[11px] font-semibold tracking-[3px] uppercase text-brand-gold mb-3">
             {t("common.products")}
           </span>
-          <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-4">
+          <h2 className="font-semibold text-[clamp(28px,4vw,44px)] leading-tight text-brand-text mb-4">
             {t("products.sectionTitle")}
           </h2>
-          <p className="text-[15px] leading-[1.75] text-muted-text">
+          <p className="text-[15px] leading-[1.75] text-brand-text-secondary">
             {t("products.sectionSubtitle")}
           </p>
         </motion.div>
@@ -48,9 +50,9 @@ export default function ProductShowcase() {
               content.whatsappInquiryTemplate || t("whatsapp.productInquiryTemplate");
             const whatsappUrl = getProductWhatsAppUrl(inquiryTemplate, content.name);
             const isTerracotta = product.slug === "gut-health";
-            const accentText = isTerracotta ? "text-accent-terracotta" : "text-accent-blue";
-            const accentBorder = isTerracotta ? "hover:border-accent-terracotta/40" : "hover:border-accent-blue/40";
-            const accentDot = isTerracotta ? "bg-accent-terracotta" : "bg-accent-blue";
+            const accentText = isTerracotta ? "text-accent-terracotta" : "text-brand-primary";
+            const accentBorder = isTerracotta ? "hover:border-accent-terracotta/40" : "hover:border-brand-primary/30";
+            const accentDot = isTerracotta ? "bg-accent-terracotta" : "bg-brand-primary";
             const hasVariants = !!product.variants && product.variants.length > 0;
             const lowestPrice = getLowestVariantPrice(product);
             const defaultVariant = getDefaultVariant(product);
@@ -66,29 +68,29 @@ export default function ProductShowcase() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className={`relative bg-white rounded-[4px] border border-subtle-gray overflow-hidden shadow-none hover:shadow-md transition-all duration-300 flex flex-col ${accentBorder}`}
+                className={`group relative bg-white rounded-brand-lg border border-brand-border overflow-hidden shadow-[var(--shadow-brand-card)] hover:shadow-[var(--shadow-brand-card-hover)] hover:-translate-y-1 transition-all duration-300 flex flex-col ${accentBorder}`}
               >
                 {product.badge && (
-                  <span className="absolute top-4 left-4 z-10 bg-sale text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-[2px] shadow-sm">
+                  <span className="absolute top-4 left-4 z-10 bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-sm">
                     {t(`products.badge.${product.badge}`)}
                   </span>
                 )}
 
-                <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 bg-white">
+                <div className="relative h-56 sm:h-72 md:h-80 lg:h-96 bg-brand-hover overflow-hidden">
                   <Image
                     src={cardImage}
                     alt={content.heroImageAlt}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     sizes="(min-width: 768px) 45vw, 90vw"
                   />
                 </div>
 
                 <div className="p-6 sm:p-8 flex flex-col flex-1">
-                  <h3 className="font-serif font-light text-xl sm:text-2xl text-dark-text mb-1.5">
+                  <h3 className="font-semibold text-xl sm:text-2xl text-brand-text mb-1.5">
                     {content.name}
                   </h3>
-                  <p className="text-muted-text text-[15px] leading-[1.75] mb-3">{content.tagline}</p>
+                  <p className="text-brand-text-secondary text-[15px] leading-[1.75] mb-3">{content.tagline}</p>
 
                   {typeof product.rating === "number" && (
                     <StarRating rating={product.rating} reviewCount={product.reviewCount} className="mb-4" />
@@ -96,7 +98,7 @@ export default function ProductShowcase() {
 
                   <ul className="space-y-2 mb-5 flex-1">
                     {content.benefits.slice(0, 3).map((benefit) => (
-                      <li key={benefit} className="flex items-start gap-2 text-[15px] leading-[1.75] text-muted-text">
+                      <li key={benefit} className="flex items-start gap-2 text-[15px] leading-[1.75] text-brand-text-secondary">
                         <span className={`mt-1.5 w-1.5 h-1.5 rounded-full shrink-0 ${accentDot}`} />
                         {benefit}
                       </li>
@@ -105,23 +107,23 @@ export default function ProductShowcase() {
 
                   <div className="flex items-center gap-2.5 mb-5 flex-wrap">
                     {hasVariants ? (
-                      <span className={`font-serif font-light text-2xl ${accentText}`}>
+                      <span className={`font-semibold text-2xl ${accentText}`}>
                         {t("products.fromPrice").replace("{price}", formatPrice(lowestPrice))}
                       </span>
                     ) : (
                       <>
-                        <span className={`font-serif font-light text-2xl ${accentText}`}>
+                        <span className={`font-semibold text-2xl ${accentText}`}>
                           {formatPrice(product.price)}
                         </span>
                         {product.compareAtPrice && (
-                          <span className="text-base text-dark-text/40 line-through">
+                          <span className="text-base text-brand-text/40 line-through">
                             {formatPrice(product.compareAtPrice)}
                           </span>
                         )}
                       </>
                     )}
                     {savingsPercent && (
-                      <span className="bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2 py-0.5 rounded-[2px]">
+                      <span className="bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2 py-0.5 rounded-full">
                         {t("buyBox.save").replace("{percent}", String(savingsPercent))}
                       </span>
                     )}
@@ -130,7 +132,7 @@ export default function ProductShowcase() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href={`/${locale}/products/${product.slug}/`}
-                      className="btn btn-dark flex-1 inline-flex items-center justify-center gap-2"
+                      className="flex-1 inline-flex items-center justify-center gap-2 h-[48px] px-5 rounded-[12px] bg-brand-primary text-white text-[14px] font-medium transition-all duration-150 hover:-translate-y-0.5 hover:bg-brand-primary-dark active:scale-[0.98]"
                     >
                       {t("products.shopNow")}
                       <ArrowRight className="w-4 h-4" />
@@ -139,7 +141,7 @@ export default function ProductShowcase() {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn btn-outline flex-1 inline-flex items-center justify-center gap-2"
+                      className="flex-1 inline-flex items-center justify-center gap-2 h-[48px] px-5 rounded-[12px] border border-brand-border bg-white text-brand-text text-[14px] font-medium transition-all duration-150 hover:-translate-y-0.5 hover:bg-brand-hover active:scale-[0.98]"
                     >
                       <MessageCircle className="w-4 h-4" />
                       {t("products.askOnWhatsapp")}
