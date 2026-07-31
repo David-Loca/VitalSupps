@@ -240,11 +240,11 @@ export function getDefaultMetadata(locale: string): MetadataContent {
   const defaults: Record<string, MetadataContent> = {
     en: {
       homepage: {
-        title: "Your Site Name | Home",
+        title: "VitalSupps | Home",
         description: "Generic site description — to be replaced with real content.",
       },
       blog: {
-        title: "Blog | Your Site Name",
+        title: "Blog | VitalSupps",
         description: "News, guides and tips.",
       },
       blogListing: {
@@ -253,26 +253,26 @@ export function getDefaultMetadata(locale: string): MetadataContent {
       },
       legal: {
         refundPolicy: {
-          title: "Refund Policy | Your Site Name",
-          description: "Read Your Site Name's refund policy.",
+          title: "Refund Policy | VitalSupps",
+          description: "Read VitalSupps's refund policy.",
         },
         privacyPolicy: {
-          title: "Privacy Policy | Your Site Name",
-          description: "Learn how Your Site Name collects, uses, and protects your personal data.",
+          title: "Privacy Policy | VitalSupps",
+          description: "Learn how VitalSupps collects, uses, and protects your personal data.",
         },
         termsOfService: {
-          title: "Terms of Service | Your Site Name",
-          description: "Read the terms and conditions for using Your Site Name's services.",
+          title: "Terms of Service | VitalSupps",
+          description: "Read the terms and conditions for using VitalSupps's services.",
         },
       },
     },
     fr: {
       homepage: {
-        title: "Your Site Name | Accueil",
+        title: "VitalSupps | Accueil",
         description: "Description générique du site — à remplacer par le contenu réel.",
       },
       blog: {
-        title: "Blog | Your Site Name",
+        title: "Blog | VitalSupps",
         description: "Actualités, guides et conseils.",
       },
       blogListing: {
@@ -281,26 +281,26 @@ export function getDefaultMetadata(locale: string): MetadataContent {
       },
       legal: {
         refundPolicy: {
-          title: "Politique de Remboursement | Your Site Name",
-          description: "Consultez la politique de remboursement de Your Site Name.",
+          title: "Politique de Remboursement | VitalSupps",
+          description: "Consultez la politique de remboursement de VitalSupps.",
         },
         privacyPolicy: {
-          title: "Politique de Confidentialité | Your Site Name",
-          description: "Découvrez comment Your Site Name collecte, utilise et protège vos données personnelles.",
+          title: "Politique de Confidentialité | VitalSupps",
+          description: "Découvrez comment VitalSupps collecte, utilise et protège vos données personnelles.",
         },
         termsOfService: {
-          title: "Conditions d'Utilisation | Your Site Name",
-          description: "Consultez les conditions d'utilisation des services Your Site Name.",
+          title: "Conditions d'Utilisation | VitalSupps",
+          description: "Consultez les conditions d'utilisation des services VitalSupps.",
         },
       },
     },
     it: {
       homepage: {
-        title: "Your Site Name | Home",
+        title: "VitalSupps | Home",
         description: "Descrizione generica del sito — da sostituire con contenuti reali.",
       },
       blog: {
-        title: "Blog | Your Site Name",
+        title: "Blog | VitalSupps",
         description: "Notizie, guide e consigli.",
       },
       blogListing: {
@@ -309,16 +309,16 @@ export function getDefaultMetadata(locale: string): MetadataContent {
       },
       legal: {
         refundPolicy: {
-          title: "Politica di Rimborso | Your Site Name",
-          description: "Consulta la politica di rimborso di Your Site Name.",
+          title: "Politica di Rimborso | VitalSupps",
+          description: "Consulta la politica di rimborso di VitalSupps.",
         },
         privacyPolicy: {
-          title: "Informativa sulla Privacy | Your Site Name",
-          description: "Scopri come Your Site Name raccoglie, utilizza e protegge i tuoi dati personali.",
+          title: "Informativa sulla Privacy | VitalSupps",
+          description: "Scopri come VitalSupps raccoglie, utilizza e protegge i tuoi dati personali.",
         },
         termsOfService: {
-          title: "Termini di Servizio | Your Site Name",
-          description: "Consulta i termini e le condizioni per l'utilizzo dei servizi Your Site Name.",
+          title: "Termini di Servizio | VitalSupps",
+          description: "Consulta i termini e le condizioni per l'utilizzo dei servizi VitalSupps.",
         },
       },
     },

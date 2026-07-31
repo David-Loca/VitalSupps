@@ -1,22 +1,37 @@
 import type { Locale } from "@/lib/i18n";
+import { PRODUCT_KEYWORDS } from "@/lib/seo/product-keywords";
 
 /**
- * Hand-curated homepage meta keywords. Replace with real product keywords
- * per locale — these are neutral placeholders left after removing the
- * IPTV-specific keyword set and the generated keyword corpus.
+ * Homepage `<meta name="keywords">` list per locale: the union of both
+ * products' curated keyword lists, deduped, plus the brand name.
  */
-export const CORE_SITE_KEYWORDS: Record<Locale, readonly string[]> = {
-  en: ["methylene blue", "gut health supplement", "vitalsupps"],
-  fr: ["bleu de méthylène", "complément santé intestinale", "votre produit", "vitalsupps"],
-  es: ["azul de metileno", "suplemento salud intestinal", "vitalsupps"],
-  de: ["methylenblau", "darmgesundheit nahrungsergänzung", "vitalsupps"],
-};
+export const CORE_SITE_KEYWORDS: Record<Locale, readonly string[]> = (() => {
+  const locales: Locale[] = ["en", "fr", "es", "de"];
+  const result = {} as Record<Locale, readonly string[]>;
+  for (const locale of locales) {
+    const combined = [
+      ...PRODUCT_KEYWORDS[locale]["gut-health"],
+      ...PRODUCT_KEYWORDS[locale]["methylene-blue"],
+      "VitalSupps",
+      "vitalsupps",
+    ];
+    const seen = new Set<string>();
+    const deduped: string[] = [];
+    for (const kw of combined) {
+      const key = kw.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        deduped.push(kw);
+      }
+    }
+    result[locale] = deduped;
+  }
+  return result;
+})();
 
 /**
- * Keywords for homepage `<meta name="keywords">`. Previously merged in a
- * large generated keyword corpus; that corpus was removed, so this now
- * simply returns the core list. Kept as a function so future keyword
- * generation can be reintroduced without touching call sites.
+ * Keywords for homepage `<meta name="keywords">`. Kept as a function so
+ * future keyword generation can be reintroduced without touching call sites.
  */
 export function getHomepageKeywordList(locale: Locale): string[] {
   return [...CORE_SITE_KEYWORDS[locale]];

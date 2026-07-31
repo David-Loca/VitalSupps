@@ -73,7 +73,7 @@ export async function generateMetadata({
     const canonicalUrl = `${baseUrl}${canonicalPath}`;
 
     return buildSocialMetadata({
-      title: `${title} | Your Site Name`,
+      title: `${title} | VitalSupps`,
       description,
       locale,
       canonicalUrl,
@@ -95,7 +95,7 @@ export async function generateMetadata({
 function getDefaultMetadata(locale: Locale, slug: string): Metadata {
   const baseUrl = getSiteBaseUrl();
   return buildSocialMetadata({
-    title: "Blog Post | Your Site Name",
+    title: "Blog Post | VitalSupps",
     description: "Read our latest blog post.",
     locale,
     canonicalUrl: `${baseUrl}/${locale}/blog/${slug}/`,

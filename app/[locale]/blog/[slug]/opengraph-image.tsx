@@ -6,7 +6,7 @@ import { createOgImageResponse, ogImageContentType, ogImageSize } from "@/lib/se
 import { resolveAbsoluteImageUrl } from "@/lib/seo/og-image";
 import { getBlogMetadata } from "@/lib/utils/metadata-loader";
 
-export const alt = "Your Site Name Blog Post";
+export const alt = "VitalSupps Blog Post";
 export const size = ogImageSize;
 export const contentType = ogImageContentType;
 

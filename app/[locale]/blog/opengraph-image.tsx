@@ -3,7 +3,7 @@ import { locales } from "@/lib/i18n";
 import { createOgImageResponse, ogImageContentType, ogImageSize } from "@/lib/seo/og-card";
 import { getBlogMetadata } from "@/lib/utils/metadata-loader";
 
-export const alt = "Your Site Name Blog";
+export const alt = "VitalSupps Blog";
 export const size = ogImageSize;
 export const contentType = ogImageContentType;
 

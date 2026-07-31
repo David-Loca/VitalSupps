@@ -26,7 +26,7 @@ export function WebPageJsonLd({ url, name, description, locale, keywords, siteUr
     inLanguage,
     isPartOf: {
       "@type": "WebSite",
-      name: "Your Site Name",
+      name: "VitalSupps",
       url: siteUrl,
     },
   };

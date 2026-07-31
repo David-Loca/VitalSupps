@@ -39,9 +39,9 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = getSiteBaseUrl();
 
-  const title = "Your Site Name | Your Product Tagline";
+  const title = "VitalSupps | Methylene Blue & Gut Health Supplements";
   const description =
-    "Generic placeholder description — replace with real product copy.";
+    "VitalSupps offers pharmaceutical grade methylene blue and premium gut health supplements.";
 
   return {
     ...buildSocialMetadata({

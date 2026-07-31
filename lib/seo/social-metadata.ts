@@ -53,7 +53,7 @@ export function buildSocialMetadata(input: SocialMetadataInput): Metadata {
     modifiedTime,
     tags = [],
     section,
-    author = "Your Site Name",
+    author = "VitalSupps",
     useGeneratedOgImage = false,
   } = input;
 
@@ -120,8 +120,8 @@ export function buildSocialMetadata(input: SocialMetadataInput): Metadata {
     keywords: keywords?.length ? keywords : undefined,
     authors: [{ name: author }],
     creator: author,
-    publisher: "Your Site Name",
-    applicationName: "Your Site Name",
+    publisher: "VitalSupps",
+    applicationName: "VitalSupps",
     metadataBase: getSafeMetadataBase(),
     alternates: {
       canonical: canonicalUrl,
@@ -133,8 +133,6 @@ export function buildSocialMetadata(input: SocialMetadataInput): Metadata {
       title,
       description,
       ...(twitterImages ? { images: twitterImages } : {}),
-      creator: "@streampro",
-      site: "@streampro",
     },
     robots: {
       index: true,

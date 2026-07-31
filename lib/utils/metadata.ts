@@ -35,13 +35,13 @@ export function generateMetadata(options: MetadataOptions): Metadata {
     locale = "en",
     publishedTime,
     modifiedTime,
-    author = "Your Site Name",
+    author = "VitalSupps",
     section,
     tags = [],
   } = options;
 
   const baseUrl = getSiteBaseUrl();
-  const fullTitle = `${title} | Your Site Name`;
+  const fullTitle = `${title} | VitalSupps`;
   const pageUrl = url || `${baseUrl}/${locale}/`;
 
   const languageAlternates = buildHreflangAlternates(
