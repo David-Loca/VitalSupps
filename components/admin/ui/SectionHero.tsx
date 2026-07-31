@@ -12,7 +12,7 @@ interface SectionHeroProps {
 export default function SectionHero({ icon, title, subtitle }: SectionHeroProps) {
   return (
     <div className="relative isolate overflow-hidden rounded-admin-lg border border-admin-border bg-admin-card p-6 sm:p-8 shadow-[var(--shadow-admin-card)]">
-      <DecorativeCardBackground opacity={0.22} />
+      <DecorativeCardBackground opacity={0.14} />
 
       <div className="relative z-10 flex items-center gap-4">
         <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-admin-success-bg text-admin-primary">

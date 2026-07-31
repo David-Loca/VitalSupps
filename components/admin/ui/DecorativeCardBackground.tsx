@@ -26,7 +26,7 @@ interface DecorativeCardBackgroundProps {
   topRight?: boolean;
   /** Show the smaller, fainter echo branch in the bottom-right corner. Default true. */
   bottomRight?: boolean;
-  /** Base opacity for the top-right motif (0–1, ~15–25% per brand spec). The bottom-right echo renders fainter still. Default 0.2. */
+  /** Base opacity for the top-right motif (0–1). Kept under 0.15 per brand spec so it reads as texture, not illustration. The bottom-right echo renders fainter still. Default 0.13. */
   opacity?: number;
   className?: string;
 }
@@ -34,7 +34,7 @@ interface DecorativeCardBackgroundProps {
 export default function DecorativeCardBackground({
   topRight = true,
   bottomRight = true,
-  opacity = 0.2,
+  opacity = 0.13,
   className = "",
 }: DecorativeCardBackgroundProps) {
   return (
@@ -45,7 +45,7 @@ export default function DecorativeCardBackground({
       {topRight && (
         <>
           <GoldCurve
-            className="absolute -right-6 -top-10 h-[220px] w-[340px] text-admin-gold-muted sm:h-[260px] sm:w-[400px]"
+            className="absolute -right-6 -top-10 h-[220px] w-[340px] text-admin-champagne sm:h-[260px] sm:w-[400px]"
             style={{ opacity }}
           />
           <BotanicalCorner

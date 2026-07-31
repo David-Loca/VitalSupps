@@ -44,7 +44,7 @@ export default function AdminLogin() {
 
   return (
     <div className="admin-scope relative flex min-h-screen items-center justify-center overflow-hidden p-4">
-      <GoldCurve className="pointer-events-none absolute -right-10 -top-16 h-[420px] w-[560px] text-admin-gold opacity-[0.08]" />
+      <GoldCurve className="pointer-events-none absolute -right-10 -top-16 h-[420px] w-[560px] text-admin-champagne opacity-[0.08]" />
       <BotanicalCorner className="pointer-events-none absolute -right-6 -top-10 h-[380px] w-[440px] text-admin-sage opacity-[0.1]" />
       <BotanicalCornerSmall className="pointer-events-none absolute -bottom-8 -left-8 h-64 w-64 rotate-180 text-admin-sage opacity-[0.08]" />
 
