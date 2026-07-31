@@ -30,7 +30,7 @@ function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
 
   return (
     <div>
-      <div className="relative h-90 sm:h-110 lg:h-125 w-full bg-white border border-subtle-gray rounded-[4px] overflow-hidden mb-3">
+      <div className="relative h-90 sm:h-110 lg:h-125 w-full bg-white border border-brand-border rounded-brand-lg shadow-[var(--shadow-brand-card)] overflow-hidden mb-3">
         {images[activeIndex] ? (
           <Image
             src={images[activeIndex]}
@@ -41,7 +41,7 @@ function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
             priority
           />
         ) : (
-          <div className="flex flex-col items-center justify-center h-full gap-2 text-dark-text/35">
+          <div className="flex flex-col items-center justify-center h-full gap-2 text-brand-text/35">
             <ImageIcon className="w-10 h-10" strokeWidth={1.5} />
             <span className="text-xs font-medium">Product photo coming soon</span>
           </div>
@@ -57,14 +57,14 @@ function ProductGallery({ images, alt }: { images: string[]; alt: string }) {
             onClick={() => setActiveIndex(index)}
             aria-label={`View image ${index + 1}`}
             disabled={!hasMultiple}
-            className={`relative w-16 h-16 rounded-[4px] bg-light-gray border overflow-hidden flex items-center justify-center shrink-0 transition-colors ${
-              activeIndex === index ? "border-accent-blue" : "border-subtle-gray"
+            className={`relative w-16 h-16 rounded-[10px] bg-brand-hover border overflow-hidden flex items-center justify-center shrink-0 transition-colors ${
+              activeIndex === index ? "border-brand-primary" : "border-brand-border"
             } ${hasMultiple ? "cursor-pointer" : "cursor-default"}`}
           >
             {src ? (
               <Image src={src} alt="" fill className="object-cover" sizes="64px" />
             ) : (
-              <ImageIcon className="w-5 h-5 text-dark-text/30" strokeWidth={1.5} />
+              <ImageIcon className="w-5 h-5 text-brand-text/30" strokeWidth={1.5} />
             )}
           </button>
         ))}
@@ -92,7 +92,7 @@ export default function ProductPageClient({
       ? selectedVariant.images
       : [product.images.primary];
   const isTerracotta = product.slug === "gut-health";
-  const accentDot = isTerracotta ? "bg-accent-terracotta" : "bg-accent-blue";
+  const accentDot = isTerracotta ? "bg-accent-terracotta" : "bg-brand-primary";
   const specs = product.specs;
 
   return (
@@ -102,16 +102,16 @@ export default function ProductPageClient({
       <main className="pt-32 sm:pt-36">
         {/* Breadcrumbs */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-dark-text/55">
-            <Link href={`/${locale}/`} className="hover:text-accent-blue transition-colors">
+          <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-brand-text-secondary">
+            <Link href={`/${locale}/`} className="hover:text-brand-primary transition-colors">
               {t("breadcrumbs.home")}
             </Link>
             <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-            <Link href={`/${locale}/#products`} className="hover:text-accent-blue transition-colors">
+            <Link href={`/${locale}/#products`} className="hover:text-brand-primary transition-colors">
               {t("breadcrumbs.products")}
             </Link>
             <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-            <span className="text-dark-text font-medium truncate">{content.name}</span>
+            <span className="text-brand-text font-medium truncate">{content.name}</span>
           </nav>
         </div>
 
@@ -133,29 +133,29 @@ export default function ProductPageClient({
               />
 
               <div className="mt-6">
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-dark-text/50 mb-2">
+                <h2 className="text-sm font-semibold uppercase tracking-wide text-brand-text-secondary mb-2">
                   {t("products.targetAudience")}
                 </h2>
-                <p className="text-dark-text/80 text-sm sm:text-base">{content.targetAudience}</p>
+                <p className="text-brand-text/80 text-sm sm:text-base">{content.targetAudience}</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* Benefits */}
-        <section className="bg-off-white py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10">
+        <section className="bg-brand-bg py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10">
           <div className="max-w-[1200px] mx-auto">
-            <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-8">
+            <h2 className="font-semibold text-[clamp(28px,4vw,44px)] leading-tight text-brand-text mb-8">
               {t("products.benefits")}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {content.benefits.map((benefit) => (
                 <div
                   key={benefit}
-                  className="flex items-start gap-3 bg-white rounded-[4px] p-4 border border-subtle-gray"
+                  className="flex items-start gap-3 bg-white rounded-brand-lg p-4 border border-brand-border"
                 >
                   <span className={`mt-1 w-2 h-2 rounded-full shrink-0 ${accentDot}`} />
-                  <p className="text-[15px] leading-[1.75] text-muted-text">{benefit}</p>
+                  <p className="text-[15px] leading-[1.75] text-brand-text-secondary">{benefit}</p>
                 </div>
               ))}
             </div>
@@ -166,26 +166,26 @@ export default function ProductPageClient({
         <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
           <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
-              <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-5">
+              <h2 className="font-semibold text-[clamp(28px,4vw,44px)] leading-tight text-brand-text mb-5">
                 {t("products.howToUse")}
               </h2>
-              <p className="text-[15px] leading-[1.75] text-muted-text mb-6">{content.usage}</p>
+              <p className="text-[15px] leading-[1.75] text-brand-text-secondary mb-6">{content.usage}</p>
 
               {content.safety && (
-                <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-[4px] p-4">
-                  <AlertTriangle className="w-5 h-5 text-warning shrink-0 mt-0.5" />
-                  <p className="text-sm text-dark-text/80 leading-relaxed">{content.safety}</p>
+                <div className="flex items-start gap-3 bg-brand-warning-bg border border-brand-warning/25 rounded-brand-md p-4">
+                  <AlertTriangle className="w-5 h-5 text-brand-warning shrink-0 mt-0.5" />
+                  <p className="text-sm text-brand-text/80 leading-relaxed">{content.safety}</p>
                 </div>
               )}
             </div>
 
             <div>
-              <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-5">
+              <h2 className="font-semibold text-[clamp(28px,4vw,44px)] leading-tight text-brand-text mb-5">
                 {t("products.ingredients")}
               </h2>
               <ul className="space-y-2.5 mb-8">
                 {content.ingredients.map((ingredient) => (
-                  <li key={ingredient} className="text-[15px] leading-[1.75] text-muted-text pl-4 relative">
+                  <li key={ingredient} className="text-[15px] leading-[1.75] text-brand-text-secondary pl-4 relative">
                     <span className={`absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full ${accentDot}`} />
                     {ingredient}
                   </li>
@@ -195,34 +195,34 @@ export default function ProductPageClient({
               {/* Spec table — marketplace-style trust signal */}
               {specs && (
                 <div>
-                  <h3 className="text-sm font-semibold uppercase tracking-wide text-dark-text/50 mb-3">
+                  <h3 className="text-sm font-semibold uppercase tracking-wide text-brand-text-secondary mb-3">
                     {t("specs.title")}
                   </h3>
-                  <table className="w-full text-sm border border-subtle-gray rounded-[4px] overflow-hidden">
+                  <table className="w-full text-sm border border-brand-border rounded-brand-md overflow-hidden">
                     <tbody>
-                      <tr className="border-b border-subtle-gray">
-                        <th scope="row" className="text-left font-medium text-dark-text/60 bg-off-white px-4 py-2.5 w-1/2">
+                      <tr className="border-b border-brand-border">
+                        <th scope="row" className="text-left font-medium text-brand-text-secondary bg-brand-bg px-4 py-2.5 w-1/2">
                           {t("specs.servingSize")}
                         </th>
-                        <td className="px-4 py-2.5 text-dark-text/85">{specs.servingSize}</td>
+                        <td className="px-4 py-2.5 text-brand-text/85">{specs.servingSize}</td>
                       </tr>
-                      <tr className="border-b border-subtle-gray">
-                        <th scope="row" className="text-left font-medium text-dark-text/60 bg-off-white px-4 py-2.5">
+                      <tr className="border-b border-brand-border">
+                        <th scope="row" className="text-left font-medium text-brand-text-secondary bg-brand-bg px-4 py-2.5">
                           {t("specs.servingsPerContainer")}
                         </th>
-                        <td className="px-4 py-2.5 text-dark-text/85">{specs.servingsPerContainer}</td>
+                        <td className="px-4 py-2.5 text-brand-text/85">{specs.servingsPerContainer}</td>
                       </tr>
-                      <tr className="border-b border-subtle-gray">
-                        <th scope="row" className="text-left font-medium text-dark-text/60 bg-off-white px-4 py-2.5">
+                      <tr className="border-b border-brand-border">
+                        <th scope="row" className="text-left font-medium text-brand-text-secondary bg-brand-bg px-4 py-2.5">
                           {t("specs.form")}
                         </th>
-                        <td className="px-4 py-2.5 text-dark-text/85">{specs.form}</td>
+                        <td className="px-4 py-2.5 text-brand-text/85">{specs.form}</td>
                       </tr>
                       <tr>
-                        <th scope="row" className="text-left font-medium text-dark-text/60 bg-off-white px-4 py-2.5">
+                        <th scope="row" className="text-left font-medium text-brand-text-secondary bg-brand-bg px-4 py-2.5">
                           {t("specs.allergens")}
                         </th>
-                        <td className="px-4 py-2.5 text-dark-text/85">{specs.allergens}</td>
+                        <td className="px-4 py-2.5 text-brand-text/85">{specs.allergens}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -237,7 +237,7 @@ export default function ProductPageClient({
         {/* Product FAQ */}
         <section className="py-14 sm:py-20 lg:py-[100px] px-4 sm:px-6 lg:px-10 bg-white">
           <div className="max-w-4xl mx-auto">
-            <h2 className="font-serif font-light text-[clamp(28px,4vw,48px)] text-dark-text mb-8 text-center">
+            <h2 className="font-semibold text-[clamp(28px,4vw,44px)] leading-tight text-brand-text mb-8 text-center">
               {t("faq.title")}
             </h2>
             <div className="space-y-3">
@@ -246,8 +246,8 @@ export default function ProductPageClient({
                 return (
                   <div
                     key={item.question}
-                    className={`bg-white rounded-[4px] border transition-all duration-300 overflow-hidden ${
-                      isOpen ? "border-accent-blue" : "border-subtle-gray"
+                    className={`bg-white rounded-brand-lg border transition-all duration-300 overflow-hidden ${
+                      isOpen ? "border-brand-primary shadow-[var(--shadow-brand-card)]" : "border-brand-border"
                     }`}
                   >
                     <button
@@ -255,14 +255,14 @@ export default function ProductPageClient({
                       className="w-full py-4 px-5 sm:px-6 text-left flex items-center justify-between gap-4 cursor-pointer"
                       aria-expanded={isOpen}
                     >
-                      <h3 className="text-sm sm:text-base font-semibold pr-2 flex-1 text-dark-text">
+                      <h3 className="text-sm sm:text-base font-semibold pr-2 flex-1 text-brand-text">
                         {item.question}
                       </h3>
                       <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
                         transition={{ duration: 0.3 }}
                         className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center ${
-                          isOpen ? "bg-accent-blue text-white" : "bg-off-white text-dark-text"
+                          isOpen ? "bg-brand-primary text-white" : "bg-brand-hover text-brand-text"
                         }`}
                       >
                         <ChevronDown className="w-4 h-4" />
@@ -277,8 +277,8 @@ export default function ProductPageClient({
                           transition={{ duration: 0.3 }}
                           className="overflow-hidden"
                         >
-                          <div className="px-5 sm:px-6 pb-5 border-l-4 border-accent-secondary-light ml-5 sm:ml-6 pl-4">
-                            <p className="text-[15px] leading-[1.75] text-muted-text">
+                          <div className="px-5 sm:px-6 pb-5 border-l-2 border-brand-gold/40 ml-5 sm:ml-6 pl-4">
+                            <p className="text-[15px] leading-[1.75] text-brand-text-secondary">
                               {item.answer}
                             </p>
                           </div>

@@ -32,10 +32,10 @@ export default function StarRating({
           const half = !filled && i + 0.5 === rounded;
           return (
             <span key={i} className="relative inline-block">
-              <Star className={`${sizeClass} text-accent-secondary/25`} fill="currentColor" strokeWidth={0} />
+              <Star className={`${sizeClass} text-brand-gold/25`} fill="currentColor" strokeWidth={0} />
               {(filled || half) && (
                 <Star
-                  className={`${sizeClass} text-accent-secondary absolute inset-0`}
+                  className={`${sizeClass} text-brand-gold absolute inset-0`}
                   fill="currentColor"
                   strokeWidth={0}
                   style={half ? { clipPath: "inset(0 50% 0 0)" } : undefined}
@@ -45,9 +45,9 @@ export default function StarRating({
           );
         })}
       </div>
-      <span className="text-sm font-semibold text-dark-text">{rating.toFixed(1)}</span>
+      <span className="text-sm font-semibold text-brand-text">{rating.toFixed(1)}</span>
       {showCount && typeof reviewCount === "number" && (
-        <span className="text-sm text-dark-text/55">({reviewCount})</span>
+        <span className="text-sm text-brand-text-secondary">({reviewCount})</span>
       )}
     </div>
   );
