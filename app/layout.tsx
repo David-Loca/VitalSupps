@@ -89,7 +89,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="UsDivhmxwn1peRYhvqO8TmyNGB180fGmIwM8BST2kh4" />
         <Script
           id="locale-lang-attr"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -108,7 +108,7 @@ export default function RootLayout({
         />
         <Script
           id="suppress-ipapi-error"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -133,7 +133,7 @@ export default function RootLayout({
         />
         <Script
           id="suppress-ipapi-rejection"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function() {

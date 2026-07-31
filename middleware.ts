@@ -9,10 +9,11 @@ export function middleware(request: NextRequest) {
 
   const isAdminIndex = pathname === "/admin" || pathname === "/admin/";
 
-  // Protect admin routes (except login and index redirect page)
+  // Protect admin routes (except login, logging, and index redirect page)
   if (
     pathname.startsWith("/admin") &&
     !pathname.startsWith("/admin/login") &&
+    !pathname.startsWith("/admin/logging") &&
     !isAdminIndex
   ) {
     const sessionCookie = request.cookies.get('admin_session');
