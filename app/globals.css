@@ -109,40 +109,42 @@
   /* Brand tokens — public-site alias of the admin design system, so the */
   /* storefront and the Website Editor share one visual identity without */
   /* the public site importing anything literally named "admin-*".      */
-  /* Values are defined once above; these are pure aliases (no          */
-  /* duplication) so the two stay in sync automatically.                */
+  /* NOTE: Tailwind's @theme does not resolve var() chains between its   */
+  /* own tokens (verified: chained values never reach computed styles),  */
+  /* so these mirror the admin block's literal values rather than        */
+  /* referencing them — keep the two in sync if either changes.          */
   /* ------------------------------------------------------------------ */
-  --font-brand: var(--font-admin);
+  --font-brand: var(--font-inter), system-ui, -apple-system, sans-serif;
 
-  --color-brand-primary: var(--color-admin-primary);
-  --color-brand-primary-dark: var(--color-admin-primary-dark);
-  --color-brand-emerald: var(--color-admin-emerald);
-  --color-brand-sage: var(--color-admin-sage);
-  --color-brand-gold: var(--color-admin-gold);
-  --color-brand-champagne: var(--color-admin-champagne);
-  --color-brand-gold-light: var(--color-admin-gold-light);
-  --color-brand-bg: var(--color-admin-bg);
-  --color-brand-card: var(--color-admin-card);
-  --color-brand-border: var(--color-admin-border);
-  --color-brand-text: var(--color-admin-text);
-  --color-brand-text-secondary: var(--color-admin-text-secondary);
-  --color-brand-hover: var(--color-admin-hover);
-  --color-brand-success: var(--color-admin-success);
-  --color-brand-success-bg: var(--color-admin-success-bg);
-  --color-brand-warning: var(--color-admin-warning);
-  --color-brand-danger: var(--color-admin-danger);
-  --color-brand-danger-bg: var(--color-admin-danger-bg);
+  --color-brand-primary: #14532d;
+  --color-brand-primary-dark: #0f3e28;
+  --color-brand-emerald: #0f5b3a;
+  --color-brand-sage: #bfcdb8;
+  --color-brand-gold: #d8a73c;
+  --color-brand-champagne: #d4af37;
+  --color-brand-gold-light: #f3e6c8;
+  --color-brand-bg: #fafaf8;
+  --color-brand-card: #ffffff;
+  --color-brand-border: #e9e6de;
+  --color-brand-text: #13281f;
+  --color-brand-text-secondary: #6b7280;
+  --color-brand-hover: #f8f6f2;
+  --color-brand-success: #2e7d32;
+  --color-brand-success-bg: #eaf5ea;
+  --color-brand-warning: #c98b1e;
+  --color-brand-danger: #c73b3b;
+  --color-brand-danger-bg: #fbebeb;
 
-  --shadow-brand-card: var(--shadow-admin-card);
-  --shadow-brand-card-hover: var(--shadow-admin-card-hover);
-  --shadow-brand-focus: var(--shadow-admin-focus);
+  --shadow-brand-card: 0 10px 30px rgba(15, 62, 40, 0.06);
+  --shadow-brand-card-hover: 0 16px 40px rgba(15, 62, 40, 0.10);
+  --shadow-brand-focus: 0 0 0 4px rgba(20, 83, 45, 0.10);
 
-  --radius-brand-sm: var(--radius-admin-sm);
-  --radius-brand-md: var(--radius-admin-md);
-  --radius-brand-lg: var(--radius-admin-lg);
-  --radius-brand-xl: var(--radius-admin-xl);
+  --radius-brand-sm: 10px;
+  --radius-brand-md: 14px;
+  --radius-brand-lg: 18px;
+  --radius-brand-xl: 24px;
 
-  --ease-brand: var(--ease-admin);
+  --ease-brand: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes admin-fade-up {
