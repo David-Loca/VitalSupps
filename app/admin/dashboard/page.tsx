@@ -436,13 +436,12 @@ export default function AdminDashboard() {
         <div className="mx-auto max-w-[1500px] px-4 py-4 sm:px-8">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="relative h-9 w-auto shrink-0">
+              <div className="relative h-9 w-9 shrink-0 rounded-full overflow-hidden">
                 <Image
-                  src="/logo/Logo3-removebg-preview.png"
-                  alt="Logo"
-                  width={135}
-                  height={36}
-                  className="h-full w-auto object-contain"
+                  src="/logo/vitalsupps-icon.jpg"
+                  alt="VitalSupps"
+                  fill
+                  className="object-cover"
                   priority
                 />
               </div>
