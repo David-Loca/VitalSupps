@@ -82,7 +82,7 @@ export default function FAQSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="font-serif font-light text-[clamp(28px,4vw,48px)] text-center mb-8 xl:mb-10 2xl:mb-12 text-dark-text"
+          className="font-semibold text-[clamp(28px,4vw,44px)] leading-tight text-center mb-8 xl:mb-10 2xl:mb-12 text-brand-text"
         >
           {t("faq.title")}
         </motion.h2>
@@ -95,10 +95,10 @@ export default function FAQSection() {
             return (
               <div
                 key={faq.id}
-                className={`bg-white rounded-[4px] border transition-all duration-300 overflow-hidden h-fit ${
+                className={`bg-white rounded-brand-lg border transition-all duration-300 overflow-hidden h-fit ${
                   isOpen
-                    ? "border-accent-blue"
-                    : "border-subtle-gray hover:border-accent-blue/30"
+                    ? "border-brand-primary shadow-[var(--shadow-brand-card)]"
+                    : "border-brand-border hover:border-brand-primary/30"
                 }`}
               >
                 {/* Question Button */}
@@ -108,14 +108,14 @@ export default function FAQSection() {
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${faq.id}`}
                 >
-                  <h3 className="text-sm sm:text-base font-semibold font-heading pr-2 flex-1 text-dark-text">
+                  <h3 className="text-sm sm:text-base font-semibold font-heading pr-2 flex-1 text-brand-text">
                     {t(faq.questionKey)}
                   </h3>
                   <motion.div
                     animate={{ rotate: isOpen ? 180 : 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-300 ${
-                      isOpen ? "bg-accent-blue text-white" : "bg-off-white text-dark-text"
+                      isOpen ? "bg-brand-primary text-white" : "bg-brand-hover text-brand-text"
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -133,8 +133,8 @@ export default function FAQSection() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="px-5 sm:px-6 pb-5 border-l-4 border-accent-secondary-light ml-5 sm:ml-6 pl-4">
-                        <p className="text-[15px] leading-[1.75] text-muted-text">
+                      <div className="px-5 sm:px-6 pb-5 border-l-2 border-brand-gold/40 ml-5 sm:ml-6 pl-4">
+                        <p className="text-[15px] leading-[1.75] text-brand-text-secondary">
                           {t(faq.answerKey)}
                         </p>
                       </div>

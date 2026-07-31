@@ -19,7 +19,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.3 }}
-          className="bg-accent-blue rounded-lg overflow-hidden"
+          className="bg-brand-primary rounded-brand-lg overflow-hidden"
         >
           <div className="p-6 md:p-8 xl:p-10 2xl:p-12">
             <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 md:gap-8 xl:gap-10 2xl:gap-12 items-center">
