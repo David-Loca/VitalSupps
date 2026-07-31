@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-3xl sm:text-4xl font-bold text-accent-blue mb-6 sm:mb-8"
+            className="text-3xl sm:text-4xl font-bold text-brand-primary mb-6 sm:mb-8"
           >
             {t("legal.privacyPolicy.title")}
           </motion.h1>
@@ -35,12 +35,12 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8 space-y-4"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8 space-y-4"
           >
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.intro")}
             </p>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.intro2")}
             </p>
           </motion.div>
@@ -51,12 +51,12 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.privacyPolicy.dataProtectionTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.dataProtectionText")}
             </p>
           </motion.div>
@@ -67,15 +67,15 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.privacyPolicy.dataUsageTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed mb-4">
               {t("legal.privacyPolicy.dataUsageText")}
             </p>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.dataUsageText2")}
             </p>
           </motion.div>
@@ -86,15 +86,15 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.4 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.privacyPolicy.dataCollectionTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed mb-4">
               {t("legal.privacyPolicy.dataCollectionText")}
             </p>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.dataCollectionText2")}
             </p>
           </motion.div>
@@ -105,12 +105,12 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.privacyPolicy.securityTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.securityText")}
             </p>
           </motion.div>
@@ -121,9 +121,9 @@ export default function PrivacyPolicyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.privacyPolicy.conclusion")}
             </p>
           </motion.div>

@@ -25,7 +25,7 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="text-3xl sm:text-4xl font-bold text-accent-blue mb-6 sm:mb-8"
+            className="text-3xl sm:text-4xl font-bold text-brand-primary mb-6 sm:mb-8"
           >
             {t("legal.termsOfService.title")}
           </motion.h1>
@@ -35,9 +35,9 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.intro")}
             </p>
           </motion.div>
@@ -46,12 +46,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.definitionsTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.definitionsText")}
             </p>
           </motion.div>
@@ -60,12 +60,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.cookiesTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.cookiesText")}
             </p>
           </motion.div>
@@ -74,18 +74,18 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.4 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.intellectualPropertyTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed mb-4">
               {t("legal.termsOfService.intellectualPropertyText")}
             </p>
-            <p className="text-base sm:text-lg font-semibold text-dark-text mb-2">
+            <p className="text-base sm:text-lg font-semibold text-brand-text mb-2">
               {t("legal.termsOfService.intellectualPropertyRestrictions")}
             </p>
-            <ul className="list-disc list-inside space-y-2 text-base sm:text-lg text-dark-text/70 leading-relaxed ml-4">
+            <ul className="list-disc list-inside space-y-2 text-base sm:text-lg text-brand-text-secondary leading-relaxed ml-4">
               <li>{t("legal.termsOfService.restriction1")}</li>
               <li>{t("legal.termsOfService.restriction2")}</li>
             </ul>
@@ -95,15 +95,15 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.commentsTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed mb-4">
               {t("legal.termsOfService.commentsText")}
             </p>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.commentsText2")}
             </p>
           </motion.div>
@@ -112,15 +112,15 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.hyperlinksTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed mb-4">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed mb-4">
               {t("legal.termsOfService.hyperlinksText")}
             </p>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.hyperlinksText2")}
             </p>
           </motion.div>
@@ -129,12 +129,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.7 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.iframesTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.iframesText")}
             </p>
           </motion.div>
@@ -143,12 +143,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.8 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.contentResponsibilityTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.contentResponsibilityText")}
             </p>
           </motion.div>
@@ -157,14 +157,14 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.9 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.privacyDataTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.privacyDataText")}{" "}
-              <Link href={`/${locale}/privacy-policy`} className="text-accent-blue hover:underline">
+              <Link href={`/${locale}/privacy-policy`} className="text-brand-primary hover:underline">
                 {t("common.privacyPolicy")}
               </Link>
               .
@@ -175,12 +175,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 1.0 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.modificationsTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.modificationsText")}
             </p>
           </motion.div>
@@ -189,12 +189,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 1.1 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.linkRemovalTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.linkRemovalText")}
             </p>
           </motion.div>
@@ -203,12 +203,12 @@ export default function TermsOfServicePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 1.2 }}
-            className="mb-6 bg-white rounded-2xl border border-subtle-gray shadow-sm p-6 sm:p-8"
+            className="mb-6 bg-white rounded-brand-lg border border-brand-border shadow-[var(--shadow-brand-card)] p-6 sm:p-8"
           >
-            <h2 className="text-xl sm:text-2xl font-semibold text-dark-text mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-brand-text mb-4">
               {t("legal.termsOfService.limitationTitle")}
             </h2>
-            <p className="text-base sm:text-lg text-dark-text/70 leading-relaxed">
+            <p className="text-base sm:text-lg text-brand-text-secondary leading-relaxed">
               {t("legal.termsOfService.limitationText")}
             </p>
           </motion.div>
