@@ -22,14 +22,20 @@ const DECOR_PROPS = {
   className: "pointer-events-none select-none",
 };
 
+interface DecorativeSvgProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
 /** Large fine-line botanical spray — the signature top-right hero motif. */
-export function BotanicalCorner({ className = "" }: { className?: string }) {
+export function BotanicalCorner({ className = "", style }: DecorativeSvgProps) {
   return (
     <svg
       viewBox="0 0 360 300"
       fill="none"
       {...DECOR_PROPS}
       className={`${DECOR_PROPS.className} ${className}`}
+      style={style}
     >
       {/* main stem */}
       <path
@@ -72,13 +78,14 @@ export function BotanicalCorner({ className = "" }: { className?: string }) {
 }
 
 /** Compact botanical sprig for information cards / small corners. */
-export function BotanicalCornerSmall({ className = "" }: { className?: string }) {
+export function BotanicalCornerSmall({ className = "", style }: DecorativeSvgProps) {
   return (
     <svg
       viewBox="0 0 180 180"
       fill="none"
       {...DECOR_PROPS}
       className={`${DECOR_PROPS.className} ${className}`}
+      style={style}
     >
       <path
         d="M20 170C48 150 72 122 90 90C108 58 128 34 165 15"
@@ -99,13 +106,14 @@ export function BotanicalCornerSmall({ className = "" }: { className?: string })
 }
 
 /** Tiny centered sprout used inside empty states — meant to be gently visible. */
-export function BotanicalIcon({ className = "" }: { className?: string }) {
+export function BotanicalIcon({ className = "", style }: DecorativeSvgProps) {
   return (
     <svg
       viewBox="0 0 64 64"
       fill="none"
       {...DECOR_PROPS}
       className={`${DECOR_PROPS.className} ${className}`}
+      style={style}
     >
       <path
         d="M32 56V30"
@@ -143,13 +151,14 @@ export function GoldDivider({ className = "" }: { className?: string }) {
 }
 
 /** Flowing metallic-gold bezier ribbons — sit behind the botanical motif. */
-export function GoldCurve({ className = "" }: { className?: string }) {
+export function GoldCurve({ className = "", style }: DecorativeSvgProps) {
   return (
     <svg
       viewBox="0 0 400 260"
       fill="none"
       {...DECOR_PROPS}
       className={`${DECOR_PROPS.className} ${className}`}
+      style={style}
     >
       <path
         d="M-10 190C90 150 150 90 260 20C300 -4 340 -6 400 10"
@@ -174,6 +183,3 @@ export function GoldCurve({ className = "" }: { className?: string }) {
     </svg>
   );
 }
-
-/** Legacy alias kept for call sites that want the small sprig. */
-export const LeafSprig = BotanicalCornerSmall;

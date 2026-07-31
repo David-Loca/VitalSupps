@@ -13,5 +13,5 @@ export {
   BotanicalIcon,
   GoldDivider,
   GoldCurve,
-  LeafSprig,
 } from "./Decorative";
+export { default as DecorativeCardBackground } from "./DecorativeCardBackground";

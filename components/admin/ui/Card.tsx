@@ -1,6 +1,6 @@
 "use client";
 
-import { BotanicalCornerSmall } from "./Decorative";
+import DecorativeCardBackground from "./DecorativeCardBackground";
 
 interface CardProps {
   children: React.ReactNode;
@@ -31,9 +31,7 @@ export default function Card({
       className={`relative isolate overflow-hidden rounded-admin-lg border border-admin-border bg-admin-card shadow-[var(--shadow-admin-card)]
         transition-shadow duration-150 ${noPadding ? "" : "p-6 sm:p-8"} ${className}`}
     >
-      {decorated && (
-        <BotanicalCornerSmall className="absolute -right-5 -bottom-8 z-0 h-32 w-32 text-admin-sage opacity-[0.07]" />
-      )}
+      {decorated && <DecorativeCardBackground topRight={false} opacity={0.14} />}
       {(title || subtitle) && (
         <div className="relative z-10 mb-6 flex items-start justify-between gap-4">
           <div>
