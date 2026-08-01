@@ -7,7 +7,7 @@ const CLOUDINARY_OG_TRANSFORM = "w_1200,h_630,c_fill,g_auto,q_auto:good,f_jpg";
 
 export function getSiteBaseUrl(): string {
   const raw = process.env.NEXT_PUBLIC_BASE_URL?.trim();
-  if (!raw) return "https://example.com";
+  if (!raw) return "https://vital-healthstore.com";
   const withScheme = /^https?:\/\//i.test(raw) ? raw : `https://${raw}`;
   return withScheme.replace(/\/+$/, "");
 }

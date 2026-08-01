@@ -2,10 +2,10 @@ import type { Locale } from "@/lib/i18n";
 
 /** Default public inbox per site language (override with NEXT_PUBLIC_CONTACT_EMAIL_EN | _ES | _FR). */
 const CONTACT_EMAIL_BY_LOCALE: Record<Locale, string> = {
-  en: "info@example.com",
-  fr: "info@example.com",
-  es: "info@example.com",
-  de: "info@example.com",
+  en: "info@vital-healthstore.com",
+  fr: "info@vital-healthstore.com",
+  es: "info@vital-healthstore.com",
+  de: "info@vital-healthstore.com",
 };
 
 /**

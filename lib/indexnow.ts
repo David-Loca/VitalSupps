@@ -8,7 +8,7 @@ import { getPublishedLocales } from "@/lib/admin/blog-locales";
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 function getBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
+  return process.env.NEXT_PUBLIC_BASE_URL || "https://vital-healthstore.com";
 }
 
 // NOTE: the file this default key pointed to (public/0eb11dfbd77a4ebeb9f0b5c64861ac23.txt)
