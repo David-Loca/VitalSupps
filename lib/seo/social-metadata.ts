@@ -34,7 +34,7 @@ function getSafeMetadataBase(): URL {
   try {
     return new URL(getSiteBaseUrl());
   } catch {
-    return new URL("https://vital-healthstore.com");
+    return new URL("https://www.vital-healthstore.com");
   }
 }
 

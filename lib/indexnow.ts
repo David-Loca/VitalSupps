@@ -8,13 +8,12 @@ import { getPublishedLocales } from "@/lib/admin/blog-locales";
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 function getBaseUrl(): string {
-  return process.env.NEXT_PUBLIC_BASE_URL || "https://vital-healthstore.com";
+  return process.env.NEXT_PUBLIC_BASE_URL || "https://www.vital-healthstore.com";
 }
 
-// NOTE: the file this default key pointed to (public/0eb11dfbd77a4ebeb9f0b5c64861ac23.txt)
-// was deleted as part of the IPTV cleanup. Set INDEXNOW_KEY / INDEXNOW_KEY_LOCATION
-// env vars and add a matching public/<key>.txt file before relying on IndexNow again.
-const DEFAULT_INDEXNOW_KEY = "0eb11dfbd77a4ebeb9f0b5c64861ac23";
+// Matches public/caf94f9ba86da17e5131c4b5313143b7.txt (generated for vital-healthstore.com).
+// Override via INDEXNOW_KEY / INDEXNOW_KEY_LOCATION env vars if the key is ever rotated.
+const DEFAULT_INDEXNOW_KEY = "caf94f9ba86da17e5131c4b5313143b7";
 
 function getIndexNowKey(): string {
   return process.env.INDEXNOW_KEY?.trim() || DEFAULT_INDEXNOW_KEY;
@@ -47,12 +46,21 @@ export function buildIndexNowUrlListForMetadata(locale: Locale): string[] {
   urls.push(`${baseUrl}/${locale}/`);
   urls.push(`${baseUrl}/${locale}/blog/`);
 
+  // Product pages — the highest-value pages on the site, previously missing here
+  urls.push(`${baseUrl}/${locale}/products/methylene-blue/`);
+  urls.push(`${baseUrl}/${locale}/products/gut-health/`);
+
   // Legal pages
   urls.push(`${baseUrl}${getLegalUrl("refund-policy", locale)}`);
   urls.push(`${baseUrl}${getLegalUrl("privacy-policy", locale)}`);
   urls.push(`${baseUrl}${getLegalUrl("terms-of-service", locale)}`);
 
   return uniq(urls);
+}
+
+/** Every indexable page across all locales — used for a one-off full-site IndexNow submission. */
+export function buildIndexNowUrlListForFullSite(): string[] {
+  return uniq(locales.flatMap((loc) => buildIndexNowUrlListForMetadata(loc)));
 }
 
 export function buildIndexNowUrlListForBlog(blog: BlogPost): string[] {

@@ -124,7 +124,7 @@ export default async function LocaleLayout({
     notFound();
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://vital-healthstore.com";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.vital-healthstore.com";
   const { organizationSchema, faqSchema, breadcrumbSchema, websiteSchema } =
     generateStructuredData(locale as Locale, baseUrl);
 
