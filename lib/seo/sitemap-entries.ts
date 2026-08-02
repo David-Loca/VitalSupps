@@ -5,6 +5,7 @@ import { getLegalUrl } from "@/lib/utils/installation-slugs";
 import { getBlogUrl, isBlogAvailableInLocale } from "@/lib/utils/blog-slugs";
 import { getPublishedLocales } from "@/lib/admin/blog-locales";
 import { buildHreflangAlternates, buildHomepageHreflangAlternates } from "@/lib/seo/hreflang";
+import { getAllProducts } from "@/lib/products";
 
 const legalEnglishSlugs = [
   "refund-policy",
@@ -77,6 +78,14 @@ export function buildSitemapEntries(
     englishSlugs: legalEnglishSlugs,
     pathForLocale: getLegalUrl,
     priority: () => 0.55,
+  });
+
+  // Product pages — the site's highest-value pages, given top priority.
+  const products = getAllProducts();
+  pushLocalizedGroup({
+    englishSlugs: products.map((product) => product.slug),
+    pathForLocale: (slug, locale) => `/${locale}/products/${slug}/`,
+    priority: () => 0.9,
   });
 
   locales.forEach((locale) => {
