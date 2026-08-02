@@ -45,7 +45,7 @@
     "ctaPrimary": "Jetzt einkaufen",
     "ctaSecondary": "Schreiben Sie uns auf WhatsApp",
     "badgeLabTested": "Laborgeprüft",
-    "badgeMadeInUsa": "Hergestellt in den USA",
+    "badgeMadeInUsa": "Hergestellt in Deutschland",
     "badgeNonGmo": "Gentechnikfrei",
     "ribbon": "Bestseller",
     "priceFrom": "Ab 35,99 $"
@@ -118,7 +118,7 @@
     "statSupportValue": "7 Tage/Woche",
     "trustBadgesAlt": "Von Drittlaboren getestet",
     "badgeLabTested": "Laborgeprüft",
-    "badgeMadeInUsa": "Hergestellt in den USA",
+    "badgeMadeInUsa": "Hergestellt in Deutschland",
     "badgeNonGmo": "Gentechnikfrei",
     "feature1": {
       "title": "Von Drittlaboren getestet",
@@ -156,7 +156,7 @@
       "description": "Hergestellt in einer Anlage, die den Good-Manufacturing-Practice-Standards folgt."
     },
     "madeInUsa": {
-      "title": "Hergestellt in den USA",
+      "title": "Hergestellt in Deutschland",
       "description": "Im Inland formuliert und hergestellt unter strenger Qualitätskontrolle."
     }
   },
@@ -223,7 +223,7 @@
   "footer": {
     "quickLinks": "Schnellzugriff",
     "legal": "Rechtliches",
-    "description": "VitalSupps stellt Premium-Nahrungsergänzungsmittel her, die laborgeprüft sind — Methylenblau für Fokus und zelluläre Energie sowie Darmgesundheits-Kapseln für digestives Wohlbefinden. Hergestellt in den USA in einer GMP-zertifizierten Anlage.",
+    "description": "VitalSupps stellt Premium-Nahrungsergänzungsmittel her, die laborgeprüft sind — Methylenblau für Fokus und zelluläre Energie sowie Darmgesundheits-Kapseln für digestives Wohlbefinden. Hergestellt in Deutschland in einer GMP-zertifizierten Anlage.",
     "paymentMethods": "Zahlungsmethoden",
     "copyright": "© {year} VitalSupps. Alle Rechte vorbehalten.",
     "fdaDisclaimer": "Diese Aussagen wurden nicht von der US-amerikanischen Food and Drug Administration (FDA) bewertet. Dieses Produkt ist nicht dazu bestimmt, Krankheiten zu diagnostizieren, zu behandeln, zu heilen oder vorzubeugen. Konsultieren Sie vor der Anwendung Ihren Arzt, besonders bei Schwangerschaft, Stillzeit, Medikamenteneinnahme oder bestehender Erkrankung."

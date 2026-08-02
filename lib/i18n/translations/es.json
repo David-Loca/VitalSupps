@@ -45,7 +45,7 @@
     "ctaPrimary": "Comprar Ahora",
     "ctaSecondary": "Escríbenos por WhatsApp",
     "badgeLabTested": "Probado en Laboratorio",
-    "badgeMadeInUsa": "Hecho en EE. UU.",
+    "badgeMadeInUsa": "Hecho en España",
     "badgeNonGmo": "Sin OGM",
     "ribbon": "Más vendido",
     "priceFrom": "Desde $35.99"
@@ -118,7 +118,7 @@
     "statSupportValue": "7 Días/Semana",
     "trustBadgesAlt": "Probado por Terceros",
     "badgeLabTested": "Probado en Laboratorio",
-    "badgeMadeInUsa": "Hecho en EE. UU.",
+    "badgeMadeInUsa": "Hecho en España",
     "badgeNonGmo": "Sin OGM",
     "feature1": {
       "title": "Probado en Laboratorio Independiente",
@@ -156,7 +156,7 @@
       "description": "Producido en una instalación que sigue los estándares de Buenas Prácticas de Manufactura."
     },
     "madeInUsa": {
-      "title": "Hecho en EE. UU.",
+      "title": "Hecho en España",
       "description": "Formulado y fabricado localmente bajo estrictos controles de calidad."
     }
   },
@@ -223,7 +223,7 @@
   "footer": {
     "quickLinks": "Enlaces Rápidos",
     "legal": "Legal",
-    "description": "VitalSupps elabora suplementos premium probados en laboratorio — Azul de Metileno para la concentración y la energía celular, y cápsulas de Salud Intestinal para el confort digestivo. Fabricado en EE. UU. en una instalación certificada GMP.",
+    "description": "VitalSupps elabora suplementos premium probados en laboratorio — Azul de Metileno para la concentración y la energía celular, y cápsulas de Salud Intestinal para el confort digestivo. Fabricado en España en una instalación certificada GMP.",
     "paymentMethods": "Métodos de Pago",
     "copyright": "© {year} VitalSupps. Todos los derechos reservados.",
     "fdaDisclaimer": "Estas declaraciones no han sido evaluadas por la Administración de Alimentos y Medicamentos (FDA). Este producto no está destinado a diagnosticar, tratar, curar o prevenir ninguna enfermedad. Consulta a tu médico antes de usarlo, especialmente si estás embarazada, en periodo de lactancia, tomando medicación o tienes una condición médica."

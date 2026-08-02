@@ -45,7 +45,7 @@
     "ctaPrimary": "Acheter maintenant",
     "ctaSecondary": "Parlez-nous sur WhatsApp",
     "badgeLabTested": "Testé en Laboratoire",
-    "badgeMadeInUsa": "Fabriqué aux États-Unis",
+    "badgeMadeInUsa": "Fabriqué en France",
     "badgeNonGmo": "Sans OGM",
     "ribbon": "Meilleure vente",
     "priceFrom": "À partir de 35,99 $"
@@ -118,7 +118,7 @@
     "statSupportValue": "7j/7",
     "trustBadgesAlt": "Testé par un Tiers Indépendant",
     "badgeLabTested": "Testé en Laboratoire",
-    "badgeMadeInUsa": "Fabriqué aux États-Unis",
+    "badgeMadeInUsa": "Fabriqué en France",
     "badgeNonGmo": "Sans OGM",
     "feature1": {
       "title": "Testé en Laboratoire Indépendant",
@@ -156,7 +156,7 @@
       "description": "Produit dans une installation respectant les normes de Bonnes Pratiques de Fabrication."
     },
     "madeInUsa": {
-      "title": "Fabriqué aux États-Unis",
+      "title": "Fabriqué en France",
       "description": "Formulé et fabriqué localement sous contrôle qualité strict."
     }
   },
@@ -223,7 +223,7 @@
   "footer": {
     "quickLinks": "Liens Rapides",
     "legal": "Légal",
-    "description": "VitalSupps propose des compléments premium testés en laboratoire — Bleu de Méthylène pour la concentration et l'énergie cellulaire, et gélules Santé Intestinale pour le confort digestif. Fabriqué aux États-Unis dans une installation certifiée GMP.",
+    "description": "VitalSupps propose des compléments premium testés en laboratoire — Bleu de Méthylène pour la concentration et l'énergie cellulaire, et gélules Santé Intestinale pour le confort digestif. Fabriqué en France dans une installation certifiée GMP.",
     "paymentMethods": "Moyens de Paiement",
     "copyright": "© {year} VitalSupps. Tous droits réservés.",
     "fdaDisclaimer": "Ces déclarations n'ont pas été évaluées par la Food and Drug Administration (FDA). Ce produit n'est pas destiné à diagnostiquer, traiter, guérir ou prévenir une maladie. Consultez votre médecin avant utilisation, surtout en cas de grossesse, d'allaitement, de traitement médicamenteux ou de pathologie."
