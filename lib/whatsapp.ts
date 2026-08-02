@@ -8,11 +8,15 @@
 /**
  * Get the WhatsApp number
  * Currently reads from environment variable, but will be replaced with Sanity data
+ *
+ * No fallback number on purpose: the old number was decommissioned at the
+ * client's request and a replacement hasn't been provided yet. Set
+ * NEXT_PUBLIC_WHATSAPP_NUMBER once the new number is available.
  */
 export function getWhatsAppNumber(): string {
-  // For now, use environment variable with fallback to default number
+  // For now, use environment variable; no default until the client supplies a new number
   // Later: fetch from Sanity CMS
-  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "447727896626";
+  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
 }
 
 /**
