@@ -79,7 +79,7 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
                 <span className="text-[10px] sm:text-[11px] font-semibold tracking-[3px] uppercase text-brand-gold">
                   {t("hero.eyebrow")}
                 </span>
-                <span className="inline-flex items-center bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full whitespace-nowrap">
                   {t("hero.ribbon")}
                 </span>
               </div>
@@ -133,7 +133,7 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
               className="relative order-1 lg:order-2"
             >
               <div className="relative w-full h-72 sm:h-96 md:h-105 lg:h-120 rounded-brand-lg overflow-hidden shadow-[var(--shadow-brand-card)] border border-brand-border">
-                <span className="absolute top-4 left-4 z-10 bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-sm">
+                <span className="absolute top-4 left-4 z-10 bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
                   {t("hero.ribbon")}
                 </span>
                 <Image

@@ -61,7 +61,7 @@ export default function BuyBox({
         )}
       </div>
       {savingsPercent && (
-        <span className="inline-block bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2.5 py-1 rounded-full mb-4">
+        <span className="inline-block bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2.5 py-1 rounded-full mb-4 whitespace-nowrap">
           {t("buyBox.save").replace("{percent}", String(savingsPercent))}
         </span>
       )}

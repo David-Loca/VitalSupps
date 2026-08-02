@@ -71,7 +71,7 @@ export default function ProductShowcase() {
                 className={`group relative bg-white rounded-brand-lg border border-brand-border overflow-hidden shadow-[var(--shadow-brand-card)] hover:shadow-[var(--shadow-brand-card-hover)] hover:-translate-y-1 transition-all duration-300 flex flex-col ${accentBorder}`}
               >
                 {product.badge && (
-                  <span className="absolute top-4 left-4 z-10 bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-sm">
+                  <span className="absolute top-4 left-4 z-10 bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
                     {t(`products.badge.${product.badge}`)}
                   </span>
                 )}
@@ -123,7 +123,7 @@ export default function ProductShowcase() {
                       </>
                     )}
                     {savingsPercent && (
-                      <span className="bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2 py-0.5 rounded-full">
+                      <span className="bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2 py-0.5 rounded-full whitespace-nowrap">
                         {t("buyBox.save").replace("{percent}", String(savingsPercent))}
                       </span>
                     )}
