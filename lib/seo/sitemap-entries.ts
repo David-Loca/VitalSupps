@@ -6,6 +6,7 @@ import { getBlogUrl, isBlogAvailableInLocale } from "@/lib/utils/blog-slugs";
 import { getPublishedLocales } from "@/lib/admin/blog-locales";
 import { buildHreflangAlternates, buildHomepageHreflangAlternates } from "@/lib/seo/hreflang";
 import { getAllProducts } from "@/lib/products";
+import { getProductUrl } from "@/lib/utils/product-slugs";
 
 const legalEnglishSlugs = [
   "refund-policy",
@@ -84,7 +85,7 @@ export function buildSitemapEntries(
   const products = getAllProducts();
   pushLocalizedGroup({
     englishSlugs: products.map((product) => product.slug),
-    pathForLocale: (slug, locale) => `/${locale}/products/${slug}/`,
+    pathForLocale: getProductUrl,
     priority: () => 0.9,
   });
 

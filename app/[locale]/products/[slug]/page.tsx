@@ -6,6 +6,7 @@ import { buildSocialMetadata } from "@/lib/seo/social-metadata";
 import { getSiteBaseUrl } from "@/lib/seo/og-image";
 import { buildHreflangAlternatesForPaths } from "@/lib/seo/hreflang";
 import { getProductKeywords } from "@/lib/seo/product-keywords";
+import { getProductUrl } from "@/lib/utils/product-slugs";
 import { ProductJsonLd } from "@/components/seo/ProductJsonLd";
 import ProductPageClient from "./ProductPageClient";
 
@@ -41,7 +42,7 @@ export async function generateMetadata({
   const baseUrl = getSiteBaseUrl();
   const hreflangAlternates = buildHreflangAlternatesForPaths(
     baseUrl,
-    (loc) => `/${loc}/products/${slug}/`
+    (loc) => getProductUrl(slug, loc)
   );
 
   const { title, description } = buildProductTitleAndDescription(slug, locale, content, product);
@@ -50,7 +51,7 @@ export async function generateMetadata({
     title,
     description,
     locale,
-    canonicalUrl: `${baseUrl}/${locale}/products/${slug}/`,
+    canonicalUrl: `${baseUrl}${getProductUrl(slug, locale)}`,
     keywords: getProductKeywords(slug, locale),
     type: "website",
     languageAlternates: hreflangAlternates,
@@ -123,7 +124,7 @@ export default async function ProductPage({
   }
 
   const baseUrl = getSiteBaseUrl();
-  const canonicalUrl = `${baseUrl}/${locale}/products/${slug}/`;
+  const canonicalUrl = `${baseUrl}${getProductUrl(slug, locale)}`;
 
   return (
     <>

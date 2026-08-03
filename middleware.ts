@@ -1,7 +1,13 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 import { fixDuplicateLocalePath } from '@/lib/i18n/locale-path';
-import { locales, defaultLocale } from '@/lib/i18n';
+import { locales, defaultLocale, type Locale } from '@/lib/i18n';
+import {
+  isEnglishProductsSegment,
+  isKnownProductSlug,
+  getEnglishProductSlugFromLocalized,
+  getProductUrl,
+} from '@/lib/utils/product-slugs';
 
 export function middleware(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
@@ -87,6 +93,43 @@ export function middleware(request: NextRequest) {
       // This prevents it from appearing in Search Console as "not indexed"
       response.headers.set('X-Robots-Tag', 'noindex, nofollow');
       return response;
+    }
+
+    // Canonicalize product URLs still using the literal English "/products/"
+    // segment on a non-English locale (e.g. /fr/products/methylene-blue/) to
+    // the fully localized URL (e.g. /fr/produits/bleu-de-methylene/).
+    if (
+      (locales as string[]).includes(locale) &&
+      isEnglishProductsSegment(slug) &&
+      pathSegments.length >= 3 &&
+      isKnownProductSlug(pathSegments[2])
+    ) {
+      const englishProductSlug = pathSegments[2];
+      const localizedUrl = getProductUrl(englishProductSlug, locale as Locale);
+      if (localizedUrl !== `/${locale}/products/${englishProductSlug}/`) {
+        url.pathname = localizedUrl;
+        const response = NextResponse.redirect(url, 301);
+        response.headers.set('X-Robots-Tag', 'noindex, nofollow');
+        return response;
+      }
+    }
+  }
+
+  // Rewrite fully localized product URLs (e.g. /fr/produits/bleu-de-methylene/)
+  // internally to the canonical English route (/fr/products/methylene-blue/)
+  // that actually exists on disk — the visitor's address bar keeps the
+  // pretty localized URL, Next.js just serves the existing page for it.
+  if (pathSegments.length >= 3) {
+    const locale = pathSegments[0];
+    const category = pathSegments[1];
+    const productSlug = pathSegments[2];
+
+    if ((locales as string[]).includes(locale)) {
+      const englishSlug = getEnglishProductSlugFromLocalized(category, productSlug, locale as Locale);
+      if (englishSlug) {
+        url.pathname = `/${locale}/products/${englishSlug}/`;
+        return NextResponse.rewrite(url);
+      }
     }
   }
 

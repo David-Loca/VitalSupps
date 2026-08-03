@@ -14,6 +14,7 @@ import {
   getLowestVariantPrice,
 } from "@/lib/products";
 import { getProductWhatsAppUrl } from "@/lib/whatsapp";
+import { getProductUrl } from "@/lib/utils/product-slugs";
 import StarRating from "./StarRating";
 import { BotanicalCornerSmall } from "@/components/admin/ui/Decorative";
 
@@ -131,7 +132,7 @@ export default function ProductShowcase() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
-                      href={`/${locale}/products/${product.slug}/`}
+                      href={getProductUrl(product.slug, locale)}
                       className="flex-1 inline-flex items-center justify-center gap-2 h-[48px] px-5 rounded-[12px] bg-brand-primary text-white text-[14px] font-medium transition-all duration-150 hover:-translate-y-0.5 hover:bg-brand-primary-dark active:scale-[0.98]"
                     >
                       {t("products.shopNow")}
