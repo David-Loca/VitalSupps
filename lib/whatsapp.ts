@@ -9,14 +9,14 @@
  * Get the WhatsApp number
  * Currently reads from environment variable, but will be replaced with Sanity data
  *
- * No fallback number on purpose: the old number was decommissioned at the
- * client's request and a replacement hasn't been provided yet. Set
- * NEXT_PUBLIC_WHATSAPP_NUMBER once the new number is available.
+ * Default is the new UK number the client purchased (+44 7737 135680),
+ * replacing the old decommissioned number. Override via
+ * NEXT_PUBLIC_WHATSAPP_NUMBER if it ever changes again.
  */
 export function getWhatsAppNumber(): string {
-  // For now, use environment variable; no default until the client supplies a new number
+  // For now, use environment variable with fallback to default number
   // Later: fetch from Sanity CMS
-  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
+  return process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "447737135680";
 }
 
 /**
