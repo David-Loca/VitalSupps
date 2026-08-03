@@ -53,10 +53,10 @@ export default function BuyBox({
       )}
 
       <div className="flex items-baseline gap-3 mb-1">
-        <span className="font-semibold text-3xl text-brand-text">{formatPrice(price)}</span>
+        <span className="font-semibold text-3xl text-brand-text">{formatPrice(price, locale)}</span>
         {compareAtPrice && (
           <span className="text-lg text-brand-text/40 line-through">
-            {formatPrice(compareAtPrice)}
+            {formatPrice(compareAtPrice, locale)}
           </span>
         )}
       </div>

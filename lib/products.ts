@@ -101,8 +101,25 @@ export function getProductContent(product: Product, locale: Locale): ProductLoca
   return product[locale] ?? product.en;
 }
 
-export function formatPrice(price: number): string {
-  return `$${price.toFixed(2)}`;
+/**
+ * Currency + regional number-format per site language: English shows USD,
+ * French/German/Spanish show EUR (matching the "Made in [country]" choices
+ * already used for those locales). The underlying price number is the same
+ * across locales — only the symbol/format changes, not the amount.
+ */
+const CURRENCY_BY_LOCALE: Record<Locale, { currency: string; intlLocale: string }> = {
+  en: { currency: "USD", intlLocale: "en-US" },
+  fr: { currency: "EUR", intlLocale: "fr-FR" },
+  de: { currency: "EUR", intlLocale: "de-DE" },
+  es: { currency: "EUR", intlLocale: "es-ES" },
+};
+
+export function formatPrice(price: number, locale: Locale = "en"): string {
+  const { currency, intlLocale } = CURRENCY_BY_LOCALE[locale] ?? CURRENCY_BY_LOCALE.en;
+  return new Intl.NumberFormat(intlLocale, {
+    style: "currency",
+    currency,
+  }).format(price);
 }
 
 /**

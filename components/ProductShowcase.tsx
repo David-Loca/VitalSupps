@@ -108,16 +108,16 @@ export default function ProductShowcase() {
                   <div className="flex items-center gap-2.5 mb-5 flex-wrap">
                     {hasVariants ? (
                       <span className={`font-semibold text-2xl ${accentText}`}>
-                        {t("products.fromPrice").replace("{price}", formatPrice(lowestPrice))}
+                        {t("products.fromPrice").replace("{price}", formatPrice(lowestPrice, locale))}
                       </span>
                     ) : (
                       <>
                         <span className={`font-semibold text-2xl ${accentText}`}>
-                          {formatPrice(product.price)}
+                          {formatPrice(product.price, locale)}
                         </span>
                         {product.compareAtPrice && (
                           <span className="text-base text-brand-text/40 line-through">
-                            {formatPrice(product.compareAtPrice)}
+                            {formatPrice(product.compareAtPrice, locale)}
                           </span>
                         )}
                       </>

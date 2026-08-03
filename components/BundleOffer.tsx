@@ -70,14 +70,14 @@ export default function BundleOffer() {
               <div className="flex-1 sm:pl-4">
                 <p className="text-sm text-brand-text-secondary mb-0.5">{t("bundle.individualPrice")}</p>
                 <p className="text-base text-brand-text/40 line-through mb-1.5">
-                  {formatPrice(individualTotal)}
+                  {formatPrice(individualTotal, locale)}
                 </p>
                 <p className="text-sm text-brand-text-secondary mb-0.5">{t("bundle.bundlePrice")}</p>
                 <p className="font-semibold text-3xl text-brand-text mb-1.5">
-                  {formatPrice(bundlePrice)}
+                  {formatPrice(bundlePrice, locale)}
                 </p>
                 <span className="inline-block bg-sale-light text-sale-dark text-xs font-bold tracking-wide px-2.5 py-1 rounded-full">
-                  {t("bundle.youSave").replace("{amount}", formatPrice(savings))}
+                  {t("bundle.youSave").replace("{amount}", formatPrice(savings, locale))}
                 </span>
               </div>
             </div>

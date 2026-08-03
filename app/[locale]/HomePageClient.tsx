@@ -10,6 +10,7 @@ import { shouldReduceAnimations, isMobile } from "@/lib/utils/performance";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 import type { BlogPost } from "@/lib/admin/blog-shared";
 import { BotanicalCorner, BotanicalCornerSmall, GoldCurve } from "@/components/admin/ui/Decorative";
+import { getAllProducts, getLowestVariantPrice, formatPrice } from "@/lib/products";
 
 // Lazy load non-critical components
 const ProductShowcase = lazy(() => import("@/components/ProductShowcase"));
@@ -33,6 +34,9 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
   const { t, locale } = useLanguage();
   const [reduceAnimations, setReduceAnimations] = useState(false);
   const whatsappUrl = getWhatsAppUrl(t("whatsapp.contactQuestion"));
+  const lowestSitewidePrice = Math.min(
+    ...getAllProducts().map((product) => getLowestVariantPrice(product))
+  );
 
   useEffect(() => {
     const mobile = isMobile();
@@ -89,7 +93,9 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
               <p className="text-[16px] leading-[1.75] text-brand-text-secondary max-w-xl mx-auto lg:mx-0 mb-6">
                 {t("hero.subtitle")}
               </p>
-              <p className="font-medium text-xl text-brand-primary mb-9">{t("hero.priceFrom")}</p>
+              <p className="font-medium text-xl text-brand-primary mb-9">
+                {t("hero.priceFrom").replace("{price}", formatPrice(lowestSitewidePrice, locale))}
+              </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
                 <a

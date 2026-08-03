@@ -99,8 +99,8 @@ function buildProductTitleAndDescription(
 
   const title = titleLeadIn ? `${titleLeadIn[locale]} | VitalSupps` : `${content.name} | VitalSupps`;
   const description = descriptionLeadIn
-    ? `${descriptionLeadIn[locale]} — ${content.name}, ${formatPrice(product.price)}. ${content.targetAudience}`
-    : `${content.tagline} — ${formatPrice(product.price)}. ${content.targetAudience}`;
+    ? `${descriptionLeadIn[locale]} — ${content.name}, ${formatPrice(product.price, locale)}. ${content.targetAudience}`
+    : `${content.tagline} — ${formatPrice(product.price, locale)}. ${content.targetAudience}`;
 
   return { title, description };
 }

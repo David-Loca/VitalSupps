@@ -48,7 +48,7 @@
     "badgeMadeInUsa": "Fabriqué en France",
     "badgeNonGmo": "Sans OGM",
     "ribbon": "Meilleure vente",
-    "priceFrom": "À partir de 35,99 $"
+    "priceFrom": "À partir de {price}"
   },
   "announcement": {
     "shipping": "",

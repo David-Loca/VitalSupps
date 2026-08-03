@@ -48,7 +48,7 @@
     "badgeMadeInUsa": "Hecho en España",
     "badgeNonGmo": "Sin OGM",
     "ribbon": "Más vendido",
-    "priceFrom": "Desde $35.99"
+    "priceFrom": "Desde {price}"
   },
   "announcement": {
     "shipping": "",
