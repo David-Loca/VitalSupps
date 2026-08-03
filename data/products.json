@@ -17,8 +17,8 @@
         "compareAtPrice": 44.99,
         "images": [
           "/images/products/methylene-blue-hero.svg",
-          "/images/products/methylene-blue/drops-30ml/img2.webp",
-          "/images/products/methylene-blue/drops-30ml/img3.webp"
+          "/images/products/methylene-blue/drops-30ml/img1.webp",
+          "/images/products/methylene-blue/drops-30ml/img2.webp"
         ]
       },
       {
@@ -28,8 +28,8 @@
         "compareAtPrice": 52.99,
         "images": [
           "/images/products/methylene-blue-hero.svg",
-          "/images/products/methylene-blue/gummies-30ct/img2.webp",
-          "/images/products/methylene-blue/gummies-30ct/img3.webp"
+          "/images/products/methylene-blue/gummies-30ct/img1.webp",
+          "/images/products/methylene-blue/gummies-30ct/img2.webp"
         ]
       },
       {
@@ -39,7 +39,7 @@
         "compareAtPrice": 61.99,
         "images": [
           "/images/products/methylene-blue-hero.svg",
-          "/images/products/methylene-blue/drops-50ml/img2.webp",
+          "/images/products/methylene-blue/drops-50ml/img1.webp",
           "/images/products/methylene-blue/drops-50ml/img3.webp"
         ],
         "isDefault": true
@@ -62,8 +62,8 @@
         "compareAtPrice": 82.99,
         "images": [
           "/images/products/methylene-blue-hero.svg",
-          "/images/products/methylene-blue/drops-60ml/img2.webp",
-          "/images/products/methylene-blue/drops-60ml/img3.webp"
+          "/images/products/methylene-blue/drops-60ml/img1.webp",
+          "/images/products/methylene-blue/drops-60ml/img2.webp"
         ]
       }
     ],
@@ -324,8 +324,8 @@
         "compareAtPrice": 44.99,
         "images": [
           "/images/products/gut-health-hero.svg",
-          "/images/products/gut-health/60ct/img2.webp",
-          "/images/products/gut-health/60ct/img3.webp"
+          "/images/products/gut-health/60ct/img1.webp",
+          "/images/products/gut-health/60ct/img2.webp"
         ]
       },
       {
@@ -346,8 +346,8 @@
         "compareAtPrice": 64.99,
         "images": [
           "/images/products/gut-health-hero.svg",
-          "/images/products/gut-health/120ct/img2.webp",
-          "/images/products/gut-health/120ct/img3.webp"
+          "/images/products/gut-health/120ct/img1.webp",
+          "/images/products/gut-health/120ct/img4.webp"
         ],
         "isDefault": true
       },
@@ -359,7 +359,7 @@
         "images": [
           "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/150ct/img2.webp",
-          "/images/products/gut-health/150ct/img3.webp"
+          "/images/products/gut-health/150ct/img6.webp"
         ]
       },
       {
@@ -369,8 +369,8 @@
         "compareAtPrice": 79.99,
         "images": [
           "/images/products/gut-health-hero.svg",
-          "/images/products/gut-health/gummies-60ct/img2.webp",
-          "/images/products/gut-health/gummies-60ct/img3.webp"
+          "/images/products/gut-health/gummies-60ct/img1.webp",
+          "/images/products/gut-health/gummies-60ct/img2.webp"
         ]
       }
     ],
