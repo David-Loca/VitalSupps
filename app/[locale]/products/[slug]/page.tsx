@@ -61,31 +61,31 @@ export async function generateMetadata({
 
 const PRODUCT_TITLE_LEAD_IN: Record<string, Record<Locale, string>> = {
   "methylene-blue": {
-    en: "Buy Pharmaceutical Grade Methylene Blue Drops",
-    fr: "Acheter Bleu de Méthylène Qualité Pharmaceutique",
-    es: "Comprar Azul de Metileno Grado Farmacéutico",
-    de: "Methylenblau Kaufen – Pharma Qualität",
+    en: "Buy Pharmaceutical Grade Methylene Blue Drops Online",
+    fr: "Acheter Bleu de Méthylène Qualité Pharmaceutique en Ligne",
+    es: "Comprar Azul de Metileno Grado Farmacéutico Online",
+    de: "Methylenblau Kaufen Online – Pharma Qualität",
   },
   "gut-health": {
-    en: "Best Probiotic & Digestive Health Supplement",
-    fr: "Meilleur Complément Probiotique & Digestion",
-    es: "Mejor Suplemento Probiótico y Digestivo",
-    de: "Bestes Probiotikum für die Darmgesundheit",
+    en: "Best Gut Health Supplement – Probiotic & Digestive Enzymes",
+    fr: "Meilleur Complément Santé Intestinale – Probiotique & Enzymes",
+    es: "Mejor Suplemento de Salud Intestinal – Probiótico y Enzimas",
+    de: "Bestes Darmgesundheit Supplement – Probiotikum & Enzyme",
   },
 };
 
 const PRODUCT_DESCRIPTION_LEAD_IN: Record<string, Record<Locale, string>> = {
   "methylene-blue": {
-    en: "Buy pharmaceutical grade methylene blue drops",
-    fr: "Achetez du bleu de méthylène qualité pharmaceutique",
-    es: "Compre azul de metileno grado farmacéutico",
-    de: "Kaufen Sie Methylenblau in Pharma-Qualität",
+    en: "Buy pharmaceutical grade methylene blue drops online — USP-grade, third-party lab-tested",
+    fr: "Achetez du bleu de méthylène qualité pharmaceutique en ligne — qualité USP, testé en laboratoire indépendant",
+    es: "Compre azul de metileno grado farmacéutico online — calidad USP, probado por laboratorios independientes",
+    de: "Kaufen Sie Methylenblau in Pharma-Qualität online — USP-Qualität, von unabhängigen Labors geprüft",
   },
   "gut-health": {
-    en: "Best probiotic digestive health supplement",
-    fr: "Meilleur complément probiotique pour la digestion",
-    es: "Mejor suplemento probiótico para la digestión",
-    de: "Bestes Probiotikum-Supplement für die Verdauung",
+    en: "Best gut health supplement with probiotics and digestive enzymes for a balanced microbiome",
+    fr: "Meilleur complément santé intestinale avec probiotiques et enzymes digestives pour un microbiote équilibré",
+    es: "Mejor suplemento de salud intestinal con probióticos y enzimas digestivas para una microbiota equilibrada",
+    de: "Bestes Darmgesundheit-Supplement mit Probiotika und Verdauungsenzymen für ein ausgeglichenes Mikrobiom",
   },
 };
 

@@ -52,6 +52,16 @@ const faqData: FAQItem[] = [
     questionKey: "faq.general8.question",
     answerKey: "faq.general8.answer",
   },
+  {
+    id: "general-9",
+    questionKey: "faq.general9.question",
+    answerKey: "faq.general9.answer",
+  },
+  {
+    id: "general-10",
+    questionKey: "faq.general10.question",
+    answerKey: "faq.general10.answer",
+  },
 ];
 
 export default function FAQSection() {
