@@ -20,7 +20,7 @@
       "de": ""
     },
     "publishedAt": "2026-08-05T19:25:59.271Z",
-    "updatedAt": "2026-08-05T22:11:45.820Z",
+    "updatedAt": "2026-08-05T22:12:41.005Z",
     "locale": "fr",
     "translations": [
       "fr"
@@ -458,7 +458,7 @@
         "type": "paragraph",
         "content": {
           "en": "",
-          "fr": "Chaque flacon est conçu pour assurer une excellente conservation du produit.",
+          "fr": "Chaque flacon est conçu pour assurer [une excellente conservation du produit](https://www.amazon.fr/bleu-de-methylene/s?k=bleu+de+methylene).",
           "es": "",
           "de": ""
         }
