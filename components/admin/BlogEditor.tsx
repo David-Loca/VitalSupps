@@ -45,6 +45,7 @@ import {
 } from "@/lib/admin/admin-locale-labels";
 import BlogLocaleToolbar from "@/components/admin/BlogLocaleToolbar";
 import { getAdminDict } from "@/lib/admin/i18n";
+import { normalizeLinkUrl } from "@/lib/utils/normalize-link-url";
 
 interface BlogEditorProps {
   onSave: (blog: BlogPost) => Promise<void>;
@@ -907,7 +908,8 @@ export default function BlogEditor({ onSave, onDelete, initialBlog, locale }: Bl
                           </button>
                           <button
                             onClick={() => {
-                              const url = prompt("Enter URL:");
+                              const rawUrl = prompt("Enter URL:");
+                              const url = normalizeLinkUrl(rawUrl);
                               if (url) {
                                 const textarea = document.getElementById(`paragraph-${block.id}`) as HTMLTextAreaElement;
                                 if (textarea) {

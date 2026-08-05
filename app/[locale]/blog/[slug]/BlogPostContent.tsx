@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { Clock } from "lucide-react";
 import type { BlogBlock, BlogPost } from "@/lib/admin/blog-shared";
 import type { Locale } from "@/lib/i18n";
+import { normalizeLinkUrl } from "@/lib/utils/normalize-link-url";
 
 interface BlogPostContentProps {
   blog: BlogPost;
@@ -49,8 +50,10 @@ export default function BlogPostContent({ blog, locale: serverLocale }: BlogPost
   const parseMarkdown = (text: string) => {
     if (!text) return text;
 
-    // Parse links: [text](url)
-    text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">$1</a>');
+    // Parse links: [text](url) — normalize bare domains (e.g. "example.com") to absolute URLs
+    text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, linkText, url) =>
+      `<a href="${normalizeLinkUrl(url)}" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:underline">${linkText}</a>`
+    );
 
     // Parse bold: **text**
     text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
