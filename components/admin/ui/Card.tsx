@@ -32,7 +32,7 @@ export default function Card({
         transition-shadow duration-150 ${noPadding ? "" : "p-6 sm:p-8"} ${className}`}
     >
       {decorated && <DecorativeCardBackground topRight={false} opacity={0.14} />}
-      {(title || subtitle) && (
+      {(title || subtitle || headerAction) && (
         <div className="relative z-10 mb-6 flex items-start justify-between gap-4">
           <div>
             {title && (
