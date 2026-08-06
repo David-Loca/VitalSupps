@@ -8,6 +8,7 @@ import { buildHreflangAlternatesForPaths } from "@/lib/seo/hreflang";
 import { getProductKeywords } from "@/lib/seo/product-keywords";
 import { getProductUrl } from "@/lib/utils/product-slugs";
 import { ProductJsonLd } from "@/components/seo/ProductJsonLd";
+import { buildBreadcrumbSchema, BREADCRUMB_LABELS } from "@/lib/seo/breadcrumb-schema";
 import ProductPageClient from "./ProductPageClient";
 
 export async function generateStaticParams() {
@@ -125,10 +126,21 @@ export default async function ProductPage({
 
   const baseUrl = getSiteBaseUrl();
   const canonicalUrl = `${baseUrl}${getProductUrl(slug, locale)}`;
+  const content = getProductContent(product, locale);
+
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: BREADCRUMB_LABELS[locale].home, url: `${baseUrl}/${locale}/` },
+    { name: BREADCRUMB_LABELS[locale].products, url: `${baseUrl}/${locale}/#products` },
+    { name: content.name, url: canonicalUrl },
+  ]);
 
   return (
     <>
       <ProductJsonLd product={product} locale={locale} canonicalUrl={canonicalUrl} baseUrl={baseUrl} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <ProductPageClient product={product} locale={locale} />
     </>
   );

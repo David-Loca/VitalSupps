@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Image from "next/image";
 import { Clock } from "lucide-react";
 import type { BlogBlock, BlogPost } from "@/lib/admin/blog-shared";
 import type { Locale } from "@/lib/i18n";
@@ -142,17 +143,18 @@ export default function BlogPostContent({ blog, locale: serverLocale }: BlogPost
                 : "flex justify-start"
             }`}
           >
-            <div className={`relative ${getImageMaxWidth()}`}>
-              <img
-                src={block.imageUrl}
+            <div className={`relative ${getImageMaxWidth()} aspect-4/3`}>
+              <Image
+                src={block.imageUrl!}
                 alt={
                   typeof block.imageAlt === "string"
                     ? block.imageAlt
                     : (block.imageAlt?.[activeLocale] || displayTitle)
                 }
-                className="w-full h-auto rounded-brand-lg border border-brand-border"
+                fill
+                className="object-cover rounded-brand-lg border border-brand-border"
                 loading="lazy"
-                decoding="async"
+                sizes="(min-width: 768px) 640px, 100vw"
               />
             </div>
           </div>
@@ -245,12 +247,13 @@ export default function BlogPostContent({ blog, locale: serverLocale }: BlogPost
           {/* Featured Image */}
           {isRenderableImageUrl(blog.featuredImage) && (
             <div className="relative w-full h-40 sm:h-56 md:h-64 lg:h-72 mb-6 sm:mb-8 md:mb-10 rounded-brand-lg overflow-hidden border border-brand-border bg-brand-hover">
-              <img
-                src={blog.featuredImage}
+              <Image
+                src={blog.featuredImage!}
                 alt={displayTitle}
-                className="w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
+                fill
+                className="object-cover"
+                priority
+                sizes="(min-width: 1024px) 896px, 100vw"
               />
             </div>
           )}

@@ -1,11 +1,38 @@
+import type { Metadata } from "next";
 import type { Locale } from "@/lib/i18n";
 import { getAllBlogs } from "@/lib/admin/blog";
 import { getBlogUrl, isBlogAvailableInLocale } from "@/lib/utils/blog-slugs";
-import { hreflangByLocale } from "@/lib/seo/hreflang";
+import { hreflangByLocale, buildHomepageHreflangAlternates } from "@/lib/seo/hreflang";
 import { getSiteBaseUrl } from "@/lib/seo/og-image";
+import { buildSocialMetadata } from "@/lib/seo/social-metadata";
+import { getBlogListingMetadata } from "@/lib/utils/metadata-loader";
+import { getHomepageKeywordList } from "@/lib/seo/site-keywords";
+import { buildBreadcrumbSchema, BREADCRUMB_LABELS } from "@/lib/seo/breadcrumb-schema";
 import BlogListingClient from "./BlogListingClient";
 
 export const revalidate = 3600; // Revalidate every hour so new posts appear
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const baseUrl = getSiteBaseUrl();
+  const { title, description } = await getBlogListingMetadata(locale);
+  const hreflangAlternates = buildHomepageHreflangAlternates(baseUrl, "/blog/");
+
+  return buildSocialMetadata({
+    title,
+    description,
+    locale,
+    canonicalUrl: `${baseUrl}/${locale}/blog/`,
+    keywords: getHomepageKeywordList(locale),
+    type: "website",
+    languageAlternates: hreflangAlternates,
+    useGeneratedOgImage: true,
+  });
+}
 
 const baseUrl = getSiteBaseUrl();
 
@@ -68,11 +95,20 @@ export default async function BlogPage({ params }: BlogPageProps) {
     }),
   };
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: BREADCRUMB_LABELS[locale].home, url: `${baseUrl}/${locale}/` },
+    { name: BREADCRUMB_LABELS[locale].blog, url: `${baseUrl}/${locale}/blog/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <BlogListingClient initialBlogs={blogs} locale={locale} />
     </>

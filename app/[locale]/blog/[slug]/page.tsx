@@ -11,6 +11,7 @@ import {
 } from "@/lib/seo/og-image";
 import { hreflangByLocale } from "@/lib/seo/hreflang";
 import { siteNameMap } from "@/lib/i18n/locale-maps";
+import { buildBreadcrumbSchema, BREADCRUMB_LABELS } from "@/lib/seo/breadcrumb-schema";
 
 export const revalidate = 3600; // Revalidate every hour
 
@@ -77,11 +78,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     url: articleUrl,
   };
 
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: BREADCRUMB_LABELS[locale].home, url: `${baseUrl}/${locale}/` },
+    { name: BREADCRUMB_LABELS[locale].blog, url: `${baseUrl}/${locale}/blog/` },
+    { name: title, url: articleUrl },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <BlogPostContent blog={blog} locale={locale} />
     </>
