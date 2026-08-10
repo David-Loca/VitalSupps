@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
   // Static export is disabled
   trailingSlash: true,
   images: {
+    // Vercel's Image Optimization API has a hard monthly transformation quota;
+    // once exceeded, every optimized image on the site fails to load. Serving
+    // images unoptimized avoids that cliff entirely (Cloudinary already
+    // handles resizing/format for uploaded images on its own end).
+    unoptimized: true,
     qualities: [20, 24, 40, 50, 75, 80],
     remotePatterns: [
       {
