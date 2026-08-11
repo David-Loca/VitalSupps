@@ -7,7 +7,7 @@
     "rating": 4.7,
     "reviewCount": 128,
     "images": {
-      "primary": "/images/products/methylene-blue-hero.svg"
+      "primary": "https://res.cloudinary.com/df5we7yoo/image/upload/v1786445997/product-images/xdhxrwubg3d81ktyzyiq.jpg"
     },
     "variants": [
       {
@@ -16,7 +16,6 @@
         "price": 35.99,
         "compareAtPrice": 44.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/drops-30ml/img1.webp",
           "/images/products/methylene-blue/drops-30ml/img2.webp"
         ]
@@ -27,7 +26,6 @@
         "price": 41.99,
         "compareAtPrice": 52.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/gummies-30ct/img1.webp",
           "/images/products/methylene-blue/gummies-30ct/img2.webp"
         ]
@@ -38,7 +36,6 @@
         "price": 48.99,
         "compareAtPrice": 61.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/drops-50ml/img1.webp",
           "/images/products/methylene-blue/drops-50ml/img3.webp"
         ],
@@ -50,7 +47,6 @@
         "price": 55.99,
         "compareAtPrice": 69.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/capsules-60ct/img2.webp",
           "/images/products/methylene-blue/capsules-60ct/img3.webp"
         ]
@@ -61,7 +57,6 @@
         "price": 65.99,
         "compareAtPrice": 82.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/drops-60ml/img1.webp",
           "/images/products/methylene-blue/drops-60ml/img2.webp"
         ]
@@ -314,7 +309,7 @@
     "rating": 4.6,
     "reviewCount": 94,
     "images": {
-      "primary": "/images/products/gut-health-hero.svg"
+      "primary": "https://res.cloudinary.com/df5we7yoo/image/upload/v1786446304/product-images/nsz3bjty8xtjnhii4uh8.png"
     },
     "variants": [
       {
@@ -323,7 +318,6 @@
         "price": 35.99,
         "compareAtPrice": 44.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/60ct/img1.webp",
           "/images/products/gut-health/60ct/img2.webp"
         ]
@@ -334,7 +328,6 @@
         "price": 42.99,
         "compareAtPrice": 54.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/90ct/img2.webp",
           "/images/products/gut-health/90ct/img3.webp"
         ]
@@ -345,7 +338,6 @@
         "price": 49.99,
         "compareAtPrice": 64.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/120ct/img1.webp",
           "/images/products/gut-health/120ct/img4.webp"
         ],
@@ -357,7 +349,6 @@
         "price": 59.99,
         "compareAtPrice": 74.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/150ct/img2.webp",
           "/images/products/gut-health/150ct/img6.webp"
         ]
@@ -368,7 +359,6 @@
         "price": 65.99,
         "compareAtPrice": 79.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/gummies-60ct/img1.webp",
           "/images/products/gut-health/gummies-60ct/img2.webp"
         ]
@@ -629,7 +619,7 @@
     "rating": 4.6,
     "reviewCount": 76,
     "images": {
-      "primary": "/images/products/teeth-whitening-strips-hero.svg"
+      "primary": "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447046/product-images/alecdcec1becczfzh4o5.jpg"
     },
     "variants": [
       {
@@ -638,9 +628,9 @@
         "price": 24.99,
         "compareAtPrice": 32.99,
         "images": [
-          "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips/img1.jpg",
-          "/images/products/teeth-whitening-strips/img2.jpg"
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447037/product-images/ujn1qoeoueshv1lvm8f9.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447060/product-images/jirn9gccmowtm9cv3tvx.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447066/product-images/lvwkv1qg2x7zlqqfoxls.jpg"
         ]
       },
       {
@@ -649,9 +639,10 @@
         "price": 59.99,
         "compareAtPrice": 79.99,
         "images": [
-          "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips/img1.jpg",
-          "/images/products/teeth-whitening-strips/img2.jpg"
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447110/product-images/yhrpcs0aafelkixaorgr.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447121/product-images/j7oz4ojylrabagw9cihv.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447126/product-images/pobvcev4vr1ljkubhemy.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447130/product-images/vv12d2pazodv9rilsub2.jpg"
         ],
         "isDefault": true
       },
@@ -661,9 +652,10 @@
         "price": 44.99,
         "compareAtPrice": 59.99,
         "images": [
-          "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips/img1.jpg",
-          "/images/products/teeth-whitening-strips/img2.jpg"
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447138/product-images/hxrwapryzay8w417bmai.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447145/product-images/wq9wpk4cvwreb3lbily8.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447150/product-images/kihan3ekh9dgyfbcelow.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447155/product-images/gf24hi1oufhlysnnwuna.jpg"
         ]
       }
     ],
