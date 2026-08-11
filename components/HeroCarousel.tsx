@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getAllProducts, getProductContent } from "@/lib/products";
 import { getProductUrl } from "@/lib/utils/product-slugs";
@@ -22,6 +23,10 @@ export default function HeroCarousel({ reduceAnimations = false }: HeroCarouselP
 
   const next = useCallback(() => {
     setIndex((i) => (i + 1) % products.length);
+  }, [products.length]);
+
+  const prev = useCallback(() => {
+    setIndex((i) => (i - 1 + products.length) % products.length);
   }, [products.length]);
 
   useEffect(() => {
@@ -87,6 +92,26 @@ export default function HeroCarousel({ reduceAnimations = false }: HeroCarouselP
           </p>
         </motion.a>
       </AnimatePresence>
+
+      {/* Prev/next arrows */}
+      {products.length > 1 && (
+        <>
+          <button
+            onClick={prev}
+            aria-label="Previous slide"
+            className="absolute top-1/2 left-3 z-20 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white/90 text-brand-text shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200 hover:bg-white hover:scale-105 cursor-pointer"
+          >
+            <ChevronLeft className="w-4 h-4" strokeWidth={2.5} />
+          </button>
+          <button
+            onClick={next}
+            aria-label="Next slide"
+            className="absolute top-1/2 right-3 z-20 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-white/90 text-brand-text shadow-sm opacity-0 group-hover:opacity-100 transition-all duration-200 hover:bg-white hover:scale-105 cursor-pointer"
+          >
+            <ChevronRight className="w-4 h-4" strokeWidth={2.5} />
+          </button>
+        </>
+      )}
 
       {/* Dot indicators */}
       {products.length > 1 && (
