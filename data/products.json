@@ -619,7 +619,7 @@
     "rating": 4.6,
     "reviewCount": 76,
     "images": {
-      "primary": "https://res.cloudinary.com/df5we7yoo/image/upload/v1786446821/product-images/iomcx6iibtd6nc6ekyzd.jpg"
+      "primary": "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447046/product-images/alecdcec1becczfzh4o5.jpg"
     },
     "variants": [
       {
@@ -628,9 +628,9 @@
         "price": 24.99,
         "compareAtPrice": 32.99,
         "images": [
-          "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips-detail1.svg",
-          "/images/products/teeth-whitening-strips-detail2.svg"
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447037/product-images/ujn1qoeoueshv1lvm8f9.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447060/product-images/jirn9gccmowtm9cv3tvx.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447066/product-images/lvwkv1qg2x7zlqqfoxls.jpg"
         ]
       },
       {
@@ -639,9 +639,10 @@
         "price": 34.99,
         "compareAtPrice": 46.99,
         "images": [
-          "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips-detail1.svg",
-          "/images/products/teeth-whitening-strips-detail2.svg"
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447110/product-images/yhrpcs0aafelkixaorgr.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447121/product-images/j7oz4ojylrabagw9cihv.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447126/product-images/pobvcev4vr1ljkubhemy.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447130/product-images/vv12d2pazodv9rilsub2.jpg"
         ],
         "isDefault": true
       },
@@ -651,9 +652,10 @@
         "price": 44.99,
         "compareAtPrice": 59.99,
         "images": [
-          "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips-detail1.svg",
-          "/images/products/teeth-whitening-strips-detail2.svg"
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447138/product-images/hxrwapryzay8w417bmai.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447145/product-images/wq9wpk4cvwreb3lbily8.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447150/product-images/kihan3ekh9dgyfbcelow.jpg",
+          "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447155/product-images/gf24hi1oufhlysnnwuna.jpg"
         ]
       }
     ],
