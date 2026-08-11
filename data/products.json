@@ -623,8 +623,8 @@
   },
   {
     "slug": "teeth-whitening-strips",
-    "price": 34.99,
-    "compareAtPrice": 46.99,
+    "price": 59.99,
+    "compareAtPrice": 79.99,
     "badge": "new",
     "rating": 4.6,
     "reviewCount": 76,
@@ -639,19 +639,19 @@
         "compareAtPrice": 32.99,
         "images": [
           "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips-detail1.svg",
-          "/images/products/teeth-whitening-strips-detail2.svg"
+          "/images/products/teeth-whitening-strips/img1.jpg",
+          "/images/products/teeth-whitening-strips/img2.jpg"
         ]
       },
       {
         "id": "14-treatments",
         "label": "14 Treatments (28 Strips)",
-        "price": 34.99,
-        "compareAtPrice": 46.99,
+        "price": 59.99,
+        "compareAtPrice": 79.99,
         "images": [
           "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips-detail1.svg",
-          "/images/products/teeth-whitening-strips-detail2.svg"
+          "/images/products/teeth-whitening-strips/img1.jpg",
+          "/images/products/teeth-whitening-strips/img2.jpg"
         ],
         "isDefault": true
       },
@@ -662,8 +662,8 @@
         "compareAtPrice": 59.99,
         "images": [
           "/images/products/teeth-whitening-strips-hero.svg",
-          "/images/products/teeth-whitening-strips-detail1.svg",
-          "/images/products/teeth-whitening-strips-detail2.svg"
+          "/images/products/teeth-whitening-strips/img1.jpg",
+          "/images/products/teeth-whitening-strips/img2.jpg"
         ]
       }
     ],
