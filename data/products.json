@@ -310,7 +310,7 @@
     "rating": 4.6,
     "reviewCount": 94,
     "images": {
-      "primary": "/images/products/gut-health-hero.svg"
+      "primary": "https://res.cloudinary.com/df5we7yoo/image/upload/v1786446304/product-images/nsz3bjty8xtjnhii4uh8.png"
     },
     "variants": [
       {
@@ -319,7 +319,6 @@
         "price": 35.99,
         "compareAtPrice": 44.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/60ct/img1.webp",
           "/images/products/gut-health/60ct/img2.webp"
         ]
@@ -330,7 +329,6 @@
         "price": 42.99,
         "compareAtPrice": 54.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/90ct/img2.webp",
           "/images/products/gut-health/90ct/img3.webp"
         ]
@@ -341,7 +339,6 @@
         "price": 49.99,
         "compareAtPrice": 64.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/120ct/img1.webp",
           "/images/products/gut-health/120ct/img4.webp"
         ],
@@ -353,7 +350,6 @@
         "price": 59.99,
         "compareAtPrice": 74.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/150ct/img2.webp",
           "/images/products/gut-health/150ct/img6.webp"
         ]
@@ -364,7 +360,6 @@
         "price": 65.99,
         "compareAtPrice": 79.99,
         "images": [
-          "/images/products/gut-health-hero.svg",
           "/images/products/gut-health/gummies-60ct/img1.webp",
           "/images/products/gut-health/gummies-60ct/img2.webp"
         ]
