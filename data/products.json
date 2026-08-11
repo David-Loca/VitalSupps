@@ -27,7 +27,6 @@
         "price": 41.99,
         "compareAtPrice": 52.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/gummies-30ct/img1.webp",
           "/images/products/methylene-blue/gummies-30ct/img2.webp"
         ]
@@ -38,7 +37,6 @@
         "price": 48.99,
         "compareAtPrice": 61.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/drops-50ml/img1.webp",
           "/images/products/methylene-blue/drops-50ml/img3.webp"
         ],
@@ -50,7 +48,6 @@
         "price": 55.99,
         "compareAtPrice": 69.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/capsules-60ct/img2.webp",
           "/images/products/methylene-blue/capsules-60ct/img3.webp"
         ]
@@ -61,7 +58,6 @@
         "price": 65.99,
         "compareAtPrice": 82.99,
         "images": [
-          "/images/products/methylene-blue-hero.svg",
           "/images/products/methylene-blue/drops-60ml/img1.webp",
           "/images/products/methylene-blue/drops-60ml/img2.webp"
         ]
