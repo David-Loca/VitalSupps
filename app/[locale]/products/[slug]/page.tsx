@@ -73,6 +73,12 @@ const PRODUCT_TITLE_LEAD_IN: Record<string, Record<Locale, string>> = {
     es: "Mejor Suplemento de Salud Intestinal – Probiótico y Enzimas",
     de: "Bestes Darmgesundheit Supplement – Probiotikum & Enzyme",
   },
+  "teeth-whitening-strips": {
+    en: "Buy Peroxide-Free Teeth Whitening Strips Online",
+    fr: "Acheter des Bandes Blanchissantes Dentaires Sans Peroxyde",
+    es: "Comprar Bandas Blanqueadoras Dentales Sin Peróxido",
+    de: "Peroxidfreie Zahnaufhellungsstreifen Online Kaufen",
+  },
 };
 
 const PRODUCT_DESCRIPTION_LEAD_IN: Record<string, Record<Locale, string>> = {
@@ -87,6 +93,12 @@ const PRODUCT_DESCRIPTION_LEAD_IN: Record<string, Record<Locale, string>> = {
     fr: "Meilleur complément santé intestinale avec probiotiques et enzymes digestives pour un microbiote équilibré",
     es: "Mejor suplemento de salud intestinal con probióticos y enzimas digestivas para una microbiota equilibrada",
     de: "Bestes Darmgesundheit-Supplement mit Probiotika und Verdauungsenzymen für ein ausgeglichenes Mikrobiom",
+  },
+  "teeth-whitening-strips": {
+    en: "Buy peroxide-free teeth whitening strips online — enamel-safe, no-slip grip",
+    fr: "Achetez des bandes blanchissantes dentaires sans peroxyde en ligne — sans risque pour l'émail",
+    es: "Compra bandas blanqueadoras dentales sin peróxido online — seguras para el esmalte",
+    de: "Kaufen Sie peroxidfreie Zahnaufhellungsstreifen online — zahnschmelzschonend",
   },
 };
 

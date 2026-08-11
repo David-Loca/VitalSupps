@@ -18,18 +18,22 @@ const PRODUCT_SLUG_MAP: Record<Locale, Record<string, string>> = {
   en: {
     "methylene-blue": "methylene-blue",
     "gut-health": "gut-health",
+    "teeth-whitening-strips": "teeth-whitening-strips",
   },
   fr: {
     "methylene-blue": "bleu-de-methylene",
     "gut-health": "sante-intestinale",
+    "teeth-whitening-strips": "bandes-blanchissantes-dentaires",
   },
   es: {
     "methylene-blue": "azul-de-metileno",
     "gut-health": "salud-intestinal",
+    "teeth-whitening-strips": "bandas-blanqueadoras-dentales",
   },
   de: {
     "methylene-blue": "methylenblau",
     "gut-health": "darmgesundheit",
+    "teeth-whitening-strips": "zahnaufhellungsstreifen",
   },
 };
 

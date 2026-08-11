@@ -620,5 +620,291 @@
         }
       ]
     }
+  },
+  {
+    "slug": "teeth-whitening-strips",
+    "price": 34.99,
+    "compareAtPrice": 46.99,
+    "badge": "new",
+    "rating": 4.6,
+    "reviewCount": 76,
+    "images": {
+      "primary": "/images/products/teeth-whitening-strips-hero.svg"
+    },
+    "variants": [
+      {
+        "id": "7-treatments",
+        "label": "7 Treatments (14 Strips)",
+        "price": 24.99,
+        "compareAtPrice": 32.99,
+        "images": [
+          "/images/products/teeth-whitening-strips-hero.svg",
+          "/images/products/teeth-whitening-strips-detail1.svg",
+          "/images/products/teeth-whitening-strips-detail2.svg"
+        ]
+      },
+      {
+        "id": "14-treatments",
+        "label": "14 Treatments (28 Strips)",
+        "price": 34.99,
+        "compareAtPrice": 46.99,
+        "images": [
+          "/images/products/teeth-whitening-strips-hero.svg",
+          "/images/products/teeth-whitening-strips-detail1.svg",
+          "/images/products/teeth-whitening-strips-detail2.svg"
+        ],
+        "isDefault": true
+      },
+      {
+        "id": "20-treatments",
+        "label": "20 Treatments (40 Strips)",
+        "price": 44.99,
+        "compareAtPrice": 59.99,
+        "images": [
+          "/images/products/teeth-whitening-strips-hero.svg",
+          "/images/products/teeth-whitening-strips-detail1.svg",
+          "/images/products/teeth-whitening-strips-detail2.svg"
+        ]
+      }
+    ],
+    "specs": {
+      "servingSize": "1 upper strip + 1 lower strip per treatment",
+      "servingsPerContainer": "7, 14, or 20 treatments depending on pack size",
+      "form": "Flexible dry-gel whitening strip",
+      "allergens": "Peroxide-free formula; free from artificial dyes and unnecessary additives"
+    },
+    "reviews": [
+      {
+        "name": "Jessica L.",
+        "daysAgo": 4,
+        "rating": 5,
+        "text": "Stayed put through a whole hour of chores without sliding around, which is more than I can say for other strips I've tried. Noticed a difference by day 8.",
+        "isSample": true
+      },
+      {
+        "name": "Marco D.",
+        "daysAgo": 9,
+        "rating": 4,
+        "text": "No sensitivity at all, which was my main worry going in. Results were gradual but very visible by the end of the box.",
+        "isSample": true
+      },
+      {
+        "name": "Priya S.",
+        "daysAgo": 17,
+        "rating": 5,
+        "text": "The dry-gel really does stay on better than the gummy strips I used before. Easy to talk and drink water without it peeling off.",
+        "isSample": true
+      },
+      {
+        "name": "Tom H.",
+        "daysAgo": 26,
+        "rating": 5,
+        "text": "Ordered the 40-strip pack and it lasted exactly as long as expected. Teeth are noticeably brighter in photos now.",
+        "isSample": true
+      },
+      {
+        "name": "Nadia F.",
+        "daysAgo": 38,
+        "rating": 4,
+        "text": "Good value compared to the pharmacy brands. Taste is neutral and there's no weird aftertaste like some other strips.",
+        "isSample": true
+      }
+    ],
+    "en": {
+      "name": "Teeth Whitening Strips",
+      "tagline": "A brighter, more confident smile in as little as 14 days",
+      "heroImageAlt": "VitalSupps peroxide-free teeth whitening strips packaging with fanned strips",
+      "targetAudience": "Anyone who wants a noticeably brighter smile at home, without the sensitivity or expense of in-office whitening treatments.",
+      "benefits": [
+        "Peroxide-free, enamel-safe whitening formula",
+        "No-slip grip stays in place during wear",
+        "Dry-gel technology resists premature detachment from saliva",
+        "Visible results in as little as 14 days of use",
+        "Free from artificial dyes and unnecessary additives",
+        "GMP-certified manufacturing"
+      ],
+      "usage": "Apply one strip to your upper teeth and one to your lower teeth, pressing gently to smooth out air bubbles. Leave in place for up to 60 minutes, then remove and discard. Use once daily for best results — a full 14-treatment box is designed for a 14-day course.",
+      "safety": "For external dental use only. Discontinue use if you experience gum irritation or tooth sensitivity that does not resolve. Not recommended for children under 12, or for those who are pregnant or nursing without consulting a dentist first. Avoid contact with eyes.",
+      "ingredients": [
+        "Sodium bicarbonate",
+        "PVP (film-forming agent)",
+        "Sodium hydroxide",
+        "Purified water",
+        "Peppermint flavoring"
+      ],
+      "faq": [
+        {
+          "question": "Do these whitening strips contain peroxide?",
+          "answer": "No. Our formula is peroxide-free, using a gentle dry-gel technology instead — designed to whiten effectively without the sensitivity that hydrogen peroxide can cause."
+        },
+        {
+          "question": "How long until I see results?",
+          "answer": "Most people notice a visible difference within the first week, with the full effect developing over a 14-day course when used once daily as directed."
+        },
+        {
+          "question": "Will the strips slip around while I'm wearing them?",
+          "answer": "They're designed with a no-slip grip and a dry-gel formula that resists sliding, so they stay in place for the full wear time even if you move around."
+        },
+        {
+          "question": "How many treatments do I need?",
+          "answer": "Each treatment uses one upper and one lower strip. Choose the 7, 14, or 20-treatment pack depending on how long a course you want — 14 treatments is our most popular, matching the standard 14-day program."
+        },
+        {
+          "question": "Where can I buy peroxide-free teeth whitening strips online?",
+          "answer": "Right here — choose your pack size in the buy box above, or message us on WhatsApp to place an order."
+        },
+        {
+          "question": "What makes these the best teeth whitening strips for sensitive teeth?",
+          "answer": "The peroxide-free, dry-gel formula is specifically designed to whiten without the sharp sensitivity spikes associated with peroxide-based strips, while the no-slip grip keeps each strip exactly where you place it."
+        }
+      ]
+    },
+    "fr": {
+      "name": "Bandes Blanchissantes Dentaires",
+      "tagline": "Un sourire plus éclatant et confiant en aussi peu que 14 jours",
+      "heroImageAlt": "Emballage des bandes blanchissantes dentaires VitalSupps sans peroxyde, bandes déployées en éventail",
+      "targetAudience": "Toute personne qui souhaite un sourire visiblement plus blanc à la maison, sans la sensibilité ni le coût des traitements blanchissants en cabinet.",
+      "benefits": [
+        "Formule blanchissante sans peroxyde, sans risque pour l'émail",
+        "Grip anti-glisse qui reste bien en place pendant le port",
+        "Technologie dry-gel qui résiste au décollement prématuré causé par la salive",
+        "Résultats visibles en aussi peu que 14 jours d'utilisation",
+        "Sans colorants artificiels ni additifs superflus",
+        "Fabrication certifiée GMP"
+      ],
+      "usage": "Appliquez une bande sur les dents du haut et une sur les dents du bas, en lissant doucement pour chasser les bulles d'air. Laissez agir jusqu'à 60 minutes, puis retirez et jetez. Utilisez une fois par jour pour de meilleurs résultats — une boîte complète de 14 traitements est conçue pour une cure de 14 jours.",
+      "safety": "Usage dentaire externe uniquement. Arrêtez l'utilisation en cas d'irritation gingivale ou de sensibilité dentaire persistante. Non recommandé pour les enfants de moins de 12 ans, ni pour les femmes enceintes ou allaitantes sans avis dentaire préalable. Évitez le contact avec les yeux.",
+      "ingredients": [
+        "Bicarbonate de sodium",
+        "PVP (agent filmogène)",
+        "Hydroxyde de sodium",
+        "Eau purifiée",
+        "Arôme de menthe poivrée"
+      ],
+      "faq": [
+        {
+          "question": "Ces bandes blanchissantes contiennent-elles du peroxyde ?",
+          "answer": "Non. Notre formule est sans peroxyde et utilise à la place une technologie dry-gel douce — conçue pour blanchir efficacement sans la sensibilité que peut provoquer le peroxyde d'hydrogène."
+        },
+        {
+          "question": "Au bout de combien de temps vois-je des résultats ?",
+          "answer": "La plupart des utilisateurs remarquent une différence visible dès la première semaine, avec un effet complet après une cure de 14 jours en une application quotidienne."
+        },
+        {
+          "question": "Les bandes glissent-elles pendant le port ?",
+          "answer": "Elles sont conçues avec un grip anti-glisse et une formule dry-gel qui résiste au glissement, pour rester en place pendant toute la durée du port même en bougeant."
+        },
+        {
+          "question": "Combien de traitements me faut-il ?",
+          "answer": "Chaque traitement utilise une bande du haut et une du bas. Choisissez le pack de 7, 14 ou 20 traitements selon la durée de cure souhaitée — 14 traitements est notre format le plus populaire, correspondant au programme standard de 14 jours."
+        },
+        {
+          "question": "Où puis-je acheter des bandes blanchissantes dentaires sans peroxyde en ligne ?",
+          "answer": "Directement ici — choisissez la taille de votre pack dans la boîte d'achat ci-dessus, ou contactez-nous sur WhatsApp pour passer commande."
+        },
+        {
+          "question": "Qu'est-ce qui fait de ces bandes les meilleures pour les dents sensibles ?",
+          "answer": "La formule sans peroxyde à base de dry-gel est spécialement conçue pour blanchir sans les pics de sensibilité associés aux bandes à base de peroxyde, tandis que le grip anti-glisse maintient chaque bande exactement là où vous la placez."
+        }
+      ]
+    },
+    "es": {
+      "name": "Bandas Blanqueadoras Dentales",
+      "tagline": "Una sonrisa más blanca y segura en tan solo 14 días",
+      "heroImageAlt": "Envase de las bandas blanqueadoras dentales VitalSupps sin peróxido, bandas desplegadas en abanico",
+      "targetAudience": "Cualquiera que quiera una sonrisa visiblemente más blanca desde casa, sin la sensibilidad ni el costo de los tratamientos de blanqueamiento en clínica.",
+      "benefits": [
+        "Fórmula blanqueadora sin peróxido, segura para el esmalte",
+        "Agarre antideslizante que se mantiene en su lugar durante el uso",
+        "Tecnología dry-gel que resiste el despegue prematuro causado por la saliva",
+        "Resultados visibles en tan solo 14 días de uso",
+        "Sin colorantes artificiales ni aditivos innecesarios",
+        "Fabricación certificada GMP"
+      ],
+      "usage": "Aplica una banda en los dientes superiores y otra en los inferiores, presionando suavemente para eliminar burbujas de aire. Deja actuar hasta 60 minutos y luego retira y desecha. Úsalas una vez al día para mejores resultados — una caja completa de 14 tratamientos está diseñada para una cura de 14 días.",
+      "safety": "Uso dental externo únicamente. Suspende el uso si experimentas irritación de encías o sensibilidad dental persistente. No recomendado para menores de 12 años, ni durante el embarazo o la lactancia sin consultar antes a un dentista. Evita el contacto con los ojos.",
+      "ingredients": [
+        "Bicarbonato de sodio",
+        "PVP (agente formador de película)",
+        "Hidróxido de sodio",
+        "Agua purificada",
+        "Aroma de menta"
+      ],
+      "faq": [
+        {
+          "question": "¿Estas bandas blanqueadoras contienen peróxido?",
+          "answer": "No. Nuestra fórmula está libre de peróxido y utiliza en su lugar una tecnología dry-gel suave — diseñada para blanquear eficazmente sin la sensibilidad que puede provocar el peróxido de hidrógeno."
+        },
+        {
+          "question": "¿Cuánto tiempo tardaré en ver resultados?",
+          "answer": "La mayoría de las personas notan una diferencia visible en la primera semana, con el efecto completo tras una cura de 14 días usándolas una vez al día según las instrucciones."
+        },
+        {
+          "question": "¿Las bandas se deslizan mientras las llevo puestas?",
+          "answer": "Están diseñadas con un agarre antideslizante y una fórmula dry-gel que resiste el deslizamiento, por lo que permanecen en su lugar durante todo el tiempo de uso aunque te muevas."
+        },
+        {
+          "question": "¿Cuántos tratamientos necesito?",
+          "answer": "Cada tratamiento usa una banda superior y una inferior. Elige el pack de 7, 14 o 20 tratamientos según la duración de cura que desees — 14 tratamientos es nuestro formato más popular, correspondiente al programa estándar de 14 días."
+        },
+        {
+          "question": "¿Dónde puedo comprar bandas blanqueadoras dentales sin peróxido en línea?",
+          "answer": "Aquí mismo — elige el tamaño de tu pack en el cuadro de compra de arriba, o escríbenos por WhatsApp para hacer tu pedido."
+        },
+        {
+          "question": "¿Qué hace que estas sean las mejores bandas blanqueadoras para dientes sensibles?",
+          "answer": "La fórmula sin peróxido a base de dry-gel está diseñada específicamente para blanquear sin los picos de sensibilidad asociados a las bandas con peróxido, mientras que el agarre antideslizante mantiene cada banda exactamente donde la coloques."
+        }
+      ]
+    },
+    "de": {
+      "name": "Zahnaufhellungsstreifen",
+      "tagline": "Ein strahlenderes, selbstbewussteres Lächeln in nur 14 Tagen",
+      "heroImageAlt": "Verpackung der peroxidfreien VitalSupps Zahnaufhellungsstreifen mit fächerförmig ausgebreiteten Streifen",
+      "targetAudience": "Für alle, die sich zu Hause ein sichtbar weißeres Lächeln wünschen, ohne die Empfindlichkeit oder die Kosten einer professionellen Zahnaufhellung.",
+      "benefits": [
+        "Peroxidfreie, zahnschmelzschonende Aufhellungsformel",
+        "Rutschfester Halt bleibt während der Tragezeit an Ort und Stelle",
+        "Dry-Gel-Technologie widersteht vorzeitigem Ablösen durch Speichel",
+        "Sichtbare Ergebnisse bereits nach 14 Tagen Anwendung",
+        "Frei von künstlichen Farbstoffen und unnötigen Zusatzstoffen",
+        "GMP-zertifizierte Herstellung"
+      ],
+      "usage": "Einen Streifen auf die oberen und einen auf die unteren Zähne auflegen, leicht andrücken, um Luftblasen zu glätten. Bis zu 60 Minuten einwirken lassen, dann entfernen und entsorgen. Für beste Ergebnisse einmal täglich anwenden — eine vollständige 14er-Packung ist für eine 14-tägige Kur konzipiert.",
+      "safety": "Nur zur äußerlichen Zahnanwendung. Anwendung bei anhaltender Zahnfleischreizung oder Zahnempfindlichkeit abbrechen. Nicht empfohlen für Kinder unter 12 Jahren oder während Schwangerschaft/Stillzeit ohne vorherige zahnärztliche Beratung. Kontakt mit den Augen vermeiden.",
+      "ingredients": [
+        "Natriumbicarbonat",
+        "PVP (filmbildendes Mittel)",
+        "Natriumhydroxid",
+        "Gereinigtes Wasser",
+        "Pfefferminzaroma"
+      ],
+      "faq": [
+        {
+          "question": "Enthalten diese Aufhellungsstreifen Peroxid?",
+          "answer": "Nein. Unsere Formel ist peroxidfrei und nutzt stattdessen eine sanfte Dry-Gel-Technologie — entwickelt, um effektiv aufzuhellen, ohne die Empfindlichkeit, die Wasserstoffperoxid verursachen kann."
+        },
+        {
+          "question": "Wie lange dauert es, bis ich Ergebnisse sehe?",
+          "answer": "Die meisten Menschen bemerken bereits in der ersten Woche einen sichtbaren Unterschied, mit voller Wirkung nach einer 14-tägigen Kur bei täglicher Anwendung wie beschrieben."
+        },
+        {
+          "question": "Verrutschen die Streifen während des Tragens?",
+          "answer": "Sie sind mit rutschfestem Halt und einer Dry-Gel-Formel ausgestattet, die dem Verrutschen widersteht, sodass sie während der gesamten Tragezeit an Ort und Stelle bleiben, auch wenn Sie sich bewegen."
+        },
+        {
+          "question": "Wie viele Behandlungen brauche ich?",
+          "answer": "Jede Behandlung verwendet einen oberen und einen unteren Streifen. Wählen Sie die 7-, 14- oder 20-Behandlungs-Packung je nach gewünschter Kurdauer — 14 Behandlungen ist unser beliebtestes Format und entspricht dem Standardprogramm von 14 Tagen."
+        },
+        {
+          "question": "Wo kann ich peroxidfreie Zahnaufhellungsstreifen online kaufen?",
+          "answer": "Genau hier — wählen Sie Ihre Packungsgröße in der Kauf-Box oben, oder schreiben Sie uns auf WhatsApp, um Ihre Bestellung abzuschließen."
+        },
+        {
+          "question": "Was macht diese Streifen zur besten Wahl für empfindliche Zähne?",
+          "answer": "Die peroxidfreie Dry-Gel-Formel wurde speziell entwickelt, um aufzuhellen, ohne die starken Empfindlichkeitsspitzen, die mit peroxidbasierten Streifen einhergehen, während der rutschfeste Halt jeden Streifen genau dort hält, wo Sie ihn platzieren."
+        }
+      ]
+    }
   }
 ]

@@ -1,7 +1,7 @@
 import type { Locale } from "@/lib/i18n";
 import { getProductBySlug, getProductContent } from "@/lib/products";
 
-export type ProductKeywordSlug = "methylene-blue" | "gut-health";
+export type ProductKeywordSlug = "methylene-blue" | "gut-health" | "teeth-whitening-strips";
 
 /**
  * Hand-curated per-locale, per-product keyword lists for `<meta name="keywords">`
@@ -53,6 +53,20 @@ export const PRODUCT_KEYWORDS: Record<Locale, Record<ProductKeywordSlug, string[
       "methylene blue capsules",
       "methylene blue dosage",
     ],
+    "teeth-whitening-strips": [
+      "buy teeth whitening strips",
+      "best teeth whitening strips",
+      "peroxide free whitening strips",
+      "teeth whitening strips for sensitive teeth",
+      "teeth whitening strips review",
+      "at home teeth whitening",
+      "whitening strips online",
+      "enamel safe teeth whitening",
+      "teeth whitening strips no sensitivity",
+      "professional teeth whitening strips",
+      "teeth whitening kit",
+      "dental whitening strips USA",
+    ],
   },
   fr: {
     "gut-health": [
@@ -90,6 +104,16 @@ export const PRODUCT_KEYWORDS: Record<Locale, Record<ProductKeywordSlug, string[
       "gouttes de bleu de méthylène avis",
       "bleu de méthylène posologie",
     ],
+    "teeth-whitening-strips": [
+      "acheter bandes blanchissantes dentaires",
+      "meilleures bandes blanchissantes",
+      "bandes blanchissantes sans peroxyde",
+      "blanchiment dentaire dents sensibles",
+      "blanchiment des dents à domicile",
+      "bandes blanchissantes en ligne",
+      "blanchiment dentaire sans danger pour l'émail",
+      "kit blanchiment dentaire",
+    ],
   },
   es: {
     "gut-health": [
@@ -125,6 +149,16 @@ export const PRODUCT_KEYWORDS: Record<Locale, Record<ProductKeywordSlug, string[
       "azul de metileno dosis",
       "azul de metileno opiniones",
     ],
+    "teeth-whitening-strips": [
+      "comprar bandas blanqueadoras dentales",
+      "mejores bandas blanqueadoras",
+      "bandas blanqueadoras sin peróxido",
+      "blanqueamiento dental dientes sensibles",
+      "blanqueamiento dental en casa",
+      "bandas blanqueadoras online",
+      "blanqueamiento dental seguro para el esmalte",
+      "kit de blanqueamiento dental",
+    ],
   },
   de: {
     "gut-health": [
@@ -158,11 +192,21 @@ export const PRODUCT_KEYWORDS: Record<Locale, Record<ProductKeywordSlug, string[
       "Methylenblau Dosierung",
       "Methylenblau Erfahrungen",
     ],
+    "teeth-whitening-strips": [
+      "Zahnaufhellungsstreifen kaufen",
+      "beste Zahnaufhellungsstreifen",
+      "peroxidfreie Zahnaufhellungsstreifen",
+      "Zahnaufhellung für empfindliche Zähne",
+      "Zähne aufhellen zuhause",
+      "Aufhellungsstreifen online kaufen",
+      "zahnschmelzschonende Zahnaufhellung",
+      "Zahnaufhellungs-Set",
+    ],
   },
 };
 
 function isProductKeywordSlug(slug: string): slug is ProductKeywordSlug {
-  return slug === "methylene-blue" || slug === "gut-health";
+  return slug === "methylene-blue" || slug === "gut-health" || slug === "teeth-whitening-strips";
 }
 
 /**

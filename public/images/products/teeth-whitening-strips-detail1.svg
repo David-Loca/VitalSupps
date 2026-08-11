@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="Close-up of a single VitalSupps whitening strip being applied">
+  <defs>
+    <radialGradient id="tw8-bg" cx="0.5" cy="0.32" r="0.95">
+      <stop offset="0%" stop-color="#eaf6ff" />
+      <stop offset="55%" stop-color="#bfe3f7" />
+      <stop offset="100%" stop-color="#3aa6e0" />
+    </radialGradient>
+    <linearGradient id="tw8-strip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#dff1fb" />
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="1000" fill="url(#tw8-bg)" />
+  <circle cx="620" cy="760" r="220" fill="#137bc2" opacity="0.08" />
+
+  <!-- large single strip, curved -->
+  <path d="M180 300 Q160 520 260 720 Q310 800 420 800 Q470 800 470 750 L470 320 Q470 270 420 260 L230 250 Q180 250 180 300 Z"
+        fill="url(#tw8-strip)" stroke="#137bc2" stroke-width="2" opacity="0.96" />
+  <path d="M230 300 Q210 500 300 680" fill="none" stroke="#3aa6e0" stroke-width="1.5" opacity="0.5" />
+  <path d="M280 290 Q262 490 350 670" fill="none" stroke="#3aa6e0" stroke-width="1.5" opacity="0.4" />
+
+  <!-- gel sheen highlight -->
+  <ellipse cx="330" cy="420" rx="70" ry="150" fill="#FFFFFF" opacity="0.35" transform="rotate(-12 330 420)" />
+
+  <!-- sparkle cluster -->
+  <g fill="#137bc2">
+    <path d="M560 260 L568 288 L596 296 L568 304 L560 332 L552 304 L524 296 L552 288 Z" opacity="0.9" />
+    <path d="M640 400 L645 416 L661 421 L645 426 L640 442 L635 426 L619 421 L635 416 Z" opacity="0.7" />
+    <path d="M600 500 L604 512 L616 516 L604 520 L600 532 L596 520 L584 516 L596 512 Z" opacity="0.55" />
+  </g>
+
+  <!-- caption plate -->
+  <rect x="200" y="850" width="400" height="90" rx="14" fill="#0a3f66" opacity="0.92" />
+  <text x="400" y="888" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-weight="600" font-size="24" fill="#eaf6ff">VitalSupps Whitening</text>
+  <text x="400" y="915" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="12" fill="#FFFFFF" opacity="0.75" letter-spacing="1.5">FLEXIBLE, NO-SLIP FIT</text>
+</svg>

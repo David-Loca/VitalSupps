@@ -20,7 +20,7 @@ export default function BundleOffer() {
   const contentA = getProductContent(productA, locale);
   const contentB = getProductContent(productB, locale);
   const individualTotal = productA.price + productB.price;
-  const bundlePrice = getBundlePrice(products, BUNDLE_DISCOUNT_PERCENT);
+  const bundlePrice = getBundlePrice([productA, productB], BUNDLE_DISCOUNT_PERCENT);
   const savings = individualTotal - bundlePrice;
   const whatsappUrl = getBundleWhatsAppUrl(t("whatsapp.bundleTemplate"), [contentA.name, contentB.name]);
 
