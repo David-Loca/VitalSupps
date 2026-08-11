@@ -2,7 +2,6 @@
 
 import { lazy, Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { ArrowRight, MessageCircle, ShieldCheck, Leaf, FlaskConical } from "lucide-react";
 import Header from "@/components/Header";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -11,6 +10,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 import type { BlogPost } from "@/lib/admin/blog-shared";
 import { BotanicalCorner, BotanicalCornerSmall, GoldCurve } from "@/components/admin/ui/Decorative";
 import { getAllProducts, getLowestVariantPrice, formatPrice } from "@/lib/products";
+import HeroCarousel from "@/components/HeroCarousel";
 
 // Lazy load non-critical components
 const ProductShowcase = lazy(() => import("@/components/ProductShowcase"));
@@ -138,19 +138,7 @@ export default function Home({ latestBlogs: _latestBlogs = [] }: HomePageClientP
               transition={{ duration: 0.6, delay: 0.1 }}
               className="relative order-1 lg:order-2"
             >
-              <div className="relative w-full h-72 sm:h-96 md:h-105 lg:h-120 rounded-brand-lg overflow-hidden shadow-[var(--shadow-brand-card)] border border-brand-border">
-                <span className="absolute top-4 left-4 z-10 bg-brand-gold text-white text-[11px] font-bold tracking-wide uppercase px-2.5 py-1 rounded-full shadow-sm whitespace-nowrap">
-                  {t("hero.ribbon")}
-                </span>
-                <Image
-                  src="/images/products/methylene-blue-hero.svg"
-                  alt="VitalSupps Methylene Blue amber dropper bottle"
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 50vw, 90vw"
-                  priority
-                />
-              </div>
+              <HeroCarousel reduceAnimations={reduceAnimations} />
             </motion.div>
           </div>
         </div>

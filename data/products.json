@@ -625,8 +625,8 @@
       {
         "id": "7-treatments",
         "label": "7 Treatments (14 Strips)",
-        "price": 24.99,
-        "compareAtPrice": 32.99,
+        "price": 59.99,
+        "compareAtPrice": 74.99,
         "images": [
           "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447037/product-images/ujn1qoeoueshv1lvm8f9.jpg",
           "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447060/product-images/jirn9gccmowtm9cv3tvx.jpg",
@@ -649,8 +649,8 @@
       {
         "id": "20-treatments",
         "label": "20 Treatments (40 Strips)",
-        "price": 44.99,
-        "compareAtPrice": 59.99,
+        "price": 79.99,
+        "compareAtPrice": 99.99,
         "images": [
           "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447138/product-images/hxrwapryzay8w417bmai.jpg",
           "https://res.cloudinary.com/df5we7yoo/image/upload/v1786447145/product-images/wq9wpk4cvwreb3lbily8.jpg",
