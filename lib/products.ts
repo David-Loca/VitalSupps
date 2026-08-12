@@ -31,6 +31,12 @@ export interface ProductLocaleContent {
    * site-wide `whatsapp.productOrderTemplate` translation when unset.
    */
   whatsappOrderTemplate?: string;
+  /**
+   * Optional admin-editable SEO keywords for this product/locale, comma-separated
+   * (not visible on site — added to `<meta name="keywords">` and JSON-LD).
+   * Merged with the curated list in lib/seo/product-keywords.ts, not a replacement.
+   */
+  seoKeywords?: string;
 }
 
 export interface ProductSpecs {

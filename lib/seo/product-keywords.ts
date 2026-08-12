@@ -210,8 +210,9 @@ function isProductKeywordSlug(slug: string): slug is ProductKeywordSlug {
 }
 
 /**
- * Full keyword list for a product page: the curated per-locale keyword list
- * plus the product's own localized display name and "VitalSupps", deduped.
+ * Full keyword list for a product page: the curated per-locale keyword list,
+ * the admin-entered keywords from the Product Editor (if any), the product's
+ * own localized display name, and "VitalSupps" — deduped.
  */
 export function getProductKeywords(slug: string, locale: Locale): string[] {
   const base = isProductKeywordSlug(slug) ? PRODUCT_KEYWORDS[locale][slug] : [];
@@ -219,7 +220,13 @@ export function getProductKeywords(slug: string, locale: Locale): string[] {
   const extra: string[] = [];
   const product = getProductBySlug(slug);
   if (product) {
-    extra.push(getProductContent(product, locale).name);
+    const content = getProductContent(product, locale);
+    const adminKeywords = (content.seoKeywords || "")
+      .split(",")
+      .map((kw) => kw.trim())
+      .filter(Boolean);
+    extra.push(...adminKeywords);
+    extra.push(content.name);
   }
   extra.push("VitalSupps");
 

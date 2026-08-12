@@ -65,6 +65,7 @@ function emptyLocaleContent(): ProductLocaleContent {
     safety: "",
     ingredients: [""],
     faq: [],
+    seoKeywords: "",
   };
 }
 
@@ -752,6 +753,22 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
               rows={2}
               className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
             />
+          </div>
+          <div>
+            <label className="text-sm font-medium text-admin-text mb-2 flex items-center gap-1.5">
+              SEO Keywords — {LOCALE_LABELS[activeLocale]}{" "}
+              <span className="font-normal text-admin-text-secondary">(comma-separated, not visible on site)</span>
+            </label>
+            <textarea
+              value={content.seoKeywords || ""}
+              onChange={(e) => setLocaleField("seoKeywords", e.target.value)}
+              rows={2}
+              placeholder="keyword one, keyword two, keyword three"
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent resize-none"
+            />
+            <p className="mt-1.5 text-xs text-admin-text-secondary">
+              Added to this page's meta tags for search engines. These are combined with our existing curated keywords — no need to repeat obvious ones like the product name.
+            </p>
           </div>
           <div>
             <label className="block text-sm font-medium text-admin-text mb-2">
