@@ -28,6 +28,7 @@ import {
 } from "@/lib/i18n/normalize-hero-text";
 import BlogsManager from "@/components/admin/BlogsManager";
 import ProductsManager from "@/components/admin/ProductsManager";
+import HeroCarouselEditor from "@/components/admin/HeroCarouselEditor";
 import DeploymentNotification from "@/components/admin/DeploymentNotification";
 import PreviewPanel from "@/components/admin/PreviewPanel";
 import AdminSidebar, { type AdminSection } from "@/components/admin/AdminSidebar";
@@ -549,6 +550,8 @@ export default function AdminDashboard() {
                       title={ui.hero.title}
                       subtitle={ui.hero.subtitle}
                     />
+
+                    <HeroCarouselEditor />
 
                     <Card>
                       <div className="space-y-6">
