@@ -15,14 +15,18 @@ export default function robots(): MetadataRoute.Robots {
     'terms-of-service',
   ];
 
-  // Build disallow patterns for English slugs under every locale
+  // Build disallow patterns for English slugs under every NON-English locale
+  // (e.g. disallow /fr/terms-of-service since French uses its own localized
+  // slug there) — English itself must stay crawlable, it's the canonical URL.
   const disallowPatterns = [
     '/api/',
     '/admin/',
-    ...locales.flatMap((locale) => [
-      ...englishSlugs.map(slug => `/${locale}/${slug}`),
-      ...englishSlugs.map(slug => `/${locale}/${slug}/`),
-    ]),
+    ...locales
+      .filter((locale) => locale !== 'en')
+      .flatMap((locale) => [
+        ...englishSlugs.map(slug => `/${locale}/${slug}`),
+        ...englishSlugs.map(slug => `/${locale}/${slug}/`),
+      ]),
   ];
 
   return {
