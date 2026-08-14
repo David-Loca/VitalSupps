@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { getAllProducts } from "@/lib/products";
 
 /**
  * Localized URL slugs for the product catalog. Each locale gets its own
@@ -6,6 +7,11 @@ import type { Locale } from "@/lib/i18n";
  * the English slug (e.g. "methylene-blue") is the canonical key used
  * throughout the app (data lookups, admin, WhatsApp messages, image paths).
  * Keep in sync with `middleware.ts`'s product rewrite/redirect logic.
+ *
+ * The admin can override any of these per-product, per-locale via the
+ * Product Editor (`Product.slugs`, stored in data/products.json) — that
+ * takes priority. This static map is only the fallback for products that
+ * haven't had a custom slug set for a given locale.
  */
 const PRODUCTS_SEGMENT: Record<Locale, string> = {
   en: "products",
@@ -49,12 +55,14 @@ export function isEnglishProductsSegment(segment: string): boolean {
 
 /** True if `slug` is a real, known product's canonical English slug. */
 export function isKnownProductSlug(slug: string): boolean {
-  return Object.prototype.hasOwnProperty.call(PRODUCT_SLUG_MAP.en, slug);
+  return getAllProducts().some((p) => p.slug === slug);
 }
 
 /** Localized slug (no leading/trailing slashes) for an English product slug + locale. */
 export function getProductSlug(englishSlug: string, locale: Locale): string {
-  return PRODUCT_SLUG_MAP[locale]?.[englishSlug] ?? englishSlug;
+  const product = getAllProducts().find((p) => p.slug === englishSlug);
+  const adminOverride = product?.slugs?.[locale];
+  return adminOverride || PRODUCT_SLUG_MAP[locale]?.[englishSlug] || englishSlug;
 }
 
 /** Full locale-prefixed, fully localized product URL (with trailing slash). */
@@ -73,10 +81,29 @@ export function getEnglishProductSlugFromLocalized(
   locale: Locale
 ): string | null {
   if (segment !== getProductsSegment(locale)) return null;
+
+  // Admin-set overrides take priority over the static fallback map.
+  const products = getAllProducts();
+  const overrideMatch = products.find((p) => p.slugs?.[locale] === localizedSlug);
+  if (overrideMatch) return overrideMatch.slug;
+
   const map = PRODUCT_SLUG_MAP[locale];
-  if (!map) return null;
-  for (const [englishSlug, slug] of Object.entries(map)) {
-    if (slug === localizedSlug) return englishSlug;
+  if (map) {
+    for (const [englishSlug, slug] of Object.entries(map)) {
+      // Skip entries a product has overridden — the override already won above,
+      // so if it didn't match, the static slug shouldn't match here either.
+      const product = products.find((p) => p.slug === englishSlug);
+      if (product?.slugs?.[locale]) continue;
+      if (slug === localizedSlug) return englishSlug;
+    }
   }
+
+  // Products with no static or admin-set localized slug fall back to their
+  // English slug directly (see getProductSlug) — match that here too.
+  const englishFallback = products.find(
+    (p) => !p.slugs?.[locale] && !PRODUCT_SLUG_MAP[locale]?.[p.slug] && p.slug === localizedSlug
+  );
+  if (englishFallback) return englishFallback.slug;
+
   return null;
 }

@@ -322,6 +322,17 @@ export function validateProductForPublish(product: Product): ProductValidationRe
     };
   }
 
+  if (product.slugs) {
+    for (const [loc, localizedSlug] of Object.entries(product.slugs)) {
+      if (localizedSlug && !isValidSlugFormat(localizedSlug)) {
+        return {
+          ok: false,
+          error: `URL slug for ${loc.toUpperCase()} must be lowercase letters, numbers, and hyphens only.`,
+        };
+      }
+    }
+  }
+
   for (const loc of PRODUCT_LOCALES) {
     const content = product[loc];
     if (!content) {

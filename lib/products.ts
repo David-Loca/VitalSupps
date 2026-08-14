@@ -78,6 +78,12 @@ export interface ProductVariant {
 
 export interface Product {
   slug: string;
+  /**
+   * Optional admin-editable localized URL slug overrides, keyed by locale
+   * (e.g. { fr: "bleu-de-methylene" } for /fr/produits/bleu-de-methylene/).
+   * Falls back to the canonical English `slug` for any locale left unset.
+   */
+  slugs?: Partial<Record<Locale, string>>;
   price: number;
   compareAtPrice?: number;
   badge?: string;

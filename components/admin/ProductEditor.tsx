@@ -23,6 +23,7 @@ import type {
 } from "@/lib/products";
 import { locales as PRODUCT_LOCALES, type Locale } from "@/lib/i18n";
 import { getAdminDict } from "@/lib/admin/i18n";
+import { getProductsSegment } from "@/lib/utils/product-slugs";
 
 const LOCALE_LABELS: Record<Locale, string> = {
   en: "English",
@@ -89,6 +90,7 @@ interface ProductDraft extends Omit<Product, "reviews"> {
 function buildEmptyProduct(): ProductDraft {
   return {
     slug: "",
+    slugs: {},
     price: 0,
     compareAtPrice: undefined,
     badge: "",
@@ -108,6 +110,7 @@ function buildEmptyProduct(): ProductDraft {
 function normalizeInitialProduct(product: Product): ProductDraft {
   return {
     ...product,
+    slugs: product.slugs || {},
     specs: product.specs || emptySpecs(),
     reviews: (product.reviews || []).map((r) => ({
       ...r,
@@ -720,6 +723,26 @@ export default function ProductEditor({ onSave, onDelete, initialProduct, locale
               onChange={(e) => setLocaleField("name", e.target.value)}
               className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text text-lg font-medium focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
             />
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-admin-text mb-2">
+              URL slug — {LOCALE_LABELS[activeLocale]}
+            </label>
+            <input
+              type="text"
+              value={product.slugs?.[activeLocale] || ""}
+              onChange={(e) =>
+                setProduct((prev) => ({
+                  ...prev,
+                  slugs: { ...prev.slugs, [activeLocale]: e.target.value },
+                }))
+              }
+              placeholder={product.slug || "leave blank to use the default"}
+              className="w-full px-4 py-3 bg-white border border-admin-border rounded-admin-md text-admin-text focus:outline-none focus:ring-2 focus:ring-admin-primary focus:border-transparent"
+            />
+            <p className="text-xs text-admin-text-secondary mt-1">
+              Optional. Lowercase letters, numbers, and hyphens only. Preview: /{activeLocale}/{getProductsSegment(activeLocale)}/{product.slugs?.[activeLocale] || product.slug || "your-slug"}/
+            </p>
           </div>
           <div>
             <label className="block text-sm font-medium text-admin-text mb-2">
